@@ -2,7 +2,7 @@
 <html lang="zh-Hans-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f1a2e">
 <meta name="referrer" content="no-referrer">
 <title>中国二手车出口 | 金霸二手车 - 出口BYD/MG到全球50+国</title>
@@ -151,7 +151,8 @@
   --header-height: 72px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font); color: var(--gray-800); background: var(--white); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); font-family: var(--font); color: var(--gray-800); background: var(--white); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; }
@@ -464,7 +465,8 @@ img { max-width: 100%; height: auto; }
 .badge { position: absolute; top: 10px; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; color: var(--white); z-index: 2; }
 .badge-featured { left: 10px; background: var(--gold); }
 .badge-new { right: 10px; background: var(--green); }
-.car-card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
+.car-card-body {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
 .car-card-title { display: block; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.3; transition: color var(--transition-fast); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .car-card-title:hover { color: var(--gold); }
 .car-card-meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.75rem; color: var(--gray-600); margin-bottom: 10px; }
@@ -565,7 +567,8 @@ img { max-width: 100%; height: auto; }
   .footer-grid { grid-template-columns: 1fr; gap: 20px; }
   .section { padding: 24px 0; }
   .car-card-image-link { height: 180px; }
-  .car-card-body { padding: 12px; }
+  .car-card-body {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); padding: 12px; }
   .car-card-title { font-size: 0.9375rem; }
   .car-card-price { font-size: 1.125rem; }
   .testimonial-card { padding: 20px 16px; }
@@ -641,7 +644,8 @@ img { max-width: 100%; height: auto; }
       .car-card-image-link { 
         height: 180px; 
       }
-      .car-card-body { 
+      .car-card-body {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
         padding: 12px; 
       }
       .car-card-title { 
@@ -802,7 +806,97 @@ img { max-width: 100%; height: auto; }
       }
     }
     
-  </style>
+  
+    /* ===== 额外移动端优化 ===== */
+    
+    /* 图片加载失败的占位样式 */
+    .car-card-image-link img[src$=".jpg"],
+    .car-card-image-link img[src$=".webp"] {
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+    
+    /* 国旗图片响应式 */
+    .country-flag img {
+      transition: transform 0.2s ease;
+    }
+    .country-card:hover .country-flag img {
+      transform: scale(1.2);
+    }
+    
+    /* 汽车卡片 hover 效果 */
+    .car-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .car-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(184, 134, 11, 0.2);
+    }
+    
+    /* Hero badge 动画 */
+    .hero-badge {
+      animation: fadeIn 0.6s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* 按钮微交互 */
+    .btn-primary {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184, 134, 11, 0.4);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    
+    /* 统计数字动画 */
+    .stat-number {
+      transition: color 0.3s ease;
+    }
+    .stat-item:hover .stat-number {
+      color: var(--gold-light);
+    }
+    
+    /* 滚动条美化 */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--gray-100);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-light);
+    }
+    
+    /* 评价卡片动画 */
+    .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* 信任项 hover */
+    .trust-item {
+      transition: transform 0.2s ease;
+    }
+    .trust-item:hover {
+      transform: scale(1.02);
+    }
+    </style>
 
 <script type="application/ld+json">
     {
@@ -940,7 +1034,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/1" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/1/primary.jpg" alt="BYD 海豹 650智驾版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/1/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="BYD 海豹 650智驾版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -957,7 +1051,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/2" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/2/primary.jpg" alt="BYD 汉 DM-i 智驾版 125KM激光雷达旗舰型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/2/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="BYD 汉 DM-i 智驾版 125KM激光雷达旗舰型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -974,7 +1068,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/3" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/3/7003_1.jpg" alt="BYD 宋PLUS新能源 DM-i 112KM 尊荣型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/3/7003_1.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="BYD 宋PLUS新能源 DM-i 112KM 尊荣型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -991,7 +1085,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/4" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/4/7004_1.jpg" alt="Chery 瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/4/7004_1.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="Chery 瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1008,7 +1102,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/5" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/5/primary.jpg" alt="Chery 瑞虎9 2.0T 自动两驱尊享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/5/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="Chery 瑞虎9 2.0T 自动两驱尊享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1025,7 +1119,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/6" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/6/primary.jpg" alt="Haval 哈弗大狗 2.0T DCT中华田园犬版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/6/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="Haval 哈弗大狗 2.0T DCT中华田园犬版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1054,7 +1148,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/1" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/1/primary.jpg" alt="BYD 海豹 650智驾版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/1/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="BYD 海豹 650智驾版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1071,7 +1165,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/2" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/2/primary.jpg" alt="BYD 汉 DM-i 智驾版 125KM激光雷达旗舰型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/2/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="BYD 汉 DM-i 智驾版 125KM激光雷达旗舰型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1088,7 +1182,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/3" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/3/7003_1.jpg" alt="BYD 宋PLUS新能源 DM-i 112KM 尊荣型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/3/7003_1.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="BYD 宋PLUS新能源 DM-i 112KM 尊荣型" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1105,7 +1199,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/4" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/4/7004_1.jpg" alt="Chery 瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/4/7004_1.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="Chery 瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1122,7 +1216,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/5" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/5/primary.jpg" alt="Chery 瑞虎9 2.0T 自动两驱尊享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/5/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="Chery 瑞虎9 2.0T 自动两驱尊享版 5座" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1139,7 +1233,7 @@ img { max-width: 100%; height: auto; }
 
       <div class="car-card">
         <a href="/cars/6" class="car-card-image-link">
-          <img class="car-card-image" src="/uploads/cars/6/primary.jpg" alt="Haval 哈弗大狗 2.0T DCT中华田园犬版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
+          <img class="car-card-image" src="/uploads/cars/6/primary.jpg" onerror="this.onerror=null;this.style.background='#1a2744';this.alt='图片加载中...'" alt="Haval 哈弗大狗 2.0T DCT中华田园犬版" referrerpolicy="no-referrer" loading="lazy" decoding="async" width="400" height="300" style="background:#f8f7f4">
           <span class="badge badge-featured"><span data-lang="zh">精选</span><span data-lang="en" style="display:none">Featured</span><span data-lang="ru" style="display:none">Рекомендуем</span><span data-lang="ar" style="display:none">مميز</span></span>
         </a>
         <div class="car-card-body">
@@ -1166,12 +1260,12 @@ img { max-width: 100%; height: auto; }
       <a href="/about" class="link-more"><span data-lang="zh">了解更多</span><span data-lang="en" style="display:none">Learn More</span><span data-lang="ru" style="display:none">Узнать больше</span><span data-lang="ar" style="display:none">اعرف المزيد</span> &rarr;</a>
     </div>
     <div class="country-grid">
-      <div class="country-card"><div class="country-flag"><img src="/images/flags/ru.png" alt="Russia" loading="lazy" width="40" height="30"></div><h3>俄罗斯</h3></div>
-      <div class="country-card"><div class="country-flag"><img src="/images/flags/kz.png" alt="Kazakhstan" loading="lazy" width="40" height="30"></div><h3>哈萨克斯坦</h3></div>
-      <div class="country-card"><div class="country-flag"><img src="/images/flags/ae.png" alt="UAE" loading="lazy" width="40" height="30"></div><h3>阿联酋</h3></div>
-      <div class="country-card"><div class="country-flag"><img src="/images/flags/eg.png" alt="Egypt" loading="lazy" width="40" height="30"></div><h3>埃及</h3></div>
-      <div class="country-card"><div class="country-flag"><img src="/images/flags/ng.png" alt="Nigeria" loading="lazy" width="40" height="30"></div><h3>尼日利亚</h3></div>
-      <div class="country-card"><div class="country-flag"><img src="/images/flags/uz.png" alt="Uzbekistan" loading="lazy" width="40" height="30"></div><h3>乌兹别克斯坦</h3></div>
+      <div class="country-card"><div class="country-flag"><img src="/images/flags/ru.png" onerror="this.onerror=null;this.src='/images/flags/ru.svg';" alt="Russia" loading="lazy" width="40" height="30"></div><h3>俄罗斯</h3></div>
+      <div class="country-card"><div class="country-flag"><img src="/images/flags/kz.png" onerror="this.onerror=null;this.src='/images/flags/kz.svg';" alt="Kazakhstan" loading="lazy" width="40" height="30"></div><h3>哈萨克斯坦</h3></div>
+      <div class="country-card"><div class="country-flag"><img src="/images/flags/ae.png" onerror="this.onerror=null;this.src='/images/flags/ae.svg';" alt="UAE" loading="lazy" width="40" height="30"></div><h3>阿联酋</h3></div>
+      <div class="country-card"><div class="country-flag"><img src="/images/flags/eg.png" onerror="this.onerror=null;this.src='/images/flags/eg.svg';" alt="Egypt" loading="lazy" width="40" height="30"></div><h3>埃及</h3></div>
+      <div class="country-card"><div class="country-flag"><img src="/images/flags/ng.png" onerror="this.onerror=null;this.src='/images/flags/ng.svg';" alt="Nigeria" loading="lazy" width="40" height="30"></div><h3>尼日利亚</h3></div>
+      <div class="country-card"><div class="country-flag"><img src="/images/flags/uz.png" onerror="this.onerror=null;this.src='/images/flags/uz.svg';" alt="Uzbekistan" loading="lazy" width="40" height="30"></div><h3>乌兹别克斯坦</h3></div>
     </div>
   </div>
 </section>
