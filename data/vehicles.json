@@ -1,0 +1,2296 @@
+[
+  {
+    "id": 1,
+    "title": "BYD 海豹 650智驾版",
+    "price": "$19,833",
+    "year": "2025",
+    "mileage": "17000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "海豹 650智驾版",
+    "photos": [
+      "/uploads/cars/1/primary.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "BYD 汉 DM-i 智驾版 125KM激光雷达旗舰型",
+    "price": "$19,417",
+    "year": "2025",
+    "mileage": "2300 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "汉 DM-i 智驾版 125KM激光雷达旗舰型",
+    "photos": [
+      "/uploads/cars/2/primary.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "BYD 宋PLUS新能源 DM-i 112KM 尊荣型",
+    "price": "$13,875",
+    "year": "2025",
+    "mileage": "11000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "宋PLUS新能源 DM-i 112KM 尊荣型",
+    "photos": [
+      "/uploads/cars/3/primary.jpg",
+      "/uploads/cars/3/7003_1.jpg",
+      "/uploads/cars/3/7003_2.jpg",
+      "/uploads/cars/3/7003_3.jpg",
+      "/uploads/cars/3/7003_4.jpg",
+      "/uploads/cars/3/7003_5.jpg",
+      "/uploads/cars/3/7003_6.jpg",
+      "/uploads/cars/3/7003_7.jpg",
+      "/uploads/cars/3/7003_8.jpg",
+      "/uploads/cars/3/7003_9.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Chery 瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座",
+    "price": "$11,917",
+    "year": "2024",
+    "mileage": "27000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座",
+    "photos": [
+      "/uploads/cars/4/primary.jpg",
+      "/uploads/cars/4/7004_1.jpg",
+      "/uploads/cars/4/7004_2.jpg",
+      "/uploads/cars/4/7004_3.jpg",
+      "/uploads/cars/4/7004_4.jpg",
+      "/uploads/cars/4/7004_5.jpg",
+      "/uploads/cars/4/7004_6.jpg",
+      "/uploads/cars/4/7004_7.jpg",
+      "/uploads/cars/4/7004_8.jpg",
+      "/uploads/cars/4/7004_9.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Chery 瑞虎9 2.0T 自动两驱尊享版 5座",
+    "price": "$16,375",
+    "year": "2025",
+    "mileage": "4100 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎9 2.0T 自动两驱尊享版 5座",
+    "photos": [
+      "/uploads/cars/5/primary.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Haval 哈弗大狗 2.0T DCT中华田园犬版",
+    "price": "$18,028",
+    "year": "2026",
+    "mileage": "100 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗大狗 2.0T DCT中华田园犬版",
+    "photos": [
+      "/uploads/cars/6/primary.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "MG 名爵ZS 180DVVT 自动全球百万918版",
+    "price": "$6,806",
+    "year": "2022",
+    "mileage": "88000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "名爵ZS 180DVVT 自动全球百万918版",
+    "photos": [
+      "/uploads/cars/7/primary.jpg",
+      "/uploads/cars/7/7007_1.jpg",
+      "/uploads/cars/7/7007_2.jpg",
+      "/uploads/cars/7/7007_3.jpg",
+      "/uploads/cars/7/7007_4.jpg",
+      "/uploads/cars/7/7007_5.jpg",
+      "/uploads/cars/7/7007_6.jpg",
+      "/uploads/cars/7/7007_7.jpg",
+      "/uploads/cars/7/7007_8.jpg",
+      "/uploads/cars/7/7007_9.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Jetour 捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
+    "price": "$10,389",
+    "year": "2024",
+    "mileage": "10000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
+    "photos": [
+      "/uploads/cars/8/primary.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Haval 哈弗H6 第三代 1.5T 自动两驱Max",
+    "price": "$8,306",
+    "year": "2021",
+    "mileage": "27200 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗H6 第三代 1.5T 自动两驱Max",
+    "photos": [
+      "/uploads/cars/9/primary.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "BYD 海鸥 智驾版 305km 活力版",
+    "price": "$8,306",
+    "year": "2025",
+    "mileage": "100 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "海鸥 智驾版 305km 活力版",
+    "photos": [
+      "/uploads/cars/10/primary.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "BYD 秦PLUS DM-i 智驾版 55KM超越型",
+    "price": "$7,542",
+    "year": "2025",
+    "mileage": "15000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "秦PLUS DM-i 智驾版 55KM超越型",
+    "photos": [
+      "/uploads/cars/11/primary.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "BYD 唐新能源 DM-i 冠军版 112KM 尊荣型",
+    "price": "$14,694",
+    "year": "2023",
+    "mileage": "49000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "唐新能源 DM-i 冠军版 112KM 尊荣型",
+    "photos": [
+      "/uploads/cars/12/primary.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Chery 瑞虎8L 2.0T 两驱尊贵版 5座",
+    "price": "$15,250",
+    "year": "2024",
+    "mileage": "6000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎8L 2.0T 两驱尊贵版 5座",
+    "photos": [
+      "/uploads/cars/13/primary.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Chery 艾瑞泽8 1.6T DCT卓越版",
+    "price": "$9,236",
+    "year": "2025",
+    "mileage": "3600 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "艾瑞泽8 1.6T DCT卓越版",
+    "photos": [
+      "/uploads/cars/14/primary.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Chery 欧萌达 1.5T CVT畅行版",
+    "price": "$10,944",
+    "year": "2025",
+    "mileage": "7000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "欧萌达 1.5T CVT畅行版",
+    "photos": [
+      "/uploads/cars/15/primary.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Haval 哈弗大狗 1.5T DCT边牧版",
+    "price": "$10,667",
+    "year": "2024",
+    "mileage": "21900 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗大狗 1.5T DCT边牧版",
+    "photos": [
+      "/uploads/cars/16/primary.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Haval 哈弗H6 国潮版 1.5T 自动冠军版",
+    "price": "$12,472",
+    "year": "2023",
+    "mileage": "30000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗H6 国潮版 1.5T 自动冠军版",
+    "photos": [
+      "/uploads/cars/17/primary.jpg",
+      "/uploads/cars/17/8007_1.jpg",
+      "/uploads/cars/17/8007_2.jpg",
+      "/uploads/cars/17/8007_3.jpg",
+      "/uploads/cars/17/8007_4.jpg",
+      "/uploads/cars/17/8007_5.jpg",
+      "/uploads/cars/17/8007_6.jpg",
+      "/uploads/cars/17/8007_7.jpg",
+      "/uploads/cars/17/8007_8.jpg",
+      "/uploads/cars/17/8007_9.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Haval 哈弗H9 2.0T 汽油四驱尊享型 5座",
+    "price": "$14,694",
+    "year": "2020",
+    "mileage": "36000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗H9 2.0T 汽油四驱尊享型 5座",
+    "photos": [
+      "/uploads/cars/18/primary.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "MG MG7 1.5T DCT至美优雅版",
+    "price": "$11,917",
+    "year": "2023",
+    "mileage": "20000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG7 1.5T DCT至美优雅版",
+    "photos": [
+      "/uploads/cars/19/primary.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "MG 名爵ZS 180DVVT 自动全球百万918版",
+    "price": "$6,778",
+    "year": "2022",
+    "mileage": "88000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "名爵ZS 180DVVT 自动全球百万918版",
+    "photos": [
+      "/uploads/cars/20/primary.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Great Wall 炮 2.0T乘用版自动汽油四驱尊享型GW4C20B",
+    "price": "$18,028",
+    "year": "2023",
+    "mileage": "15000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "炮 2.0T乘用版自动汽油四驱尊享型GW4C20B",
+    "photos": [
+      "/uploads/cars/21/primary.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Great Wall 风骏5 2.0T 柴油两驱进取型大双",
+    "price": "$8,306",
+    "year": "2023",
+    "mileage": "40000 km",
+    "fuel": "柴油",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "风骏5 2.0T 柴油两驱进取型大双",
+    "photos": [
+      "/uploads/cars/22/primary.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Roewe 荣威RX5 1.5T 超感精英版",
+    "price": "$5,694",
+    "year": "2023",
+    "mileage": "30000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Roewe",
+    "model": "荣威RX5 1.5T 超感精英版",
+    "photos": [
+      "/uploads/cars/23/primary.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Roewe 飞凡R7 进阶版",
+    "price": "$11,542",
+    "year": "2024",
+    "mileage": "25000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Roewe",
+    "model": "飞凡R7 进阶版",
+    "photos": [
+      "/uploads/cars/24/primary.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Jetour 捷途旅行者 2.0T 四驱穿越PRO",
+    "price": "$16,667",
+    "year": "2023",
+    "mileage": "9600 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途旅行者 2.0T 四驱穿越PRO",
+    "photos": [
+      "/uploads/cars/25/primary.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Jetour 捷途大圣 1.5T DCT 星耀PRO",
+    "price": "$11,639",
+    "year": "2024",
+    "mileage": "23700 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途大圣 1.5T DCT 星耀PRO",
+    "photos": [
+      "/uploads/cars/26/primary.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Avatr 阿维塔11 Ultra 增程版",
+    "price": "$26,917",
+    "year": "2025",
+    "mileage": "3000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔11 Ultra 增程版",
+    "photos": [
+      "/uploads/cars/27/primary.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Avatr 阿维塔12 改款 Max纯电版",
+    "price": "$31,667",
+    "year": "2025",
+    "mileage": "100 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔12 改款 Max纯电版",
+    "photos": [
+      "/uploads/cars/28/primary.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "NIO 蔚来ES6 75kWh",
+    "price": "$22,639",
+    "year": "2024",
+    "mileage": "28400 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来ES6 75kWh",
+    "photos": [
+      "/uploads/cars/29/primary.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "NIO 蔚来ET5 75kWh",
+    "price": "$20,556",
+    "year": "2025",
+    "mileage": "26000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来ET5 75kWh",
+    "photos": [
+      "/uploads/cars/30/primary.jpg"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "XPeng 小鹏P7+ 长续航 Max",
+    "price": "$20,667",
+    "year": "2024",
+    "mileage": "5100 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "XPeng",
+    "model": "小鹏P7+ 长续航 Max",
+    "photos": [
+      "/uploads/cars/31/primary.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "XPeng 小鹏MONA M03 600 超长续航 Max",
+    "price": "$15,139",
+    "year": "2025",
+    "mileage": "12600 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "XPeng",
+    "model": "小鹏MONA M03 600 超长续航 Max",
+    "photos": [
+      "/uploads/cars/32/primary.jpg"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Zeekr 极氪001 YOU版 100kWh 四驱",
+    "price": "$31,389",
+    "year": "2025",
+    "mileage": "2200 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪001 YOU版 100kWh 四驱",
+    "photos": [
+      "/uploads/cars/33/primary.jpg"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Zeekr 极氪X 五座长续航版",
+    "price": "$14,583",
+    "year": "2025",
+    "mileage": "2000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪X 五座长续航版",
+    "photos": [
+      "/uploads/cars/34/primary.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "BYD 宋Pro新能源 第二代 DM-i 115KM超越型",
+    "price": "$11,361",
+    "year": "2025",
+    "mileage": "37900 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "宋Pro新能源 第二代 DM-i 115KM超越型",
+    "photos": [
+      "/uploads/cars/35/primary.jpg"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "BYD 海豚 智驾版 410km 时尚版",
+    "price": "$11,917",
+    "year": "2025",
+    "mileage": "5000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "海豚 智驾版 410km 时尚版",
+    "photos": [
+      "/uploads/cars/36/primary.jpg"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Chery 瑞虎8 PRO 冠军版 290T 两驱巅峰版 7座",
+    "price": "$12,750",
+    "year": "2024",
+    "mileage": "15500 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎8 PRO 冠军版 290T 两驱巅峰版 7座",
+    "photos": [
+      "/uploads/cars/37/primary.jpg"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Chery 艾瑞泽8 PRO 2.0T DCT 尊享型",
+    "price": "$14,139",
+    "year": "2025",
+    "mileage": "17560 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "艾瑞泽8 PRO 2.0T DCT 尊享型",
+    "photos": [
+      "/uploads/cars/38/primary.jpg"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Haval 哈弗H6 第三代 1.5T 自动两驱Max",
+    "price": "$8,306",
+    "year": "2021",
+    "mileage": "45000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗H6 第三代 1.5T 自动两驱Max",
+    "photos": [
+      "/uploads/cars/39/primary.jpg"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Haval 哈弗初恋 1.5T 自动大四版",
+    "price": "$12,333",
+    "year": "2021",
+    "mileage": "18000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗初恋 1.5T 自动大四版",
+    "photos": [
+      "/uploads/cars/40/primary.jpg"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "MG MG5 180DVVT CVT青春豪华版",
+    "price": "$5,528",
+    "year": "2021",
+    "mileage": "9700 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG5 180DVVT CVT青春豪华版",
+    "photos": [
+      "/uploads/cars/41/primary.jpg"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "MG MG6 Pro 1.5T 自动Trophy豪华版",
+    "price": "$6,431",
+    "year": "2021",
+    "mileage": "37000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG6 Pro 1.5T 自动Trophy豪华版",
+    "photos": [
+      "/uploads/cars/42/primary.jpg"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "MG MG7 2.0T 自动猎美尊享版",
+    "price": "$10,944",
+    "year": "2023",
+    "mileage": "35000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG7 2.0T 自动猎美尊享版",
+    "photos": [
+      "/uploads/cars/43/primary.jpg"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Great Wall 炮 2.0T商用版自动柴油两驱精英型长箱GW4D20M",
+    "price": "$11,083",
+    "year": "2023",
+    "mileage": "13000 km",
+    "fuel": "柴油",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "炮 2.0T商用版自动柴油两驱精英型长箱GW4D20M",
+    "photos": [
+      "/uploads/cars/44/primary.jpg"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Great Wall 金刚炮 2.0T自动柴油四驱精英型平箱GW4D20M",
+    "price": "$11,917",
+    "year": "2023",
+    "mileage": "21000 km",
+    "fuel": "柴油",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "金刚炮 2.0T自动柴油四驱精英型平箱GW4D20M",
+    "photos": [
+      "/uploads/cars/45/primary.jpg"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Great Wall 风骏7 2.0T柴油两驱新冠军版公务型大双GW4D20M",
+    "price": "$7,750",
+    "year": "2020",
+    "mileage": "100000 km",
+    "fuel": "柴油",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "风骏7 2.0T柴油两驱新冠军版公务型大双GW4D20M",
+    "photos": [
+      "/uploads/cars/46/primary.jpg"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Roewe 荣威RX5新能源 eRX5 超混优��版",
+    "price": "$11,458",
+    "year": "2023",
+    "mileage": "100 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Roewe",
+    "model": "荣威RX5新能源 eRX5 超混优��版",
+    "photos": [
+      "/uploads/cars/47/primary.jpg"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Roewe 荣威i5 1.5L CVT豪华版",
+    "price": "$5,694",
+    "year": "2026",
+    "mileage": "8000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Roewe",
+    "model": "荣威i5 1.5L CVT豪华版",
+    "photos": [
+      "/uploads/cars/48/primary.jpg"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Roewe 飞凡F7 进阶版",
+    "price": "$9,583",
+    "year": "2023",
+    "mileage": "102000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Roewe",
+    "model": "飞凡F7 进阶版",
+    "photos": [
+      "/uploads/cars/49/primary.jpg"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Jetour 捷途自由者 1.5TD DCT 探索",
+    "price": "$15,944",
+    "year": "2025",
+    "mileage": "3900 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途自由者 1.5TD DCT 探索",
+    "photos": [
+      "/uploads/cars/50/primary.jpg",
+      "/uploads/cars/50/8040_1.jpg",
+      "/uploads/cars/50/8040_2.jpg",
+      "/uploads/cars/50/8040_3.jpg",
+      "/uploads/cars/50/8040_4.jpg",
+      "/uploads/cars/50/8040_5.jpg",
+      "/uploads/cars/50/8040_6.jpg",
+      "/uploads/cars/50/8040_7.jpg",
+      "/uploads/cars/50/8040_8.jpg",
+      "/uploads/cars/50/8040_9.jpg"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Jetour 捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
+    "price": "$10,389",
+    "year": "2024",
+    "mileage": "10000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
+    "photos": [
+      "/uploads/cars/51/primary.jpg"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Avatr 阿维塔06 Pro增程版",
+    "price": "$20,667",
+    "year": "2025",
+    "mileage": "7400 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔06 Pro增程版",
+    "photos": [
+      "/uploads/cars/52/primary.jpg"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Avatr 阿维塔07 Max增程版",
+    "price": "$23,583",
+    "year": "2024",
+    "mileage": "28000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔07 Max增程版",
+    "photos": [
+      "/uploads/cars/53/primary.jpg"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "NIO 蔚来EC6 75kWh",
+    "price": "$29,139",
+    "year": "2023",
+    "mileage": "40000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来EC6 75kWh",
+    "photos": [
+      "/uploads/cars/54/primary.jpg"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "NIO 蔚来ET5T 75kWh Touring",
+    "price": "$20,139",
+    "year": "2024",
+    "mileage": "28000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来ET5T 75kWh Touring",
+    "photos": [
+      "/uploads/cars/55/primary.jpg"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "XPeng 小鹏G6 625 长续航 Max 科技版",
+    "price": "$19,819",
+    "year": "2025",
+    "mileage": "13000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "XPeng",
+    "model": "小鹏G6 625 长续航 Max 科技版",
+    "photos": [
+      "/uploads/cars/56/primary.jpg"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "XPeng 小鹏G9 570 Max",
+    "price": "$26,361",
+    "year": "2024",
+    "mileage": "8000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "XPeng",
+    "model": "小鹏G9 570 Max",
+    "photos": [
+      "/uploads/cars/57/primary.jpg"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Zeekr 极氪007GT 后驱智驾版 75kWh",
+    "price": "$23,028",
+    "year": "2025",
+    "mileage": "9000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪007GT 后驱智驾版 75kWh",
+    "photos": [
+      "/uploads/cars/58/primary.jpg"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Zeekr 极氪7X 75kWh 后驱智驾版",
+    "price": "$22,639",
+    "year": "2025",
+    "mileage": "22400 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪7X 75kWh 后驱智驾版",
+    "photos": [
+      "/uploads/cars/59/primary.jpg"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "BYD 海豹  650智驾版",
+    "price": "$19,833",
+    "year": "2025",
+    "mileage": "17000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "BYD",
+    "model": "海豹  650智驾版",
+    "photos": [
+      "/uploads/cars/60/primary.jpg"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "BYD 海豹06  DM-i 智驾版 120KM尊享型",
+    "price": "$12,472",
+    "year": "2025",
+    "mileage": "7000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "海豹06  DM-i 智驾版 120KM尊享型",
+    "photos": [
+      "/uploads/cars/61/primary.jpg"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "BYD 海鸥  305km 活力版",
+    "price": "$8,028",
+    "year": "2025",
+    "mileage": "100 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "BYD",
+    "model": "海鸥  305km 活力版",
+    "photos": [
+      "/uploads/cars/62/primary.jpg"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "BYD 汉  DM-i 智驾版 125KM激光雷达旗舰型",
+    "price": "$19,417",
+    "year": "2025",
+    "mileage": "2300 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "汉  DM-i 智驾版 125KM激光雷达旗舰型",
+    "photos": [
+      "/uploads/cars/63/primary.jpg"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "BYD 海狮05 EV  520KM旗舰智航版",
+    "price": "$15,000",
+    "year": "2025",
+    "mileage": "5200 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "海狮05 EV  520KM旗舰智航版",
+    "photos": [
+      "/uploads/cars/64/primary.jpg"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Chery 艾瑞泽8  1.6T DCT尚",
+    "price": "$7,333",
+    "year": "2023",
+    "mileage": "36000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "艾瑞泽8  1.6T DCT尚",
+    "photos": [
+      "/uploads/cars/65/primary.jpg"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Chery 艾瑞泽5  卓越版 1.5L 手动风尚型",
+    "price": "$6,639",
+    "year": "2025",
+    "mileage": "100 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "艾瑞泽5  卓越版 1.5L 手动风尚型",
+    "photos": [
+      "/uploads/cars/66/primary.jpg"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Chery 艾瑞泽8  高能版 2.0T DCT驰",
+    "price": "$8,722",
+    "year": "2024",
+    "mileage": "31000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "艾瑞泽8  高能版 2.0T DCT驰",
+    "photos": [
+      "/uploads/cars/67/primary.jpg"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Chery 瑞虎8 PLUS  冠军版 290TGDI DCT豪享版 5座",
+    "price": "$11,917",
+    "year": "2024",
+    "mileage": "27000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎8 PLUS  冠军版 290TGDI DCT豪享版 5座",
+    "photos": [
+      "/uploads/cars/68/primary.jpg"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Chery 瑞虎8 PLUS  290TGDI DCT尊贵型",
+    "price": "$12,056",
+    "year": "2025",
+    "mileage": "12700 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎8 PLUS  290TGDI DCT尊贵型",
+    "photos": [
+      "/uploads/cars/69/primary.jpg"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Haval 哈弗猛龙新能源  Hi4 145 穿越版",
+    "price": "$19,931",
+    "year": "2024",
+    "mileage": "19000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Haval",
+    "model": "哈弗猛龙新能源  Hi4 145 穿越版",
+    "photos": [
+      "/uploads/cars/70/primary.jpg"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Haval 哈弗H9  2.0T 汽油四驱精英型 5座",
+    "price": "$13,306",
+    "year": "2020",
+    "mileage": "84900 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗H9  2.0T 汽油四驱精英型 5座",
+    "photos": [
+      "/uploads/cars/71/primary.jpg"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Haval 哈弗枭龙MAX  Hi4 110 Plus 智驾版",
+    "price": "$16,639",
+    "year": "2025",
+    "mileage": "300 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗枭龙MAX  Hi4 110 Plus 智驾版",
+    "photos": [
+      "/uploads/cars/72/primary.jpg"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Haval 哈弗大狗  2.0T DCT中华田园犬版",
+    "price": "$18,028",
+    "year": "2026",
+    "mileage": "100 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗大狗  2.0T DCT中华田园犬版",
+    "photos": [
+      "/uploads/cars/73/primary.jpg"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "Haval 哈弗大狗 PLUS  2.0T 两驱潮野版Plus",
+    "price": "$15,694",
+    "year": "2023",
+    "mileage": "13800 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗大狗 PLUS  2.0T 两驱潮野版Plus",
+    "photos": [
+      "/uploads/cars/74/primary.jpg"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "MG MG6  1.5T 自动领潮风尚版",
+    "price": "$4,444",
+    "year": "2020",
+    "mileage": "26000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG6  1.5T 自动领潮风尚版",
+    "photos": [
+      "/uploads/cars/75/primary.jpg"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "MG MG5  300TGI DCT青奢风潮版",
+    "price": "$5,528",
+    "year": "2021",
+    "mileage": "49700 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG5  300TGI DCT青奢风潮版",
+    "photos": [
+      "/uploads/cars/76/primary.jpg"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "MG MG7  1.5T DCT至美舒享版",
+    "price": "$7,611",
+    "year": "2023",
+    "mileage": "53000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG7  1.5T DCT至美舒享版",
+    "photos": [
+      "/uploads/cars/77/primary.jpg"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "MG MG5  180DVVT CVT青春风尚版",
+    "price": "$5,111",
+    "year": "2022",
+    "mileage": "25000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG5  180DVVT CVT青春风尚版",
+    "photos": [
+      "/uploads/cars/78/primary.jpg"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "MG MG7  2.0T 自动Trophy+激擎耀世版",
+    "price": "$12,667",
+    "year": "2023",
+    "mileage": "22000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "MG7  2.0T 自动Trophy+激擎耀世版",
+    "photos": [
+      "/uploads/cars/79/primary.jpg"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Great Wall 炮  2.0T商用版自动柴油两驱领航型长箱GW4D20M",
+    "price": "$10,264",
+    "year": "2021",
+    "mileage": "50000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "炮  2.0T商用版自动柴油两驱领航型长箱GW4D20M",
+    "photos": [
+      "/uploads/cars/80/primary.jpg"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Great Wall 风骏7  2.0T柴油两驱精英型国VI大双GW4D20M",
+    "price": "$7,222",
+    "year": "2019",
+    "mileage": "70000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "风骏7  2.0T柴油两驱精英型国VI大双GW4D20M",
+    "photos": [
+      "/uploads/cars/81/primary.jpg"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Great Wall 炮  2.4T商用版自动柴油四驱精英型",
+    "price": "$14,833",
+    "year": "2024",
+    "mileage": "26000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "炮  2.4T商用版自动柴油四驱精英型",
+    "photos": [
+      "/uploads/cars/82/primary.jpg"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Great Wall 炮  2.0T商用版 自动柴油四驱茶王版长箱GW4D20M",
+    "price": "$13,861",
+    "year": "2021",
+    "mileage": "71000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "炮  2.0T商用版 自动柴油四驱茶王版长箱GW4D20M",
+    "photos": [
+      "/uploads/cars/83/primary.jpg"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Great Wall 炮  2.0T商用版手动柴油两驱精英型长箱GW4D20M",
+    "price": "$7,764",
+    "year": "2019",
+    "mileage": "36100 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Great Wall",
+    "model": "炮  2.0T商用版手动柴油两驱精英型长箱GW4D20M",
+    "photos": [
+      "/uploads/cars/84/primary.jpg"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Avatr 阿维塔06  Pro纯电版",
+    "price": "$28,319",
+    "year": "2025",
+    "mileage": "100 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔06  Pro纯电版",
+    "photos": [
+      "/uploads/cars/85/primary.jpg"
+    ]
+  },
+  {
+    "id": 86,
+    "title": "Avatr 阿维塔11  Max 增程版",
+    "price": "$29,972",
+    "year": "2025",
+    "mileage": "800 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔11  Max 增程版",
+    "photos": [
+      "/uploads/cars/86/primary.jpg"
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Avatr 阿维塔06  Ultra纯电版",
+    "price": "$25,972",
+    "year": "2025",
+    "mileage": "16000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔06  Ultra纯电版",
+    "photos": [
+      "/uploads/cars/87/primary.jpg"
+    ]
+  },
+  {
+    "id": 88,
+    "title": "Avatr 阿维塔06  Max纯电版",
+    "price": "$28,319",
+    "year": "2025",
+    "mileage": "100 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔06  Max纯电版",
+    "photos": [
+      "/uploads/cars/88/primary.jpg"
+    ]
+  },
+  {
+    "id": 89,
+    "title": "Avatr 阿维塔12  改款 Ultra增程版",
+    "price": "$30,000",
+    "year": "2025",
+    "mileage": "8600 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Avatr",
+    "model": "阿维塔12  改款 Ultra增程版",
+    "photos": [
+      "/uploads/cars/89/primary.jpg"
+    ]
+  },
+  {
+    "id": 90,
+    "title": "NIO 蔚来ES8  六座行政豪华版",
+    "price": "$48,583",
+    "year": "2026",
+    "mileage": "1000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来ES8  六座行政豪华版",
+    "photos": [
+      "/uploads/cars/90/primary.jpg"
+    ]
+  },
+  {
+    "id": 91,
+    "title": "NIO 蔚来ES6  430KM 性能版",
+    "price": "$15,250",
+    "year": "2020",
+    "mileage": "90000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来ES6  430KM 性能版",
+    "photos": [
+      "/uploads/cars/91/primary.jpg"
+    ]
+  },
+  {
+    "id": 92,
+    "title": "NIO 蔚来EC6  75kWh",
+    "price": "$21,528",
+    "year": "2023",
+    "mileage": "50000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来EC6  75kWh",
+    "photos": [
+      "/uploads/cars/92/primary.jpg"
+    ]
+  },
+  {
+    "id": 93,
+    "title": "NIO 蔚来ES8  415KM 签名版 六座版",
+    "price": "$15,250",
+    "year": "2020",
+    "mileage": "109000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "NIO",
+    "model": "蔚来ES8  415KM 签名版 六座版",
+    "photos": [
+      "/uploads/cars/93/primary.jpg"
+    ]
+  },
+  {
+    "id": 94,
+    "title": "XPeng 小鹏P7  702 长续航 Ultra",
+    "price": "$22,750",
+    "year": "2025",
+    "mileage": "8900 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "XPeng",
+    "model": "小鹏P7  702 长续航 Ultra",
+    "photos": [
+      "/uploads/cars/94/primary.jpg"
+    ]
+  },
+  {
+    "id": 95,
+    "title": "XPeng 小鹏G7  702 超长续航 Ultra",
+    "price": "$24,153",
+    "year": "2025",
+    "mileage": "10600 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "XPeng",
+    "model": "小鹏G7  702 超长续航 Ultra",
+    "photos": [
+      "/uploads/cars/95/primary.jpg"
+    ]
+  },
+  {
+    "id": 96,
+    "title": "XPeng 小鹏X9  纯电 740超长续航 Max",
+    "price": "$36,528",
+    "year": "2025",
+    "mileage": "9400 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "XPeng",
+    "model": "小鹏X9  纯电 740超长续航 Max",
+    "photos": [
+      "/uploads/cars/96/primary.jpg"
+    ]
+  },
+  {
+    "id": 97,
+    "title": "XPeng 小鹏X9  纯电 650长续航 Max",
+    "price": "$35,667",
+    "year": "2025",
+    "mileage": "7900 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "XPeng",
+    "model": "小鹏X9  纯电 650长续航 Max",
+    "photos": [
+      "/uploads/cars/97/primary.jpg"
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Zeekr 极氪009  七座过道版四驱 108kWh",
+    "price": "$51,361",
+    "year": "2024",
+    "mileage": "8000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪009  七座过道版四驱 108kWh",
+    "photos": [
+      "/uploads/cars/98/primary.jpg"
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Zeekr 极氪009  六座行政版四驱 108kWh",
+    "price": "$53,750",
+    "year": "2024",
+    "mileage": "5900 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪009  六座行政版四驱 108kWh",
+    "photos": [
+      "/uploads/cars/99/primary.jpg"
+    ]
+  },
+  {
+    "id": 100,
+    "title": "Zeekr 极氪7X  100kWh 长续航四驱智驾版",
+    "price": "$24,972",
+    "year": "2025",
+    "mileage": "10000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪7X  100kWh 长续航四驱智驾版",
+    "photos": [
+      "/uploads/cars/100/primary.jpg"
+    ]
+  },
+  {
+    "id": 101,
+    "title": "Zeekr 极氪001  长续航双电机 WE版",
+    "price": "$21,528",
+    "year": "2021",
+    "mileage": "68000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Zeekr",
+    "model": "极氪001  长续航双电机 WE版",
+    "photos": [
+      "/uploads/cars/101/primary.jpg"
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Roewe 飞凡R7  长续Pro版",
+    "price": "$10,736",
+    "year": "2024",
+    "mileage": "28000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Roewe",
+    "model": "飞凡R7  长续Pro版",
+    "photos": [
+      "/uploads/cars/102/primary.jpg"
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Roewe 荣威RX5  1.5T 超感精英版",
+    "price": "$5,764",
+    "year": "2023",
+    "mileage": "30000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Roewe",
+    "model": "荣威RX5  1.5T 超感精英版",
+    "photos": [
+      "/uploads/cars/103/primary.jpg"
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Roewe 荣威RX5新能源  eRX5 超混优越版",
+    "price": "$11,458",
+    "year": "2023",
+    "mileage": "100 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Roewe",
+    "model": "荣威RX5新能源  eRX5 超混优越版",
+    "photos": [
+      "/uploads/cars/104/primary.jpg"
+    ]
+  },
+  {
+    "id": 105,
+    "title": "Roewe 荣威iMAX8  400TGI 尊荣版",
+    "price": "$12,750",
+    "year": "2022",
+    "mileage": "20000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Roewe",
+    "model": "荣威iMAX8  400TGI 尊荣版",
+    "photos": [
+      "/uploads/cars/105/primary.jpg"
+    ]
+  },
+  {
+    "id": 106,
+    "title": "Jetour 捷途X70  1.5T DCT跃享版 5座",
+    "price": "$11,653",
+    "year": "2024",
+    "mileage": "18000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途X70  1.5T DCT跃享版 5座",
+    "photos": [
+      "/uploads/cars/106/primary.jpg"
+    ]
+  },
+  {
+    "id": 107,
+    "title": "Jetour 捷途X70 PLUS  改款 1.5T DCT山PRO 5座",
+    "price": "$8,194",
+    "year": "2021",
+    "mileage": "32000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途X70 PLUS  改款 1.5T DCT山PRO 5座",
+    "photos": [
+      "/uploads/cars/107/primary.jpg"
+    ]
+  },
+  {
+    "id": 108,
+    "title": "Jetour 捷途旅行者  1.5T 两驱发现PRO",
+    "price": "$16,361",
+    "year": "2023",
+    "mileage": "16500 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途旅行者  1.5T 两驱发现PRO",
+    "photos": [
+      "/uploads/cars/108/primary.jpg"
+    ]
+  },
+  {
+    "id": 109,
+    "title": "Jetour 捷途自由者  1.5TD DCT 探索",
+    "price": "$15,944",
+    "year": "2025",
+    "mileage": "6600 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Jetour",
+    "model": "捷途自由者  1.5TD DCT 探索",
+    "photos": [
+      "/uploads/cars/109/primary.jpg"
+    ]
+  },
+  {
+    "id": 110,
+    "title": "Toyota Corolla 1.2T 先锋版",
+    "price": "$11,200",
+    "year": "2023",
+    "mileage": "32000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Corolla 1.2T 先锋版",
+    "photos": [
+      "/uploads/cars/110/primary.jpg"
+    ]
+  },
+  {
+    "id": 111,
+    "title": "Toyota Camry 2.0E 精英版",
+    "price": "$15,200",
+    "year": "2022",
+    "mileage": "45000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Camry 2.0E 精英版",
+    "photos": [
+      "/uploads/cars/111/primary.jpg"
+    ]
+  },
+  {
+    "id": 112,
+    "title": "Toyota RAV4 2.0L CVT两驱都市版",
+    "price": "$17,800",
+    "year": "2023",
+    "mileage": "25000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "RAV4 2.0L CVT两驱都市版",
+    "photos": [
+      "/uploads/cars/112/primary.jpg"
+    ]
+  },
+  {
+    "id": 113,
+    "title": "Toyota Land Cruiser Prado 2.7L",
+    "price": "$35,800",
+    "year": "2021",
+    "mileage": "58000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Land Cruiser Prado 2.7L",
+    "photos": [
+      "/uploads/cars/113/primary.jpg"
+    ]
+  },
+  {
+    "id": 114,
+    "title": "Toyota Hilux 2.7L 双排皮卡",
+    "price": "$22,800",
+    "year": "2022",
+    "mileage": "40000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Hilux 2.7L 双排皮卡",
+    "photos": [
+      "/uploads/cars/114/primary.jpg"
+    ]
+  },
+  {
+    "id": 115,
+    "title": "Toyota Fortuner 2.7L TRD",
+    "price": "$26,800",
+    "year": "2023",
+    "mileage": "15000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Fortuner 2.7L TRD",
+    "photos": [
+      "/uploads/cars/115/primary.jpg"
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Toyota Yaris 1.5L CVT 领先版",
+    "price": "$7,200",
+    "year": "2022",
+    "mileage": "35000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Yaris 1.5L CVT 领先版",
+    "photos": [
+      "/uploads/cars/116/primary.jpg"
+    ]
+  },
+  {
+    "id": 117,
+    "title": "Toyota Vios 1.5L CVT 智行版",
+    "price": "$8,300",
+    "year": "2023",
+    "mileage": "20000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Vios 1.5L CVT 智行版",
+    "photos": [
+      "/uploads/cars/117/primary.jpg"
+    ]
+  },
+  {
+    "id": 118,
+    "title": "Toyota Innova 2.0L 7座MPV",
+    "price": "$12,600",
+    "year": "2021",
+    "mileage": "48000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Innova 2.0L 7座MPV",
+    "photos": [
+      "/uploads/cars/118/primary.jpg"
+    ]
+  },
+  {
+    "id": 119,
+    "title": "Toyota Alphard 3.5L 豪华版",
+    "price": "$39,800",
+    "year": "2020",
+    "mileage": "62000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Alphard 3.5L 豪华版",
+    "photos": [
+      "/uploads/cars/119/primary.jpg"
+    ]
+  },
+  {
+    "id": 120,
+    "title": "Toyota Hiace 2.7L 12座 商务车",
+    "price": "$19,800",
+    "year": "2022",
+    "mileage": "36000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Hiace 2.7L 12座 商务车",
+    "photos": [
+      "/uploads/cars/120/primary.jpg"
+    ]
+  },
+  {
+    "id": 121,
+    "title": "Toyota C-HR 2.0L CVT 领先版",
+    "price": "$13,500",
+    "year": "2023",
+    "mileage": "18000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "C-HR 2.0L CVT 领先版",
+    "photos": [
+      "/uploads/cars/121/primary.jpg"
+    ]
+  },
+  {
+    "id": 122,
+    "title": "Toyota Corolla Cross 1.8L 精英版",
+    "price": "$14,800",
+    "year": "2023",
+    "mileage": "22000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Corolla Cross 1.8L 精英版",
+    "photos": [
+      "/uploads/cars/122/primary.jpg"
+    ]
+  },
+  {
+    "id": 123,
+    "title": "Toyota Highlander 2.0T 四驱尊贵版",
+    "price": "$27,800",
+    "year": "2022",
+    "mileage": "34000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Highlander 2.0T 四驱尊贵版",
+    "photos": [
+      "/uploads/cars/123/primary.jpg"
+    ]
+  },
+  {
+    "id": 124,
+    "title": "Toyota Harrier 2.0L CVT 两驱豪华版",
+    "price": "$20,500",
+    "year": "2023",
+    "mileage": "16000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Toyota",
+    "model": "Harrier 2.0L CVT 两驱豪华版",
+    "photos": [
+      "/uploads/cars/124/primary.jpg"
+    ]
+  },
+  {
+    "id": 125,
+    "title": "Volkswagen Passat 330TSI 精英版",
+    "price": "$13,800",
+    "year": "2022",
+    "mileage": "42000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Passat 330TSI 精英版",
+    "photos": [
+      "/uploads/cars/125/primary.jpg"
+    ]
+  },
+  {
+    "id": 126,
+    "title": "Volkswagen Tiguan 330TSI 两驱智享版",
+    "price": "$16,800",
+    "year": "2023",
+    "mileage": "28000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Tiguan 330TSI 两驱智享版",
+    "photos": [
+      "/uploads/cars/126/primary.jpg"
+    ]
+  },
+  {
+    "id": 127,
+    "title": "Volkswagen Polo 1.5L 自动全景乐享版",
+    "price": "$6,800",
+    "year": "2022",
+    "mileage": "38000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Polo 1.5L 自动全景乐享版",
+    "photos": [
+      "/uploads/cars/127/primary.jpg"
+    ]
+  },
+  {
+    "id": 128,
+    "title": "Volkswagen Lavida 1.5L 自动舒适版",
+    "price": "$9,200",
+    "year": "2023",
+    "mileage": "24000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Lavida 1.5L 自动舒适版",
+    "photos": [
+      "/uploads/cars/128/primary.jpg"
+    ]
+  },
+  {
+    "id": 129,
+    "title": "Volkswagen Magotan 330TSI DSG 豪华版",
+    "price": "$16,200",
+    "year": "2022",
+    "mileage": "36000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Magotan 330TSI DSG 豪华版",
+    "photos": [
+      "/uploads/cars/129/primary.jpg"
+    ]
+  },
+  {
+    "id": 130,
+    "title": "Volkswagen T-Roc 280TSI 两驱豪华版",
+    "price": "$12,800",
+    "year": "2023",
+    "mileage": "20000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "T-Roc 280TSI 两驱豪华版",
+    "photos": [
+      "/uploads/cars/130/primary.jpg"
+    ]
+  },
+  {
+    "id": 131,
+    "title": "Volkswagen Tayron 330TSI 两驱豪华版",
+    "price": "$15,800",
+    "year": "2023",
+    "mileage": "26000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Tayron 330TSI 两驱豪华版",
+    "photos": [
+      "/uploads/cars/131/primary.jpg"
+    ]
+  },
+  {
+    "id": 132,
+    "title": "Volkswagen Tharu 280TSI 两驱舒适版",
+    "price": "$11,800",
+    "year": "2022",
+    "mileage": "30000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Tharu 280TSI 两驱舒适版",
+    "photos": [
+      "/uploads/cars/132/primary.jpg"
+    ]
+  },
+  {
+    "id": 133,
+    "title": "Volkswagen Bora 1.5L 自动时尚版",
+    "price": "$7,800",
+    "year": "2022",
+    "mileage": "40000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Bora 1.5L 自动时尚版",
+    "photos": [
+      "/uploads/cars/133/primary.jpg"
+    ]
+  },
+  {
+    "id": 134,
+    "title": "Volkswagen Santana 1.5L 自动风尚版",
+    "price": "$5,800",
+    "year": "2021",
+    "mileage": "50000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Santana 1.5L 自动风尚版",
+    "photos": [
+      "/uploads/cars/134/primary.jpg"
+    ]
+  },
+  {
+    "id": 135,
+    "title": "Volkswagen Golf 280TSI DSG Pro",
+    "price": "$14,200",
+    "year": "2023",
+    "mileage": "22000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Golf 280TSI DSG Pro",
+    "photos": [
+      "/uploads/cars/135/primary.jpg"
+    ]
+  },
+  {
+    "id": 136,
+    "title": "Volkswagen Touran 280TSI 7座舒适版",
+    "price": "$11,200",
+    "year": "2022",
+    "mileage": "35000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Touran 280TSI 7座舒适版",
+    "photos": [
+      "/uploads/cars/136/primary.jpg"
+    ]
+  },
+  {
+    "id": 137,
+    "title": "Volkswagen Teramont 380TSI 四驱豪华版",
+    "price": "$24,800",
+    "year": "2021",
+    "mileage": "46000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "Teramont 380TSI 四驱豪华版",
+    "photos": [
+      "/uploads/cars/137/primary.jpg"
+    ]
+  },
+  {
+    "id": 138,
+    "title": "Volkswagen CC 380TSI 夺目版",
+    "price": "$18,800",
+    "year": "2022",
+    "mileage": "32000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Volkswagen",
+    "model": "CC 380TSI 夺目版",
+    "photos": [
+      "/uploads/cars/138/primary.jpg"
+    ]
+  },
+  {
+    "id": 139,
+    "title": "Volkswagen ID.4 Crozz 纯电动 SUV",
+    "price": "$19,800",
+    "year": "2023",
+    "mileage": "15000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Volkswagen",
+    "model": "ID.4 Crozz 纯电动 SUV",
+    "photos": [
+      "/uploads/cars/139/primary.jpg"
+    ]
+  },
+  {
+    "id": 140,
+    "title": "Chery 瑞虎7  1.5T CVT尊贵版",
+    "price": "$8,722",
+    "year": "2024",
+    "mileage": "20000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎7  1.5T CVT尊贵版",
+    "photos": [
+      "/uploads/cars/140/primary.jpg"
+    ]
+  },
+  {
+    "id": 141,
+    "title": "Chery 瑞虎3x  1.5L CVT时尚版",
+    "price": "$7,194",
+    "year": "2023",
+    "mileage": "19000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "瑞虎3x  1.5L CVT时尚版",
+    "photos": [
+      "/uploads/cars/141/primary.jpg"
+    ]
+  },
+  {
+    "id": 142,
+    "title": "Chery 艾瑞泽5  1.5L CVT领锐版",
+    "price": "$1,972",
+    "year": "2016",
+    "mileage": "100000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Chery",
+    "model": "艾瑞泽5  1.5L CVT领锐版",
+    "photos": [
+      "/uploads/cars/142/primary.jpg"
+    ]
+  },
+  {
+    "id": 143,
+    "title": "BYD 元新能源  EV360 智联创酷型",
+    "price": "$4,861",
+    "year": "2018",
+    "mileage": "50000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "元新能源  EV360 智联创酷型",
+    "photos": [
+      "/uploads/cars/143/primary.jpg"
+    ]
+  },
+  {
+    "id": 144,
+    "title": "BYD 宋PLUS新能源  DM-i 112KM 尊荣型",
+    "price": "$13,875",
+    "year": "2025",
+    "mileage": "11000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "宋PLUS新能源  DM-i 112KM 尊荣型",
+    "photos": [
+      "/uploads/cars/144/primary.jpg"
+    ]
+  },
+  {
+    "id": 145,
+    "title": "BYD 秦L  DM-i 智驾版 120KM超越型",
+    "price": "$11,917",
+    "year": "2025",
+    "mileage": "7000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "秦L  DM-i 智驾版 120KM超越型",
+    "photos": [
+      "/uploads/cars/145/primary.jpg"
+    ]
+  },
+  {
+    "id": 146,
+    "title": "BYD 海狮07 EV  610智航版",
+    "price": "$16,639",
+    "year": "2024",
+    "mileage": "52000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "BYD",
+    "model": "海狮07 EV  610智航版",
+    "photos": [
+      "/uploads/cars/146/primary.jpg"
+    ]
+  },
+  {
+    "id": 147,
+    "title": "Haval 哈弗F7  1.5T 两驱i潮",
+    "price": "$7,472",
+    "year": "2020",
+    "mileage": "32000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗F7  1.5T 两驱i潮",
+    "photos": [
+      "/uploads/cars/147/primary.jpg",
+      "/uploads/cars/147/8137_1.jpg",
+      "/uploads/cars/147/8137_2.jpg",
+      "/uploads/cars/147/8137_3.jpg",
+      "/uploads/cars/147/8137_4.jpg",
+      "/uploads/cars/147/8137_5.jpg",
+      "/uploads/cars/147/8137_6.jpg",
+      "/uploads/cars/147/8137_7.jpg",
+      "/uploads/cars/147/8137_8.jpg",
+      "/uploads/cars/147/8137_9.jpg"
+    ]
+  },
+  {
+    "id": 148,
+    "title": "Haval 哈弗M6  PLUS 1.5T 手动豪华智联型",
+    "price": "$7,750",
+    "year": "2023",
+    "mileage": "11000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Haval",
+    "model": "哈弗M6  PLUS 1.5T 手动豪华智联型",
+    "photos": [
+      "/uploads/cars/148/primary.jpg"
+    ]
+  },
+  {
+    "id": 149,
+    "title": "MG 名爵ZS  180DVVT 自动全球百万918版",
+    "price": "$6,778",
+    "year": "2022",
+    "mileage": "88000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "MG",
+    "model": "名爵ZS  180DVVT 自动全球百万918版",
+    "photos": [
+      "/uploads/cars/149/primary.jpg"
+    ]
+  },
+  {
+    "id": 150,
+    "title": "Geely 缤越 2025款 1.5L CVT 超能 MAX",
+    "price": "$10,500",
+    "year": "2025",
+    "mileage": "15000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Geely",
+    "model": "缤越 2025款 1.5L CVT 超能 MAX",
+    "photos": [
+      "/uploads/cars/150/primary.jpg"
+    ]
+  },
+  {
+    "id": 151,
+    "title": "Geely 星越L 2025款 东方曜 2.0TD 自动揽星版",
+    "price": "$17,300",
+    "year": "2025",
+    "mileage": "18000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Geely",
+    "model": "星越L 2025款 东方曜 2.0TD 自动揽星版",
+    "photos": [
+      "/uploads/cars/151/primary.jpg"
+    ]
+  },
+  {
+    "id": 152,
+    "title": "Geely 帝豪 2026款 第5代 1.5L CVT尊贵型",
+    "price": "$9,500",
+    "year": "2026",
+    "mileage": "5000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Geely",
+    "model": "帝豪 2026款 第5代 1.5L CVT尊贵型",
+    "photos": [
+      "/uploads/cars/152/primary.jpg"
+    ]
+  },
+  {
+    "id": 153,
+    "title": "Changan 长安CS75PLUS 2025款 第四代 1.5T 新蓝鲸 智慧鲸悦版",
+    "price": "$13,200",
+    "year": "2025",
+    "mileage": "12000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Changan",
+    "model": "长安CS75PLUS 2025款 第四代 1.5T 新蓝鲸 智慧鲸悦版",
+    "photos": [
+      "/uploads/cars/153/primary.jpg"
+    ]
+  },
+  {
+    "id": 154,
+    "title": "Changan 逸动 2026款 第四代 1.5T 500Bar 智享型",
+    "price": "$10,500",
+    "year": "2026",
+    "mileage": "8000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Changan",
+    "model": "逸动 2026款 第四代 1.5T 500Bar 智享型",
+    "photos": [
+      "/uploads/cars/154/primary.jpg"
+    ]
+  },
+  {
+    "id": 155,
+    "title": "Changan 长安CS55PLUS 2022款 第二代 1.5T DCT尊贵型",
+    "price": "$10,800",
+    "year": "2022",
+    "mileage": "25000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "Changan",
+    "model": "长安CS55PLUS 2022款 第二代 1.5T DCT尊贵型",
+    "photos": [
+      "/uploads/cars/155/primary.jpg"
+    ]
+  },
+  {
+    "id": 156,
+    "title": "Li Auto 理想L7 2025款 Ultra 智能焕新版",
+    "price": "$35,500",
+    "year": "2025",
+    "mileage": "15000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "Li Auto",
+    "model": "理想L7 2025款 Ultra 智能焕新版",
+    "photos": [
+      "/uploads/cars/156/primary.jpg"
+    ]
+  },
+  {
+    "id": 157,
+    "title": "AITO 问界M7 2026款 增程 Ultra四驱版 5座192线激光雷达）",
+    "price": "$38,800",
+    "year": "2026",
+    "mileage": "12000 km",
+    "fuel": "插混",
+    "transmission": "自动",
+    "brand": "AITO",
+    "model": "问界M7 2026款 增程 Ultra四驱版 5座192线激光雷达）",
+    "photos": [
+      "/uploads/cars/157/primary.jpg"
+    ]
+  },
+  {
+    "id": 158,
+    "title": "Luxeed 智界S7 2024款 Pro",
+    "price": "$28,500",
+    "year": "2024",
+    "mileage": "18000 km",
+    "fuel": "纯电",
+    "transmission": "自动",
+    "brand": "Luxeed",
+    "model": "智界S7 2024款 Pro",
+    "photos": [
+      "/uploads/cars/158/primary.jpg"
+    ]
+  },
+  {
+    "id": 159,
+    "title": "GAC 传祺GS3 2026款 影速 270T 劲享版",
+    "price": "$11,500",
+    "year": "2026",
+    "mileage": "8000 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "GAC",
+    "model": "传祺GS3 2026款 影速 270T 劲享版",
+    "photos": [
+      "/uploads/cars/159/primary.jpg"
+    ]
+  },
+  {
+    "id": 160,
+    "title": "BYD 海狮05 EV 520KM旗舰智航版",
+    "price": "$15,000",
+    "year": "2025",
+    "mileage": "5200 km",
+    "fuel": "Petrol",
+    "transmission": "手动",
+    "brand": "BYD",
+    "model": "海狮05 EV 520KM旗舰智航版",
+    "photos": [
+      "/uploads/cars/160/primary.jpg"
+    ]
+  }
+]
