@@ -1,0 +1,5 @@
+.jb-langbar{position:fixed;left:18px;bottom:18px;z-index:2000;display:flex;gap:4px;padding:6px;background:rgba(7,24,39,.94);border:1px solid rgba(255,255,255,.15);border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.24);backdrop-filter:blur(12px)}
+.jb-langbar button{appearance:none;border:0;background:transparent;color:#cbd6df;border-radius:999px;padding:8px 10px;font:700 11px/1 system-ui;cursor:pointer}.jb-langbar button:hover,.jb-langbar button.active{background:#ff6a2b;color:#fff}
+[dir=rtl] body{text-align:right}[dir=rtl] .jb-langbar{left:auto;right:18px}[dir=rtl] .float,[dir=rtl] .jinba-float{right:auto;left:20px}[dir=rtl] .actions,[dir=rtl] .specs,[dir=rtl] .btn-group,[dir=rtl] .check{flex-direction:row-reverse}[dir=rtl] .section-head,[dir=rtl] .car-foot,[dir=rtl] .top .wrap{direction:rtl}
+.jb-image-note{font-size:12px;color:#607181;margin-top:8px}
+@media(max-width:600px){.jb-langbar{left:10px;bottom:10px}.jb-langbar button{padding:7px 8px}.float,.jinba-float{bottom:62px!important}}

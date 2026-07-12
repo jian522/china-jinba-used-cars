@@ -1,0 +1,35 @@
+name: Rebuild multilingual site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/rebuild_site.py
+      - assets/jinba-global.css
+      - assets/jinba-global.js
+      - .github/workflows/rebuild-site.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair images and inject multilingual controls
+        run: python3 scripts/rebuild_site.py
+      - name: Validate generated site
+        run: |
+          test "$(grep -Rho 'autoimg.cn' --include='*.html' . | wc -l)" -eq 0
+          test "$(grep -Rl 'jinba-global.js' --include='*.html' . | wc -l)" -ge 326
+      - name: Publish generated pages
+        run: |
+          git config user.name "Jinba Site Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add '*.html' cars about contact services assets scripts
+          if ! git diff --cached --quiet; then
+            git commit -m "Repair vehicle images and enable four languages [skip ci]"
+            git push
+          fi
