@@ -19,16 +19,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Repair images and inject multilingual controls
-        run: python3 scripts/rebuild_site.py
+        run: |
+          python3 scripts/rebuild_site.py
+          python3 scripts/build_v2.py
       - name: Validate generated site
         run: |
           test "$(grep -Rho 'autoimg.cn' --include='*.html' . | wc -l)" -eq 0
-          test "$(grep -Rl 'jinba-global.js' --include='*.html' . | wc -l)" -ge 326
+          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -eq 640
+          test "$(grep -Rho 'hreflang=' en zh ru ar --include='*.html' | wc -l)" -gt 2500
       - name: Publish generated pages
         run: |
           git config user.name "Jinba Site Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add '*.html' cars about contact services assets scripts
+          git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Repair vehicle images and enable four languages [skip ci]"
             git push
