@@ -41,8 +41,10 @@ for page in root.rglob('*.html'):
     if m:
         local=f'/uploads/cars/{m.group(1)}/primary.jpg'
         if (root/local.lstrip('/')).exists(): text=re.sub(r'https://[^"\']*autoimg\.cn[^"\']*',local,text)
-    if 'jinba-global.css' not in text: text=text.replace('</head>','  <link rel="stylesheet" href="/assets/jinba-global.css">\n</head>')
-    if 'jinba-global.js' not in text: text=text.replace('</body>','  <script src="/assets/jinba-global.js" defer></script>\n</body>')
+    if 'jinba-global.css' not in text: text=text.replace('</head>','  <link rel="stylesheet" href="/assets/jinba-global.css?v=20260712g2">\n</head>')
+    else: text=re.sub(r'/assets/jinba-global\.css(?:\?v=[^"\']*)?', '/assets/jinba-global.css?v=20260712g2', text)
+    if 'jinba-global.js' not in text: text=text.replace('</body>','  <script src="/assets/jinba-global.js?v=20260712g2" defer></script>\n</body>')
+    else: text=re.sub(r'/assets/jinba-global\.js(?:\?v=[^"\']*)?', '/assets/jinba-global.js?v=20260712g2', text)
     for u in re.findall(r'https://[^"\']*autoimg\.cn[^"\']*',text): remaining.add(u)
     if text!=old: page.write_text(text);changed+=1
 
