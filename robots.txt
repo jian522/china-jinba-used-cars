@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://jinbacars.com/sitemap.xml
+
+Disallow: /admin

@@ -1,0 +1,30 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+  
+  <!-- Gold accent line -->
+  <rect x="0" y="0" width="1200" height="8" fill="#b8860b" />
+  <rect x="0" y="622" width="1200" height="8" fill="#b8860b" />
+  
+  <!-- Main title -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">金霸二手车</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="48" fill="#b8860b" text-anchor="middle">Jinba Auto Export</text>
+  
+  <!-- Divider -->
+  <line x1="300" y1="320" x2="900" y2="320" stroke="#b8860b" stroke-width="3" />
+  
+  <!-- Core selling points -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="36" fill="#ffffff" text-anchor="middle">中国专业二手车出口平台 |  since 2016</text>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="32" fill="#d4a843" text-anchor="middle">160+ 在线好车 | 50+ 出口国家</text>
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle">BYD · MG · Chery · Geely · Haval</text>
+  
+  <!-- Website URL -->
+  <text x="600" y="590" font-family="Arial, sans-serif" font-size="24" fill="#b8860b" text-anchor="middle">www.jinbacars.com</text>
+</svg>
