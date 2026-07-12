@@ -35,6 +35,7 @@ remaining=set()
 for page in root.rglob('*.html'):
     text=page.read_text(errors='ignore')
     old=text
+    text=text.replace('info@jinbacars.com','jian5222@gmail.com').replace('+86 139 XXXX XXXX','+86 180 7908 9999').replace('© 2025 jinbacars.com','© 2026 Jinba Auto Export')
     for url,local in mapping.items(): text=text.replace(url,local)
     # Any remaining third-party vehicle image on a specific car page falls back to that car's real local primary.
     m=re.search(r'/cars/(\d+)(?:/index\.html|\.html)$',str(page).replace('\\','/'))
