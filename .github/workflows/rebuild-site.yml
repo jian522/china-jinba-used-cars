@@ -7,6 +7,10 @@ on:
       - scripts/rebuild_site.py
       - assets/jinba-global.css
       - assets/jinba-global.js
+      - assets/v3.css
+      - assets/v3.js
+      - scripts/build_v2.py
+      - data/vehicles.json
       - .github/workflows/rebuild-site.yml
   workflow_dispatch:
 
