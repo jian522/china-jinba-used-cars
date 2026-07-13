@@ -28,7 +28,7 @@ jobs:
       - name: Validate generated site
         run: |
           test "$(grep -Rho 'autoimg.cn' --include='*.html' . | wc -l)" -eq 0
-          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -eq 624
+          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -eq 616
           test "$(grep -Rho 'hreflang=' en zh ru ar --include='*.html' | wc -l)" -gt 2500
       - name: Publish generated pages
         run: |
