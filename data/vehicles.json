@@ -57,7 +57,7 @@
     "year": "2024",
     "mileage": "27000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座",
     "photos": [
@@ -80,7 +80,7 @@
     "year": "2025",
     "mileage": "4100 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "瑞虎9 2.0T 自动两驱尊享版 5座",
     "photos": [
@@ -94,7 +94,7 @@
     "year": "2026",
     "mileage": "100 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗大狗 2.0T DCT中华田园犬版",
     "photos": [
@@ -108,7 +108,7 @@
     "year": "2022",
     "mileage": "88000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "名爵ZS 180DVVT 自动全球百万918版",
     "photos": [
@@ -131,7 +131,7 @@
     "year": "2024",
     "mileage": "10000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
     "photos": [
@@ -145,7 +145,7 @@
     "year": "2021",
     "mileage": "27200 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗H6 第三代 1.5T 自动两驱Max",
     "photos": [
@@ -215,7 +215,7 @@
     "year": "2025",
     "mileage": "3600 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "艾瑞泽8 1.6T DCT卓越版",
     "photos": [
@@ -229,7 +229,7 @@
     "year": "2025",
     "mileage": "7000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "欧萌达 1.5T CVT畅行版",
     "photos": [
@@ -243,7 +243,7 @@
     "year": "2024",
     "mileage": "21900 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗大狗 1.5T DCT边牧版",
     "photos": [
@@ -257,7 +257,7 @@
     "year": "2023",
     "mileage": "30000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗H6 国潮版 1.5T 自动冠军版",
     "photos": [
@@ -294,7 +294,7 @@
     "year": "2023",
     "mileage": "20000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG7 1.5T DCT至美优雅版",
     "photos": [
@@ -308,7 +308,7 @@
     "year": "2022",
     "mileage": "88000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "名爵ZS 180DVVT 自动全球百万918版",
     "photos": [
@@ -322,7 +322,7 @@
     "year": "2023",
     "mileage": "15000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Great Wall",
     "model": "炮 2.0T乘用版自动汽油四驱尊享型GW4C20B",
     "photos": [
@@ -392,7 +392,7 @@
     "year": "2024",
     "mileage": "23700 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途大圣 1.5T DCT 星耀PRO",
     "photos": [
@@ -560,7 +560,7 @@
     "year": "2025",
     "mileage": "17560 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "艾瑞泽8 PRO 2.0T DCT 尊享型",
     "photos": [
@@ -574,7 +574,7 @@
     "year": "2021",
     "mileage": "45000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗H6 第三代 1.5T 自动两驱Max",
     "photos": [
@@ -588,7 +588,7 @@
     "year": "2021",
     "mileage": "18000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗初恋 1.5T 自动大四版",
     "photos": [
@@ -602,7 +602,7 @@
     "year": "2021",
     "mileage": "9700 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG5 180DVVT CVT青春豪华版",
     "photos": [
@@ -616,7 +616,7 @@
     "year": "2021",
     "mileage": "37000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG6 Pro 1.5T 自动Trophy豪华版",
     "photos": [
@@ -630,7 +630,7 @@
     "year": "2023",
     "mileage": "35000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG7 2.0T 自动猎美尊享版",
     "photos": [
@@ -644,7 +644,7 @@
     "year": "2023",
     "mileage": "13000 km",
     "fuel": "柴油",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Great Wall",
     "model": "炮 2.0T商用版自动柴油两驱精英型长箱GW4D20M",
     "photos": [
@@ -658,7 +658,7 @@
     "year": "2023",
     "mileage": "21000 km",
     "fuel": "柴油",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Great Wall",
     "model": "金刚炮 2.0T自动柴油四驱精英型平箱GW4D20M",
     "photos": [
@@ -700,7 +700,7 @@
     "year": "2026",
     "mileage": "8000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Roewe",
     "model": "荣威i5 1.5L CVT豪华版",
     "photos": [
@@ -728,7 +728,7 @@
     "year": "2025",
     "mileage": "3900 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途自由者 1.5TD DCT 探索",
     "photos": [
@@ -751,7 +751,7 @@
     "year": "2024",
     "mileage": "10000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
     "photos": [
@@ -947,7 +947,7 @@
     "year": "2023",
     "mileage": "36000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "艾瑞泽8  1.6T DCT尚",
     "photos": [
@@ -975,7 +975,7 @@
     "year": "2024",
     "mileage": "31000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "艾瑞泽8  高能版 2.0T DCT驰",
     "photos": [
@@ -989,7 +989,7 @@
     "year": "2024",
     "mileage": "27000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "瑞虎8 PLUS  冠军版 290TGDI DCT豪享版 5座",
     "photos": [
@@ -1003,7 +1003,7 @@
     "year": "2025",
     "mileage": "12700 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "瑞虎8 PLUS  290TGDI DCT尊贵型",
     "photos": [
@@ -1059,7 +1059,7 @@
     "year": "2026",
     "mileage": "100 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Haval",
     "model": "哈弗大狗  2.0T DCT中华田园犬版",
     "photos": [
@@ -1087,7 +1087,7 @@
     "year": "2020",
     "mileage": "26000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG6  1.5T 自动领潮风尚版",
     "photos": [
@@ -1101,7 +1101,7 @@
     "year": "2021",
     "mileage": "49700 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG5  300TGI DCT青奢风潮版",
     "photos": [
@@ -1115,7 +1115,7 @@
     "year": "2023",
     "mileage": "53000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG7  1.5T DCT至美舒享版",
     "photos": [
@@ -1129,7 +1129,7 @@
     "year": "2022",
     "mileage": "25000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG5  180DVVT CVT青春风尚版",
     "photos": [
@@ -1143,7 +1143,7 @@
     "year": "2023",
     "mileage": "22000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "MG7  2.0T 自动Trophy+激擎耀世版",
     "photos": [
@@ -1157,7 +1157,7 @@
     "year": "2021",
     "mileage": "50000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Great Wall",
     "model": "炮  2.0T商用版自动柴油两驱领航型长箱GW4D20M",
     "photos": [
@@ -1185,7 +1185,7 @@
     "year": "2024",
     "mileage": "26000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Great Wall",
     "model": "炮  2.4T商用版自动柴油四驱精英型",
     "photos": [
@@ -1199,7 +1199,7 @@
     "year": "2021",
     "mileage": "71000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Great Wall",
     "model": "炮  2.0T商用版 自动柴油四驱茶王版长箱GW4D20M",
     "photos": [
@@ -1521,7 +1521,7 @@
     "year": "2024",
     "mileage": "18000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途X70  1.5T DCT跃享版 5座",
     "photos": [
@@ -1535,7 +1535,7 @@
     "year": "2021",
     "mileage": "32000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途X70 PLUS  改款 1.5T DCT山PRO 5座",
     "photos": [
@@ -1563,7 +1563,7 @@
     "year": "2025",
     "mileage": "6600 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Jetour",
     "model": "捷途自由者  1.5TD DCT 探索",
     "photos": [
@@ -1605,7 +1605,7 @@
     "year": "2023",
     "mileage": "25000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Toyota",
     "model": "RAV4 2.0L CVT两驱都市版",
     "photos": [
@@ -1661,7 +1661,7 @@
     "year": "2022",
     "mileage": "35000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Toyota",
     "model": "Yaris 1.5L CVT 领先版",
     "photos": [
@@ -1675,7 +1675,7 @@
     "year": "2023",
     "mileage": "20000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Toyota",
     "model": "Vios 1.5L CVT 智行版",
     "photos": [
@@ -1731,7 +1731,7 @@
     "year": "2023",
     "mileage": "18000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Toyota",
     "model": "C-HR 2.0L CVT 领先版",
     "photos": [
@@ -1773,7 +1773,7 @@
     "year": "2023",
     "mileage": "16000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Toyota",
     "model": "Harrier 2.0L CVT 两驱豪华版",
     "photos": [
@@ -1815,7 +1815,7 @@
     "year": "2022",
     "mileage": "38000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Volkswagen",
     "model": "Polo 1.5L 自动全景乐享版",
     "photos": [
@@ -1829,7 +1829,7 @@
     "year": "2023",
     "mileage": "24000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Volkswagen",
     "model": "Lavida 1.5L 自动舒适版",
     "photos": [
@@ -1843,7 +1843,7 @@
     "year": "2022",
     "mileage": "36000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Volkswagen",
     "model": "Magotan 330TSI DSG 豪华版",
     "photos": [
@@ -1899,7 +1899,7 @@
     "year": "2022",
     "mileage": "40000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Volkswagen",
     "model": "Bora 1.5L 自动时尚版",
     "photos": [
@@ -1913,7 +1913,7 @@
     "year": "2021",
     "mileage": "50000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Volkswagen",
     "model": "Santana 1.5L 自动风尚版",
     "photos": [
@@ -1927,7 +1927,7 @@
     "year": "2023",
     "mileage": "22000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Volkswagen",
     "model": "Golf 280TSI DSG Pro",
     "photos": [
@@ -1997,7 +1997,7 @@
     "year": "2024",
     "mileage": "20000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "瑞虎7  1.5T CVT尊贵版",
     "photos": [
@@ -2011,7 +2011,7 @@
     "year": "2023",
     "mileage": "19000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "瑞虎3x  1.5L CVT时尚版",
     "photos": [
@@ -2025,7 +2025,7 @@
     "year": "2016",
     "mileage": "100000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Chery",
     "model": "艾瑞泽5  1.5L CVT领锐版",
     "photos": [
@@ -2052,7 +2052,7 @@
     "price": "$13,875",
     "year": "2025",
     "mileage": "11000 km",
-    "fuel": "纯电",
+    "fuel": "插混",
     "transmission": "自动",
     "brand": "BYD",
     "model": "宋PLUS新能源  DM-i 112KM 尊荣型",
@@ -2132,7 +2132,7 @@
     "year": "2022",
     "mileage": "88000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "MG",
     "model": "名爵ZS  180DVVT 自动全球百万918版",
     "photos": [
@@ -2146,7 +2146,7 @@
     "year": "2025",
     "mileage": "15000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Geely",
     "model": "缤越 2025款 1.5L CVT 超能 MAX",
     "photos": [
@@ -2160,7 +2160,7 @@
     "year": "2025",
     "mileage": "18000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Geely",
     "model": "星越L 2025款 东方曜 2.0TD 自动揽星版",
     "photos": [
@@ -2174,7 +2174,7 @@
     "year": "2026",
     "mileage": "5000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Geely",
     "model": "帝豪 2026款 第5代 1.5L CVT尊贵型",
     "photos": [
@@ -2216,7 +2216,7 @@
     "year": "2022",
     "mileage": "25000 km",
     "fuel": "Petrol",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "Changan",
     "model": "长安CS55PLUS 2022款 第二代 1.5T DCT尊贵型",
     "photos": [
@@ -2285,7 +2285,7 @@
     "price": "$15,000",
     "year": "2025",
     "mileage": "5200 km",
-    "fuel": "Petrol",
+    "fuel": "纯电",
     "transmission": "手动",
     "brand": "BYD",
     "model": "海狮05 EV 520KM旗舰智航版",
