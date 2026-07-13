@@ -1,0 +1,24 @@
+name: Submit updated pages to IndexNow
+
+on:
+  workflow_run:
+    workflows: ["Rebuild multilingual site"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main}
+      - name: Wait for GitHub Pages deployment
+        run: sleep 60
+      - name: Verify IndexNow key and submit canonical URLs
+        run: |
+          curl --fail --retry 4 --retry-delay 10 https://jinbacars.com/6d9a7c2e4f8b41a39c5d7e0b2f6a8c14.txt
+          python3 scripts/submit_indexnow.py

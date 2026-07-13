@@ -11,7 +11,10 @@ on:
       - assets/v3.js
       - scripts/build_v2.py
       - scripts/enrich_inventory.py
+      - scripts/seo_content.py
+      - scripts/submit_indexnow.py
       - data/vehicles.json
+      - robots.txt
       - .github/workflows/rebuild-site.yml
   workflow_dispatch:
 

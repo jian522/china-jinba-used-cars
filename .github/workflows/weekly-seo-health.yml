@@ -1,0 +1,22 @@
+name: Weekly production SEO health
+
+on:
+  schedule:
+    - cron: "20 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit live pages, sitemaps and vehicle images
+        run: python3 scripts/seo_health.py
+      - name: Create maintenance issue when checks fail
+        if: failure()
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh issue create --title "[SEO健康检查] 线上页面或图片异常" --body "自动检查发现异常，请查看工作流日志：https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
