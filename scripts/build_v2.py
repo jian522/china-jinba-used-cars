@@ -52,14 +52,11 @@ def contact(lang):
  t=T[lang];return head(lang,f"{t['contact']} | Jinba Auto Export",t['ctap'],'/contact/')+header(lang,'/contact/')+f'''<section class="pagehead"><div class="wrap"><h1>{t['contact']}</h1><p>{t['ctap']}</p></div></section><main class="section"><div class="wrap contactbox"><div class="contactcard"><h3>WhatsApp</h3><a href="https://wa.me/8618079089999">+86 180 7908 9999</a></div><div class="contactcard"><h3>{t['email']}</h3><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div><div class="contactcard"><h3>{t['location']}</h3><p>Jinba Auto Export</p></div><div class="contactcard"><h3>{t['quote']}</h3><a class="btn primary" href="https://wa.me/8618079089999">{t['whatsapp']}</a></div></div></main>'''+footer(lang)
 def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s)
 V=json.loads(DATA.read_text()) if DATA.exists() else extract();DATA.parent.mkdir(exist_ok=True);DATA.write_text(json.dumps(V,ensure_ascii=False,indent=2))
-# IDs 1, 2, 5 and 6 only contain generated placeholder artwork, not real vehicle photos.
-# Keep them out of public inventory until original photos are supplied. IDs 3 and 4
-# have nine real detail photos; discard their placeholder primary and promote photo 1.
-for v in V:
- if v['id'] in (3,4):v['photos']=[p for p in v['photos'] if not p.endswith('/primary.jpg')]
-V=[v for v in V if v['id'] not in (1,2,5,6)]
+# IDs 1–6 contain generated placeholder artwork rather than real vehicle photos.
+# Keep them out of public inventory until original photographs are supplied.
+V=[v for v in V if v['id'] not in (1,2,3,4,5,6)]
 for l in langs:
- for i in (1,2,5,6):shutil.rmtree(R/l/f'cars/{i}',ignore_errors=True)
+ for i in (1,2,3,4,5,6):shutil.rmtree(R/l/f'cars/{i}',ignore_errors=True)
 for l in langs:
  write(R/l/'index.html',home(l,V));write(R/l/'cars/index.html',inventory(l,V));write(R/l/'contact/index.html',contact(l))
  for v in V:write(R/l/f'cars/{v["id"]}/index.html',detail(l,v))
