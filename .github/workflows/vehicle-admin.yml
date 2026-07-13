@@ -1,0 +1,61 @@
+name: Vehicle inventory administration
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: vehicle-inventory-admin
+  cancel-in-progress: false
+
+jobs:
+  update-inventory:
+    if: >-
+      github.actor == 'jian522' &&
+      (contains(github.event.issue.labels.*.name, 'vehicle-admin') ||
+      startsWith(github.event.issue.title, '[新增车辆]') ||
+      startsWith(github.event.issue.title, '[更新车辆]') ||
+      startsWith(github.event.issue.title, '[下架车辆]'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image processor
+        run: python3 -m pip install --disable-pip-version-check Pillow==12.2.0
+      - name: Validate submission and update inventory
+        id: vehicle
+        run: python3 scripts/admin_vehicle.py
+      - name: Build multilingual website
+        run: python3 scripts/build_v2.py
+      - name: Validate generated website
+        run: |
+          python3 -m py_compile scripts/admin_vehicle.py scripts/build_v2.py
+          test "$(grep -Rho 'autoimg.cn' --include='*.html' en zh ru ar | wc -l)" -eq 0
+          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -gt 600
+          test -f admin/index.html
+      - name: Commit and publish
+        env:
+          SUMMARY: ${{ steps.vehicle.outputs.summary }}
+        run: |
+          git config user.name "Jinba Inventory Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "$SUMMARY [skip ci]"
+          git push
+      - name: Confirm success and close request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          SUMMARY: ${{ steps.vehicle.outputs.summary }}
+        run: |
+          gh issue close "$ISSUE" --comment "✅ 已完成：$SUMMARY。网站正在自动发布，通常1–3分钟后生效。"
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE" --body "❌ 自动处理失败，库存没有发布。请查看本次工作流日志并修正表单：https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"

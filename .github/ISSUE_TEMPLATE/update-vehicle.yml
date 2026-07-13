@@ -1,0 +1,86 @@
+name: 更新车辆
+description: 修改已有车辆资料，或用6–9张新原图替换整套照片
+title: "[更新车辆] "
+labels: ["vehicle-admin", "vehicle-update"]
+body:
+  - type: input
+    id: id
+    attributes: {label: Vehicle ID, description: "详情页网址中的数字，例如 /cars/17/ 填17", placeholder: "17"}
+    validations: {required: true}
+  - type: markdown
+    attributes: {value: "只填写需要修改的项目。照片留空代表保留原图；如上传新图，必须一次上传完整6–9张。"}
+  - type: input
+    id: brand
+    attributes: {label: Brand}
+  - type: input
+    id: title
+    attributes: {label: Chinese vehicle title}
+  - type: input
+    id: model
+    attributes: {label: Model / trim}
+  - type: input
+    id: title_en
+    attributes: {label: English title (optional)}
+  - type: input
+    id: title_ru
+    attributes: {label: Russian title (optional)}
+  - type: input
+    id: title_ar
+    attributes: {label: Arabic title (optional)}
+  - type: input
+    id: year
+    attributes: {label: Model year}
+  - type: input
+    id: mileage
+    attributes: {label: Mileage in km}
+  - type: input
+    id: price
+    attributes: {label: Price in USD}
+  - type: dropdown
+    id: fuel
+    attributes: {label: Fuel type, options: [No change, Petrol, Diesel, EV, PHEV, Hybrid]}
+  - type: dropdown
+    id: transmission
+    attributes: {label: Transmission, options: [No change, Automatic, Manual]}
+  - type: input
+    id: body
+    attributes: {label: Body type}
+  - type: input
+    id: engine
+    attributes: {label: Engine / motor}
+  - type: input
+    id: drive
+    attributes: {label: Drive type}
+  - type: input
+    id: color
+    attributes: {label: Exterior color}
+  - type: input
+    id: seats
+    attributes: {label: Seats}
+  - type: input
+    id: production
+    attributes: {label: Production date}
+  - type: input
+    id: registration
+    attributes: {label: First registration}
+  - type: input
+    id: vin
+    attributes: {label: VIN last 6 characters}
+  - type: input
+    id: emission
+    attributes: {label: Emission standard}
+  - type: input
+    id: port
+    attributes: {label: Departure port}
+  - type: input
+    id: term
+    attributes: {label: Trade term}
+  - type: textarea
+    id: description
+    attributes: {label: Chinese description}
+  - type: textarea
+    id: photos
+    attributes: {label: Replace with 6–9 original photos, description: "如要替换照片，将完整6–9张原图拖到这里；否则留空。"}
+  - type: input
+    id: primary
+    attributes: {label: Primary photo number, description: "仅在替换照片时填写，默认为1"}

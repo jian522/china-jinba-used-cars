@@ -10,6 +10,7 @@ on:
       - assets/v3.css
       - assets/v3.js
       - scripts/build_v2.py
+      - scripts/enrich_inventory.py
       - data/vehicles.json
       - .github/workflows/rebuild-site.yml
   workflow_dispatch:
@@ -28,14 +29,17 @@ jobs:
       - name: Validate generated site
         run: |
           test "$(grep -Rho 'autoimg.cn' --include='*.html' . | wc -l)" -eq 0
-          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -eq 616
+          expected="$(python3 -c "import json; print(sum(v.get('status') == 'published' for v in json.load(open('data/vehicles.json'))) * 4)")"
+          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -eq "$expected"
           test "$(grep -Rho 'hreflang=' en zh ru ar --include='*.html' | wc -l)" -gt 2500
+          test -f admin/index.html
+          python3 -m py_compile scripts/build_v2.py scripts/enrich_inventory.py scripts/admin_vehicle.py
       - name: Publish generated pages
         run: |
           git config user.name "Jinba Site Bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Repair vehicle images and enable four languages [skip ci]"
+            git commit -m "Rebuild multilingual vehicle inventory [skip ci]"
             git push
           fi

@@ -1,0 +1,111 @@
+name: 新增车辆
+description: 填写出口参数并上传6–9张原始照片，审核通过后自动发布
+title: "[新增车辆] "
+labels: ["vehicle-admin", "vehicle-add"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        只有仓库所有者 `jian522` 的提交会自动发布。请不要上传带其他平台Logo、水印或无授权的图片。
+        照片顺序建议：左前45°主图、正前、右前/侧面、车尾、驾驶舱、后排、仪表、发动机舱、后备厢。
+  - type: input
+    id: brand
+    attributes: {label: Brand, description: "例如 BYD、Toyota、Geely", placeholder: "BYD"}
+    validations: {required: true}
+  - type: input
+    id: title
+    attributes: {label: Chinese vehicle title, placeholder: "BYD 宋PLUS DM-i 112KM 尊荣型"}
+    validations: {required: true}
+  - type: input
+    id: model
+    attributes: {label: Model / trim, placeholder: "宋PLUS DM-i 112KM 尊荣型"}
+    validations: {required: true}
+  - type: input
+    id: title_en
+    attributes: {label: English title (optional), description: "不填则系统自动生成"}
+  - type: input
+    id: title_ru
+    attributes: {label: Russian title (optional), description: "不填则系统自动生成"}
+  - type: input
+    id: title_ar
+    attributes: {label: Arabic title (optional), description: "不填则系统自动生成"}
+  - type: input
+    id: year
+    attributes: {label: Model year, placeholder: "2025"}
+    validations: {required: true}
+  - type: input
+    id: mileage
+    attributes: {label: Mileage in km, placeholder: "15000"}
+    validations: {required: true}
+  - type: input
+    id: price
+    attributes: {label: Price in USD, placeholder: "12500"}
+    validations: {required: true}
+  - type: dropdown
+    id: fuel
+    attributes: {label: Fuel type, options: [Petrol, Diesel, EV, PHEV, Hybrid]}
+    validations: {required: true}
+  - type: dropdown
+    id: transmission
+    attributes: {label: Transmission, options: [Automatic, Manual]}
+    validations: {required: true}
+  - type: dropdown
+    id: body
+    attributes: {label: Body type, options: [SUV, Sedan, Hatchback, MPV, Pickup, Van, Coupe, Wagon, Other]}
+    validations: {required: true}
+  - type: input
+    id: engine
+    attributes: {label: Engine / motor, placeholder: "1.5T / 150 kW electric motor"}
+    validations: {required: true}
+  - type: dropdown
+    id: drive
+    attributes: {label: Drive type, options: [FWD, RWD, AWD, 4WD, 2WD]}
+    validations: {required: true}
+  - type: input
+    id: color
+    attributes: {label: Exterior color, placeholder: "White"}
+    validations: {required: true}
+  - type: input
+    id: seats
+    attributes: {label: Seats, placeholder: "5"}
+    validations: {required: true}
+  - type: input
+    id: production
+    attributes: {label: Production date, placeholder: "2025-03"}
+  - type: input
+    id: registration
+    attributes: {label: First registration, placeholder: "2025-04"}
+  - type: input
+    id: vin
+    attributes: {label: VIN last 6 characters, description: "仅填写车架号后6位", placeholder: "A12345"}
+  - type: input
+    id: emission
+    attributes: {label: Emission standard, placeholder: "China VI / Euro VI"}
+  - type: input
+    id: port
+    attributes: {label: Departure port, placeholder: "Shanghai / Ningbo / Guangzhou"}
+  - type: dropdown
+    id: term
+    attributes: {label: Trade term, options: [FOB, CIF, CFR, EXW]}
+    validations: {required: true}
+  - type: textarea
+    id: description
+    attributes: {label: Chinese description, description: "填写已确认的真实车况和卖点，不要填写未经验证的信息"}
+  - type: textarea
+    id: photos
+    attributes:
+      label: Upload 6–9 original photos
+      description: "点击文本框后，将6–9张照片直接拖进来；等待每张图片上传完成后再提交。单张不超过15MB，最低800×600。"
+      placeholder: "把6–9张原始车辆照片拖到这里"
+    validations: {required: true}
+  - type: input
+    id: primary
+    attributes: {label: Primary photo number, description: "填写1–9；建议选择左前45°或正前脸", placeholder: "1"}
+    validations: {required: true}
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: 图片与数据确认
+      options:
+        - label: 我确认车辆资料真实，图片拥有商业展示权限，且没有其他平台Logo或水印。
+          required: true
