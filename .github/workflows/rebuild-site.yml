@@ -35,7 +35,10 @@ jobs:
           expected="$(python3 -c "import json; print(sum(v.get('status') == 'published' for v in json.load(open('data/vehicles.json'))) * 4)")"
           test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -eq "$expected"
           test "$(grep -Rho 'hreflang=' en zh ru ar --include='*.html' | wc -l)" -gt 2500
+          test "$(grep -Rho 'href="/admin/"' en zh ru ar --include='*.html' | wc -l)" -eq 0
           test -f admin/index.html
+          grep -q 'noindex,nofollow,noarchive' admin/index.html
+          grep -q "github.actor == 'jian522'" .github/workflows/vehicle-admin.yml
           python3 -m py_compile scripts/build_v2.py scripts/enrich_inventory.py scripts/admin_vehicle.py
       - name: Publish generated pages
         run: |
