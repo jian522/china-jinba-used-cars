@@ -1,0 +1,1876 @@
+{
+  "generated_on": "2026-07-15",
+  "summary": {
+    "published_vehicles": 154,
+    "complete_vehicles": 4,
+    "incomplete_vehicles": 150,
+    "available_photos": 190,
+    "missing_to_6": 750,
+    "missing_to_9": 1200,
+    "duplicate_primary_groups": 20
+  },
+  "duplicate_primary_groups": [
+    [
+      7,
+      20,
+      149
+    ],
+    [
+      8,
+      51
+    ],
+    [
+      9,
+      39
+    ],
+    [
+      23,
+      103
+    ],
+    [
+      25,
+      108
+    ],
+    [
+      27,
+      86
+    ],
+    [
+      28,
+      89
+    ],
+    [
+      29,
+      91
+    ],
+    [
+      33,
+      101
+    ],
+    [
+      37,
+      68
+    ],
+    [
+      38,
+      67
+    ],
+    [
+      41,
+      78
+    ],
+    [
+      43,
+      79
+    ],
+    [
+      44,
+      80
+    ],
+    [
+      46,
+      81
+    ],
+    [
+      47,
+      104
+    ],
+    [
+      50,
+      109
+    ],
+    [
+      54,
+      92
+    ],
+    [
+      64,
+      160
+    ],
+    [
+      116,
+      117
+    ]
+  ],
+  "vehicles": [
+    {
+      "id": 8,
+      "stock_id": "JB-0008",
+      "title": "Jetour 捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/8/primary.jpg",
+      "duplicate_primary_with": [
+        51
+      ]
+    },
+    {
+      "id": 9,
+      "stock_id": "JB-0009",
+      "title": "Haval 哈弗H6 第三代 1.5T 自动两驱Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/9/primary.jpg",
+      "duplicate_primary_with": [
+        39
+      ]
+    },
+    {
+      "id": 10,
+      "stock_id": "JB-0010",
+      "title": "BYD 海鸥 智驾版 305km 活力版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/10/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 11,
+      "stock_id": "JB-0011",
+      "title": "BYD 秦PLUS DM-i 智驾版 55KM超越型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/11/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 12,
+      "stock_id": "JB-0012",
+      "title": "BYD 唐新能源 DM-i 冠军版 112KM 尊荣型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/12/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 13,
+      "stock_id": "JB-0013",
+      "title": "Chery 瑞虎8L 2.0T 两驱尊贵版 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/13/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 14,
+      "stock_id": "JB-0014",
+      "title": "Chery 艾瑞泽8 1.6T DCT卓越版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/14/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 15,
+      "stock_id": "JB-0015",
+      "title": "Chery 欧萌达 1.5T CVT畅行版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/15/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 16,
+      "stock_id": "JB-0016",
+      "title": "Haval 哈弗大狗 1.5T DCT边牧版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/16/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 18,
+      "stock_id": "JB-0018",
+      "title": "Haval 哈弗H9 2.0T 汽油四驱尊享型 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/18/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 19,
+      "stock_id": "JB-0019",
+      "title": "MG MG7 1.5T DCT至美优雅版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/19/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 20,
+      "stock_id": "JB-0020",
+      "title": "MG 名爵ZS 180DVVT 自动全球百万918版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/20/primary.jpg",
+      "duplicate_primary_with": [
+        7,
+        149
+      ]
+    },
+    {
+      "id": 21,
+      "stock_id": "JB-0021",
+      "title": "Great Wall 炮 2.0T乘用版自动汽油四驱尊享型GW4C20B",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/21/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 22,
+      "stock_id": "JB-0022",
+      "title": "Great Wall 风骏5 2.0T 柴油两驱进取型大双",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/22/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 23,
+      "stock_id": "JB-0023",
+      "title": "Roewe 荣威RX5 1.5T 超感精英版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/23/primary.jpg",
+      "duplicate_primary_with": [
+        103
+      ]
+    },
+    {
+      "id": 24,
+      "stock_id": "JB-0024",
+      "title": "Roewe 飞凡R7 进阶版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/24/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 25,
+      "stock_id": "JB-0025",
+      "title": "Jetour 捷途旅行者 2.0T 四驱穿越PRO",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/25/primary.jpg",
+      "duplicate_primary_with": [
+        108
+      ]
+    },
+    {
+      "id": 26,
+      "stock_id": "JB-0026",
+      "title": "Jetour 捷途大圣 1.5T DCT 星耀PRO",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/26/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 27,
+      "stock_id": "JB-0027",
+      "title": "Avatr 阿维塔11 Ultra 增程版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/27/primary.jpg",
+      "duplicate_primary_with": [
+        86
+      ]
+    },
+    {
+      "id": 28,
+      "stock_id": "JB-0028",
+      "title": "Avatr 阿维塔12 改款 Max纯电版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/28/primary.jpg",
+      "duplicate_primary_with": [
+        89
+      ]
+    },
+    {
+      "id": 29,
+      "stock_id": "JB-0029",
+      "title": "NIO 蔚来ES6 75kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/29/primary.jpg",
+      "duplicate_primary_with": [
+        91
+      ]
+    },
+    {
+      "id": 30,
+      "stock_id": "JB-0030",
+      "title": "NIO 蔚来ET5 75kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/30/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 31,
+      "stock_id": "JB-0031",
+      "title": "XPeng 小鹏P7+ 长续航 Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/31/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 32,
+      "stock_id": "JB-0032",
+      "title": "XPeng 小鹏MONA M03 600 超长续航 Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/32/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 33,
+      "stock_id": "JB-0033",
+      "title": "Zeekr 极氪001 YOU版 100kWh 四驱",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/33/primary.jpg",
+      "duplicate_primary_with": [
+        101
+      ]
+    },
+    {
+      "id": 34,
+      "stock_id": "JB-0034",
+      "title": "Zeekr 极氪X 五座长续航版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/34/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 35,
+      "stock_id": "JB-0035",
+      "title": "BYD 宋Pro新能源 第二代 DM-i 115KM超越型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/35/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 36,
+      "stock_id": "JB-0036",
+      "title": "BYD 海豚 智驾版 410km 时尚版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/36/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 37,
+      "stock_id": "JB-0037",
+      "title": "Chery 瑞虎8 PRO 冠军版 290T 两驱巅峰版 7座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/37/primary.jpg",
+      "duplicate_primary_with": [
+        68
+      ]
+    },
+    {
+      "id": 38,
+      "stock_id": "JB-0038",
+      "title": "Chery 艾瑞泽8 PRO 2.0T DCT 尊享型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/38/primary.jpg",
+      "duplicate_primary_with": [
+        67
+      ]
+    },
+    {
+      "id": 39,
+      "stock_id": "JB-0039",
+      "title": "Haval 哈弗H6 第三代 1.5T 自动两驱Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/39/primary.jpg",
+      "duplicate_primary_with": [
+        9
+      ]
+    },
+    {
+      "id": 40,
+      "stock_id": "JB-0040",
+      "title": "Haval 哈弗初恋 1.5T 自动大四版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/40/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 41,
+      "stock_id": "JB-0041",
+      "title": "MG MG5 180DVVT CVT青春豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/41/primary.jpg",
+      "duplicate_primary_with": [
+        78
+      ]
+    },
+    {
+      "id": 42,
+      "stock_id": "JB-0042",
+      "title": "MG MG6 Pro 1.5T 自动Trophy豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/42/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 43,
+      "stock_id": "JB-0043",
+      "title": "MG MG7 2.0T 自动猎美尊享版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/43/primary.jpg",
+      "duplicate_primary_with": [
+        79
+      ]
+    },
+    {
+      "id": 44,
+      "stock_id": "JB-0044",
+      "title": "Great Wall 炮 2.0T商用版自动柴油两驱精英型长箱GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/44/primary.jpg",
+      "duplicate_primary_with": [
+        80
+      ]
+    },
+    {
+      "id": 45,
+      "stock_id": "JB-0045",
+      "title": "Great Wall 金刚炮 2.0T自动柴油四驱精英型平箱GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/45/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 46,
+      "stock_id": "JB-0046",
+      "title": "Great Wall 风骏7 2.0T柴油两驱新冠军版公务型大双GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/46/primary.jpg",
+      "duplicate_primary_with": [
+        81
+      ]
+    },
+    {
+      "id": 47,
+      "stock_id": "JB-0047",
+      "title": "Roewe 荣威RX5新能源 eRX5 超混优越版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/47/primary.jpg",
+      "duplicate_primary_with": [
+        104
+      ]
+    },
+    {
+      "id": 48,
+      "stock_id": "JB-0048",
+      "title": "Roewe 荣威i5 1.5L CVT豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/48/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 49,
+      "stock_id": "JB-0049",
+      "title": "Roewe 飞凡F7 进阶版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/49/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 51,
+      "stock_id": "JB-0051",
+      "title": "Jetour 捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/51/primary.jpg",
+      "duplicate_primary_with": [
+        8
+      ]
+    },
+    {
+      "id": 52,
+      "stock_id": "JB-0052",
+      "title": "Avatr 阿维塔06 Pro增程版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/52/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 53,
+      "stock_id": "JB-0053",
+      "title": "Avatr 阿维塔07 Max增程版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/53/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 54,
+      "stock_id": "JB-0054",
+      "title": "NIO 蔚来EC6 75kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/54/primary.jpg",
+      "duplicate_primary_with": [
+        92
+      ]
+    },
+    {
+      "id": 55,
+      "stock_id": "JB-0055",
+      "title": "NIO 蔚来ET5T 75kWh Touring",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/55/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 56,
+      "stock_id": "JB-0056",
+      "title": "XPeng 小鹏G6 625 长续航 Max 科技版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/56/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 57,
+      "stock_id": "JB-0057",
+      "title": "XPeng 小鹏G9 570 Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/57/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 58,
+      "stock_id": "JB-0058",
+      "title": "Zeekr 极氪007GT 后驱智驾版 75kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/58/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 59,
+      "stock_id": "JB-0059",
+      "title": "Zeekr 极氪7X 75kWh 后驱智驾版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/59/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 60,
+      "stock_id": "JB-0060",
+      "title": "BYD 海豹  650智驾版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/60/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 61,
+      "stock_id": "JB-0061",
+      "title": "BYD 海豹06  DM-i 智驾版 120KM尊享型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/61/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 62,
+      "stock_id": "JB-0062",
+      "title": "BYD 海鸥  305km 活力版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/62/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 63,
+      "stock_id": "JB-0063",
+      "title": "BYD 汉  DM-i 智驾版 125KM激光雷达旗舰型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/63/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 64,
+      "stock_id": "JB-0064",
+      "title": "BYD 海狮05 EV  520KM旗舰智航版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/64/primary.jpg",
+      "duplicate_primary_with": [
+        160
+      ]
+    },
+    {
+      "id": 65,
+      "stock_id": "JB-0065",
+      "title": "Chery 艾瑞泽8  1.6T DCT尚",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/65/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 66,
+      "stock_id": "JB-0066",
+      "title": "Chery 艾瑞泽5  卓越版 1.5L 手动风尚型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/66/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 67,
+      "stock_id": "JB-0067",
+      "title": "Chery 艾瑞泽8  高能版 2.0T DCT驰",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/67/primary.jpg",
+      "duplicate_primary_with": [
+        38
+      ]
+    },
+    {
+      "id": 68,
+      "stock_id": "JB-0068",
+      "title": "Chery 瑞虎8 PLUS  冠军版 290TGDI DCT豪享版 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/68/primary.jpg",
+      "duplicate_primary_with": [
+        37
+      ]
+    },
+    {
+      "id": 69,
+      "stock_id": "JB-0069",
+      "title": "Chery 瑞虎8 PLUS  290TGDI DCT尊贵型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/69/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 70,
+      "stock_id": "JB-0070",
+      "title": "Haval 哈弗猛龙新能源  Hi4 145 穿越版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/70/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 71,
+      "stock_id": "JB-0071",
+      "title": "Haval 哈弗H9  2.0T 汽油四驱精英型 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/71/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 72,
+      "stock_id": "JB-0072",
+      "title": "Haval 哈弗枭龙MAX  Hi4 110 Plus 智驾版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/72/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 73,
+      "stock_id": "JB-0073",
+      "title": "Haval 哈弗大狗  2.0T DCT中华田园犬版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/73/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 74,
+      "stock_id": "JB-0074",
+      "title": "Haval 哈弗大狗 PLUS  2.0T 两驱潮野版Plus",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/74/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 75,
+      "stock_id": "JB-0075",
+      "title": "MG MG6  1.5T 自动领潮风尚版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/75/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 76,
+      "stock_id": "JB-0076",
+      "title": "MG MG5  300TGI DCT青奢风潮版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/76/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 77,
+      "stock_id": "JB-0077",
+      "title": "MG MG7  1.5T DCT至美舒享版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/77/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 78,
+      "stock_id": "JB-0078",
+      "title": "MG MG5  180DVVT CVT青春风尚版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/78/primary.jpg",
+      "duplicate_primary_with": [
+        41
+      ]
+    },
+    {
+      "id": 79,
+      "stock_id": "JB-0079",
+      "title": "MG MG7  2.0T 自动Trophy+激擎耀世版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/79/primary.jpg",
+      "duplicate_primary_with": [
+        43
+      ]
+    },
+    {
+      "id": 80,
+      "stock_id": "JB-0080",
+      "title": "Great Wall 炮  2.0T商用版自动柴油两驱领航型长箱GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/80/primary.jpg",
+      "duplicate_primary_with": [
+        44
+      ]
+    },
+    {
+      "id": 81,
+      "stock_id": "JB-0081",
+      "title": "Great Wall 风骏7  2.0T柴油两驱精英型国VI大双GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/81/primary.jpg",
+      "duplicate_primary_with": [
+        46
+      ]
+    },
+    {
+      "id": 82,
+      "stock_id": "JB-0082",
+      "title": "Great Wall 炮  2.4T商用版自动柴油四驱精英型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/82/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 83,
+      "stock_id": "JB-0083",
+      "title": "Great Wall 炮  2.0T商用版 自动柴油四驱茶王版长箱GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/83/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 84,
+      "stock_id": "JB-0084",
+      "title": "Great Wall 炮  2.0T商用版手动柴油两驱精英型长箱GW4D20M",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/84/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 85,
+      "stock_id": "JB-0085",
+      "title": "Avatr 阿维塔06  Pro纯电版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/85/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 86,
+      "stock_id": "JB-0086",
+      "title": "Avatr 阿维塔11  Max 增程版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/86/primary.jpg",
+      "duplicate_primary_with": [
+        27
+      ]
+    },
+    {
+      "id": 87,
+      "stock_id": "JB-0087",
+      "title": "Avatr 阿维塔06  Ultra纯电版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/87/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 88,
+      "stock_id": "JB-0088",
+      "title": "Avatr 阿维塔06  Max纯电版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/88/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 89,
+      "stock_id": "JB-0089",
+      "title": "Avatr 阿维塔12  改款 Ultra增程版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/89/primary.jpg",
+      "duplicate_primary_with": [
+        28
+      ]
+    },
+    {
+      "id": 90,
+      "stock_id": "JB-0090",
+      "title": "NIO 蔚来ES8  六座行政豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/90/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 91,
+      "stock_id": "JB-0091",
+      "title": "NIO 蔚来ES6  430KM 性能版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/91/primary.jpg",
+      "duplicate_primary_with": [
+        29
+      ]
+    },
+    {
+      "id": 92,
+      "stock_id": "JB-0092",
+      "title": "NIO 蔚来EC6  75kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/92/primary.jpg",
+      "duplicate_primary_with": [
+        54
+      ]
+    },
+    {
+      "id": 93,
+      "stock_id": "JB-0093",
+      "title": "NIO 蔚来ES8  415KM 签名版 六座版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/93/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 94,
+      "stock_id": "JB-0094",
+      "title": "XPeng 小鹏P7  702 长续航 Ultra",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/94/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 95,
+      "stock_id": "JB-0095",
+      "title": "XPeng 小鹏G7  702 超长续航 Ultra",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/95/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 96,
+      "stock_id": "JB-0096",
+      "title": "XPeng 小鹏X9  纯电 740超长续航 Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/96/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 97,
+      "stock_id": "JB-0097",
+      "title": "XPeng 小鹏X9  纯电 650长续航 Max",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/97/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 98,
+      "stock_id": "JB-0098",
+      "title": "Zeekr 极氪009  七座过道版四驱 108kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/98/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 99,
+      "stock_id": "JB-0099",
+      "title": "Zeekr 极氪009  六座行政版四驱 108kWh",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/99/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 100,
+      "stock_id": "JB-0100",
+      "title": "Zeekr 极氪7X  100kWh 长续航四驱智驾版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/100/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 101,
+      "stock_id": "JB-0101",
+      "title": "Zeekr 极氪001  长续航双电机 WE版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/101/primary.jpg",
+      "duplicate_primary_with": [
+        33
+      ]
+    },
+    {
+      "id": 102,
+      "stock_id": "JB-0102",
+      "title": "Roewe 飞凡R7  长续Pro版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/102/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 103,
+      "stock_id": "JB-0103",
+      "title": "Roewe 荣威RX5  1.5T 超感精英版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/103/primary.jpg",
+      "duplicate_primary_with": [
+        23
+      ]
+    },
+    {
+      "id": 104,
+      "stock_id": "JB-0104",
+      "title": "Roewe 荣威RX5新能源  eRX5 超混优越版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/104/primary.jpg",
+      "duplicate_primary_with": [
+        47
+      ]
+    },
+    {
+      "id": 105,
+      "stock_id": "JB-0105",
+      "title": "Roewe 荣威iMAX8  400TGI 尊荣版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/105/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 106,
+      "stock_id": "JB-0106",
+      "title": "Jetour 捷途X70  1.5T DCT跃享版 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/106/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 107,
+      "stock_id": "JB-0107",
+      "title": "Jetour 捷途X70 PLUS  改款 1.5T DCT山PRO 5座",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/107/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 108,
+      "stock_id": "JB-0108",
+      "title": "Jetour 捷途旅行者  1.5T 两驱发现PRO",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/108/primary.jpg",
+      "duplicate_primary_with": [
+        25
+      ]
+    },
+    {
+      "id": 109,
+      "stock_id": "JB-0109",
+      "title": "Jetour 捷途自由者  1.5TD DCT 探索",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/109/primary.jpg",
+      "duplicate_primary_with": [
+        50
+      ]
+    },
+    {
+      "id": 110,
+      "stock_id": "JB-0110",
+      "title": "Toyota Corolla 1.2T 先锋版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/110/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 111,
+      "stock_id": "JB-0111",
+      "title": "Toyota Camry 2.0E 精英版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/111/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 112,
+      "stock_id": "JB-0112",
+      "title": "Toyota RAV4 2.0L CVT两驱都市版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/112/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 113,
+      "stock_id": "JB-0113",
+      "title": "Toyota Land Cruiser Prado 2.7L",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/113/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 114,
+      "stock_id": "JB-0114",
+      "title": "Toyota Hilux 2.7L 双排皮卡",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/114/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 115,
+      "stock_id": "JB-0115",
+      "title": "Toyota Fortuner 2.7L TRD",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/115/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 116,
+      "stock_id": "JB-0116",
+      "title": "Toyota Yaris 1.5L CVT 领先版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/116/primary.jpg",
+      "duplicate_primary_with": [
+        117
+      ]
+    },
+    {
+      "id": 117,
+      "stock_id": "JB-0117",
+      "title": "Toyota Vios 1.5L CVT 智行版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/117/primary.jpg",
+      "duplicate_primary_with": [
+        116
+      ]
+    },
+    {
+      "id": 118,
+      "stock_id": "JB-0118",
+      "title": "Toyota Innova 2.0L 7座MPV",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/118/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 119,
+      "stock_id": "JB-0119",
+      "title": "Toyota Alphard 3.5L 豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/119/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 120,
+      "stock_id": "JB-0120",
+      "title": "Toyota Hiace 2.7L 12座 商务车",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/120/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 121,
+      "stock_id": "JB-0121",
+      "title": "Toyota C-HR 2.0L CVT 领先版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/121/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 122,
+      "stock_id": "JB-0122",
+      "title": "Toyota Corolla Cross 1.8L 精英版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/122/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 123,
+      "stock_id": "JB-0123",
+      "title": "Toyota Highlander 2.0T 四驱尊贵版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/123/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 124,
+      "stock_id": "JB-0124",
+      "title": "Toyota Harrier 2.0L CVT 两驱豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/124/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 125,
+      "stock_id": "JB-0125",
+      "title": "Volkswagen Passat 330TSI 精英版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/125/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 126,
+      "stock_id": "JB-0126",
+      "title": "Volkswagen Tiguan 330TSI 两驱智享版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/126/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 127,
+      "stock_id": "JB-0127",
+      "title": "Volkswagen Polo 1.5L 自动全景乐享版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/127/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 128,
+      "stock_id": "JB-0128",
+      "title": "Volkswagen Lavida 1.5L 自动舒适版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/128/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 129,
+      "stock_id": "JB-0129",
+      "title": "Volkswagen Magotan 330TSI DSG 豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/129/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 130,
+      "stock_id": "JB-0130",
+      "title": "Volkswagen T-Roc 280TSI 两驱豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/130/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 131,
+      "stock_id": "JB-0131",
+      "title": "Volkswagen Tayron 330TSI 两驱豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/131/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 132,
+      "stock_id": "JB-0132",
+      "title": "Volkswagen Tharu 280TSI 两驱舒适版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/132/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 133,
+      "stock_id": "JB-0133",
+      "title": "Volkswagen Bora 1.5L 自动时尚版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/133/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 134,
+      "stock_id": "JB-0134",
+      "title": "Volkswagen Santana 1.5L 自动风尚版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/134/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 135,
+      "stock_id": "JB-0135",
+      "title": "Volkswagen Golf 280TSI DSG Pro",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/135/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 136,
+      "stock_id": "JB-0136",
+      "title": "Volkswagen Touran 280TSI 7座舒适版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/136/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 137,
+      "stock_id": "JB-0137",
+      "title": "Volkswagen Teramont 380TSI 四驱豪华版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/137/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 138,
+      "stock_id": "JB-0138",
+      "title": "Volkswagen CC 380TSI 夺目版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/138/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 139,
+      "stock_id": "JB-0139",
+      "title": "Volkswagen ID.4 Crozz 纯电动 SUV",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/139/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 140,
+      "stock_id": "JB-0140",
+      "title": "Chery 瑞虎7  1.5T CVT尊贵版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/140/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 141,
+      "stock_id": "JB-0141",
+      "title": "Chery 瑞虎3x  1.5L CVT时尚版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/141/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 142,
+      "stock_id": "JB-0142",
+      "title": "Chery 艾瑞泽5  1.5L CVT领锐版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/142/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 143,
+      "stock_id": "JB-0143",
+      "title": "BYD 元新能源  EV360 智联创酷型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/143/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 144,
+      "stock_id": "JB-0144",
+      "title": "BYD 宋PLUS新能源  DM-i 112KM 尊荣型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/144/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 145,
+      "stock_id": "JB-0145",
+      "title": "BYD 秦L  DM-i 智驾版 120KM超越型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/145/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 146,
+      "stock_id": "JB-0146",
+      "title": "BYD 海狮07 EV  610智航版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/146/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 148,
+      "stock_id": "JB-0148",
+      "title": "Haval 哈弗M6  PLUS 1.5T 手动豪华智联型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/148/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 149,
+      "stock_id": "JB-0149",
+      "title": "MG 名爵ZS  180DVVT 自动全球百万918版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/149/primary.jpg",
+      "duplicate_primary_with": [
+        7,
+        20
+      ]
+    },
+    {
+      "id": 150,
+      "stock_id": "JB-0150",
+      "title": "Geely 缤越 2025款 1.5L CVT 超能 MAX",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/150/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 151,
+      "stock_id": "JB-0151",
+      "title": "Geely 星越L 2025款 东方曜 2.0TD 自动揽星版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/151/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 152,
+      "stock_id": "JB-0152",
+      "title": "Geely 帝豪 2026款 第5代 1.5L CVT尊贵型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/152/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 153,
+      "stock_id": "JB-0153",
+      "title": "Changan 长安CS75PLUS 2025款 第四代 1.5T 新蓝鲸 智慧鲸悦版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/153/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 154,
+      "stock_id": "JB-0154",
+      "title": "Changan 逸动 2026款 第四代 1.5T 500Bar 智享型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/154/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 155,
+      "stock_id": "JB-0155",
+      "title": "Changan 长安CS55PLUS 2022款 第二代 1.5T DCT尊贵型",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/155/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 156,
+      "stock_id": "JB-0156",
+      "title": "Li Auto 理想L7 2025款 Ultra 智能焕新版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/156/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 157,
+      "stock_id": "JB-0157",
+      "title": "AITO 问界M7 2026款 增程 Ultra四驱版 5座192线激光雷达）",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/157/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 158,
+      "stock_id": "JB-0158",
+      "title": "Luxeed 智界S7 2024款 Pro",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/158/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 159,
+      "stock_id": "JB-0159",
+      "title": "GAC 传祺GS3 2026款 影速 270T 劲享版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/159/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 160,
+      "stock_id": "JB-0160",
+      "title": "BYD 海狮05 EV 520KM旗舰智航版",
+      "photo_count": 1,
+      "missing_to_6": 5,
+      "missing_to_9": 8,
+      "complete": false,
+      "primary": "/uploads/cars/160/primary.jpg",
+      "duplicate_primary_with": [
+        64
+      ]
+    },
+    {
+      "id": 7,
+      "stock_id": "JB-0007",
+      "title": "MG 名爵ZS 180DVVT 自动全球百万918版",
+      "photo_count": 10,
+      "missing_to_6": 0,
+      "missing_to_9": 0,
+      "complete": true,
+      "primary": "/uploads/cars/7/primary.jpg",
+      "duplicate_primary_with": [
+        20,
+        149
+      ]
+    },
+    {
+      "id": 17,
+      "stock_id": "JB-0017",
+      "title": "Haval 哈弗H6 国潮版 1.5T 自动冠军版",
+      "photo_count": 10,
+      "missing_to_6": 0,
+      "missing_to_9": 0,
+      "complete": true,
+      "primary": "/uploads/cars/17/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 50,
+      "stock_id": "JB-0050",
+      "title": "Jetour 捷途自由者 1.5TD DCT 探索",
+      "photo_count": 10,
+      "missing_to_6": 0,
+      "missing_to_9": 0,
+      "complete": true,
+      "primary": "/uploads/cars/50/primary.jpg",
+      "duplicate_primary_with": [
+        109
+      ]
+    },
+    {
+      "id": 147,
+      "stock_id": "JB-0147",
+      "title": "Haval 哈弗F7  1.5T 两驱i潮",
+      "photo_count": 10,
+      "missing_to_6": 0,
+      "missing_to_9": 0,
+      "complete": true,
+      "primary": "/uploads/cars/147/primary.jpg",
+      "duplicate_primary_with": []
+    }
+  ]
+}
