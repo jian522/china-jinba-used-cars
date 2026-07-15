@@ -1,5 +1,5 @@
 from pathlib import Path
-import re,json,html,shutil
+import re,json,html,shutil,csv,io
 from datetime import date
 from urllib.parse import quote_plus
 from enrich_inventory import enrich_all
@@ -130,7 +130,15 @@ def photo_dashboard(V,audit):
   title=quote_plus(f"[更新车辆] {v['id']} {v['stock_id']} 补全照片")
   update=f"https://github.com/jian522/china-jinba-used-cars/issues/new?template=update-vehicle.yml&title={title}"
   items.append(f'''<article class="photoitem"><img loading="lazy" width="180" height="135" src="{esc(row['primary'])}" alt="{esc(v['title'])}"><div><small>{esc(v['stock_id'])} · ID {v['id']}</small><h2>{esc(v['title'])}</h2><p>现有 {row['photo_count']} 张 · 至少还需 {row['missing_to_6']} 张{esc(warning)}</p><div class="actions"><a href="/zh/cars/{v['id']}/">查看车辆</a><a class="btn primary" href="{update}" rel="nofollow noopener">上传完整照片 →</a></div></div></article>''')
- return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#071827"><title>照片补全清单 | Jinba Auto Export</title><link rel="stylesheet" href="/assets/v3.css?v=4"></head><body><div class="top"><div class="wrap"><span>JINBA AUTO EXPORT · PHOTO AUDIT</span><span>{audit['generated_on']}</span></div></div><header class="header"><nav class="wrap nav"><a class="brand" href="/admin/login/"><span class="mark">J</span><span>JINBA AUTO<small>PHOTO COVERAGE</small></span></a><a class="quote" href="/admin/login/">返回安全入口</a></nav></header><main class="section alt"><div class="wrap adminwrap"><div class="kicker">REAL PHOTO COMPLETION</div><h1>车辆照片补全清单</h1><p class="adminlead">只上传属于同一台库存车辆、拥有商业展示权限的原始照片。系统不会用生成图、厂家图或其他车辆照片凑数。</p><div class="adminsummary"><div><b>{summary['published_vehicles']}</b><span>已发布车辆</span></div><div><b>{summary['complete_vehicles']}</b><span>完整图集</span></div><div><b>{summary['incomplete_vehicles']}</b><span>待补车辆</span></div><div><b>{summary['missing_to_6']}</b><span>至少缺少照片</span></div></div><div class="adminnote"><h2>上传标准</h2><p>每车6–9张：左前45°主图、正前、侧面、车尾、驾驶舱、后排、仪表／中控、发动机舱或充电口、后备厢。不要上传其他平台水印图片。</p><p>检测到 <b>{summary['duplicate_primary_groups']}</b> 组跨车辆重复主图，已在对应车辆下方标记，需要优先核实。</p><a class="btn primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new?template=bulk-photo-import.yml" rel="nofollow noopener">一次批量补图最多20台 →</a></div><div class="photolist">{''.join(items)}</div></div></main></body></html>'''
+ return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#071827"><title>照片补全清单 | Jinba Auto Export</title><link rel="stylesheet" href="/assets/v3.css?v=4"></head><body><div class="top"><div class="wrap"><span>JINBA AUTO EXPORT · PHOTO AUDIT</span><span>{audit['generated_on']}</span></div></div><header class="header"><nav class="wrap nav"><a class="brand" href="/admin/login/"><span class="mark">J</span><span>JINBA AUTO<small>PHOTO COVERAGE</small></span></a><a class="quote" href="/admin/login/">返回安全入口</a></nav></header><main class="section alt"><div class="wrap adminwrap"><div class="kicker">REAL PHOTO COMPLETION</div><h1>车辆照片补全清单</h1><p class="adminlead">只上传属于同一台库存车辆、拥有商业展示权限的原始照片。系统不会用生成图、厂家图或其他车辆照片凑数。</p><div class="adminsummary"><div><b>{summary['published_vehicles']}</b><span>已发布车辆</span></div><div><b>{summary['complete_vehicles']}</b><span>完整图集</span></div><div><b>{summary['incomplete_vehicles']}</b><span>待补车辆</span></div><div><b>{summary['missing_to_6']}</b><span>至少缺少照片</span></div></div><div class="adminnote"><h2>上传标准</h2><p>每车6–9张：左前45°主图、正前、侧面、车尾、驾驶舱、后排、仪表／中控、发动机舱或充电口、后备厢。不要上传其他平台水印图片。</p><p>检测到 <b>{summary['duplicate_primary_groups']}</b> 组跨车辆重复主图，已在对应车辆下方标记，需要优先核实。</p><div class="actions"><a class="btn primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new?template=bulk-photo-import.yml" rel="nofollow noopener">一次批量补图最多20台 →</a><a href="/data/photo-completion-queue.csv" download>下载车商补图清单 CSV</a></div></div><div class="photolist">{''.join(items)}</div></div></main></body></html>'''
+def photo_queue_csv(V,audit):
+ vehicles={int(v['id']):v for v in V};stream=io.StringIO();writer=csv.writer(stream)
+ writer.writerow(['stock_id','vehicle_id','vehicle_title','current_photos','missing_to_6','duplicate_primary_with','vin_last6','supplier_source_reference','rights_confirmed'])
+ for row in audit['vehicles']:
+  if row['complete']:continue
+  v=vehicles[row['id']]
+  writer.writerow([v['stock_id'],v['id'],v['title'],row['photo_count'],row['missing_to_6'],' '.join(map(str,row['duplicate_primary_with'])),v.get('vin_last6',''),v.get('photo_source_reference',''),v.get('photo_rights','')])
+ return '\ufeff'+stream.getvalue()
 def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s)
 V=json.loads(DATA.read_text()) if DATA.exists() else extract()
 for v in V:
@@ -164,6 +172,7 @@ write(R/'admin/index.html',admin_page())
 write(R/'admin/login/index.html',admin_page())
 write(R/'admin/photo-coverage/index.html',photo_dashboard(V,photo_audit))
 write(R/'data/photo-audit.json',write_audit)
+write(R/'data/photo-completion-queue.csv',photo_queue_csv(V,photo_audit))
 for old,target in {'about':'/en/','services':'/en/#process','contact':'/en/contact/'}.items():
  write(R/old/'index.html',f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="https://jinbacars.com{target}"><title>Jinba Auto Export</title>')
 published={v['id'] for v in V}
