@@ -41,10 +41,12 @@ jobs:
           test -f admin/index.html
           test -f admin/login/index.html
           test -f admin/photo-coverage/index.html
+          test -f data/photo-completion-queue.csv
           grep -q 'noindex,nofollow,noarchive' admin/index.html
           grep -q 'noindex,nofollow,noarchive' admin/login/index.html
           grep -q "github.actor == 'jian522'" .github/workflows/vehicle-admin.yml
           python3 -c "import json; a=json.load(open('data/photo-audit.json')); v=[x for x in json.load(open('data/vehicles.json')) if x.get('status') == 'published']; assert a['summary']['published_vehicles'] == len(v); assert a['summary']['incomplete_vehicles'] == sum(len(x.get('photos', [])) < 6 for x in v)"
+          python3 -c "import csv,json; a=json.load(open('data/photo-audit.json')); rows=list(csv.DictReader(open('data/photo-completion-queue.csv', encoding='utf-8-sig'))); assert len(rows) == a['summary']['incomplete_vehicles']"
           python3 -m py_compile scripts/build_v2.py scripts/enrich_inventory.py scripts/photo_audit.py scripts/admin_vehicle.py scripts/batch_photo_import.py
       - name: Publish generated pages
         run: |
