@@ -56,7 +56,9 @@ jobs:
           test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -gt 600
           test "$(grep -Rho 'href="/admin/"' en zh ru ar --include='*.html' | wc -l)" -eq 0
           test -f admin/index.html
+          test -f admin/login/index.html
           grep -q 'noindex,nofollow,noarchive' admin/index.html
+          grep -q 'noindex,nofollow,noarchive' admin/login/index.html
       - name: Commit and publish
         env:
           SUMMARY: ${{ steps.vehicle.outputs.summary }}
