@@ -54,7 +54,9 @@ jobs:
           python3 -m py_compile scripts/admin_vehicle.py scripts/build_v2.py
           test "$(grep -Rho 'autoimg.cn' --include='*.html' en zh ru ar | wc -l)" -eq 0
           test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -gt 600
+          test "$(grep -Rho 'href="/admin/"' en zh ru ar --include='*.html' | wc -l)" -eq 0
           test -f admin/index.html
+          grep -q 'noindex,nofollow,noarchive' admin/index.html
       - name: Commit and publish
         env:
           SUMMARY: ${{ steps.vehicle.outputs.summary }}
