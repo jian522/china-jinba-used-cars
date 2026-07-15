@@ -147,6 +147,7 @@ for l in langs:
 write(R/'index.html','<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="https://jinbacars.com/en/"><title>Jinba Auto Export</title>')
 write(R/'cars/index.html','<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/en/cars/"><link rel="canonical" href="https://jinbacars.com/en/cars/">')
 write(R/'admin/index.html',admin_page())
+write(R/'admin/login/index.html',admin_page())
 for old,target in {'about':'/en/','services':'/en/#process','contact':'/en/contact/'}.items():
  write(R/old/'index.html',f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="https://jinbacars.com{target}"><title>Jinba Auto Export</title>')
 published={v['id'] for v in V}
