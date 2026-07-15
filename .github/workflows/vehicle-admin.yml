@@ -4,15 +4,31 @@ on:
   issues:
     types: [opened, edited, reopened]
 
-permissions:
-  contents: write
-  issues: write
+permissions: {}
 
 concurrency:
   group: vehicle-inventory-admin
   cancel-in-progress: false
 
 jobs:
+  reject-unauthorized:
+    if: >-
+      github.actor != 'jian522' &&
+      (contains(github.event.issue.labels.*.name, 'vehicle-admin') ||
+      startsWith(github.event.issue.title, '[新增车辆]') ||
+      startsWith(github.event.issue.title, '[更新车辆]') ||
+      startsWith(github.event.issue.title, '[下架车辆]'))
+    permissions:
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reject unauthorized inventory request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          gh issue close "$ISSUE" --repo "${{ github.repository }}" --comment "⛔ 此车辆管理请求未获授权，未对库存或网站执行任何修改。只有仓库所有者 jian522 可以发布车辆数据。"
+
   update-inventory:
     if: >-
       github.actor == 'jian522' &&
@@ -20,6 +36,9 @@ jobs:
       startsWith(github.event.issue.title, '[新增车辆]') ||
       startsWith(github.event.issue.title, '[更新车辆]') ||
       startsWith(github.event.issue.title, '[下架车辆]'))
+    permissions:
+      contents: write
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
