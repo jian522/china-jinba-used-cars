@@ -1,0 +1,33 @@
+name: 批量补全车辆照片
+description: 一次为最多20台现有车辆上传完整6–9张实拍照片
+title: "[批量补图] "
+labels: ["vehicle-admin", "photo-batch"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        仅仓库所有者 `jian522` 的提交会执行。每组必须是同一台库存车辆的6–9张原始照片。
+        系统会先完整校验整批内容，再自动压缩、查重、替换图库并重建四种语言页面；任一组不合格时整批不发布。
+
+        每台车使用一行组头，随后把该车照片直接拖入文本框：
+        `JB-0008 | primary=1 | vin=A12345 | source=供应商库存号或授权来源`
+        没有VIN后6位时填写 `vin=-`，但 source 必须能追溯到实际供应商或车源编号。
+  - type: textarea
+    id: groups
+    attributes:
+      label: Batch photo groups
+      description: "每批最多20台；每台6–9张；单张不超过15MB且最低800×600。等待所有图片上传完成后再提交。"
+      placeholder: |
+        JB-0008 | primary=1 | vin=A12345 | source=Supplier stock XY-008
+        将JB-0008的6–9张图片拖到这里
+
+        JB-0009 | primary=2 | vin=- | source=Supplier stock XY-009
+        将JB-0009的6–9张图片拖到这里
+    validations: {required: true}
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: 图片授权确认
+      options:
+        - label: 我确认每组照片均属于对应的同一台车辆，拥有商业展示权限，且没有其他平台Logo或水印。
+          required: true
