@@ -17,6 +17,7 @@ jobs:
       (contains(github.event.issue.labels.*.name, 'vehicle-admin') ||
       startsWith(github.event.issue.title, '[新增车辆]') ||
       startsWith(github.event.issue.title, '[更新车辆]') ||
+      startsWith(github.event.issue.title, '[批量补图]') ||
       startsWith(github.event.issue.title, '[下架车辆]'))
     permissions:
       issues: write
@@ -35,6 +36,7 @@ jobs:
       (contains(github.event.issue.labels.*.name, 'vehicle-admin') ||
       startsWith(github.event.issue.title, '[新增车辆]') ||
       startsWith(github.event.issue.title, '[更新车辆]') ||
+      startsWith(github.event.issue.title, '[批量补图]') ||
       startsWith(github.event.issue.title, '[下架车辆]'))
     permissions:
       contents: write
@@ -46,12 +48,19 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check Pillow==12.2.0
       - name: Validate submission and update inventory
         id: vehicle
-        run: python3 scripts/admin_vehicle.py
+        env:
+          LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+        run: |
+          if [[ ",${LABELS}," == *",photo-batch,"* ]] || [[ "${{ github.event.issue.title }}" == "[批量补图]"* ]]; then
+            python3 scripts/batch_photo_import.py
+          else
+            python3 scripts/admin_vehicle.py
+          fi
       - name: Build multilingual website
         run: python3 scripts/build_v2.py
       - name: Validate generated website
         run: |
-          python3 -m py_compile scripts/admin_vehicle.py scripts/build_v2.py scripts/photo_audit.py
+          python3 -m py_compile scripts/admin_vehicle.py scripts/batch_photo_import.py scripts/build_v2.py scripts/photo_audit.py
           test "$(grep -Rho 'autoimg.cn' --include='*.html' en zh ru ar | wc -l)" -eq 0
           test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -gt 600
           test "$(grep -Rho 'href="/admin/"' en zh ru ar --include='*.html' | wc -l)" -eq 0
