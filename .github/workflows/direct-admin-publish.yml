@@ -1,0 +1,42 @@
+name: Publish direct vehicle admin changes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/vehicles.json
+      - uploads/cars/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vehicle-inventory-admin
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.actor == 'jian522'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install image processor
+        run: python3 -m pip install --disable-pip-version-check Pillow==12.2.0
+      - name: Build multilingual website
+        run: python3 scripts/build_v2.py
+      - name: Validate generated website
+        run: |
+          python3 -m py_compile scripts/build_v2.py scripts/photo_audit.py
+          test "$(find en zh ru ar -path '*/cars/*/index.html' | wc -l)" -gt 600
+          test -f admin/index.html
+      - name: Publish generated pages
+        run: |
+          git config user.name "Jinba Inventory Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish direct inventory update [skip ci]"
+          git pull --rebase origin main
+          git push origin main
