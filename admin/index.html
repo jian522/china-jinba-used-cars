@@ -1,1 +1,23 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#071827"><title>授权登录 | Jinba Auto Export</title><link rel="stylesheet" href="/assets/v3.css?v=4"></head><body><div class="top"><div class="wrap"><span>JINBA AUTO EXPORT · PRIVATE ADMIN</span><span>GitHub 身份验证</span></div></div><header class="header"><nav class="wrap nav"><a class="brand" href="/zh/"><span class="mark">J</span><span>JINBA AUTO<small>VEHICLE ADMIN</small></span></a><a class="quote" href="/zh/cars/">返回公开库存</a></nav></header><main class="section alt"><div class="wrap adminwrap"><div class="kicker">AUTHORIZED OWNER ONLY</div><h1>车辆管理授权登录</h1><p class="adminlead">后台不使用网页明文密码。请使用仓库所有者 GitHub 账号 <b>jian522</b> 登录；GitHub 将验证账号和登录安全信息，其他账号无法发布或修改车辆数据。</p><div class="adminnote"><h2>安全状态</h2><ul><li>首页和所有公开页面已移除后台入口</li><li>只有 GitHub 账号 <b>jian522</b> 的管理请求会执行</li><li>其他账号提交的管理请求会被自动拒绝并关闭</li><li>后台页面禁止搜索引擎收录和存档</li></ul><a class="btn primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new/choose" rel="nofollow noopener">使用 GitHub 账号进入车辆管理 →</a></div><div class="adminnote"><h2>照片补全</h2><p>查看每台车现有照片、缺少数量和重复主图风险；可以单车上传，也可以一次批量处理最多20台。</p><div class="actions"><a href="/admin/photo-coverage/">打开照片补全清单 →</a><a class="btn primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new?template=bulk-photo-import.yml" rel="nofollow noopener">批量补图 →</a></div></div></div></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#081a2b">
+  <title>车辆管理后台 | Jinba Auto</title>
+  <link rel="stylesheet" href="/admin/admin.css?v=1">
+</head>
+<body>
+  <header class="bar"><a class="brand" href="/admin/"><span>J</span><b>JINBA AUTO</b><small>车辆管理后台</small></a><nav><a href="/zh/">查看网站</a><a href="https://github.com/jian522/china-jinba-used-cars/actions/workflows/vehicle-admin.yml">发布记录</a></nav></header>
+  <main>
+    <section class="hero"><div><p class="eyebrow">OWNER CONSOLE</p><h1>车辆库存管理</h1><p>搜索车辆、检查照片、更新资料并自动发布四种语言页面。</p></div><a class="button primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new?template=add-vehicle.yml">＋ 新增车辆</a></section>
+    <section class="stats" aria-label="库存统计"><article><span id="total">—</span><small>车辆总数</small></article><article><span id="published">—</span><small>已发布</small></article><article><span id="limited">—</span><small>照片待补</small></article><article><span id="complete">—</span><small>图集完整</small></article></section>
+    <section class="tools"><label><span class="sr-only">搜索车辆</span><input id="search" type="search" placeholder="搜索库存编号、品牌或车型…" autocomplete="off"></label><select id="status" aria-label="状态筛选"><option value="all">全部状态</option><option value="published">已发布</option><option value="unpublished">未发布</option><option value="limited">照片待补</option><option value="complete">图集完整</option></select><a class="button" href="https://github.com/jian522/china-jinba-used-cars/issues/new?template=bulk-photo-import.yml">批量补图</a></section>
+    <div id="notice" class="notice">正在读取车辆数据…</div>
+    <section id="cars" class="cars" aria-live="polite"></section>
+  </main>
+  <footer>只有 GitHub 仓库所有者 jian522 提交的操作会执行。后台不保存密码或访问令牌。</footer>
+  <script src="/admin/app.js?v=1" defer></script>
+</body>
+</html>
