@@ -4,7 +4,7 @@ from datetime import date
 from urllib.parse import quote_plus
 from enrich_inventory import enrich_all
 from photo_audit import build_photo_audit
-from seo_content import MARKETS, MARKET_COPY, GUIDES, CATEGORY_NAMES, UI as SEO_UI
+from seo_content import MARKETS, MARKET_COPY, MARKET_DETAILS, GUIDES, CATEGORY_NAMES, UI as SEO_UI
 
 R=Path(__file__).resolve().parents[1]; DATA=R/'data/vehicles.json'; BASE='https://jinbacars.com';INDEXNOW_KEY='6d9a7c2e4f8b41a39c5d7e0b2f6a8c14'
 langs=['en','zh','ru','ar']
@@ -77,10 +77,14 @@ def directory_page(lang,title,desc,path,links):
  crumb=breadcrumbs(lang,[(T[lang]['home'],f'/{lang}/'),(title,f'/{lang}{path}')])
  return head(lang,f'{title} | Jinba Auto Export',desc,path)+header(lang,path)+f'''<section class="pagehead"><div class="wrap"><h1>{esc(title)}</h1><p>{esc(desc)}</p></div></section><main class="section"><div class="wrap">{crumb}<div class="linkgrid">{items}</div></div></main>'''+footer(lang)
 def market_index(lang):
- ui=SEO_UI[lang];links=[(m['names'][lang],f'/{lang}/markets/{m["slug"]}/',MARKET_COPY[lang]['intro'].format(market=m['names'][lang])) for m in MARKETS]
+ ui=SEO_UI[lang];links=[(m['names'][lang],f'/{lang}/markets/{m["slug"]}/',MARKET_DETAILS.get(m['slug'],{}).get(lang,{}).get('description') or MARKET_COPY[lang]['intro'].format(market=m['names'][lang])) for m in MARKETS]
  return directory_page(lang,ui['markets'],ui['quote'],'/markets/',links)
 def market_page(lang,market,V):
- ui=SEO_UI[lang];name=market['names'][lang];copy=MARKET_COPY[lang];intro=copy['intro'].format(market=name);body=copy['body'].format(market=name);path=f'/markets/{market["slug"]}/';check=''.join(f'<li>{esc(x)}</li>' for x in copy['items']);vehicles=''.join(card(v,lang) for v in V[:12]);crumb=breadcrumbs(lang,[(T[lang]['home'],f'/{lang}/'),(ui['markets'],f'/{lang}/markets/'),(name,f'/{lang}{path}')]);title=f'{T[lang]["inventory"]} — {name}' if lang!='en' else f'Used cars from China to {name}'
+ ui=SEO_UI[lang];name=market['names'][lang];copy=MARKET_COPY[lang];special=MARKET_DETAILS.get(market['slug'],{}).get(lang);path=f'/markets/{market["slug"]}/';crumb=breadcrumbs(lang,[(T[lang]['home'],f'/{lang}/'),(ui['markets'],f'/{lang}/markets/'),(name,f'/{lang}{path}')])
+ if special:
+  title=special['title'];intro=special['intro'];body=special['body'];desc=special['description'];sections=''.join(f'<section><h2>{esc(h)}</h2><p>{esc(p)}</p></section>' for h,p in special['sections']);faqs=''.join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q,a in special['faqs']);faq_schema={'@context':'https://schema.org','@type':'FAQPage','mainEntity':[{'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':a}} for q,a in special['faqs']]};message=quote_plus(special['whatsapp']);preferred=[v for v in V if str(v['id']) in {'14','16','50','154'}];vehicles=''.join(card(v,lang) for v in preferred);check=''.join(f'<li>{esc(x)}</li>' for x in copy['items'])
+  return head(lang,f'{title} | Jinba Auto Export',desc,path)+jsonld(faq_schema)+header(lang,path)+f'''<section class="pagehead"><div class="wrap"><h1>{esc(title)}</h1><p>{esc(intro)}</p></div></section><main><section class="section"><article class="wrap contentpage">{crumb}<p class="lead">{esc(body)}</p>{sections}<div class="checkpanel"><h2>{ui['check']}</h2><ul>{check}</ul><div class="actions"><a class="btn primary" data-track="whatsapp" data-market="iraq" href="https://wa.me/8618079089999?text={message}">WhatsApp →</a><a class="btn" href="/{lang}/contact/?market=iraq&amp;utm_source=organic&amp;utm_medium=landing_page&amp;utm_campaign=iraq">{ui['quote']} →</a></div></div><section><h2>FAQ</h2>{faqs}</section></article></section><section class="section alt"><div class="wrap"><div class="head"><h2>{ui['available']}</h2><a href="/{lang}/cars/?utm_source=organic&amp;utm_medium=landing_page&amp;utm_campaign=iraq">{ui['all']} →</a></div><div class="grid">{vehicles}</div></div></section></main>'''+footer(lang)
+ intro=copy['intro'].format(market=name);body=copy['body'].format(market=name);check=''.join(f'<li>{esc(x)}</li>' for x in copy['items']);vehicles=''.join(card(v,lang) for v in V[:12]);title=f'{T[lang]["inventory"]} — {name}' if lang!='en' else f'Used cars from China to {name}'
  return head(lang,f'{title} | Jinba Auto Export',intro,path)+header(lang,path)+f'''<section class="pagehead"><div class="wrap"><h1>{esc(title)}</h1><p>{esc(intro)}</p></div></section><main><section class="section"><div class="wrap contentpage">{crumb}<p class="lead">{esc(body)}</p><div class="checkpanel"><h2>{ui['check']}</h2><ul>{check}</ul><a class="btn primary" href="/{lang}/contact/?market={market['slug']}">{ui['quote']} →</a></div></div></section><section class="section alt"><div class="wrap"><div class="head"><h2>{ui['available']}</h2><a href="/{lang}/cars/">{ui['all']} →</a></div><div class="grid">{vehicles}</div></div></section></main>'''+footer(lang)
 def brand_index(lang,V):
  ui=SEO_UI[lang];brands=sorted(set(v['brand'] for v in V));links=[]
