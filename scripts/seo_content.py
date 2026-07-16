@@ -6,7 +6,49 @@ MARKETS = [
     {"slug": "kazakhstan", "names": {"en": "Kazakhstan", "zh": "哈萨克斯坦", "ru": "Казахстан", "ar": "كازاخستان"}},
     {"slug": "uzbekistan", "names": {"en": "Uzbekistan", "zh": "乌兹别克斯坦", "ru": "Узбекистан", "ar": "أوزبكستان"}},
     {"slug": "nigeria", "names": {"en": "Nigeria", "zh": "尼日利亚", "ru": "Нигерия", "ar": "نيجيريا"}},
+    {"slug": "iraq", "names": {"en": "Iraq", "zh": "伊拉克", "ru": "Ирак", "ar": "العراق"}},
 ]
+
+MARKET_DETAILS = {
+    "iraq": {
+        "en": {
+            "title": "Used Cars from China to Iraq",
+            "description": "Browse petrol sedans and SUVs for export from China to Iraq. Request vehicle condition, export documents and a shipping quotation to your destination.",
+            "intro": "Source export-ready used cars from China for Iraq with a clear stock number, current vehicle details and a written destination quotation.",
+            "body": "Jinba Auto Export helps Iraqi buyers compare available petrol sedans and SUVs, confirm the vehicle condition and coordinate export documents and international transport. Tell us your preferred model, budget and destination so we can prepare a relevant shortlist instead of a generic price list.",
+            "sections": [["Vehicles suited to Iraqi buyers", "Our current inventory includes petrol automatic sedans and SUVs from Chinese brands such as Chery, Changan, Haval and Jetour. Availability changes, so confirm the stock number and condition before payment."], ["Quotation and shipping", "Your written quotation can separate the vehicle price, inland transport, export handling and international freight. Share the Iraqi destination city or receiving port so the route can be checked."], ["Checks before ordering", "Import, customs and registration rules can change. Confirm model-year eligibility, specifications, duties and local registration with the Iraqi authority or a licensed customs broker before purchase."]],
+            "faqs": [["Can I import a used Chinese car to Iraq?", "Eligibility depends on current Iraqi import, customs and registration requirements. Confirm the exact model year and specification before payment."], ["Which vehicles are available for Iraq?", "The live inventory page shows currently published vehicles. Send the stock number on WhatsApp to reconfirm availability, photos and condition."], ["Does the displayed price include shipping to Iraq?", "No. Website prices are indicative vehicle prices unless a written quotation explicitly includes freight, insurance, duties or destination charges."], ["What information is needed for a quotation?", "Send the vehicle or stock number, budget, destination city or port, and preferred shipping method if known."]],
+            "whatsapp": "Hello Jinba Auto Export, I found your Iraq market page. Please send available cars and a shipping quotation to Iraq."
+        },
+        "zh": {
+            "title": "中国二手车出口伊拉克",
+            "description": "查看适合出口伊拉克的中国汽油轿车和SUV，获取车辆车况、出口文件及目的地运输报价。",
+            "intro": "面向伊拉克采购中国出口二手车，按库存编号核实车辆资料，并获取清晰的目的地书面报价。",
+            "body": "金霸汽车出口协助伊拉克买家对比在售汽油轿车和SUV、确认车况，并协调出口文件与国际运输。请提供意向车型、预算和目的地，我们会按需求推荐车辆，而不是只发送通用价目表。",
+            "sections": [["适合伊拉克市场的车型", "当前库存包括奇瑞、长安、哈弗和捷途等中国品牌的汽油自动挡轿车与SUV。库存随时变化，付款前须重新确认库存编号和车况。"], ["报价与运输", "书面报价可分别列明车价、国内运输、出口操作和国际运费。请提供伊拉克目的城市或接收港口，以便核对路线。"], ["订车前核实", "进口、海关和注册政策可能调整。采购前请向伊拉克主管部门或持牌清关代理确认车型年份、配置、税费和当地上牌要求。"]],
+            "faqs": [["中国二手车可以进口到伊拉克吗？", "是否符合条件取决于伊拉克当前进口、海关和注册规定，付款前需要按具体年份和配置确认。"], ["哪些车辆适合发往伊拉克？", "网站实时库存页展示当前已发布车辆。将库存编号发到WhatsApp，可重新确认库存、照片和车况。"], ["网页价格是否包含运到伊拉克的费用？", "不包含。除非书面报价明确列入，否则网页价格只是车辆参考价，不含运费、保险、关税和目的地费用。"], ["询价需要提供什么？", "请发送车型或库存编号、预算、伊拉克目的城市或港口，以及已知的运输方式。"]],
+            "whatsapp": "你好，我从伊拉克市场页面联系。请发送适合出口伊拉克的现车和运输报价。"
+        },
+        "ru": {
+            "title": "Подержанные автомобили из Китая в Ирак",
+            "description": "Бензиновые седаны и SUV для экспорта из Китая в Ирак. Запросите данные о состоянии, документах и стоимости доставки.",
+            "intro": "Выбирайте подержанные автомобили из Китая для Ирака по номеру склада и получайте письменный расчет до места назначения.",
+            "body": "Jinba Auto Export помогает покупателям из Ирака сравнить бензиновые седаны и SUV, подтвердить состояние машины и согласовать экспортные документы и перевозку. Сообщите модель, бюджет и пункт назначения, чтобы получить подходящую подборку.",
+            "sections": [["Автомобили для рынка Ирака", "В наличии есть бензиновые седаны и SUV с автоматической коробкой марок Chery, Changan, Haval и Jetour. До оплаты подтвердите номер, наличие и состояние."], ["Расчет и доставка", "В письменном расчете можно отдельно указать цену автомобиля, перевозку по Китаю, экспортное оформление и международный фрахт. Сообщите город или порт назначения в Ираке."], ["Проверка до заказа", "Импортные, таможенные и регистрационные правила могут меняться. Уточните допустимый год, комплектацию, пошлины и регистрацию у органов Ирака или лицензированного брокера."]],
+            "faqs": [["Можно ли ввезти подержанный китайский автомобиль в Ирак?", "Это зависит от действующих требований Ирака. До оплаты подтвердите допустимость конкретного года и комплектации."], ["Какие автомобили доступны для Ирака?", "На странице склада показаны опубликованные автомобили. Отправьте номер в WhatsApp для проверки наличия, фото и состояния."], ["Включена ли доставка в цену на сайте?", "Нет. Цена является ориентировочной и не включает фрахт, страхование, пошлины и расходы назначения без письменного подтверждения."], ["Что нужно для расчета?", "Укажите модель или номер склада, бюджет, город или порт назначения и желаемый способ доставки."]],
+            "whatsapp": "Здравствуйте! Я нашел страницу для Ирака. Пришлите доступные автомобили и расчет доставки в Ирак."
+        },
+        "ar": {
+            "title": "سيارات مستعملة من الصين إلى العراق",
+            "description": "تصفح سيارات سيدان وSUV بنزين للتصدير من الصين إلى العراق، واطلب تقرير الحالة ووثائق التصدير وعرض الشحن.",
+            "intro": "اشترِ سيارات مستعملة جاهزة للتصدير من الصين إلى العراق مع رقم مخزون واضح وبيانات حالية وعرض مكتوب للوجهة.",
+            "body": "تساعد Jinba Auto Export المشترين في العراق على مقارنة سيارات السيدان وSUV المتاحة، وتأكيد حالة السيارة، وتنسيق وثائق التصدير والنقل الدولي. أرسل الطراز والميزانية والوجهة لنجهز قائمة مناسبة بدلاً من قائمة أسعار عامة.",
+            "sections": [["سيارات مناسبة للمشترين في العراق", "يشمل المخزون الحالي سيارات سيدان وSUV بنزين أوتوماتيك من علامات صينية مثل Chery وChangan وHaval وJetour. يتغير التوفر، لذلك أكد رقم المخزون والحالة قبل الدفع."], ["العرض والشحن", "يمكن أن يفصل العرض المكتوب سعر السيارة والنقل داخل الصين وإجراءات التصدير والشحن الدولي. أرسل مدينة أو ميناء الوصول في العراق للتحقق من المسار."], ["التحقق قبل الطلب", "قد تتغير قواعد الاستيراد والجمارك والتسجيل. تحقق من سنة الصنع والمواصفات والرسوم والتسجيل لدى الجهة العراقية أو مخلص جمركي مرخص قبل الشراء."]],
+            "faqs": [["هل يمكن استيراد سيارة صينية مستعملة إلى العراق؟", "تعتمد الأهلية على المتطلبات العراقية الحالية. تحقق من سنة الصنع والمواصفات الدقيقة قبل الدفع."], ["ما السيارات المتاحة للعراق؟", "تعرض صفحة المخزون السيارات المنشورة حالياً. أرسل رقم المخزون عبر واتساب لإعادة تأكيد التوفر والصور والحالة."], ["هل يشمل السعر الشحن إلى العراق؟", "لا. السعر المعروض استرشادي ولا يشمل الشحن أو التأمين أو الرسوم أو تكاليف الوجهة إلا إذا نص العرض المكتوب على ذلك."], ["ما المعلومات المطلوبة لعرض السعر؟", "أرسل الطراز أو رقم المخزون والميزانية ومدينة أو ميناء الوصول وطريقة الشحن إن كانت معروفة."]],
+            "whatsapp": "مرحباً Jinba Auto Export، وجدت صفحة سوق العراق. أرسلوا السيارات المتاحة وعرض الشحن إلى العراق."
+        }
+    }
+}
 
 UI = {
     "en": {"markets":"Export markets","brands":"Browse by brand","categories":"Vehicle categories","guides":"Buying guides","available":"Available vehicles","check":"What to confirm before ordering","quote":"Request a destination quotation","related":"Related resources","updated":"Information updated","all":"View inventory"},
@@ -87,4 +129,3 @@ CATEGORY_NAMES = {
     "petrol":{"en":"Petrol vehicles","zh":"汽油车","ru":"Бензиновые автомобили","ar":"سيارات البنزين"},
     "diesel":{"en":"Diesel vehicles","zh":"柴油车","ru":"Дизельные автомобили","ar":"سيارات الديزل"},
 }
-
