@@ -4,3 +4,4 @@ Sitemap: https://jinbacars.com/sitemap.xml
 Sitemap: https://jinbacars.com/sitemap-images.xml
 
 Disallow: /admin
+Disallow: /data

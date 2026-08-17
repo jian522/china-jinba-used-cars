@@ -1432,7 +1432,8 @@
       "en": "Stock JB-0034: 2025 Zeekr X 5-seat Long Range Edition with 2,000 km indicated mileage. Confirm availability, condition and export quotation before payment.",
       "ru": "Автомобиль JB-0034: Zeekr X 5-seat большой запас хода версия, 2025 год, заявленный пробег 2,000 км. Наличие, состояние и экспортная цена подтверждаются до оплаты.",
       "ar": "المخزون JB-0034: Zeekr X 5-seat مدى طويل فئة موديل 2025، والعداد المعروض 2,000 كم. يجب تأكيد التوفر والحالة وعرض التصدير قبل الدفع."
-    }
+    },
+    "seats": 5
   },
   {
     "id": 35,
@@ -3741,7 +3742,8 @@
       "en": "Stock JB-0090: 2026 NIO ES8 6-seat Executive Luxury with 1,000 km indicated mileage. Confirm availability, condition and export quotation before payment.",
       "ru": "Автомобиль JB-0090: NIO ES8 6-seat Executive люкс, 2026 год, заявленный пробег 1,000 км. Наличие, состояние и экспортная цена подтверждаются до оплаты.",
       "ar": "المخزون JB-0090: NIO ES8 6-seat Executive فاخر موديل 2026، والعداد المعروض 1,000 كم. يجب تأكيد التوفر والحالة وعرض التصدير قبل الدفع."
-    }
+    },
+    "seats": 6
   },
   {
     "id": 91,
@@ -3864,7 +3866,8 @@
       "en": "Stock JB-0093: 2020 NIO ES8 415KM Signature 6-seat Edition with 109,000 km indicated mileage. Confirm availability, condition and export quotation before payment.",
       "ru": "Автомобиль JB-0093: NIO ES8 415KM Signature 6-seat версия, 2020 год, заявленный пробег 109,000 км. Наличие, состояние и экспортная цена подтверждаются до оплаты.",
       "ar": "المخزون JB-0093: NIO ES8 415KM Signature 6-seat فئة موديل 2020، والعداد المعروض 109,000 كم. يجب تأكيد التوفر والحالة وعرض التصدير قبل الدفع."
-    }
+    },
+    "seats": 6
   },
   {
     "id": 94,
@@ -4069,7 +4072,8 @@
       "en": "Stock JB-0098: 2024 Zeekr 009 7-seat Aisle Edition 4WD 108kWh with 8,000 km indicated mileage. Confirm availability, condition and export quotation before payment.",
       "ru": "Автомобиль JB-0098: Zeekr 009 7-seat Aisle версия 4WD 108kWh, 2024 год, заявленный пробег 8,000 км. Наличие, состояние и экспортная цена подтверждаются до оплаты.",
       "ar": "المخزون JB-0098: Zeekr 009 7-seat Aisle فئة 4WD 108kWh موديل 2024، والعداد المعروض 8,000 كم. يجب تأكيد التوفر والحالة وعرض التصدير قبل الدفع."
-    }
+    },
+    "seats": 7
   },
   {
     "id": 99,
@@ -4110,7 +4114,8 @@
       "en": "Stock JB-0099: 2024 Zeekr 009 6-seat Executive 4WD 108kWh with 5,900 km indicated mileage. Confirm availability, condition and export quotation before payment.",
       "ru": "Автомобиль JB-0099: Zeekr 009 6-seat Executive 4WD 108kWh, 2024 год, заявленный пробег 5,900 км. Наличие, состояние и экспортная цена подтверждаются до оплаты.",
       "ar": "المخزون JB-0099: Zeekr 009 6-seat Executive 4WD 108kWh موديل 2024، والعداد المعروض 5,900 كم. يجب تأكيد التوفر والحالة وعرض التصدير قبل الدفع."
-    }
+    },
+    "seats": 6
   },
   {
     "id": 100,
@@ -6594,7 +6599,7 @@
     "year": "2025",
     "mileage": "5200 km",
     "fuel": "纯电",
-    "transmission": "手动",
+    "transmission": "自动",
     "brand": "BYD",
     "model": "海狮05 EV 520KM旗舰智航版",
     "photos": [

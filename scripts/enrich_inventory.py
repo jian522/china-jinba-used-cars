@@ -67,7 +67,7 @@ PHRASES = {
     "领潮风尚版": "Trend Style", "青奢风潮版": "Youth Luxury", "激擎耀世版": "Performance",
     "创酷型": "Cool", "智慧鲸悦版": "Smart Comfort", "东方曜": "Oriental Edition",
     "自动揽星版": "Automatic Premium", "新蓝鲸": "Blue Whale", "超混优越版": "Super Hybrid Premium",
-    "超混优��版": "Super Hybrid Premium", "超混优": "Super Hybrid", "高能版": "High Power",
+    "超混优": "Super Hybrid", "高能版": "High Power",
     "激光雷达旗舰型": "LiDAR Flagship", "线激光雷达": "-line LiDAR", "国VI": "China VI",
     "签名": "Signature", "过道版": "Aisle Edition", "全景": "Panoramic", "版": "Edition",
     "款": "", "型": "", "座": "-seat", "第": "", "代": "Gen",
@@ -123,23 +123,52 @@ def localized_title(en: str, lang: str) -> str:
     return tidy(text)
 
 
+def _parse_amount(raw: str, multiplier_words: tuple[str, ...] = ("万",)) -> int:
+    """Parse a numeric amount, honouring Chinese 万 (10,000) units.
+
+    Handles "$12,800", "12800 km" and "12.8万" alike; returns 0 when unparsable.
+    """
+    text = str(raw or "")
+    scaled = 1
+    for word in multiplier_words:
+        if word in text:
+            scaled = 10000
+            break
+    digits = re.sub(r"[^\d.]", "", text)
+    if not digits:
+        return 0
+    return int(float(digits) * scaled)
+
+
 def inferred_fields(vehicle: dict) -> None:
     title = vehicle.get("title", "")
     vehicle.setdefault("stock_id", f"JB-{int(vehicle['id']):04d}")
     vehicle.setdefault("status", "published" if int(vehicle["id"]) > 6 else "unpublished")
-    vehicle["price_usd"] = int(re.sub(r"\D", "", vehicle.get("price", "")) or 0)
-    vehicle["mileage_km"] = int(re.sub(r"\D", "", vehicle.get("mileage", "")) or 0)
+    vehicle["price_usd"] = _parse_amount(vehicle.get("price", ""))
+    vehicle["mileage_km"] = _parse_amount(vehicle.get("mileage", ""))
     engine = re.search(r"\b\d\.\d[TL]\b", title, re.I)
     vehicle.setdefault("engine", engine.group(0).upper() if engine else "")
     if not vehicle.get("drive"):
         vehicle["drive"] = "4WD" if "四驱" in title else "RWD" if "后驱" in title else "2WD" if "两驱" in title else ""
+    # Electric and plug-in hybrid vehicles never have a manual gearbox; the
+    # raw feed sometimes carries "手动" from a template, so normalize it.
+    if vehicle.get("fuel") in ("纯电", "插混") and vehicle.get("transmission") in ("手动", ""):
+        vehicle["transmission"] = "自动"
     seats = re.search(r"(\d{1,2})座", title)
     if seats and not vehicle.get("seats"):
         vehicle["seats"] = int(seats.group(1))
+    else:
+        cn_seats = {"五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
+        for word, num in cn_seats.items():
+            if f"{word}座" in title:
+                vehicle["seats"] = num
+                break
     for key in ("body_type", "color", "production_date", "registration_date", "vin_last6", "emission", "departure_port"):
         vehicle.setdefault(key, "")
     vehicle.setdefault("trade_term", "FOB")
-    vehicle["photo_status"] = "complete" if 6 <= len(vehicle.get("photos", [])) <= 10 else "limited"
+    # A complete photo set is 6+ original photos; keep the threshold aligned
+    # with photo_audit.py so the two never disagree.
+    vehicle["photo_status"] = "complete" if len(vehicle.get("photos", [])) >= 6 else "limited"
 
 
 def descriptions(vehicle: dict, titles: dict[str, str]) -> dict[str, str]:

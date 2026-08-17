@@ -7,10 +7,12 @@ MARKETS = [
     {"slug": "uzbekistan", "names": {"en": "Uzbekistan", "zh": "乌兹别克斯坦", "ru": "Узбекистан", "ar": "أوزبكستان"}},
     {"slug": "nigeria", "names": {"en": "Nigeria", "zh": "尼日利亚", "ru": "Нигерия", "ar": "نيجيريا"}},
     {"slug": "iraq", "names": {"en": "Iraq", "zh": "伊拉克", "ru": "Ирак", "ar": "العراق"}},
+    {"slug": "russia", "names": {"en": "Russia", "zh": "俄罗斯", "ru": "Россия", "ar": "روسيا"}},
 ]
 
 MARKET_DETAILS = {
     "iraq": {
+        "preferred_ids": ["14", "16", "50", "154"],
         "en": {
             "title": "Used Cars from China to Iraq",
             "description": "Browse petrol sedans and SUVs for export from China to Iraq. Request vehicle condition, export documents and a shipping quotation to your destination.",
