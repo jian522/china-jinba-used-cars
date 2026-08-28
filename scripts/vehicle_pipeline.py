@@ -264,7 +264,7 @@ def merge_records(
             "photo_rights": "dealer-provided" if not row.get("source") else str(row["source"]).strip(),
         }
         existing = by_stock.get(item["stock_id"])
-        if existing:
+        if existing and not existing.get("_placeholder"):
             existing.update(base)
             updated += 1
         else:
@@ -308,20 +308,19 @@ def main() -> None:
     id_by_stock = {
         str(v.get("stock_id", "")).upper(): int(v["id"]) for v in vehicles
     }
-    for item in items:  # 新车预分配 id
+    # 为批次内新车预分配 id：登记映射 + 落盘占位（merge_records 用完整数据覆盖占位）
+    for item in items:
         if item["stock_id"] not in id_by_stock:
-            id_by_stock[item["stock_id"]] = next_vehicle_id(vehicles) + sum(
-                1 for x in items if x["stock_id"] not in id_by_stock
-            ) if False else id_by_stock.get(item["stock_id"], next_vehicle_id(vehicles))
-            vehicles.append({"id": id_by_stock[item["stock_id"]], "stock_id": item["stock_id"]})
+            id_by_stock[item["stock_id"]] = next_vehicle_id(vehicles)
+            vehicles.append({"id": id_by_stock[item["stock_id"]], "stock_id": item["stock_id"], "_placeholder": True})
 
     log("[3/4] 规范化图片（≤1600px JPEG q82）")
     photos_by_stock = import_photos(items, id_by_stock)
 
     log("[4/4] 合并数据")
     added, updated = merge_records(items, photos_by_stock, vehicles)
-    # 清掉占位记录（merge 时已有完整数据）
-    vehicles[:] = [v for v in vehicles if len(v) > 3]
+    # 防御性清理：任何未被 merge_records 覆盖的占位记录不应留在数据库
+    vehicles[:] = [v for v in vehicles if not v.get("_placeholder")]
     DATA.write_text(json.dumps(vehicles, ensure_ascii=False, indent=2) + "\n")
     rebuild_image_index(vehicles)
 
