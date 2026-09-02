@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#071827"/>
+      <stop offset="1" stop-color="#0d2944"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="440" rx="18" fill="url(#sbg)"/>
+  <circle cx="560" cy="60" r="140" fill="rgba(255,107,44,0.10)"/>
+  <circle cx="80" cy="400" r="110" fill="rgba(251,191,36,0.07)"/>
+  <text x="48" y="66" font-size="26" font-weight="900" fill="#ffffff">出口市场覆盖</text>
+  <text x="48" y="94" font-size="13" fill="rgba(255,255,255,0.65)" letter-spacing="3">DESTINATION MARKETS · MIDDLE EAST / AFRICA / CENTRAL ASIA / RUSSIA</text>
+  <rect x="48" y="110" width="56" height="4" rx="2" fill="#ff6b2c"/>
+  <!-- 8 市场格 -->
+  <g font-size="15" font-weight="800">
+    <g transform="translate(48,150)">
+      <rect width="264" height="72" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="20" y="32" fill="#ffffff">阿联酋 UAE</text>
+      <text x="20" y="54" font-size="11" fill="rgba(255,255,255,0.55)" font-weight="500">Jebel Ali 滚装/集装箱</text>
+      <text x="238" y="44" font-size="18" fill="#fbbf24" text-anchor="end">→</text>
+    </g>
+    <g transform="translate(328,150)">
+      <rect width="264" height="72" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="20" y="32" fill="#ffffff">沙特阿拉伯 KSA</text>
+      <text x="20" y="54" font-size="11" fill="rgba(255,255,255,0.55)" font-weight="500">Jeddah / Dammam</text>
+      <text x="238" y="44" font-size="18" fill="#fbbf24" text-anchor="end">→</text>
+    </g>
+    <g transform="translate(48,238)">
+      <rect width="264" height="72" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="20" y="32" fill="#ffffff">哈萨克斯坦 KZ</text>
+      <text x="20" y="54" font-size="11" fill="rgba(255,255,255,0.55)" font-weight="500">阿拉木图 · 陆运/铁路</text>
+      <text x="238" y="44" font-size="18" fill="#fbbf24" text-anchor="end">→</text>
+    </g>
+    <g transform="translate(328,238)">
+      <rect width="264" height="72" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="20" y="32" fill="#ffffff">乌兹别克斯坦 UZ</text>
+      <text x="20" y="54" font-size="11" fill="rgba(255,255,255,0.55)" font-weight="500">塔什干 · 铁路联运</text>
+      <text x="238" y="44" font-size="18" fill="#fbbf24" text-anchor="end">→</text>
+    </g>
+    <g transform="translate(48,326)">
+      <rect width="264" height="72" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="20" y="32" fill="#ffffff">尼日利亚 NG</text>
+      <text x="20" y="54" font-size="11" fill="rgba(255,255,255,0.55)" font-weight="500">Lagos 滚装直航</text>
+      <text x="238" y="44" font-size="18" fill="#fbbf24" text-anchor="end">→</text>
+    </g>
+    <g transform="translate(328,326)">
+      <rect width="264" height="72" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="20" y="32" fill="#ffffff">俄罗斯 RU</text>
+      <text x="20" y="54" font-size="11" fill="rgba(255,255,255,0.55)" font-weight="500">莫斯科 · 陆运/铁路</text>
+      <text x="238" y="44" font-size="18" fill="#fbbf24" text-anchor="end">→</text>
+    </g>
+  </g>
+</svg>
