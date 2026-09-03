@@ -104,7 +104,7 @@
       "/uploads/cars/3/7003_9.jpg"
     ],
     "stock_id": "JB-0003",
-    "status": "unpublished",
+    "status": "published",
     "price_usd": 13875,
     "mileage_km": 11000,
     "engine": "",
@@ -154,7 +154,7 @@
       "/uploads/cars/4/7004_9.jpg"
     ],
     "stock_id": "JB-0004",
-    "status": "unpublished",
+    "status": "published",
     "price_usd": 11917,
     "mileage_km": 27000,
     "engine": "",
