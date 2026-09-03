@@ -32,12 +32,13 @@ BASE = f'https://api.github.com/repos/{REPO}'
 BRANCH = 'main'
 CACHE = ROOT / '.workbuddy' / 'push_api_cache.json'
 DIFF = ROOT / '.workbuddy' / 'push_diff.json'
+TREE_CACHE = ROOT / '.workbuddy' / 'push_api_trees'
 
 EXCLUDE_PREFIX = ('.workbuddy/', 'ZCode_Workspacecacheuv/', '.git/')
 WORKERS = 6
 TIMEOUT = 60
-MAX_RETRY = 4
-TREE_CHUNK = 400
+MAX_RETRY = 7
+TREE_CHUNK = 100
 
 
 def get_token():
@@ -72,7 +73,9 @@ def api(path, method='GET', payload=None):
                 return json.loads(r.read())
         except urllib.error.HTTPError as e:
             last = f'{e.code} {e.read().decode("utf-8", "ignore")[:150]}'
-            if e.code in (403, 429) or e.code >= 500:
+            # 建树接口在服务端过载时会返回 422 "request timed out"，
+            # 这不是客户端错误，重试即可（建树是幂等的）。
+            if e.code in (403, 422, 429) or e.code >= 500:
                 time.sleep(10 * (attempt + 1))
                 continue
             raise RuntimeError(f'{method} {path} -> {last}')
@@ -100,9 +103,17 @@ def local_tree():
 
 def remote_tree(base_commit):
     tree_sha = api(f'/git/commits/{base_commit}')['tree']['sha']
-    t = api(f'/git/trees/{tree_sha}?recursive=1')
-    if t.get('truncated'):
-        raise RuntimeError('远程树被截断，需分目录递归')
+    # 递归树响应约 1.1MB，GitHub 偶发 IncompleteRead。按 tree sha 缓存，
+    # 这样重试 finish 时不必重拉，也能从上次失败中恢复。
+    TREE_CACHE.mkdir(parents=True, exist_ok=True)
+    cached = TREE_CACHE / f'{tree_sha}.json'
+    if cached.exists():
+        t = json.loads(cached.read_text(encoding='utf-8'))
+    else:
+        t = api(f'/git/trees/{tree_sha}?recursive=1')
+        if t.get('truncated'):
+            raise RuntimeError('远程树被截断，需分目录递归')
+        cached.write_text(json.dumps(t), encoding='utf-8')
     return {x['path']: (x['mode'], x['sha']) for x in t['tree']
             if x['type'] == 'blob' and not x['path'].startswith(EXCLUDE_PREFIX)}
 
