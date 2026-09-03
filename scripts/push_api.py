@@ -136,6 +136,23 @@ def load_cache():
     return {}
 
 
+def valid_cache(new):
+    """校验断点续传缓存是否仍可信。
+
+    缓存原本按「路径」命中，而内容变了路径不变时，会沿用旧内容的 blob sha，
+    导致改动被静默丢弃（2026-09-03 首页改版 4 个 html 白推一次即此因）。
+    因此缓存条目必须记录当时的本地 git blob sha，只有与当前一致才可用。
+    """
+    cache = load_cache()
+    keep, dropped = {}, 0
+    for p, item in cache.items():
+        if isinstance(item, dict) and p in new and item.get('git') == new[p][1]:
+            keep[p] = item
+        else:
+            dropped += 1
+    return keep, dropped
+
+
 def save_cache(c):
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     CACHE.write_text(json.dumps(c, ensure_ascii=False), encoding='utf-8')
@@ -152,12 +169,13 @@ def upload_one(rel):
 
 def cmd_plan():
     base, target, new, added, modified, removed = load_diff_cached(refresh=True)
-    cache = load_cache()
+    cache, dropped = valid_cache(new)
     uploads = added + modified
     pending = [p for p in uploads if p not in cache]
     print(f'base   = {base[:12]}   target = {target[:12]}')
     print(f'新增 {len(added)}  修改 {len(modified)}  删除 {len(removed)}  共需上传 {len(uploads)}')
-    print(f'已缓存 {len(uploads) - len(pending)}  待传 {len(pending)}')
+    print(f'已缓存(内容校验通过) {len(uploads) - len(pending)}  待传 {len(pending)}'
+          f'  失效缓存 {dropped}')
     if pending:
         mb = sum((ROOT / p).stat().st_size for p in pending) / 1048576
         print(f'待传体积 {mb:.1f} MB')
@@ -167,9 +185,11 @@ def cmd_plan():
 
 def cmd_upload(n=150):
     base, target, new, added, modified, removed = load_diff_cached()
-    cache = load_cache()
+    cache, dropped = valid_cache(new)
     uploads = added + modified
     pending = [p for p in uploads if p not in cache][:n]
+    if dropped:
+        print(f'  丢弃失效缓存 {dropped} 条（内容已变或旧格式）', flush=True)
     if not pending:
         print('本批无待传文件（全部已缓存）')
         return
@@ -184,7 +204,7 @@ def cmd_upload(n=150):
             rel = futs[f]
             try:
                 r, sha = f.result()
-                cache[r] = sha
+                cache[r] = {'sha': sha, 'git': new[r][1]}
                 done += 1
             except Exception as e:
                 failed.append((rel, str(e)[:80]))
@@ -203,13 +223,14 @@ def cmd_upload(n=150):
 
 def cmd_finish(msg=None):
     base, target, new, added, modified, removed = load_diff_cached()
-    cache = load_cache()
+    cache, dropped = valid_cache(new)
     uploads = added + modified
     missing = [p for p in uploads if p not in cache]
     if missing:
         print(f'还有 {len(missing)} 个文件未上传，请先跑 upload')
         return
-    entries = [{'path': p, 'mode': new[p][0], 'type': 'blob', 'sha': cache[p]} for p in uploads]
+    entries = [{'path': p, 'mode': new[p][0], 'type': 'blob', 'sha': cache[p]['sha']}
+               for p in uploads]
     old_modes = remote_tree(base)
     for p in removed:
         entries.append({'path': p, 'mode': old_modes[p][0], 'type': 'blob', 'sha': None})
