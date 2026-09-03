@@ -44,7 +44,7 @@ DATA = ROOT / "data" / "vehicles.json"
 IMAGES_INDEX = ROOT / "assets" / "vehicle-images.json"
 UPLOADS = ROOT / "uploads" / "cars"
 ALLOWED_IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
-PHOTO_MIN, PHOTO_MAX = 6, 9
+PHOTO_MIN, PHOTO_MAX = 6, 10  # 展示标准：外观+内饰 6-10 张，首图为前脸或左前 45°
 REQUIRED_FIELDS = ["stock_id", "title", "brand", "year", "mileage_km", "price_usd", "fuel"]
 
 # 常见燃料/变速箱别名归一化（车商写法 → 站点标准值）
@@ -178,6 +178,8 @@ def validate_batch(batch_dir: Path, rows: list[dict], vehicles: list[dict]) -> l
         )
         if not PHOTO_MIN <= len(photos) <= PHOTO_MAX:
             die(f"{ctx}: 图片数量 {len(photos)} 张，要求 {PHOTO_MIN}-{PHOTO_MAX} 张")
+        # 首图角度无法自动判定，仅提醒人工确认（规范见 imports/车商索图与拍摄规范.md）
+        log(f"  [确认] {ctx}: 首图 = {photos[0].name}，须为前脸正视或左前 45°（人工确认）")
         for p in photos:
             fp = image_fingerprint(p)
             if fp in seen_fp:
