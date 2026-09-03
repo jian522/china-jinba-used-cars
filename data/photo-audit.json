@@ -1,10 +1,10 @@
 {
   "generated_on": "2026-09-03",
   "summary": {
-    "published_vehicles": 209,
-    "complete_vehicles": 89,
+    "published_vehicles": 211,
+    "complete_vehicles": 91,
     "incomplete_vehicles": 120,
-    "available_photos": 1229,
+    "available_photos": 1249,
     "missing_to_6": 197,
     "missing_to_9": 656,
     "duplicate_primary_groups": 20
@@ -2426,6 +2426,28 @@
       "missing_to_9": 0,
       "complete": true,
       "primary": "/uploads/cars/215/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 3,
+      "stock_id": "JB-0003",
+      "title": "BYD 宋PLUS新能源 DM-i 112KM 尊荣型",
+      "photo_count": 10,
+      "missing_to_6": 0,
+      "missing_to_9": 0,
+      "complete": true,
+      "primary": "/uploads/cars/3/primary.jpg",
+      "duplicate_primary_with": []
+    },
+    {
+      "id": 4,
+      "stock_id": "JB-0004",
+      "title": "Chery 瑞虎8 PLUS 冠军版 290TGDI DCT豪享版 5座",
+      "photo_count": 10,
+      "missing_to_6": 0,
+      "missing_to_9": 0,
+      "complete": true,
+      "primary": "/uploads/cars/4/primary.jpg",
       "duplicate_primary_with": []
     },
     {
