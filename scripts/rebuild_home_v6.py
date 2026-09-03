@@ -17,7 +17,8 @@ published_n = len(pub_list)
 photo_n = sum(len(v['photos']) for v in pub_list)
 
 # ---------------- 首页6张车卡 ----------------
-CARD_IDS = [60, 144, 13, 9, 7, 8]  # 海豹/宋PLUS/瑞虎8L/哈弗H6/MG ZS/捷途X70
+# 前3台对齐设计稿主推实车：秦PLUS/哈弗H6/唐DM-i；后3台保留原精选（海豹/宋PLUS/瑞虎8L）
+CARD_IDS = [11, 9, 12, 60, 144, 13]
 
 # ---------------- 出口排行榜（9席，公开行业数据 + 本站在售现货） ----------------
 # 数据源：Autostat/ Izvestia 2025（俄罗斯TOP车型）、特易资讯白皮书2024-2025（市场结构）、
@@ -294,7 +295,7 @@ def build(lang):
         for lg in ['en', 'zh', 'ru', 'ar'])
 
     dirattr = ' rtl' if lang == 'ar' else ''
-    html = f'''<!doctype html><html lang="{"ar" if lang=="ar" else ("zh-CN" if lang=="zh" else lang)}" dir="{"rtl" if lang=="ar" else "ltr"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071827"><meta name="google-site-verification" content="hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0"><title>{esc(d["title"])}</title><meta name="description" content="{esc(d["desc"])}"><meta name="keywords" content="used cars china, export cars, chinese cars, BYD, Chery, Haval, auto export, used vehicle export, used car from china"><meta property="og:site_name" content="Jinba Auto Export"><meta property="og:locale" content="{lang}"><meta property="og:title" content="{esc(d["title"])}"><meta property="og:description" content="{esc(d["desc"])}"><meta property="og:type" content="website"><meta property="og:url" content="https://jinbacars.com{N[lang]}"><meta property="og:image" content="https://jinbacars.com/uploads/cars/60/primary.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(d["title"])}"><meta name="twitter:description" content="{esc(d["desc"])}"><meta name="twitter:image" content="https://jinbacars.com/uploads/cars/60/primary.jpg"><link rel="canonical" href="https://jinbacars.com{N[lang]}"><link rel="alternate" hreflang="en" href="https://jinbacars.com/en/"><link rel="alternate" hreflang="zh" href="https://jinbacars.com/zh/"><link rel="alternate" hreflang="ru" href="https://jinbacars.com/ru/"><link rel="alternate" hreflang="ar" href="https://jinbacars.com/ar/"><link rel="alternate" hreflang="x-default" href="https://jinbacars.com/en/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="Jinba Auto Export Inventory" href="/feed.xml"><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://wa.me"><link rel="stylesheet" href="/assets/v5.css?v=2"><style>
+    html = f'''<!doctype html><html lang="{"ar" if lang=="ar" else ("zh-CN" if lang=="zh" else lang)}" dir="{"rtl" if lang=="ar" else "ltr"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d0d0d"><meta name="google-site-verification" content="hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0"><title>{esc(d["title"])}</title><meta name="description" content="{esc(d["desc"])}"><meta name="keywords" content="used cars china, export cars, chinese cars, BYD, Chery, Haval, auto export, used vehicle export, used car from china"><meta property="og:site_name" content="Jinba Auto Export"><meta property="og:locale" content="{lang}"><meta property="og:title" content="{esc(d["title"])}"><meta property="og:description" content="{esc(d["desc"])}"><meta property="og:type" content="website"><meta property="og:url" content="https://jinbacars.com{N[lang]}"><meta property="og:image" content="https://jinbacars.com/uploads/cars/60/primary.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(d["title"])}"><meta name="twitter:description" content="{esc(d["desc"])}"><meta name="twitter:image" content="https://jinbacars.com/uploads/cars/60/primary.jpg"><link rel="canonical" href="https://jinbacars.com{N[lang]}"><link rel="alternate" hreflang="en" href="https://jinbacars.com/en/"><link rel="alternate" hreflang="zh" href="https://jinbacars.com/zh/"><link rel="alternate" hreflang="ru" href="https://jinbacars.com/ru/"><link rel="alternate" hreflang="ar" href="https://jinbacars.com/ar/"><link rel="alternate" hreflang="x-default" href="https://jinbacars.com/en/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="Jinba Auto Export Inventory" href="/feed.xml"><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://wa.me"><link rel="stylesheet" href="/assets/v5.css?v=2"><style>
 /* 首页新增模块样式 —— 排行榜/资质/FAQ */
 .rankgrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}}
 .rankcard{{display:flex;gap:var(--s4);background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:var(--s4);box-shadow:var(--shadow-sm);transition:var(--transition);align-items:center}}
@@ -324,7 +325,113 @@ def build(lang):
 .ranknote{{text-align:center;font-size:12px;color:var(--text-muted);margin-top:var(--s5)}}
 @media(max-width:1024px){{.rankgrid{{grid-template-columns:1fr 1fr}}.trustgrid{{grid-template-columns:1fr}}}}
 @media(max-width:768px){{.rankgrid{{grid-template-columns:1fr}}}}
-</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-3SVJ44HVKC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-3SVJ44HVKC');</script><script defer src="/assets/v4.js?v=2"></script><script type="application/ld+json">{{"@context": "https://schema.org", "@type": "Organization", "name": "Jinba Auto Export", "url": "https://jinbacars.com", "email": "jian5222@gmail.com", "telephone": "+86 180 7908 9999", "address": {{"@type": "PostalAddress", "addressLocality": "Xinyu", "addressRegion": "Jiangxi", "addressCountry": "CN"}}}}</script></head><body{dirattr}><header class="header"><nav class="wrap nav"><a class="brand" href="{N[lang]}"><span class="mark">J</span><span>JINBA AUTO<small>USED CAR EXPORT</small></span></a><button class="hamb" onclick="toggleNav(this)" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">☰</button><div class="navlinks" id="navlinks"><a href="{N[lang]}">{d["nav"][0]}</a><a href="{N[lang]}cars/">{d["nav"][1]}</a><a href="{N[lang]}about/">{d["nav"][2]}</a><a href="{N[lang]}#process">{d["nav"][3]}</a><a href="{N[lang]}contact/">{d["nav"][4]}</a><span class="langs">{langs}</span><a class="quote" href="https://wa.me/8618079089999">{d["nav_quote"]}</a></div></nav></header><main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{d["eyebrow"]}</div><h1>{esc(d["h1a"])}<em>{esc(d["h1em"])}</em></h1><p>{esc(d["sub"])}</p><div class="actions"><a class="btn primary" href="{N[lang]}cars/">{d["btn_browse"]}</a><a class="btn secondary" data-track="whatsapp" href="https://wa.me/8618079089999">{d["btn_advisor"]}</a></div></div><div class="hero-img"><img width="720" height="540" fetchpriority="high" src="{hero_img}" alt="Jinba Auto Export vehicle"></div></div></section><div class="wrap stats"><div class="stat"><b>{published_n}</b><span>{d["stat_inv"]}</span></div><div class="stat"><b>{photo_n}</b><span>{d["stat_photo"]}</span></div><div class="stat"><b>4</b><span>{d["stat_lang"]}</span></div><div class="stat"><b>1-to-1</b><span>{d["stat_11"]}</span></div></div><section class="section"><div class="wrap"><div class="head"><div><div class="kicker">{d["inv_kicker"]}</div><h2>{d["inv_h2"]}</h2></div><a href="{N[lang]}cars/">{d["inv_more"]}</a></div><div class="grid">{cards}</div></div></section><section class="section alt"><div class="wrap"><div class="head"><div><div class="kicker">{d["rank_kicker"]}</div><h2>{d["rank_h2"]}</h2></div></div><p class="lead" style="max-width:860px">{esc(d["rank_sub"])}</p><div class="rankgrid">{rank_html(lang)}</div><div class="ranknote">{esc(d["rank_src"])}</div></div></section><section class="section"><div class="wrap"><div class="head"><div><div class="kicker">{d["trust_kicker"]}</div><h2>{d["trust_h2"]}</h2></div><a href="{N[lang]}about/">{d["f_about"]} →</a></div><div class="trustgrid"><div class="trustcard"><img loading="lazy" decoding="async" width="640" height="440" src="/images/certs/certificates.svg" alt="Jinba Auto Export certificates"></div><div class="trustcard"><img loading="lazy" decoding="async" width="640" height="440" src="/images/certs/export-docs.svg" alt="Export documentation"></div><div class="trustcard"><img loading="lazy" decoding="async" width="640" height="440" src="/images/certs/markets-board.svg" alt="Destination markets"></div></div></div></section><section class="section alt"><div class="wrap"><div class="head"><div><div class="kicker">{d["mk_kicker"]}</div><h2>{d["mk_h2"]}</h2></div><a href="{N[lang]}markets/">{d["mk_h2"]} →</a></div><div class="linkgrid compact">{market_links}</div></div></section><section class="section" id="process"><div class="wrap"><div class="head"><div><div class="kicker">{d["pc_kicker"]}</div><h2>{d["pc_h2"]}</h2></div></div><div class="steps">{steps}</div></div></section><section class="section"><div class="wrap"><div class="head"><div><div class="kicker">{d["faq_kicker"]}</div><h2>{d["faq_h2"]}</h2></div></div><div class="faqwrap">{faq_html(lang)}</div></div></section><section class="section"><div class="wrap cta"><div><h2>{esc(d["cta_h2"])}</h2><p>{esc(d["cta_p"])}</p></div><a class="btn" data-track="whatsapp" href="https://wa.me/8618079089999">{esc(d["cta_btn"])}</a></div></section></main><footer><div class="wrap"><div class="footergrid"><div><h4>JINBA AUTO EXPORT</h4><p>{d["f_addr"]}</p></div><div><h4>{d["f_inv"]}</h4><a href="{N[lang]}cars/">{d["f_all"]}</a><a href="{N[lang]}brands/">{d["f_brand"]}</a><a href="{N[lang]}categories/">{d["f_cat"]}</a></div><div><h4>{d["f_co"]}</h4><a href="{N[lang]}about/">{d["f_about"]}</a><a href="{N[lang]}contact/">{d["f_contact"]}</a><a href="{N[lang]}markets/">{d["f_mk"]}</a><a href="{N[lang]}guides/">{d["f_guide"]}</a><a href="{N[lang]}privacy/">{d["f_priv"]}</a><a href="{N[lang]}terms/">{d["f_term"]}</a></div><div><h4>{"اتصل بنا" if lang=="ar" else ("Контакты" if lang=="ru" else ("Contact" if lang=="en" else "联系我们"))}</h4><a href="https://wa.me/8618079089999">WhatsApp: +86 180 7908 9999</a><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div></div><div class="copyright">{d["f_copy"]}</div></div></footer></body></html>'''
+
+/* ============ dark-workshop-neon 主题（Ardot 设计稿 2026-09-03） ============
+   深炭黑 #141414 + 荧光青柠 #9EFF00 + 浅灰米白 #F4F5F2 交替分区
+   Noto Sans SC 大标题；0~4px 硬朗圆角；仅覆盖首页，不动全站 v5.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
+.home{{--primary:#141414;--primary-light:#1e1e1e;--primary-deep:#0d0d0d;
+--accent:#9EFF00;--accent-hover:#8CE600;
+--accent-soft:rgba(158,255,0,.12);
+--glow:0 4px 18px rgba(158,255,0,.28);
+--bg:#F4F5F2;--bg-card:#fff;
+--text:#141414;--text-muted:#6b7280;--border:#e5e7e2;
+--radius-sm:2px;--radius:4px;--radius-lg:4px;--radius-xl:4px;
+--font:'Noto Sans SC',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+--transition:all .22s ease}}
+.home body{{background:var(--bg)}}
+/* Header：暗底 */
+.home .header{{background:rgba(13,13,13,.96);border-bottom:1px solid #262626}}
+.home .brand{{color:#fff}}
+.home .brand small{{color:#8a8f85}}
+.home .mark{{background:var(--accent);color:#141414;border-radius:2px;box-shadow:var(--glow)}}
+.home .navlinks a{{color:#d4d8cf}}
+.home .navlinks a:hover{{color:var(--accent)}}
+.home .langs{{border-left-color:#2e2e2e}}
+.home .langs a{{color:#8a8f85}}
+.home .langs a:hover,.home .langs a.active{{background:var(--accent-soft);color:var(--accent)}}
+.home .quote{{background:var(--accent);color:#141414 !important;border-radius:2px;box-shadow:var(--glow)}}
+.home .quote:hover{{box-shadow:0 6px 20px rgba(158,255,0,.4)}}
+.home .hamb{{color:#fff}}
+/* Hero：深炭黑 + 荧光青柠强调 + 斜纹工场质感 */
+.home .hero{{background:
+radial-gradient(ellipse 70% 55% at 75% -10%,rgba(158,255,0,.14),transparent),
+repeating-linear-gradient(-45deg,rgba(255,255,255,.016) 0 2px,transparent 2px 26px),
+linear-gradient(165deg,#0d0d0d 0%,#141414 60%,#1a1f10 100%)}}
+.home .hero::before{{background-image:
+linear-gradient(rgba(158,255,0,.05) 1px,transparent 1px),
+linear-gradient(90deg,rgba(158,255,0,.05) 1px,transparent 1px);
+mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);
+-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent)}}
+.home .eyebrow{{color:var(--accent);letter-spacing:3.2px}}
+.home .hero h1{{font-weight:900;letter-spacing:-1px}}
+.home .hero h1 em{{color:var(--accent)}}
+.home .btn.primary{{background:var(--accent);color:#141414;border-radius:2px;box-shadow:var(--glow)}}
+.home .btn.primary:hover{{box-shadow:0 8px 24px rgba(158,255,0,.42);transform:translateY(-2px)}}
+.home .btn.secondary{{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25);border-radius:2px}}
+.home .btn.secondary:hover{{background:rgba(158,255,0,.12);border-color:rgba(158,255,0,.55)}}
+.home .hero-img img{{border-radius:4px}}
+.home .hero-img::before{{border-color:rgba(158,255,0,.4);border-radius:4px}}
+/* 数据条：暗底青柠数字 */
+.home .stats{{background:#141414;border-radius:0;box-shadow:none;border-bottom:1px solid #262626;margin-top:0;padding:var(--s8) 0}}
+.home .stat{{border-right-color:#2e2e2e}}
+.home .stat b{{color:var(--accent)}}
+.home .stat span{{color:#8a8f85}}
+/* 米白分区 + 暗底分区交替 */
+.home .section.alt{{background:#141414}}
+.home .section.alt .kicker{{color:var(--accent)}}
+.home .section.alt .head h2{{color:#fff}}
+.home .section.alt .head a{{color:#141414;background:var(--accent);border-radius:2px;font-weight:700}}
+.home .section.alt .head a:hover{{background:var(--accent-hover);color:#141414}}
+.home .section.alt .lead{{color:#b9beb2}}
+.home .section.alt .ranknote{{color:#8a8f85}}
+/* 库存车卡：硬朗 4px 圆角，价格荧光青柠 */
+.home .card{{border-radius:4px;border-color:var(--border)}}
+.home .card:hover{{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,20,20,.16)}}
+.home .card .photo{{border-radius:4px 4px 0 0}}
+.home .card h3{{font-weight:800}}
+.home .card .price{{color:#4d7c00}}
+.home .card .more{{color:#141414}}
+.home .card:hover .photo img{{transform:scale(1.05)}}
+/* 排行卡（暗底分区）：暗面板 + 青柠名次与价格 */
+.home .rankcard{{background:#1e1e1e;border:1px solid #2e2e2e;border-radius:4px;box-shadow:none}}
+.home .rankcard:hover{{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.5);border-color:rgba(158,255,0,.5)}}
+.home .rank-no{{color:var(--accent)}}
+.home .rank-body h3{{color:#fff}}
+.home .rank-body p{{color:#b9beb2}}
+.home .rank-foot .price{{color:var(--accent)}}
+.home .rank-foot .src{{color:#8a8f85}}
+.home .rank-photo{{background:#141414}}
+/* 资质卡：亮区白卡不变，仅圆角收紧 */
+.home .trustcard{{border-radius:4px}}
+/* 市场卡（暗底分区）：暗面板 */
+.home .section.alt .linkcard{{background:#1e1e1e;border:1px solid #2e2e2e;border-radius:4px;box-shadow:none}}
+.home .section.alt .linkcard:hover{{border-color:rgba(158,255,0,.5);box-shadow:0 10px 26px rgba(0,0,0,.5)}}
+.home .section.alt .linkcard h3{{color:#fff}}
+.home .section.alt .linkcard > span{{color:var(--accent)}}
+/* 流程步骤 */
+.home .step{{border-radius:4px}}
+.home .step:hover{{border-color:rgba(158,255,0,.45)}}
+.home .step::after{{color:#4d7c00}}
+.home .step h3{{font-weight:800}}
+/* FAQ（亮区） */
+.home .faqitem{{border-radius:4px}}
+.home .faqitem summary{{font-weight:800}}
+.home .faqitem summary::after{{color:#4d7c00}}
+/* CTA：荧光青柠底 + 炭黑字（设计稿主视觉） */
+.home .cta{{background:var(--accent);border-radius:4px}}
+.home .cta h2{{color:#141414}}
+.home .cta p{{color:rgba(20,20,20,.72)}}
+.home .cta .btn{{background:#141414;color:var(--accent);border-radius:2px;box-shadow:0 10px 26px rgba(20,20,20,.3)}}
+/* Footer：纯暗底 + 大号水印 */
+.home footer{{background:#0d0d0d;position:relative;overflow:hidden}}
+.home footer a:hover{{color:var(--accent)}}
+.home .footergrid{{position:relative;z-index:1}}
+.home .copyright{{position:relative;z-index:1}}
+.home .footer-wm{{position:absolute;right:-10px;bottom:-34px;font-size:120px;font-weight:900;letter-spacing:6px;color:rgba(255,255,255,.035);line-height:1;white-space:nowrap;pointer-events:none;user-select:none;font-family:'Noto Sans SC',sans-serif}}
+[dir=rtl] .home .footer-wm,.home [dir=rtl] .footer-wm{{right:auto;left:-10px}}
+@media(max-width:768px){{.home .footer-wm{{font-size:64px;bottom:-18px}}}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-3SVJ44HVKC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-3SVJ44HVKC');</script><script defer src="/assets/v4.js?v=2"></script><script type="application/ld+json">{{"@context": "https://schema.org", "@type": "Organization", "name": "Jinba Auto Export", "url": "https://jinbacars.com", "email": "jian5222@gmail.com", "telephone": "+86 180 7908 9999", "address": {{"@type": "PostalAddress", "addressLocality": "Xinyu", "addressRegion": "Jiangxi", "addressCountry": "CN"}}}}</script></head><body class="home"{dirattr}><header class="header"><nav class="wrap nav"><a class="brand" href="{N[lang]}"><span class="mark">J</span><span>JINBA AUTO<small>USED CAR EXPORT</small></span></a><button class="hamb" onclick="toggleNav(this)" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">☰</button><div class="navlinks" id="navlinks"><a href="{N[lang]}">{d["nav"][0]}</a><a href="{N[lang]}cars/">{d["nav"][1]}</a><a href="{N[lang]}about/">{d["nav"][2]}</a><a href="{N[lang]}#process">{d["nav"][3]}</a><a href="{N[lang]}contact/">{d["nav"][4]}</a><span class="langs">{langs}</span><a class="quote" href="https://wa.me/8618079089999">{d["nav_quote"]}</a></div></nav></header><main><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">{d["eyebrow"]}</div><h1>{esc(d["h1a"])}<em>{esc(d["h1em"])}</em></h1><p>{esc(d["sub"])}</p><div class="actions"><a class="btn primary" href="{N[lang]}cars/">{d["btn_browse"]}</a><a class="btn secondary" data-track="whatsapp" href="https://wa.me/8618079089999">{d["btn_advisor"]}</a></div></div><div class="hero-img"><img width="720" height="540" fetchpriority="high" src="{hero_img}" alt="Jinba Auto Export vehicle"></div></div></section><div class="wrap stats"><div class="stat"><b>{published_n}</b><span>{d["stat_inv"]}</span></div><div class="stat"><b>{photo_n}</b><span>{d["stat_photo"]}</span></div><div class="stat"><b>4</b><span>{d["stat_lang"]}</span></div><div class="stat"><b>1-to-1</b><span>{d["stat_11"]}</span></div></div><section class="section"><div class="wrap"><div class="head"><div><div class="kicker">{d["inv_kicker"]}</div><h2>{d["inv_h2"]}</h2></div><a href="{N[lang]}cars/">{d["inv_more"]}</a></div><div class="grid">{cards}</div></div></section><section class="section alt"><div class="wrap"><div class="head"><div><div class="kicker">{d["rank_kicker"]}</div><h2>{d["rank_h2"]}</h2></div></div><p class="lead" style="max-width:860px">{esc(d["rank_sub"])}</p><div class="rankgrid">{rank_html(lang)}</div><div class="ranknote">{esc(d["rank_src"])}</div></div></section><section class="section"><div class="wrap"><div class="head"><div><div class="kicker">{d["trust_kicker"]}</div><h2>{d["trust_h2"]}</h2></div><a href="{N[lang]}about/">{d["f_about"]} →</a></div><div class="trustgrid"><div class="trustcard"><img loading="lazy" decoding="async" width="640" height="440" src="/images/certs/certificates.svg" alt="Jinba Auto Export certificates"></div><div class="trustcard"><img loading="lazy" decoding="async" width="640" height="440" src="/images/certs/export-docs.svg" alt="Export documentation"></div><div class="trustcard"><img loading="lazy" decoding="async" width="640" height="440" src="/images/certs/markets-board.svg" alt="Destination markets"></div></div></div></section><section class="section alt"><div class="wrap"><div class="head"><div><div class="kicker">{d["mk_kicker"]}</div><h2>{d["mk_h2"]}</h2></div><a href="{N[lang]}markets/">{d["mk_h2"]} →</a></div><div class="linkgrid compact">{market_links}</div></div></section><section class="section" id="process"><div class="wrap"><div class="head"><div><div class="kicker">{d["pc_kicker"]}</div><h2>{d["pc_h2"]}</h2></div></div><div class="steps">{steps}</div></div></section><section class="section"><div class="wrap"><div class="head"><div><div class="kicker">{d["faq_kicker"]}</div><h2>{d["faq_h2"]}</h2></div></div><div class="faqwrap">{faq_html(lang)}</div></div></section><section class="section"><div class="wrap cta"><div><h2>{esc(d["cta_h2"])}</h2><p>{esc(d["cta_p"])}</p></div><a class="btn" data-track="whatsapp" href="https://wa.me/8618079089999">{esc(d["cta_btn"])}</a></div></section></main><footer><div class="wrap"><div class="footergrid"><div><h4>JINBA AUTO EXPORT</h4><p>{d["f_addr"]}</p></div><div><h4>{d["f_inv"]}</h4><a href="{N[lang]}cars/">{d["f_all"]}</a><a href="{N[lang]}brands/">{d["f_brand"]}</a><a href="{N[lang]}categories/">{d["f_cat"]}</a></div><div><h4>{d["f_co"]}</h4><a href="{N[lang]}about/">{d["f_about"]}</a><a href="{N[lang]}contact/">{d["f_contact"]}</a><a href="{N[lang]}markets/">{d["f_mk"]}</a><a href="{N[lang]}guides/">{d["f_guide"]}</a><a href="{N[lang]}privacy/">{d["f_priv"]}</a><a href="{N[lang]}terms/">{d["f_term"]}</a></div><div><h4>{"اتصل بنا" if lang=="ar" else ("Контакты" if lang=="ru" else ("Contact" if lang=="en" else "联系我们"))}</h4><a href="https://wa.me/8618079089999">WhatsApp: +86 180 7908 9999</a><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div></div><div class="copyright">{d["f_copy"]}</div><div class="footer-wm" aria-hidden="true">JINBA CARS</div></div></footer></body></html>'''
     out = ROOT / lang / 'index.html'
     out.write_text(html, encoding='utf-8')
     print('written', out, len(html))
