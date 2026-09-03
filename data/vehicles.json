@@ -327,7 +327,6 @@
     "model": "捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
     "photos": [
       "/uploads/cars/8/primary.jpg",
-      "/uploads/cars/8/8_photo_2.jpg",
       "/uploads/cars/8/8_photo_3.jpg",
       "/uploads/cars/8/8_photo_4.jpg",
       "/uploads/cars/8/8_photo_5.jpg",
@@ -348,7 +347,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Jetour 捷途X70 PLUS 冠军版 1.5T DCT冠军MAX+ 5座",
       "en": "Jetour X70 PLUS Champion Edition 1.5T DCT Champion MAX+ 5-seat",
@@ -374,11 +373,9 @@
     "model": "哈弗H6 第三代 1.5T 自动两驱Max",
     "photos": [
       "/uploads/cars/9/primary.jpg",
-      "/uploads/cars/9/9_photo_2.jpg",
       "/uploads/cars/9/9_photo_3.jpg",
       "/uploads/cars/9/9_photo_4.jpg",
-      "/uploads/cars/9/9_photo_5.jpg",
-      "/uploads/cars/9/9_photo_6.jpg"
+      "/uploads/cars/9/9_photo_5.jpg"
     ],
     "stock_id": "JB-0009",
     "status": "published",
@@ -394,7 +391,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗H6 第三代 1.5T 自动两驱Max",
       "en": "Haval H6 3rd Gen 1.5T Automatic 2WD Max",
@@ -422,7 +419,6 @@
       "/uploads/cars/10/primary.jpg",
       "/uploads/cars/10/10_photo_2.jpg",
       "/uploads/cars/10/10_photo_3.jpg",
-      "/uploads/cars/10/10_photo_4.jpg",
       "/uploads/cars/10/10_photo_5.jpg",
       "/uploads/cars/10/10_photo_6.jpg"
     ],
@@ -440,7 +436,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海鸥 智驾版 305km 活力版",
       "en": "BYD Seagull Smart Driving 305km Vitality",
@@ -466,10 +462,8 @@
     "model": "秦PLUS DM-i 智驾版 55KM超越型",
     "photos": [
       "/uploads/cars/11/primary.jpg",
-      "/uploads/cars/11/11_photo_2.jpg",
       "/uploads/cars/11/11_photo_3.jpg",
       "/uploads/cars/11/11_photo_4.jpg",
-      "/uploads/cars/11/11_photo_5.jpg",
       "/uploads/cars/11/11_photo_6.jpg"
     ],
     "stock_id": "JB-0011",
@@ -486,7 +480,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 秦PLUS DM-i 智驾版 55KM超越型",
       "en": "BYD Qin PLUS DM-i Smart Driving 55KM Beyond",
@@ -559,7 +553,6 @@
     "photos": [
       "/uploads/cars/13/primary.jpg",
       "/uploads/cars/13/13_photo_2.jpg",
-      "/uploads/cars/13/13_photo_3.jpg",
       "/uploads/cars/13/13_photo_4.jpg",
       "/uploads/cars/13/13_photo_5.jpg",
       "/uploads/cars/13/13_photo_6.jpg"
@@ -579,7 +572,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 瑞虎8L 2.0T 两驱尊贵版 5座",
       "en": "Chery Tiggo 8L 2.0T 2WD Premium 5-seat",
@@ -653,8 +646,6 @@
       "/uploads/cars/15/primary.jpg",
       "/uploads/cars/15/15_photo_2.jpg",
       "/uploads/cars/15/15_photo_3.jpg",
-      "/uploads/cars/15/15_photo_4.jpg",
-      "/uploads/cars/15/15_photo_5.jpg",
       "/uploads/cars/15/15_photo_6.jpg"
     ],
     "stock_id": "JB-0015",
@@ -671,7 +662,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 欧萌达 1.5T CVT畅行版",
       "en": "Chery Omoda 1.5T CVT Comfort",
@@ -697,10 +688,8 @@
     "model": "哈弗大狗 1.5T DCT边牧版",
     "photos": [
       "/uploads/cars/16/primary.jpg",
-      "/uploads/cars/16/16_photo_2.jpg",
       "/uploads/cars/16/16_photo_3.jpg",
       "/uploads/cars/16/16_photo_4.jpg",
-      "/uploads/cars/16/16_photo_5.jpg",
       "/uploads/cars/16/16_photo_6.jpg"
     ],
     "stock_id": "JB-0016",
@@ -717,7 +706,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗大狗 1.5T DCT边牧版",
       "en": "Haval 1.5T DCT Border Collie Edition",
@@ -795,7 +784,6 @@
       "/uploads/cars/18/primary.jpg",
       "/uploads/cars/18/18_photo_2.jpg",
       "/uploads/cars/18/18_photo_3.jpg",
-      "/uploads/cars/18/18_photo_4.jpg",
       "/uploads/cars/18/18_photo_5.jpg",
       "/uploads/cars/18/18_photo_6.jpg"
     ],
@@ -814,7 +802,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗H9 2.0T 汽油四驱尊享型 5座",
       "en": "Haval H9 2.0T Petrol 4WD Premium 5-seat",
@@ -842,7 +830,6 @@
       "/uploads/cars/19/primary.jpg",
       "/uploads/cars/19/19_photo_2.jpg",
       "/uploads/cars/19/19_photo_3.jpg",
-      "/uploads/cars/19/19_photo_4.jpg",
       "/uploads/cars/19/19_photo_5.jpg",
       "/uploads/cars/19/19_photo_6.jpg"
     ],
@@ -860,7 +847,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG7 1.5T DCT至美优雅版",
       "en": "MG MG7 1.5T DCT Elegant",
@@ -886,10 +873,7 @@
     "model": "名爵ZS 180DVVT 自动全球百万918版",
     "photos": [
       "/uploads/cars/20/primary.jpg",
-      "/uploads/cars/20/20_photo_2.jpg",
       "/uploads/cars/20/20_photo_3.jpg",
-      "/uploads/cars/20/20_photo_4.jpg",
-      "/uploads/cars/20/20_photo_5.jpg",
       "/uploads/cars/20/20_photo_6.jpg"
     ],
     "stock_id": "JB-0020",
@@ -906,7 +890,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG 名爵ZS 180DVVT 自动全球百万918版",
       "en": "MG ZS 180DVVT Automatic Global 918 Edition",
@@ -935,8 +919,7 @@
       "/uploads/cars/21/21_photo_2.jpg",
       "/uploads/cars/21/21_photo_3.jpg",
       "/uploads/cars/21/21_photo_4.jpg",
-      "/uploads/cars/21/21_photo_5.jpg",
-      "/uploads/cars/21/21_photo_6.jpg"
+      "/uploads/cars/21/21_photo_5.jpg"
     ],
     "stock_id": "JB-0021",
     "status": "published",
@@ -952,7 +935,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 炮 2.0T乘用版自动汽油四驱尊享型GW4C20B",
       "en": "Great Wall Poer 2.0T Passenger Automatic Petrol 4WD Premium GW4C20B",
@@ -1027,8 +1010,7 @@
       "/uploads/cars/23/23_photo_2.jpg",
       "/uploads/cars/23/23_photo_3.jpg",
       "/uploads/cars/23/23_photo_4.jpg",
-      "/uploads/cars/23/23_photo_5.jpg",
-      "/uploads/cars/23/23_photo_6.jpg"
+      "/uploads/cars/23/23_photo_5.jpg"
     ],
     "stock_id": "JB-0023",
     "status": "published",
@@ -1044,7 +1026,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 荣威RX5 1.5T 超感精英版",
       "en": "Roewe RX5 1.5T Elite",
@@ -1070,9 +1052,7 @@
     "model": "飞凡R7 进阶版",
     "photos": [
       "/uploads/cars/24/primary.jpg",
-      "/uploads/cars/24/24_photo_2.jpg",
       "/uploads/cars/24/24_photo_3.jpg",
-      "/uploads/cars/24/24_photo_4.jpg",
       "/uploads/cars/24/24_photo_5.jpg",
       "/uploads/cars/24/24_photo_6.jpg"
     ],
@@ -1090,7 +1070,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 飞凡R7 进阶版",
       "en": "Roewe Rising Auto R7 Advanced",
@@ -1119,7 +1099,6 @@
       "/uploads/cars/25/25_photo_2.jpg",
       "/uploads/cars/25/25_photo_3.jpg",
       "/uploads/cars/25/25_photo_4.jpg",
-      "/uploads/cars/25/25_photo_5.jpg",
       "/uploads/cars/25/25_photo_6.jpg"
     ],
     "stock_id": "JB-0025",
@@ -1136,7 +1115,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Jetour 捷途旅行者 2.0T 四驱穿越PRO",
       "en": "Jetour 2.0T 4WD Adventure PRO",
@@ -1211,7 +1190,6 @@
       "/uploads/cars/27/27_photo_2.jpg",
       "/uploads/cars/27/27_photo_3.jpg",
       "/uploads/cars/27/27_photo_4.jpg",
-      "/uploads/cars/27/27_photo_5.jpg",
       "/uploads/cars/27/27_photo_6.jpg"
     ],
     "stock_id": "JB-0027",
@@ -1228,7 +1206,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔11 Ultra 增程版",
       "en": "Avatr Avatr 11 Ultra Range-Extended",
@@ -1255,7 +1233,6 @@
     "photos": [
       "/uploads/cars/28/primary.jpg",
       "/uploads/cars/28/28_photo_2.jpg",
-      "/uploads/cars/28/28_photo_3.jpg",
       "/uploads/cars/28/28_photo_4.jpg",
       "/uploads/cars/28/28_photo_5.jpg",
       "/uploads/cars/28/28_photo_6.jpg"
@@ -1274,7 +1251,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔12 改款 Max纯电版",
       "en": "Avatr Avatr 12 Facelift Max EV",
@@ -1300,11 +1277,8 @@
     "model": "蔚来ES6 75kWh",
     "photos": [
       "/uploads/cars/29/primary.jpg",
-      "/uploads/cars/29/29_photo_2.jpg",
-      "/uploads/cars/29/29_photo_3.jpg",
       "/uploads/cars/29/29_photo_4.jpg",
-      "/uploads/cars/29/29_photo_5.jpg",
-      "/uploads/cars/29/29_photo_6.jpg"
+      "/uploads/cars/29/29_photo_5.jpg"
     ],
     "stock_id": "JB-0029",
     "status": "published",
@@ -1320,7 +1294,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来ES6 75kWh",
       "en": "NIO ES6 75kWh",
@@ -1346,7 +1320,6 @@
     "model": "蔚来ET5 75kWh",
     "photos": [
       "/uploads/cars/30/primary.jpg",
-      "/uploads/cars/30/30_photo_2.jpg",
       "/uploads/cars/30/30_photo_3.jpg",
       "/uploads/cars/30/30_photo_4.jpg",
       "/uploads/cars/30/30_photo_5.jpg",
@@ -1366,7 +1339,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来ET5 75kWh",
       "en": "NIO ET5 75kWh",
@@ -1393,10 +1366,8 @@
     "photos": [
       "/uploads/cars/31/primary.jpg",
       "/uploads/cars/31/31_photo_2.jpg",
-      "/uploads/cars/31/31_photo_3.jpg",
       "/uploads/cars/31/31_photo_4.jpg",
-      "/uploads/cars/31/31_photo_5.jpg",
-      "/uploads/cars/31/31_photo_6.jpg"
+      "/uploads/cars/31/31_photo_5.jpg"
     ],
     "stock_id": "JB-0031",
     "status": "published",
@@ -1412,7 +1383,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏P7+ 长续航 Max",
       "en": "XPeng P7+ Long Range Max",
@@ -1441,7 +1412,6 @@
       "/uploads/cars/32/32_photo_2.jpg",
       "/uploads/cars/32/32_photo_3.jpg",
       "/uploads/cars/32/32_photo_4.jpg",
-      "/uploads/cars/32/32_photo_5.jpg",
       "/uploads/cars/32/32_photo_6.jpg"
     ],
     "stock_id": "JB-0032",
@@ -1458,7 +1428,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏MONA M03 600 超长续航 Max",
       "en": "XPeng MONA M03 600 Extended Range Max",
@@ -1487,7 +1457,6 @@
       "/uploads/cars/33/33_photo_2.jpg",
       "/uploads/cars/33/33_photo_3.jpg",
       "/uploads/cars/33/33_photo_4.jpg",
-      "/uploads/cars/33/33_photo_5.jpg",
       "/uploads/cars/33/33_photo_6.jpg"
     ],
     "stock_id": "JB-0033",
@@ -1504,7 +1473,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Zeekr 极氪001 YOU版 100kWh 四驱",
       "en": "Zeekr 001 YOU Edition 100kWh 4WD",
@@ -1532,7 +1501,6 @@
       "/uploads/cars/34/primary.jpg",
       "/uploads/cars/34/34_photo_2.jpg",
       "/uploads/cars/34/34_photo_3.jpg",
-      "/uploads/cars/34/34_photo_4.jpg",
       "/uploads/cars/34/34_photo_5.jpg",
       "/uploads/cars/34/34_photo_6.jpg"
     ],
@@ -1550,7 +1518,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Zeekr 极氪X 五座长续航版",
       "en": "Zeekr X 5-seat Long Range Edition",
@@ -1578,10 +1546,7 @@
     "photos": [
       "/uploads/cars/35/primary.jpg",
       "/uploads/cars/35/35_photo_2.jpg",
-      "/uploads/cars/35/35_photo_3.jpg",
-      "/uploads/cars/35/35_photo_4.jpg",
-      "/uploads/cars/35/35_photo_5.jpg",
-      "/uploads/cars/35/35_photo_6.jpg"
+      "/uploads/cars/35/35_photo_5.jpg"
     ],
     "stock_id": "JB-0035",
     "status": "published",
@@ -1597,7 +1562,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 宋Pro新能源 第二代 DM-i 115KM超越型",
       "en": "BYD Song Pro 2nd Gen DM-i 115KM Beyond",
@@ -1671,7 +1636,6 @@
       "/uploads/cars/37/primary.jpg",
       "/uploads/cars/37/37_photo_2.jpg",
       "/uploads/cars/37/37_photo_3.jpg",
-      "/uploads/cars/37/37_photo_4.jpg",
       "/uploads/cars/37/37_photo_5.jpg",
       "/uploads/cars/37/37_photo_6.jpg"
     ],
@@ -1690,7 +1654,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 瑞虎8 PRO 冠军版 290T 两驱巅峰版 7座",
       "en": "Chery Tiggo 8 PRO Champion Edition 290T 2WD Edition 7-seat",
@@ -1763,10 +1727,8 @@
     "photos": [
       "/uploads/cars/39/primary.jpg",
       "/uploads/cars/39/39_photo_2.jpg",
-      "/uploads/cars/39/39_photo_3.jpg",
       "/uploads/cars/39/39_photo_4.jpg",
-      "/uploads/cars/39/39_photo_5.jpg",
-      "/uploads/cars/39/39_photo_6.jpg"
+      "/uploads/cars/39/39_photo_5.jpg"
     ],
     "stock_id": "JB-0039",
     "status": "published",
@@ -1782,7 +1744,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗H6 第三代 1.5T 自动两驱Max",
       "en": "Haval H6 3rd Gen 1.5T Automatic 2WD Max",
@@ -1856,9 +1818,7 @@
       "/uploads/cars/41/primary.jpg",
       "/uploads/cars/41/41_photo_2.jpg",
       "/uploads/cars/41/41_photo_3.jpg",
-      "/uploads/cars/41/41_photo_4.jpg",
-      "/uploads/cars/41/41_photo_5.jpg",
-      "/uploads/cars/41/41_photo_6.jpg"
+      "/uploads/cars/41/41_photo_4.jpg"
     ],
     "stock_id": "JB-0041",
     "status": "published",
@@ -1874,7 +1834,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG5 180DVVT CVT青春豪华版",
       "en": "MG MG5 180DVVT CVT Youth Luxury",
@@ -1903,7 +1863,6 @@
       "/uploads/cars/42/42_photo_2.jpg",
       "/uploads/cars/42/42_photo_3.jpg",
       "/uploads/cars/42/42_photo_4.jpg",
-      "/uploads/cars/42/42_photo_5.jpg",
       "/uploads/cars/42/42_photo_6.jpg"
     ],
     "stock_id": "JB-0042",
@@ -1920,7 +1879,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG6 Pro 1.5T 自动Trophy豪华版",
       "en": "MG MG6 Pro 1.5T Automatic Trophy Luxury",
@@ -1947,7 +1906,6 @@
     "photos": [
       "/uploads/cars/43/primary.jpg",
       "/uploads/cars/43/43_photo_2.jpg",
-      "/uploads/cars/43/43_photo_3.jpg",
       "/uploads/cars/43/43_photo_4.jpg",
       "/uploads/cars/43/43_photo_5.jpg",
       "/uploads/cars/43/43_photo_6.jpg"
@@ -1966,7 +1924,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG7 2.0T 自动猎美尊享版",
       "en": "MG MG7 2.0T Automatic Premium",
@@ -1992,7 +1950,6 @@
     "model": "炮 2.0T商用版自动柴油两驱精英型长箱GW4D20M",
     "photos": [
       "/uploads/cars/44/primary.jpg",
-      "/uploads/cars/44/44_photo_2.jpg",
       "/uploads/cars/44/44_photo_3.jpg",
       "/uploads/cars/44/44_photo_4.jpg",
       "/uploads/cars/44/44_photo_5.jpg",
@@ -2012,7 +1969,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 炮 2.0T商用版自动柴油两驱精英型长箱GW4D20M",
       "en": "Great Wall Poer 2.0T Commercial Automatic Diesel 2WD Elite Long Bed GW4D20M",
@@ -2038,9 +1995,6 @@
     "model": "金刚炮 2.0T自动柴油四驱精英型平箱GW4D20M",
     "photos": [
       "/uploads/cars/45/primary.jpg",
-      "/uploads/cars/45/45_photo_2.jpg",
-      "/uploads/cars/45/45_photo_3.jpg",
-      "/uploads/cars/45/45_photo_4.jpg",
       "/uploads/cars/45/45_photo_5.jpg",
       "/uploads/cars/45/45_photo_6.jpg"
     ],
@@ -2058,7 +2012,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 金刚炮 2.0T自动柴油四驱精英型平箱GW4D20M",
       "en": "Great Wall King Kong Poer 2.0T Automatic Diesel 4WD Elite Standard Bed GW4D20M",
@@ -2086,7 +2040,6 @@
       "/uploads/cars/46/primary.jpg",
       "/uploads/cars/46/46_photo_2.jpg",
       "/uploads/cars/46/46_photo_3.jpg",
-      "/uploads/cars/46/46_photo_4.jpg",
       "/uploads/cars/46/46_photo_5.jpg",
       "/uploads/cars/46/46_photo_6.jpg"
     ],
@@ -2104,7 +2057,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 风骏7 2.0T柴油两驱新冠军版公务型大双GW4D20M",
       "en": "Great Wall Wingle 7 2.0T Diesel 2WD Champion Edition Business Double-Cab Long Bed GW4D20M",
@@ -2130,9 +2083,7 @@
     "model": "荣威RX5新能源 eRX5 超混优越版",
     "photos": [
       "/uploads/cars/47/primary.jpg",
-      "/uploads/cars/47/47_photo_2.jpg",
       "/uploads/cars/47/47_photo_3.jpg",
-      "/uploads/cars/47/47_photo_4.jpg",
       "/uploads/cars/47/47_photo_5.jpg",
       "/uploads/cars/47/47_photo_6.jpg"
     ],
@@ -2150,7 +2101,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 荣威RX5新能源 eRX5 超混优越版",
       "en": "Roewe RX5 eRX5 Super Hybrid Premium",
@@ -2179,8 +2130,7 @@
       "/uploads/cars/48/48_photo_2.jpg",
       "/uploads/cars/48/48_photo_3.jpg",
       "/uploads/cars/48/48_photo_4.jpg",
-      "/uploads/cars/48/48_photo_5.jpg",
-      "/uploads/cars/48/48_photo_6.jpg"
+      "/uploads/cars/48/48_photo_5.jpg"
     ],
     "stock_id": "JB-0048",
     "status": "published",
@@ -2196,7 +2146,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 荣威i5 1.5L CVT豪华版",
       "en": "Roewe i5 1.5L CVT Luxury",
@@ -2366,9 +2316,7 @@
     "photos": [
       "/uploads/cars/52/primary.jpg",
       "/uploads/cars/52/52_photo_2.jpg",
-      "/uploads/cars/52/52_photo_3.jpg",
       "/uploads/cars/52/52_photo_4.jpg",
-      "/uploads/cars/52/52_photo_5.jpg",
       "/uploads/cars/52/52_photo_6.jpg"
     ],
     "stock_id": "JB-0052",
@@ -2385,7 +2333,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔06 Pro增程版",
       "en": "Avatr Avatr 06 Pro Range-Extended",
@@ -2411,7 +2359,6 @@
     "model": "阿维塔07 Max增程版",
     "photos": [
       "/uploads/cars/53/primary.jpg",
-      "/uploads/cars/53/53_photo_2.jpg",
       "/uploads/cars/53/53_photo_3.jpg",
       "/uploads/cars/53/53_photo_4.jpg",
       "/uploads/cars/53/53_photo_5.jpg",
@@ -2431,7 +2378,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔07 Max增程版",
       "en": "Avatr Avatr 07 Max Range-Extended",
@@ -2458,7 +2405,6 @@
     "photos": [
       "/uploads/cars/54/primary.jpg",
       "/uploads/cars/54/54_photo_2.jpg",
-      "/uploads/cars/54/54_photo_3.jpg",
       "/uploads/cars/54/54_photo_4.jpg",
       "/uploads/cars/54/54_photo_5.jpg",
       "/uploads/cars/54/54_photo_6.jpg"
@@ -2477,7 +2423,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来EC6 75kWh",
       "en": "NIO EC6 75kWh",
@@ -2505,7 +2451,6 @@
       "/uploads/cars/55/primary.jpg",
       "/uploads/cars/55/55_photo_2.jpg",
       "/uploads/cars/55/55_photo_3.jpg",
-      "/uploads/cars/55/55_photo_4.jpg",
       "/uploads/cars/55/55_photo_5.jpg",
       "/uploads/cars/55/55_photo_6.jpg"
     ],
@@ -2523,7 +2468,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来ET5T 75kWh Touring",
       "en": "NIO ET5T 75kWh Touring",
@@ -2552,8 +2497,7 @@
       "/uploads/cars/56/56_photo_2.jpg",
       "/uploads/cars/56/56_photo_3.jpg",
       "/uploads/cars/56/56_photo_4.jpg",
-      "/uploads/cars/56/56_photo_5.jpg",
-      "/uploads/cars/56/56_photo_6.jpg"
+      "/uploads/cars/56/56_photo_5.jpg"
     ],
     "stock_id": "JB-0056",
     "status": "published",
@@ -2569,7 +2513,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏G6 625 长续航 Max 科技版",
       "en": "XPeng G6 625 Long Range Max Technology",
@@ -2598,8 +2542,7 @@
       "/uploads/cars/57/57_photo_2.jpg",
       "/uploads/cars/57/57_photo_3.jpg",
       "/uploads/cars/57/57_photo_4.jpg",
-      "/uploads/cars/57/57_photo_5.jpg",
-      "/uploads/cars/57/57_photo_6.jpg"
+      "/uploads/cars/57/57_photo_5.jpg"
     ],
     "stock_id": "JB-0057",
     "status": "published",
@@ -2615,7 +2558,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏G9 570 Max",
       "en": "XPeng G9 570 Max",
@@ -2641,11 +2584,8 @@
     "model": "极氪007GT 后驱智驾版 75kWh",
     "photos": [
       "/uploads/cars/58/primary.jpg",
-      "/uploads/cars/58/58_photo_2.jpg",
-      "/uploads/cars/58/58_photo_3.jpg",
       "/uploads/cars/58/58_photo_4.jpg",
-      "/uploads/cars/58/58_photo_5.jpg",
-      "/uploads/cars/58/58_photo_6.jpg"
+      "/uploads/cars/58/58_photo_5.jpg"
     ],
     "stock_id": "JB-0058",
     "status": "published",
@@ -2661,7 +2601,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Zeekr 极氪007GT 后驱智驾版 75kWh",
       "en": "Zeekr 007GT RWD Smart Driving 75kWh",
@@ -2688,9 +2628,7 @@
     "photos": [
       "/uploads/cars/59/primary.jpg",
       "/uploads/cars/59/59_photo_2.jpg",
-      "/uploads/cars/59/59_photo_3.jpg",
       "/uploads/cars/59/59_photo_4.jpg",
-      "/uploads/cars/59/59_photo_5.jpg",
       "/uploads/cars/59/59_photo_6.jpg"
     ],
     "stock_id": "JB-0059",
@@ -2707,7 +2645,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Zeekr 极氪7X 75kWh 后驱智驾版",
       "en": "Zeekr 7X 75kWh RWD Smart Driving",
@@ -2733,11 +2671,8 @@
     "model": "海豹  650智驾版",
     "photos": [
       "/uploads/cars/60/primary.jpg",
-      "/uploads/cars/60/60_photo_2.jpg",
-      "/uploads/cars/60/60_photo_3.jpg",
       "/uploads/cars/60/60_photo_4.jpg",
-      "/uploads/cars/60/60_photo_5.jpg",
-      "/uploads/cars/60/60_photo_6.jpg"
+      "/uploads/cars/60/60_photo_5.jpg"
     ],
     "stock_id": "JB-0060",
     "status": "published",
@@ -2753,7 +2688,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海豹  650智驾版",
       "en": "BYD Seal 650 Smart Driving",
@@ -2779,7 +2714,6 @@
     "model": "海豹06  DM-i 智驾版 120KM尊享型",
     "photos": [
       "/uploads/cars/61/primary.jpg",
-      "/uploads/cars/61/61_photo_2.jpg",
       "/uploads/cars/61/61_photo_3.jpg",
       "/uploads/cars/61/61_photo_4.jpg",
       "/uploads/cars/61/61_photo_5.jpg",
@@ -2799,7 +2733,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海豹06  DM-i 智驾版 120KM尊享型",
       "en": "BYD Seal 06 DM-i Smart Driving 120KM Premium",
@@ -2828,8 +2762,7 @@
       "/uploads/cars/62/62_photo_2.jpg",
       "/uploads/cars/62/62_photo_3.jpg",
       "/uploads/cars/62/62_photo_4.jpg",
-      "/uploads/cars/62/62_photo_5.jpg",
-      "/uploads/cars/62/62_photo_6.jpg"
+      "/uploads/cars/62/62_photo_5.jpg"
     ],
     "stock_id": "JB-0062",
     "status": "published",
@@ -2845,7 +2778,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海鸥  305km 活力版",
       "en": "BYD Seagull 305km Vitality",
@@ -2917,11 +2850,9 @@
     "model": "海狮05 EV  520KM旗舰智航版",
     "photos": [
       "/uploads/cars/64/primary.jpg",
-      "/uploads/cars/64/64_photo_2.jpg",
       "/uploads/cars/64/64_photo_3.jpg",
       "/uploads/cars/64/64_photo_4.jpg",
-      "/uploads/cars/64/64_photo_5.jpg",
-      "/uploads/cars/64/64_photo_6.jpg"
+      "/uploads/cars/64/64_photo_5.jpg"
     ],
     "stock_id": "JB-0064",
     "status": "published",
@@ -2937,7 +2868,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海狮05 EV  520KM旗舰智航版",
       "en": "BYD Sea Lion 05 EV 520KM Flagship Smart Navigation",
@@ -3011,8 +2942,6 @@
       "/uploads/cars/66/primary.jpg",
       "/uploads/cars/66/66_photo_2.jpg",
       "/uploads/cars/66/66_photo_3.jpg",
-      "/uploads/cars/66/66_photo_4.jpg",
-      "/uploads/cars/66/66_photo_5.jpg",
       "/uploads/cars/66/66_photo_6.jpg"
     ],
     "stock_id": "JB-0066",
@@ -3029,7 +2958,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 艾瑞泽5  卓越版 1.5L 手动风尚型",
       "en": "Chery Arrizo 5 Excellence 1.5L Manual Style",
@@ -3057,7 +2986,6 @@
       "/uploads/cars/67/primary.jpg",
       "/uploads/cars/67/67_photo_2.jpg",
       "/uploads/cars/67/67_photo_3.jpg",
-      "/uploads/cars/67/67_photo_4.jpg",
       "/uploads/cars/67/67_photo_5.jpg",
       "/uploads/cars/67/67_photo_6.jpg"
     ],
@@ -3075,7 +3003,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 艾瑞泽8  高能版 2.0T DCT驰",
       "en": "Chery Arrizo 8 High Power 2.0T DCT Sport",
@@ -3102,9 +3030,7 @@
     "photos": [
       "/uploads/cars/68/primary.jpg",
       "/uploads/cars/68/68_photo_2.jpg",
-      "/uploads/cars/68/68_photo_3.jpg",
       "/uploads/cars/68/68_photo_4.jpg",
-      "/uploads/cars/68/68_photo_5.jpg",
       "/uploads/cars/68/68_photo_6.jpg"
     ],
     "stock_id": "JB-0068",
@@ -3122,7 +3048,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 瑞虎8 PLUS  冠军版 290TGDI DCT豪享版 5座",
       "en": "Chery Tiggo 8 PLUS Champion Edition 290TGDI DCT Luxury 5-seat",
@@ -3148,10 +3074,7 @@
     "model": "瑞虎8 PLUS  290TGDI DCT尊贵型",
     "photos": [
       "/uploads/cars/69/primary.jpg",
-      "/uploads/cars/69/69_photo_2.jpg",
       "/uploads/cars/69/69_photo_3.jpg",
-      "/uploads/cars/69/69_photo_4.jpg",
-      "/uploads/cars/69/69_photo_5.jpg",
       "/uploads/cars/69/69_photo_6.jpg"
     ],
     "stock_id": "JB-0069",
@@ -3168,7 +3091,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 瑞虎8 PLUS  290TGDI DCT尊贵型",
       "en": "Chery Tiggo 8 PLUS 290TGDI DCT Premium",
@@ -3194,7 +3117,6 @@
     "model": "哈弗猛龙新能源  Hi4 145 穿越版",
     "photos": [
       "/uploads/cars/70/primary.jpg",
-      "/uploads/cars/70/70_photo_2.jpg",
       "/uploads/cars/70/70_photo_3.jpg",
       "/uploads/cars/70/70_photo_4.jpg",
       "/uploads/cars/70/70_photo_5.jpg",
@@ -3214,7 +3136,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗猛龙新能源  Hi4 145 穿越版",
       "en": "Haval Hi4 145 Adventure",
@@ -3241,8 +3163,6 @@
     "photos": [
       "/uploads/cars/71/primary.jpg",
       "/uploads/cars/71/71_photo_2.jpg",
-      "/uploads/cars/71/71_photo_3.jpg",
-      "/uploads/cars/71/71_photo_4.jpg",
       "/uploads/cars/71/71_photo_5.jpg",
       "/uploads/cars/71/71_photo_6.jpg"
     ],
@@ -3261,7 +3181,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗H9  2.0T 汽油四驱精英型 5座",
       "en": "Haval H9 2.0T Petrol 4WD Elite 5-seat",
@@ -3379,10 +3299,8 @@
     "model": "哈弗大狗 PLUS  2.0T 两驱潮野版Plus",
     "photos": [
       "/uploads/cars/74/primary.jpg",
-      "/uploads/cars/74/74_photo_2.jpg",
       "/uploads/cars/74/74_photo_3.jpg",
       "/uploads/cars/74/74_photo_4.jpg",
-      "/uploads/cars/74/74_photo_5.jpg",
       "/uploads/cars/74/74_photo_6.jpg"
     ],
     "stock_id": "JB-0074",
@@ -3399,7 +3317,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗大狗 PLUS  2.0T 两驱潮野版Plus",
       "en": "Haval PLUS 2.0T 2WD Outdoor Edition Plus",
@@ -3473,9 +3391,7 @@
       "/uploads/cars/76/primary.jpg",
       "/uploads/cars/76/76_photo_2.jpg",
       "/uploads/cars/76/76_photo_3.jpg",
-      "/uploads/cars/76/76_photo_4.jpg",
-      "/uploads/cars/76/76_photo_5.jpg",
-      "/uploads/cars/76/76_photo_6.jpg"
+      "/uploads/cars/76/76_photo_5.jpg"
     ],
     "stock_id": "JB-0076",
     "status": "published",
@@ -3491,7 +3407,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG5  300TGI DCT青奢风潮版",
       "en": "MG MG5 300TGI DCT Youth Luxury",
@@ -3518,9 +3434,6 @@
     "photos": [
       "/uploads/cars/77/primary.jpg",
       "/uploads/cars/77/77_photo_2.jpg",
-      "/uploads/cars/77/77_photo_3.jpg",
-      "/uploads/cars/77/77_photo_4.jpg",
-      "/uploads/cars/77/77_photo_5.jpg",
       "/uploads/cars/77/77_photo_6.jpg"
     ],
     "stock_id": "JB-0077",
@@ -3537,7 +3450,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG7  1.5T DCT至美舒享版",
       "en": "MG MG7 1.5T DCT Comfort",
@@ -3564,7 +3477,6 @@
     "photos": [
       "/uploads/cars/78/primary.jpg",
       "/uploads/cars/78/78_photo_2.jpg",
-      "/uploads/cars/78/78_photo_3.jpg",
       "/uploads/cars/78/78_photo_4.jpg",
       "/uploads/cars/78/78_photo_5.jpg",
       "/uploads/cars/78/78_photo_6.jpg"
@@ -3583,7 +3495,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG5  180DVVT CVT青春风尚版",
       "en": "MG MG5 180DVVT CVT Youth Style",
@@ -3611,7 +3523,6 @@
       "/uploads/cars/79/primary.jpg",
       "/uploads/cars/79/79_photo_2.jpg",
       "/uploads/cars/79/79_photo_3.jpg",
-      "/uploads/cars/79/79_photo_4.jpg",
       "/uploads/cars/79/79_photo_5.jpg",
       "/uploads/cars/79/79_photo_6.jpg"
     ],
@@ -3629,7 +3540,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "MG MG7  2.0T 自动Trophy+激擎耀世版",
       "en": "MG MG7 2.0T Automatic Trophy+ Performance",
@@ -3655,10 +3566,7 @@
     "model": "炮  2.0T商用版自动柴油两驱领航型长箱GW4D20M",
     "photos": [
       "/uploads/cars/80/primary.jpg",
-      "/uploads/cars/80/80_photo_2.jpg",
-      "/uploads/cars/80/80_photo_3.jpg",
       "/uploads/cars/80/80_photo_4.jpg",
-      "/uploads/cars/80/80_photo_5.jpg",
       "/uploads/cars/80/80_photo_6.jpg"
     ],
     "stock_id": "JB-0080",
@@ -3675,7 +3583,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 炮  2.0T商用版自动柴油两驱领航型长箱GW4D20M",
       "en": "Great Wall Poer 2.0T Commercial Automatic Diesel 2WD Navigation Long Bed GW4D20M",
@@ -3795,7 +3703,6 @@
       "/uploads/cars/83/primary.jpg",
       "/uploads/cars/83/83_photo_2.jpg",
       "/uploads/cars/83/83_photo_3.jpg",
-      "/uploads/cars/83/83_photo_4.jpg",
       "/uploads/cars/83/83_photo_5.jpg",
       "/uploads/cars/83/83_photo_6.jpg"
     ],
@@ -3813,7 +3720,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 炮  2.0T商用版 自动柴油四驱茶王版长箱GW4D20M",
       "en": "Great Wall Poer 2.0T Commercial Automatic Diesel 4WD Edition Long Bed GW4D20M",
@@ -3841,8 +3748,6 @@
       "/uploads/cars/84/primary.jpg",
       "/uploads/cars/84/84_photo_2.jpg",
       "/uploads/cars/84/84_photo_3.jpg",
-      "/uploads/cars/84/84_photo_4.jpg",
-      "/uploads/cars/84/84_photo_5.jpg",
       "/uploads/cars/84/84_photo_6.jpg"
     ],
     "stock_id": "JB-0084",
@@ -3859,7 +3764,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Great Wall 炮  2.0T商用版手动柴油两驱精英型长箱GW4D20M",
       "en": "Great Wall Poer 2.0T Commercial Manual Diesel 2WD Elite Long Bed GW4D20M",
@@ -3885,7 +3790,6 @@
     "model": "阿维塔06  Pro纯电版",
     "photos": [
       "/uploads/cars/85/primary.jpg",
-      "/uploads/cars/85/85_photo_2.jpg",
       "/uploads/cars/85/85_photo_3.jpg",
       "/uploads/cars/85/85_photo_4.jpg",
       "/uploads/cars/85/85_photo_5.jpg",
@@ -3905,7 +3809,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔06  Pro纯电版",
       "en": "Avatr Avatr 06 Pro EV",
@@ -3933,9 +3837,7 @@
       "/uploads/cars/86/primary.jpg",
       "/uploads/cars/86/86_photo_2.jpg",
       "/uploads/cars/86/86_photo_3.jpg",
-      "/uploads/cars/86/86_photo_4.jpg",
-      "/uploads/cars/86/86_photo_5.jpg",
-      "/uploads/cars/86/86_photo_6.jpg"
+      "/uploads/cars/86/86_photo_5.jpg"
     ],
     "stock_id": "JB-0086",
     "status": "published",
@@ -3951,7 +3853,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔11  Max 增程版",
       "en": "Avatr Avatr 11 Max Range-Extended",
@@ -3978,10 +3880,8 @@
     "photos": [
       "/uploads/cars/87/primary.jpg",
       "/uploads/cars/87/87_photo_2.jpg",
-      "/uploads/cars/87/87_photo_3.jpg",
       "/uploads/cars/87/87_photo_4.jpg",
-      "/uploads/cars/87/87_photo_5.jpg",
-      "/uploads/cars/87/87_photo_6.jpg"
+      "/uploads/cars/87/87_photo_5.jpg"
     ],
     "stock_id": "JB-0087",
     "status": "published",
@@ -3997,7 +3897,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔06  Ultra纯电版",
       "en": "Avatr Avatr 06 Ultra EV",
@@ -4023,7 +3923,6 @@
     "model": "阿维塔06  Max纯电版",
     "photos": [
       "/uploads/cars/88/primary.jpg",
-      "/uploads/cars/88/88_photo_2.jpg",
       "/uploads/cars/88/88_photo_3.jpg",
       "/uploads/cars/88/88_photo_4.jpg",
       "/uploads/cars/88/88_photo_5.jpg",
@@ -4043,7 +3942,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔06  Max纯电版",
       "en": "Avatr Avatr 06 Max EV",
@@ -4072,7 +3971,6 @@
       "/uploads/cars/89/89_photo_2.jpg",
       "/uploads/cars/89/89_photo_3.jpg",
       "/uploads/cars/89/89_photo_4.jpg",
-      "/uploads/cars/89/89_photo_5.jpg",
       "/uploads/cars/89/89_photo_6.jpg"
     ],
     "stock_id": "JB-0089",
@@ -4089,7 +3987,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Avatr 阿维塔12  改款 Ultra增程版",
       "en": "Avatr Avatr 12 Facelift Ultra Range-Extended",
@@ -4115,11 +4013,8 @@
     "model": "蔚来ES8  六座行政豪华版",
     "photos": [
       "/uploads/cars/90/primary.jpg",
-      "/uploads/cars/90/90_photo_2.jpg",
-      "/uploads/cars/90/90_photo_3.jpg",
       "/uploads/cars/90/90_photo_4.jpg",
-      "/uploads/cars/90/90_photo_5.jpg",
-      "/uploads/cars/90/90_photo_6.jpg"
+      "/uploads/cars/90/90_photo_5.jpg"
     ],
     "stock_id": "JB-0090",
     "status": "published",
@@ -4135,7 +4030,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来ES8  六座行政豪华版",
       "en": "NIO ES8 6-seat Executive Luxury",
@@ -4164,9 +4059,7 @@
       "/uploads/cars/91/primary.jpg",
       "/uploads/cars/91/91_photo_2.jpg",
       "/uploads/cars/91/91_photo_3.jpg",
-      "/uploads/cars/91/91_photo_4.jpg",
-      "/uploads/cars/91/91_photo_5.jpg",
-      "/uploads/cars/91/91_photo_6.jpg"
+      "/uploads/cars/91/91_photo_5.jpg"
     ],
     "stock_id": "JB-0091",
     "status": "published",
@@ -4182,7 +4075,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来ES6  430KM 性能版",
       "en": "NIO ES6 430KM Performance",
@@ -4209,7 +4102,6 @@
     "photos": [
       "/uploads/cars/92/primary.jpg",
       "/uploads/cars/92/92_photo_2.jpg",
-      "/uploads/cars/92/92_photo_3.jpg",
       "/uploads/cars/92/92_photo_4.jpg",
       "/uploads/cars/92/92_photo_5.jpg",
       "/uploads/cars/92/92_photo_6.jpg"
@@ -4228,7 +4120,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来EC6  75kWh",
       "en": "NIO EC6 75kWh",
@@ -4254,7 +4146,6 @@
     "model": "蔚来ES8  415KM 签名版 六座版",
     "photos": [
       "/uploads/cars/93/primary.jpg",
-      "/uploads/cars/93/93_photo_2.jpg",
       "/uploads/cars/93/93_photo_3.jpg",
       "/uploads/cars/93/93_photo_4.jpg",
       "/uploads/cars/93/93_photo_5.jpg",
@@ -4274,7 +4165,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "NIO 蔚来ES8  415KM 签名版 六座版",
       "en": "NIO ES8 415KM Signature 6-seat Edition",
@@ -4303,9 +4194,7 @@
       "/uploads/cars/94/primary.jpg",
       "/uploads/cars/94/94_photo_2.jpg",
       "/uploads/cars/94/94_photo_3.jpg",
-      "/uploads/cars/94/94_photo_4.jpg",
-      "/uploads/cars/94/94_photo_5.jpg",
-      "/uploads/cars/94/94_photo_6.jpg"
+      "/uploads/cars/94/94_photo_5.jpg"
     ],
     "stock_id": "JB-0094",
     "status": "published",
@@ -4321,7 +4210,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏P7  702 长续航 Ultra",
       "en": "XPeng P7 702 Long Range Ultra",
@@ -4349,7 +4238,6 @@
       "/uploads/cars/95/primary.jpg",
       "/uploads/cars/95/95_photo_2.jpg",
       "/uploads/cars/95/95_photo_3.jpg",
-      "/uploads/cars/95/95_photo_4.jpg",
       "/uploads/cars/95/95_photo_5.jpg",
       "/uploads/cars/95/95_photo_6.jpg"
     ],
@@ -4367,7 +4255,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏G7  702 超长续航 Ultra",
       "en": "XPeng G7 702 Extended Range Ultra",
@@ -4442,7 +4330,6 @@
       "/uploads/cars/97/97_photo_2.jpg",
       "/uploads/cars/97/97_photo_3.jpg",
       "/uploads/cars/97/97_photo_4.jpg",
-      "/uploads/cars/97/97_photo_5.jpg",
       "/uploads/cars/97/97_photo_6.jpg"
     ],
     "stock_id": "JB-0097",
@@ -4459,7 +4346,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "XPeng 小鹏X9  纯电 650长续航 Max",
       "en": "XPeng X9 EV 650 Long Range Max",
@@ -4486,7 +4373,6 @@
     "photos": [
       "/uploads/cars/98/primary.jpg",
       "/uploads/cars/98/98_photo_2.jpg",
-      "/uploads/cars/98/98_photo_3.jpg",
       "/uploads/cars/98/98_photo_4.jpg",
       "/uploads/cars/98/98_photo_5.jpg",
       "/uploads/cars/98/98_photo_6.jpg"
@@ -4505,7 +4391,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Zeekr 极氪009  七座过道版四驱 108kWh",
       "en": "Zeekr 009 7-seat Aisle Edition 4WD 108kWh",
@@ -4534,7 +4420,6 @@
       "/uploads/cars/99/primary.jpg",
       "/uploads/cars/99/99_photo_2.jpg",
       "/uploads/cars/99/99_photo_3.jpg",
-      "/uploads/cars/99/99_photo_4.jpg",
       "/uploads/cars/99/99_photo_5.jpg",
       "/uploads/cars/99/99_photo_6.jpg"
     ],
@@ -4552,7 +4437,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Zeekr 极氪009  六座行政版四驱 108kWh",
       "en": "Zeekr 009 6-seat Executive 4WD 108kWh",
@@ -4672,10 +4557,7 @@
     "photos": [
       "/uploads/cars/102/primary.jpg",
       "/uploads/cars/102/102_photo_2.jpg",
-      "/uploads/cars/102/102_photo_3.jpg",
-      "/uploads/cars/102/102_photo_4.jpg",
-      "/uploads/cars/102/102_photo_5.jpg",
-      "/uploads/cars/102/102_photo_6.jpg"
+      "/uploads/cars/102/102_photo_3.jpg"
     ],
     "stock_id": "JB-0102",
     "status": "published",
@@ -4691,7 +4573,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 飞凡R7  长续Pro版",
       "en": "Roewe Rising Auto R7 Pro Edition",
@@ -4718,8 +4600,6 @@
     "photos": [
       "/uploads/cars/103/primary.jpg",
       "/uploads/cars/103/103_photo_2.jpg",
-      "/uploads/cars/103/103_photo_3.jpg",
-      "/uploads/cars/103/103_photo_4.jpg",
       "/uploads/cars/103/103_photo_5.jpg",
       "/uploads/cars/103/103_photo_6.jpg"
     ],
@@ -4737,7 +4617,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 荣威RX5  1.5T 超感精英版",
       "en": "Roewe RX5 1.5T Elite",
@@ -4766,7 +4646,6 @@
       "/uploads/cars/104/104_photo_2.jpg",
       "/uploads/cars/104/104_photo_3.jpg",
       "/uploads/cars/104/104_photo_4.jpg",
-      "/uploads/cars/104/104_photo_5.jpg",
       "/uploads/cars/104/104_photo_6.jpg"
     ],
     "stock_id": "JB-0104",
@@ -4783,7 +4662,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 荣威RX5新能源  eRX5 超混优越版",
       "en": "Roewe RX5 eRX5 Super Hybrid Premium",
@@ -4810,7 +4689,6 @@
     "photos": [
       "/uploads/cars/105/primary.jpg",
       "/uploads/cars/105/105_photo_2.jpg",
-      "/uploads/cars/105/105_photo_3.jpg",
       "/uploads/cars/105/105_photo_4.jpg",
       "/uploads/cars/105/105_photo_5.jpg",
       "/uploads/cars/105/105_photo_6.jpg"
@@ -4829,7 +4707,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Roewe 荣威iMAX8  400TGI 尊荣版",
       "en": "Roewe iMAX8 400TGI Premium",
@@ -4855,7 +4733,6 @@
     "model": "捷途X70  1.5T DCT跃享版 5座",
     "photos": [
       "/uploads/cars/106/primary.jpg",
-      "/uploads/cars/106/106_photo_2.jpg",
       "/uploads/cars/106/106_photo_3.jpg",
       "/uploads/cars/106/106_photo_4.jpg",
       "/uploads/cars/106/106_photo_5.jpg",
@@ -4876,7 +4753,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Jetour 捷途X70  1.5T DCT跃享版 5座",
       "en": "Jetour X70 1.5T DCT Edition 5-seat",
@@ -4902,10 +4779,8 @@
     "model": "捷途X70 PLUS  改款 1.5T DCT山PRO 5座",
     "photos": [
       "/uploads/cars/107/primary.jpg",
-      "/uploads/cars/107/107_photo_2.jpg",
       "/uploads/cars/107/107_photo_3.jpg",
       "/uploads/cars/107/107_photo_4.jpg",
-      "/uploads/cars/107/107_photo_5.jpg",
       "/uploads/cars/107/107_photo_6.jpg"
     ],
     "stock_id": "JB-0107",
@@ -4923,7 +4798,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Jetour 捷途X70 PLUS  改款 1.5T DCT山PRO 5座",
       "en": "Jetour X70 PLUS Facelift 1.5T DCT Mountain PRO 5-seat",
@@ -4996,9 +4871,7 @@
     "photos": [
       "/uploads/cars/109/primary.jpg",
       "/uploads/cars/109/109_photo_2.jpg",
-      "/uploads/cars/109/109_photo_3.jpg",
       "/uploads/cars/109/109_photo_4.jpg",
-      "/uploads/cars/109/109_photo_5.jpg",
       "/uploads/cars/109/109_photo_6.jpg"
     ],
     "stock_id": "JB-0109",
@@ -5015,7 +4888,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Jetour 捷途自由者  1.5TD DCT 探索",
       "en": "Jetour 1.5TD DCT Explore",
@@ -5041,11 +4914,8 @@
     "model": "Corolla 1.2T 先锋版",
     "photos": [
       "/uploads/cars/110/primary.jpg",
-      "/uploads/cars/110/110_photo_2.jpg",
-      "/uploads/cars/110/110_photo_3.jpg",
       "/uploads/cars/110/110_photo_4.jpg",
-      "/uploads/cars/110/110_photo_5.jpg",
-      "/uploads/cars/110/110_photo_6.jpg"
+      "/uploads/cars/110/110_photo_5.jpg"
     ],
     "stock_id": "JB-0110",
     "status": "published",
@@ -5061,7 +4931,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Corolla 1.2T 先锋版",
       "en": "Toyota Corolla 1.2T Edition",
@@ -5089,8 +4959,6 @@
       "/uploads/cars/111/primary.jpg",
       "/uploads/cars/111/111_photo_2.jpg",
       "/uploads/cars/111/111_photo_3.jpg",
-      "/uploads/cars/111/111_photo_4.jpg",
-      "/uploads/cars/111/111_photo_5.jpg",
       "/uploads/cars/111/111_photo_6.jpg"
     ],
     "stock_id": "JB-0111",
@@ -5107,7 +4975,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Camry 2.0E 精英版",
       "en": "Toyota Camry 2.0E Elite",
@@ -5179,10 +5047,8 @@
     "model": "Land Cruiser Prado 2.7L",
     "photos": [
       "/uploads/cars/113/primary.jpg",
-      "/uploads/cars/113/113_photo_2.jpg",
       "/uploads/cars/113/113_photo_3.jpg",
       "/uploads/cars/113/113_photo_4.jpg",
-      "/uploads/cars/113/113_photo_5.jpg",
       "/uploads/cars/113/113_photo_6.jpg"
     ],
     "stock_id": "JB-0113",
@@ -5199,7 +5065,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Land Cruiser Prado 2.7L",
       "en": "Toyota Land Cruiser Prado 2.7L",
@@ -5273,7 +5139,6 @@
       "/uploads/cars/115/primary.jpg",
       "/uploads/cars/115/115_photo_2.jpg",
       "/uploads/cars/115/115_photo_3.jpg",
-      "/uploads/cars/115/115_photo_4.jpg",
       "/uploads/cars/115/115_photo_5.jpg",
       "/uploads/cars/115/115_photo_6.jpg"
     ],
@@ -5291,7 +5156,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Fortuner 2.7L TRD",
       "en": "Toyota Fortuner 2.7L TRD",
@@ -5318,9 +5183,6 @@
     "photos": [
       "/uploads/cars/116/primary.jpg",
       "/uploads/cars/116/116_photo_2.jpg",
-      "/uploads/cars/116/116_photo_3.jpg",
-      "/uploads/cars/116/116_photo_4.jpg",
-      "/uploads/cars/116/116_photo_5.jpg",
       "/uploads/cars/116/116_photo_6.jpg"
     ],
     "stock_id": "JB-0116",
@@ -5337,7 +5199,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Yaris 1.5L CVT 领先版",
       "en": "Toyota Yaris 1.5L CVT Leading",
@@ -5363,8 +5225,6 @@
     "model": "Vios 1.5L CVT 智行版",
     "photos": [
       "/uploads/cars/117/primary.jpg",
-      "/uploads/cars/117/117_photo_2.jpg",
-      "/uploads/cars/117/117_photo_3.jpg",
       "/uploads/cars/117/117_photo_4.jpg",
       "/uploads/cars/117/117_photo_5.jpg",
       "/uploads/cars/117/117_photo_6.jpg"
@@ -5383,7 +5243,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Vios 1.5L CVT 智行版",
       "en": "Toyota Vios 1.5L CVT Edition",
@@ -5412,7 +5272,6 @@
       "/uploads/cars/118/118_photo_2.jpg",
       "/uploads/cars/118/118_photo_3.jpg",
       "/uploads/cars/118/118_photo_4.jpg",
-      "/uploads/cars/118/118_photo_5.jpg",
       "/uploads/cars/118/118_photo_6.jpg"
     ],
     "stock_id": "JB-0118",
@@ -5430,7 +5289,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Innova 2.0L 7座MPV",
       "en": "Toyota Innova 2.0L 7-seat MPV",
@@ -5458,8 +5317,6 @@
       "/uploads/cars/119/primary.jpg",
       "/uploads/cars/119/119_photo_2.jpg",
       "/uploads/cars/119/119_photo_3.jpg",
-      "/uploads/cars/119/119_photo_4.jpg",
-      "/uploads/cars/119/119_photo_5.jpg",
       "/uploads/cars/119/119_photo_6.jpg"
     ],
     "stock_id": "JB-0119",
@@ -5476,7 +5333,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Alphard 3.5L 豪华版",
       "en": "Toyota Alphard 3.5L Luxury",
@@ -5502,7 +5359,6 @@
     "model": "Hiace 2.7L 12座 商务车",
     "photos": [
       "/uploads/cars/120/primary.jpg",
-      "/uploads/cars/120/120_photo_2.jpg",
       "/uploads/cars/120/120_photo_3.jpg",
       "/uploads/cars/120/120_photo_4.jpg",
       "/uploads/cars/120/120_photo_5.jpg",
@@ -5523,7 +5379,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Hiace 2.7L 12座 商务车",
       "en": "Toyota Hiace 2.7L 12-seat Business Van",
@@ -5552,8 +5408,7 @@
       "/uploads/cars/121/121_photo_2.jpg",
       "/uploads/cars/121/121_photo_3.jpg",
       "/uploads/cars/121/121_photo_4.jpg",
-      "/uploads/cars/121/121_photo_5.jpg",
-      "/uploads/cars/121/121_photo_6.jpg"
+      "/uploads/cars/121/121_photo_5.jpg"
     ],
     "stock_id": "JB-0121",
     "status": "published",
@@ -5569,7 +5424,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota C-HR 2.0L CVT 领先版",
       "en": "Toyota C-HR 2.0L CVT Leading",
@@ -5595,11 +5450,7 @@
     "model": "Corolla Cross 1.8L 精英版",
     "photos": [
       "/uploads/cars/122/primary.jpg",
-      "/uploads/cars/122/122_photo_2.jpg",
-      "/uploads/cars/122/122_photo_3.jpg",
-      "/uploads/cars/122/122_photo_4.jpg",
-      "/uploads/cars/122/122_photo_5.jpg",
-      "/uploads/cars/122/122_photo_6.jpg"
+      "/uploads/cars/122/122_photo_2.jpg"
     ],
     "stock_id": "JB-0122",
     "status": "published",
@@ -5615,7 +5466,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Corolla Cross 1.8L 精英版",
       "en": "Toyota Corolla Cross 1.8L Elite",
@@ -5689,9 +5540,7 @@
       "/uploads/cars/124/primary.jpg",
       "/uploads/cars/124/124_photo_2.jpg",
       "/uploads/cars/124/124_photo_3.jpg",
-      "/uploads/cars/124/124_photo_4.jpg",
-      "/uploads/cars/124/124_photo_5.jpg",
-      "/uploads/cars/124/124_photo_6.jpg"
+      "/uploads/cars/124/124_photo_4.jpg"
     ],
     "stock_id": "JB-0124",
     "status": "published",
@@ -5707,7 +5556,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Toyota Harrier 2.0L CVT 两驱豪华版",
       "en": "Toyota Harrier 2.0L CVT 2WD Luxury",
@@ -5736,7 +5585,6 @@
       "/uploads/cars/125/125_photo_2.jpg",
       "/uploads/cars/125/125_photo_3.jpg",
       "/uploads/cars/125/125_photo_4.jpg",
-      "/uploads/cars/125/125_photo_5.jpg",
       "/uploads/cars/125/125_photo_6.jpg"
     ],
     "stock_id": "JB-0125",
@@ -5753,7 +5601,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Passat 330TSI 精英版",
       "en": "Volkswagen Passat 330TSI Elite",
@@ -5781,7 +5629,6 @@
       "/uploads/cars/126/primary.jpg",
       "/uploads/cars/126/126_photo_2.jpg",
       "/uploads/cars/126/126_photo_3.jpg",
-      "/uploads/cars/126/126_photo_4.jpg",
       "/uploads/cars/126/126_photo_5.jpg",
       "/uploads/cars/126/126_photo_6.jpg"
     ],
@@ -5799,7 +5646,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Tiguan 330TSI 两驱智享版",
       "en": "Volkswagen Tiguan 330TSI 2WD Smart Comfort",
@@ -5827,7 +5674,6 @@
       "/uploads/cars/127/primary.jpg",
       "/uploads/cars/127/127_photo_2.jpg",
       "/uploads/cars/127/127_photo_3.jpg",
-      "/uploads/cars/127/127_photo_4.jpg",
       "/uploads/cars/127/127_photo_5.jpg",
       "/uploads/cars/127/127_photo_6.jpg"
     ],
@@ -5845,7 +5691,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Polo 1.5L 自动全景乐享版",
       "en": "Volkswagen Polo 1.5L Automatic Panoramic Comfort",
@@ -5917,10 +5763,8 @@
     "model": "Magotan 330TSI DSG 豪华版",
     "photos": [
       "/uploads/cars/129/primary.jpg",
-      "/uploads/cars/129/129_photo_2.jpg",
       "/uploads/cars/129/129_photo_3.jpg",
       "/uploads/cars/129/129_photo_4.jpg",
-      "/uploads/cars/129/129_photo_5.jpg",
       "/uploads/cars/129/129_photo_6.jpg"
     ],
     "stock_id": "JB-0129",
@@ -5937,7 +5781,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Magotan 330TSI DSG 豪华版",
       "en": "Volkswagen Magotan 330TSI DSG Luxury",
@@ -5962,12 +5806,7 @@
     "brand": "Volkswagen",
     "model": "T-Roc 280TSI 两驱豪华版",
     "photos": [
-      "/uploads/cars/130/primary.jpg",
-      "/uploads/cars/130/130_photo_2.jpg",
-      "/uploads/cars/130/130_photo_3.jpg",
-      "/uploads/cars/130/130_photo_4.jpg",
-      "/uploads/cars/130/130_photo_5.jpg",
-      "/uploads/cars/130/130_photo_6.jpg"
+      "/uploads/cars/130/primary.jpg"
     ],
     "stock_id": "JB-0130",
     "status": "published",
@@ -5983,7 +5822,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen T-Roc 280TSI 两驱豪华版",
       "en": "Volkswagen T-Roc 280TSI 2WD Luxury",
@@ -6010,7 +5849,6 @@
     "photos": [
       "/uploads/cars/131/primary.jpg",
       "/uploads/cars/131/131_photo_2.jpg",
-      "/uploads/cars/131/131_photo_3.jpg",
       "/uploads/cars/131/131_photo_4.jpg",
       "/uploads/cars/131/131_photo_5.jpg",
       "/uploads/cars/131/131_photo_6.jpg"
@@ -6029,7 +5867,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Tayron 330TSI 两驱豪华版",
       "en": "Volkswagen Tayron 330TSI 2WD Luxury",
@@ -6055,10 +5893,8 @@
     "model": "Tharu 280TSI 两驱舒适版",
     "photos": [
       "/uploads/cars/132/primary.jpg",
-      "/uploads/cars/132/132_photo_2.jpg",
       "/uploads/cars/132/132_photo_3.jpg",
       "/uploads/cars/132/132_photo_4.jpg",
-      "/uploads/cars/132/132_photo_5.jpg",
       "/uploads/cars/132/132_photo_6.jpg"
     ],
     "stock_id": "JB-0132",
@@ -6075,7 +5911,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Tharu 280TSI 两驱舒适版",
       "en": "Volkswagen Tharu 280TSI 2WD Comfort",
@@ -6102,10 +5938,7 @@
     "photos": [
       "/uploads/cars/133/primary.jpg",
       "/uploads/cars/133/133_photo_2.jpg",
-      "/uploads/cars/133/133_photo_3.jpg",
-      "/uploads/cars/133/133_photo_4.jpg",
-      "/uploads/cars/133/133_photo_5.jpg",
-      "/uploads/cars/133/133_photo_6.jpg"
+      "/uploads/cars/133/133_photo_4.jpg"
     ],
     "stock_id": "JB-0133",
     "status": "published",
@@ -6121,7 +5954,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Bora 1.5L 自动时尚版",
       "en": "Volkswagen Bora 1.5L Automatic Fashion",
@@ -6147,8 +5980,6 @@
     "model": "Santana 1.5L 自动风尚版",
     "photos": [
       "/uploads/cars/134/primary.jpg",
-      "/uploads/cars/134/134_photo_2.jpg",
-      "/uploads/cars/134/134_photo_3.jpg",
       "/uploads/cars/134/134_photo_4.jpg",
       "/uploads/cars/134/134_photo_5.jpg",
       "/uploads/cars/134/134_photo_6.jpg"
@@ -6167,7 +5998,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Santana 1.5L 自动风尚版",
       "en": "Volkswagen Santana 1.5L Automatic Style Edition",
@@ -6196,7 +6027,6 @@
       "/uploads/cars/135/135_photo_2.jpg",
       "/uploads/cars/135/135_photo_3.jpg",
       "/uploads/cars/135/135_photo_4.jpg",
-      "/uploads/cars/135/135_photo_5.jpg",
       "/uploads/cars/135/135_photo_6.jpg"
     ],
     "stock_id": "JB-0135",
@@ -6213,7 +6043,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Golf 280TSI DSG Pro",
       "en": "Volkswagen Golf 280TSI DSG Pro",
@@ -6239,11 +6069,8 @@
     "model": "Touran 280TSI 7座舒适版",
     "photos": [
       "/uploads/cars/136/primary.jpg",
-      "/uploads/cars/136/136_photo_2.jpg",
       "/uploads/cars/136/136_photo_3.jpg",
-      "/uploads/cars/136/136_photo_4.jpg",
-      "/uploads/cars/136/136_photo_5.jpg",
-      "/uploads/cars/136/136_photo_6.jpg"
+      "/uploads/cars/136/136_photo_4.jpg"
     ],
     "stock_id": "JB-0136",
     "status": "published",
@@ -6260,7 +6087,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Touran 280TSI 7座舒适版",
       "en": "Volkswagen Touran 280TSI 7-seat Comfort",
@@ -6289,7 +6116,6 @@
       "/uploads/cars/137/137_photo_2.jpg",
       "/uploads/cars/137/137_photo_3.jpg",
       "/uploads/cars/137/137_photo_4.jpg",
-      "/uploads/cars/137/137_photo_5.jpg",
       "/uploads/cars/137/137_photo_6.jpg"
     ],
     "stock_id": "JB-0137",
@@ -6306,7 +6132,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen Teramont 380TSI 四驱豪华版",
       "en": "Volkswagen Teramont 380TSI 4WD Luxury",
@@ -6333,9 +6159,7 @@
     "photos": [
       "/uploads/cars/138/primary.jpg",
       "/uploads/cars/138/138_photo_2.jpg",
-      "/uploads/cars/138/138_photo_3.jpg",
       "/uploads/cars/138/138_photo_4.jpg",
-      "/uploads/cars/138/138_photo_5.jpg",
       "/uploads/cars/138/138_photo_6.jpg"
     ],
     "stock_id": "JB-0138",
@@ -6352,7 +6176,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen CC 380TSI 夺目版",
       "en": "Volkswagen CC 380TSI Distinctive",
@@ -6380,8 +6204,6 @@
       "/uploads/cars/139/primary.jpg",
       "/uploads/cars/139/139_photo_2.jpg",
       "/uploads/cars/139/139_photo_3.jpg",
-      "/uploads/cars/139/139_photo_4.jpg",
-      "/uploads/cars/139/139_photo_5.jpg",
       "/uploads/cars/139/139_photo_6.jpg"
     ],
     "stock_id": "JB-0139",
@@ -6398,7 +6220,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Volkswagen ID.4 Crozz 纯电动 SUV",
       "en": "Volkswagen ID.4 Crozz EV SUV",
@@ -6424,10 +6246,8 @@
     "model": "瑞虎7  1.5T CVT尊贵版",
     "photos": [
       "/uploads/cars/140/primary.jpg",
-      "/uploads/cars/140/140_photo_2.jpg",
       "/uploads/cars/140/140_photo_3.jpg",
       "/uploads/cars/140/140_photo_4.jpg",
-      "/uploads/cars/140/140_photo_5.jpg",
       "/uploads/cars/140/140_photo_6.jpg"
     ],
     "stock_id": "JB-0140",
@@ -6444,7 +6264,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 瑞虎7  1.5T CVT尊贵版",
       "en": "Chery Tiggo 7 1.5T CVT Premium",
@@ -6471,10 +6291,8 @@
     "photos": [
       "/uploads/cars/141/primary.jpg",
       "/uploads/cars/141/141_photo_2.jpg",
-      "/uploads/cars/141/141_photo_3.jpg",
       "/uploads/cars/141/141_photo_4.jpg",
-      "/uploads/cars/141/141_photo_5.jpg",
-      "/uploads/cars/141/141_photo_6.jpg"
+      "/uploads/cars/141/141_photo_5.jpg"
     ],
     "stock_id": "JB-0141",
     "status": "published",
@@ -6490,7 +6308,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 瑞虎3x  1.5L CVT时尚版",
       "en": "Chery Tiggo 3x 1.5L CVT Fashion",
@@ -6519,7 +6337,6 @@
       "/uploads/cars/142/142_photo_2.jpg",
       "/uploads/cars/142/142_photo_3.jpg",
       "/uploads/cars/142/142_photo_4.jpg",
-      "/uploads/cars/142/142_photo_5.jpg",
       "/uploads/cars/142/142_photo_6.jpg"
     ],
     "stock_id": "JB-0142",
@@ -6536,7 +6353,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Chery 艾瑞泽5  1.5L CVT领锐版",
       "en": "Chery Arrizo 5 1.5L CVT Leading",
@@ -6610,9 +6427,7 @@
       "/uploads/cars/144/primary.jpg",
       "/uploads/cars/144/144_photo_2.jpg",
       "/uploads/cars/144/144_photo_3.jpg",
-      "/uploads/cars/144/144_photo_4.jpg",
-      "/uploads/cars/144/144_photo_5.jpg",
-      "/uploads/cars/144/144_photo_6.jpg"
+      "/uploads/cars/144/144_photo_5.jpg"
     ],
     "stock_id": "JB-0144",
     "status": "published",
@@ -6628,7 +6443,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 宋PLUS新能源  DM-i 112KM 尊荣型",
       "en": "BYD Song PLUS DM-i 112KM Premium",
@@ -6702,7 +6517,6 @@
       "/uploads/cars/146/primary.jpg",
       "/uploads/cars/146/146_photo_2.jpg",
       "/uploads/cars/146/146_photo_3.jpg",
-      "/uploads/cars/146/146_photo_4.jpg",
       "/uploads/cars/146/146_photo_5.jpg",
       "/uploads/cars/146/146_photo_6.jpg"
     ],
@@ -6720,7 +6534,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海狮07 EV  610智航版",
       "en": "BYD Sea Lion 07 EV 610 Smart Navigation",
@@ -6798,7 +6612,6 @@
       "/uploads/cars/148/primary.jpg",
       "/uploads/cars/148/148_photo_2.jpg",
       "/uploads/cars/148/148_photo_3.jpg",
-      "/uploads/cars/148/148_photo_4.jpg",
       "/uploads/cars/148/148_photo_5.jpg",
       "/uploads/cars/148/148_photo_6.jpg"
     ],
@@ -6816,7 +6629,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Haval 哈弗M6  PLUS 1.5T 手动豪华智联型",
       "en": "Haval M6 PLUS 1.5T Manual Luxury Connected",
@@ -6890,7 +6703,6 @@
       "/uploads/cars/150/primary.jpg",
       "/uploads/cars/150/150_photo_2.jpg",
       "/uploads/cars/150/150_photo_3.jpg",
-      "/uploads/cars/150/150_photo_4.jpg",
       "/uploads/cars/150/150_photo_5.jpg",
       "/uploads/cars/150/150_photo_6.jpg"
     ],
@@ -6908,7 +6720,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Geely 缤越 2025款 1.5L CVT 超能 MAX",
       "en": "Geely Coolray 2025 1.5L CVT MAX",
@@ -6937,7 +6749,6 @@
       "/uploads/cars/151/151_photo_2.jpg",
       "/uploads/cars/151/151_photo_3.jpg",
       "/uploads/cars/151/151_photo_4.jpg",
-      "/uploads/cars/151/151_photo_5.jpg",
       "/uploads/cars/151/151_photo_6.jpg"
     ],
     "stock_id": "JB-0151",
@@ -6954,7 +6765,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Geely 星越L 2025款 东方曜 2.0TD 自动揽星版",
       "en": "Geely Monjaro 2025 Oriental Edition 2.0TD Automatic Premium",
@@ -6983,8 +6794,7 @@
       "/uploads/cars/152/152_photo_2.jpg",
       "/uploads/cars/152/152_photo_3.jpg",
       "/uploads/cars/152/152_photo_4.jpg",
-      "/uploads/cars/152/152_photo_5.jpg",
-      "/uploads/cars/152/152_photo_6.jpg"
+      "/uploads/cars/152/152_photo_5.jpg"
     ],
     "stock_id": "JB-0152",
     "status": "published",
@@ -7000,7 +6810,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Geely 帝豪 2026款 第5代 1.5L CVT尊贵型",
       "en": "Geely Emgrand 2026 5th Gen 1.5L CVT Premium",
@@ -7028,7 +6838,6 @@
       "/uploads/cars/153/primary.jpg",
       "/uploads/cars/153/153_photo_2.jpg",
       "/uploads/cars/153/153_photo_3.jpg",
-      "/uploads/cars/153/153_photo_4.jpg",
       "/uploads/cars/153/153_photo_5.jpg",
       "/uploads/cars/153/153_photo_6.jpg"
     ],
@@ -7046,7 +6855,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Changan 长安CS75PLUS 2025款 第四代 1.5T 新蓝鲸 智慧鲸悦版",
       "en": "Changan CS75PLUS 2025 4th Gen 1.5T Blue Whale Smart Comfort",
@@ -7120,7 +6929,6 @@
       "/uploads/cars/155/primary.jpg",
       "/uploads/cars/155/155_photo_2.jpg",
       "/uploads/cars/155/155_photo_3.jpg",
-      "/uploads/cars/155/155_photo_4.jpg",
       "/uploads/cars/155/155_photo_5.jpg",
       "/uploads/cars/155/155_photo_6.jpg"
     ],
@@ -7138,7 +6946,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Changan 长安CS55PLUS 2022款 第二代 1.5T DCT尊贵型",
       "en": "Changan CS55PLUS 2022 2nd Gen 1.5T DCT Premium",
@@ -7259,7 +7067,6 @@
       "/uploads/cars/158/primary.jpg",
       "/uploads/cars/158/158_photo_2.jpg",
       "/uploads/cars/158/158_photo_3.jpg",
-      "/uploads/cars/158/158_photo_4.jpg",
       "/uploads/cars/158/158_photo_5.jpg",
       "/uploads/cars/158/158_photo_6.jpg"
     ],
@@ -7277,7 +7084,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "Luxeed 智界S7 2024款 Pro",
       "en": "Luxeed S7 2024 Pro",
@@ -7304,8 +7111,6 @@
     "photos": [
       "/uploads/cars/159/primary.jpg",
       "/uploads/cars/159/159_photo_2.jpg",
-      "/uploads/cars/159/159_photo_3.jpg",
-      "/uploads/cars/159/159_photo_4.jpg",
       "/uploads/cars/159/159_photo_5.jpg",
       "/uploads/cars/159/159_photo_6.jpg"
     ],
@@ -7323,7 +7128,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "GAC 传祺GS3 2026款 影速 270T 劲享版",
       "en": "GAC GS3 2026 270T Comfort",
@@ -7351,9 +7156,7 @@
       "/uploads/cars/160/primary.jpg",
       "/uploads/cars/160/160_photo_2.jpg",
       "/uploads/cars/160/160_photo_3.jpg",
-      "/uploads/cars/160/160_photo_4.jpg",
-      "/uploads/cars/160/160_photo_5.jpg",
-      "/uploads/cars/160/160_photo_6.jpg"
+      "/uploads/cars/160/160_photo_4.jpg"
     ],
     "stock_id": "JB-0160",
     "status": "published",
@@ -7369,7 +7172,7 @@
     "emission": "",
     "departure_port": "",
     "trade_term": "FOB",
-    "photo_status": "complete",
+    "photo_status": "limited",
     "title_i18n": {
       "zh": "BYD 海狮05 EV 520KM旗舰智航版",
       "en": "BYD Sea Lion 05 EV 520KM Flagship Smart Navigation",
