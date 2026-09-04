@@ -397,16 +397,21 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
 
 /* 桌面+（≥1024）：容器加宽、卡片/排行榜三列、信息密度 */
 @media (min-width: 1024px) {
-  :root { --container: 1200px; }
+  :root { --container: 1320px; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
   .rankgrid { grid-template-columns: repeat(3, 1fr); }
   .linkgrid { grid-template-columns: repeat(3, 1fr); }
   .top { display: block; }
 }
 
-/* 宽屏+（≥1280）：最大容器 */
+/* 宽屏+（≥1280）：更大容器 */
 @media (min-width: 1280px) {
-  :root { --container: 1240px; }
+  :root { --container: 1400px; }
+}
+
+/* 超宽屏（≥1600）：上限容器，避免无限拉伸变形 */
+@media (min-width: 1600px) {
+  :root { --container: 1520px; }
 }
 
 /* ====================== RTL（阿拉伯语） ====================== */
