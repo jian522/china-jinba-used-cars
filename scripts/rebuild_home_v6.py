@@ -229,6 +229,30 @@ def esc(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
 
 
+def _img_w(p):
+    try:
+        from PIL import Image as _PIL
+        with _PIL.open(ROOT / str(p).lstrip('/')) as im:
+            return im.width
+    except Exception:
+        return None
+
+
+def thumb_src(p):
+    t = p.rsplit('.', 1)[0] + '.th.webp'
+    return t if (ROOT / t.lstrip('/')).is_file() else p
+
+
+def srcset_attr(p):
+    th = thumb_src(p)
+    if th == p:
+        return ''
+    w, tw = _img_w(p), _img_w(th)
+    if not w or not tw:
+        return ''
+    return ' srcset="' + esc(f'{th} {tw}w, {p} {w}w') + '"'
+
+
 def card_html(lang, v):
     t = v['title_i18n'][lang]
     fuel = FUEL_DISP[lang].get(v['fuel'], v['fuel'])
@@ -238,7 +262,8 @@ def card_html(lang, v):
     return (f'<a class="card" data-car data-search="{search}" data-brand="{esc(v["brand"])}" '
             f'data-fuel="{data_fuel}" data-year="{v["year"]}" href="{N[lang]}cars/{v["id"]}/">'
             f'<div class="photo"><img loading="lazy" decoding="async" width="720" height="540" '
-            f'src="{v["photos"][0]}" alt="{esc(t)}">'
+            f'src="{v["photos"][0]}"{srcset_attr(v["photos"][0])} '
+            f'sizes="(max-width:600px) 48vw, (max-width:1024px) 30vw, 300px" alt="{esc(t)}">'
             f'<span class="photo-count">{t["{}`".format()] if False else L[lang]["photo_fmt"].format(nph)}</span></div>'
             f'<div class="body"><div class="meta">{v["stock_id"]} · {esc(v["brand"])} · {v["year"]}</div>'
             f'<h3>{esc(t)}</h3>'
@@ -262,7 +287,7 @@ def rank_html(lang):
             f'data-year="{v["year"]}" href="{N[lang]}cars/{v["id"]}/">'
             f'<div class="rank-no">#{no}</div>'
             f'<div class="rank-photo"><img loading="lazy" decoding="async" width="360" height="270" '
-            f'src="{v["photos"][0]}" alt="{esc(t)}"></div>'
+            f'src="{v["photos"][0]}"{srcset_attr(v["photos"][0])} sizes="96px" alt="{esc(t)}"></div>'
             f'<div class="rank-body"><h3>{esc(t)}</h3>'
             f'<p>{esc(reason)}</p>'
             f'<div class="rank-foot"><span class="price">{v["price"]}</span><span class="src">{esc(src)}</span></div>'

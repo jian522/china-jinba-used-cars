@@ -68,6 +68,20 @@ def value(lang,key,raw):return VALUES.get(key,{}).get(raw,{}).get(lang,raw)
 def thumb_src(p):
  t=p.rsplit('.',1)[0]+'.th.webp'
  return t if (R/t.lstrip('/')).is_file() else p
+try:
+ from PIL import Image as _PIL
+ def _img_w(p):
+  try:
+   with _PIL.open(R/str(p).lstrip('/')) as im:return im.width
+  except Exception:return None
+except Exception:
+ def _img_w(p):return None
+def srcset_attr(p):
+ th=thumb_src(p)
+ if th==p:return ''
+ w=_img_w(p);tw=_img_w(th)
+ if not w or not tw:return ''
+ return ' srcset="'+esc(f'{th} {tw}w, {p} {w}w')+'"'
 def title_for(v,lang):return v.get('title_i18n',{}).get(lang) or v['title']
 def description_for(v,lang):return v.get('description_i18n',{}).get(lang) or T[lang]['desc']
 def slugify(value):return re.sub(r'[^a-z0-9]+','-',value.lower()).strip('-')
@@ -79,7 +93,7 @@ def breadcrumbs(lang,items):
 def footer(lang):
  t=T[lang];l=L[lang];return f'''<footer><div class="wrap"><div class="footergrid"><div><h4>JINBA AUTO EXPORT</h4><p>{t['location']}</p></div><div><h4>{t['inventory']}</h4><a href="/{lang}/cars/">{t['all']}</a><a href="/{lang}/brands/">{SEO_UI[lang]['brands']}</a><a href="/{lang}/categories/">{SEO_UI[lang]['categories']}</a></div><div><h4>{t['company']}</h4><a href="/{lang}/about/">{t['about']}</a><a href="/{lang}/contact/">{t['contact']}</a><a href="/{lang}/markets/">{SEO_UI[lang]['markets']}</a><a href="/{lang}/guides/">{SEO_UI[lang]['guides']}</a><a href="/{lang}/privacy/">{l['privacy']}</a><a href="/{lang}/terms/">{l['terms']}</a></div><div><h4>{t['contact']}</h4><a href="https://wa.me/8618079089999">WhatsApp: +86 180 7908 9999</a><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div></div><div class="copyright">© 2026 Jinba Auto Export. {t['rights']}</div></div></footer></body></html>'''
 def card(v,lang):
- t=T[lang];name=title_for(v,lang);ph=v['photos'][0] if v['photos'] else '/images/og-image.jpg';pc=len(v['photos']);fuel=v['fuel'];displayfuel=value(lang,'fuel',fuel);search=' '.join(v.get('title_i18n',{}).values())+' '+v['brand'];return f'''<a class="card" data-car data-search="{esc(search.lower())}" data-brand="{esc(v['brand'])}" data-fuel="{esc(fuel)}" data-year="{esc(v['year'])}" href="/{lang}/cars/{v['id']}/"><div class="photo"><img loading="lazy" decoding="async" width="720" height="540" src="{esc(ph)}" alt="{esc(name)}"><span class="photo-count">{pc} {t['onephoto'] if pc==1 else t['photos']}</span></div><div class="body"><div class="meta">{esc(v['stock_id'])} · {esc(v['brand'])} · {esc(v['year'])}</div><h3>{esc(name)}</h3><div class="spec"><span>{esc(v['mileage'])}</span><span>{esc(displayfuel)}</span></div><div class="foot"><span class="price">{esc(v['price'])}</span><span class="more">{t['details']} →</span></div></div></a>'''
+ t=T[lang];name=title_for(v,lang);ph=v['photos'][0] if v['photos'] else '/images/og-image.jpg';pc=len(v['photos']);fuel=v['fuel'];displayfuel=value(lang,'fuel',fuel);search=' '.join(v.get('title_i18n',{}).values())+' '+v['brand'];return f'''<a class="card" data-car data-search="{esc(search.lower())}" data-brand="{esc(v['brand'])}" data-fuel="{esc(fuel)}" data-year="{esc(v['year'])}" href="/{lang}/cars/{v['id']}/"><div class="photo"><img loading="lazy" decoding="async" width="720" height="540" src="{esc(ph)}"{srcset_attr(ph)} sizes="(max-width:600px) 48vw, (max-width:1024px) 30vw, 300px" alt="{esc(name)}"><span class="photo-count">{pc} {t['onephoto'] if pc==1 else t['photos']}</span></div><div class="body"><div class="meta">{esc(v['stock_id'])} · {esc(v['brand'])} · {esc(v['year'])}</div><h3>{esc(name)}</h3><div class="spec"><span>{esc(v['mileage'])}</span><span>{esc(displayfuel)}</span></div><div class="foot"><span class="price">{esc(v['price'])}</span><span class="more">{t['details']} →</span></div></div></a>'''
 def home(lang,V):
  t=T[lang]; hero=V[0]['photos'][0] if V and V[0].get('photos') else '/images/og-image.jpg'; featured=''.join(card(v,lang) for v in V[:6]); steps=''.join(f'<article class="step"><h3>{t[f"step{i}"]}</h3></article>' for i in range(1,7));desc=t['hero2']
  org={'@context':'https://schema.org','@type':'Organization','name':'Jinba Auto Export','url':BASE,'email':'jian5222@gmail.com','telephone':'+86 180 7908 9999','address':{'@type':'PostalAddress','addressLocality':'Xinyu','addressRegion':'Jiangxi','addressCountry':'CN'}}
