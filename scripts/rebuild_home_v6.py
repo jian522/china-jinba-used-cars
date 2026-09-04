@@ -154,7 +154,7 @@ L = {
  },
  'ru': {
   'title': 'Jinba Auto Export | Автомобили из Китая на экспорт',
-  'desc': 'Проверенный автопарк, 96-пунктовая проверка, полный пакет экспортных документов, таможня и международная доставка в中东, Африку, Среднюю Азию и Россию.',
+  'desc': 'Проверенный автопарк, 96-пунктовая проверка, полный пакет экспортных документов, таможня и международная доставка на Ближний Восток, в Африку, Центральную Азию и Россию.',
   'eyebrow': 'СИНЬЮ · ЦЗЯНСИ · КИТАЙ',
   'h1a': 'Авто из Китая — ', 'h1em': 'весь мир.',
   'sub': 'Проверенные авто, 96-пунктовая проверка, документы, таможня и доставка под ключ.',
@@ -250,6 +250,8 @@ def card_html(lang, v):
 def rank_html(lang):
     out = []
     for car_id, no, rz, re_, rr, ra, srcz, srce in RANK:
+        if car_id not in pub:
+            continue  # 车辆下架/不存在时安全跳过，不中断首页构建
         v = pub[car_id]
         t = v['title_i18n'][lang]
         reason = {'zh': rz, 'en': re_, 'ru': rr, 'ar': ra}[lang]
@@ -277,10 +279,11 @@ def faq_html(lang):
 
 def build(lang):
     d = L[lang]
-    v = pub[7]  # hero 图：MG ZS 9图
-    hero_img = v['photos'][0]
+    hero_car = (pub.get(7) if pub.get(7, {}).get('photos') else
+                next((x for x in pub_list if x['photos']), None))  # 默认 MG ZS，异常时回退首台有图
+    hero_img = hero_car['photos'][0] if hero_car else '/images/og-image.jpg'
 
-    cards = '\n'.join(card_html(lang, pub[cid]) for cid in CARD_IDS)
+    cards = '\n'.join(card_html(lang, pub[cid]) for cid in CARD_IDS if cid in pub)
 
     market_links = '\n'.join(
         f'<a class="linkcard" href="{N[lang]}markets/{slug}/"><h3>{name[lang]}</h3><span>→</span></a>'

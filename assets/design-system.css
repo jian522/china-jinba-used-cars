@@ -241,13 +241,13 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
 .legalnote { color: var(--muted); font-size: var(--fs-13); border-top: 1px dashed var(--line); margin-top: var(--s4); padding-top: var(--s3); }
 
 /* ---------- 首页：排行榜 / 资质 / FAQ ---------- */
-.rankgrid { display: grid; gap: var(--s4); grid-template-columns: 1fr; }
+.rankgrid { display: grid; gap: var(--s4); grid-template-columns: minmax(0, 1fr); }
 .rankcard {
   display: flex; gap: var(--s4); background: var(--bg-card); border: 1px solid var(--line);
   border-radius: var(--radius-lg); padding: var(--s4); box-shadow: var(--shadow-sm); transition: var(--transition); align-items: center; color: var(--ink);
 }
 .rankcard:hover { text-decoration: none; transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(217,119,6,.35); }
-.rank-no { font-size: 22px; font-weight: 900; color: var(--accent); min-width: 44px; font-variant-numeric: tabular-nums; }
+.rank-no { font-size: 22px; font-weight: 900; color: var(--accent); min-width: 44px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .rank-photo { width: 96px; height: 72px; border-radius: var(--radius); overflow: hidden; flex-shrink: 0; background: var(--bg-2); }
 .rank-photo img { width: 100%; height: 100%; object-fit: cover; }
 .rank-body { flex: 1; min-width: 0; }
@@ -386,7 +386,7 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
     border: 0; box-shadow: none; padding: 0; max-height: none; width: auto; }
   .section { padding: var(--s8) 0; }
   .hero-grid { grid-template-columns: 1.1fr .9fr; }
-  .rankgrid { grid-template-columns: 1fr 1fr; }
+  .rankgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail { grid-template-columns: 1fr 1fr; align-items: start; }
   .contactlayout { grid-template-columns: 1fr 1.1fr; }
   .formgrid { grid-template-columns: 1fr 1fr; }
@@ -399,7 +399,7 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
 @media (min-width: 1024px) {
   :root { --container: 1320px; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-  .rankgrid { grid-template-columns: repeat(3, 1fr); }
+  .rankgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .linkgrid { grid-template-columns: repeat(3, 1fr); }
   .top { display: block; }
 }
@@ -412,6 +412,31 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
 /* 超宽屏（≥1600）：上限容器，避免无限拉伸变形 */
 @media (min-width: 1600px) {
   :root { --container: 1520px; }
+}
+
+/* ---------- 移动端导航抽屉 + 防横向溢出（<768） ---------- */
+html, body { overflow-x: hidden; }
+@media (max-width: 767.98px) {
+  .navlinks {
+    position: absolute; top: 100%; inset-inline: 0; z-index: 49;
+    flex-direction: column; align-items: stretch; gap: 2px;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .10);
+    padding: var(--s2) var(--s3) var(--s3);
+    display: none; max-height: calc(100dvh - var(--header-h)); overflow-y: auto;
+  }
+  .navlinks.open { display: flex; }
+  .navlinks a { padding: 12px 10px; font-size: var(--fs-16); }
+  .navlinks .langs { flex-wrap: wrap; padding-block: 8px 2px; border-top: 1px solid var(--line); margin-top: 6px; }
+  .navlinks .quote { text-align: center; margin-top: 4px; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s2); }
+  .card h3 { font-size: var(--fs-14); }
+  .specgrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .top .wrap > span:first-child { display: none; }  /* 小屏只留联系方式一行 */
+  .detail .actions { flex-direction: column; align-items: stretch; }
+  .detail .actions .btn { text-align: center; }
 }
 
 /* ====================== RTL（阿拉伯语） ====================== */
