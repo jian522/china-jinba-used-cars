@@ -35,6 +35,9 @@ DIFF = ROOT / '.workbuddy' / 'push_diff.json'
 TREE_CACHE = ROOT / '.workbuddy' / 'push_api_trees'
 
 EXCLUDE_PREFIX = ('.workbuddy/', 'ZCode_Workspacecacheuv/', '.git/')
+# admin/ 与 data/ 是运营目录（后台页、车辆原始数据含未发布与 VIN 片段），
+# 不应出现在公开 Pages 站点上：本地保留但不随部署上传，并在下一次发布时从远端删除。
+DEPLOY_DROP = ('admin/', 'data/')
 WORKERS = 6
 TIMEOUT = 60
 MAX_RETRY = 7
@@ -95,7 +98,7 @@ def local_tree():
         meta, raw_path = rec.split(b'\t', 1)
         mode, _typ, sha = meta.split()
         p = raw_path.decode('utf-8')
-        if p.startswith(EXCLUDE_PREFIX):
+        if p.startswith(EXCLUDE_PREFIX) or p.startswith(DEPLOY_DROP):
             continue
         tree[p] = (mode.decode(), sha.decode())
     return tree
