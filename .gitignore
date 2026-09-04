@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 HANDOVER_PROMPT.md
 *.log
+
+# 运营目录：本地保留，不进入公开站点/仓库提交
+admin/
+data/
