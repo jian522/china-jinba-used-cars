@@ -80,6 +80,19 @@ def main() -> int:
                 elif looks_mojibake(text):
                     errors.append(f"{tag} {field}.{lang} looks like mojibake: {text[:60]!r}")
 
+        # 已发布车辆在非中文站点不得出现中文标题/描述（防 50 台中文泄漏重演）
+        if v.get("status") == "published":
+            cjk = re.compile(r"[\u4e00-\u9fff]")
+            for lang in ("en", "ru", "ar"):
+                t = (v.get("title_i18n") or {}).get(lang, "")
+                if cjk.search(t):
+                    errors.append(f"{tag} published {lang} title contains Chinese: {t[:60]!r}")
+                de = (v.get("description_i18n") or {}).get(lang, "")
+                if cjk.search(de):
+                    errors.append(f"{tag} published {lang} description contains Chinese: {de[:60]!r}")
+            if cjk.search(v.get("brand", "")):
+                errors.append(f"{tag} published brand contains Chinese: {v.get('brand')!r}")
+
         # Arabic description content mix-up detection: the description must
         # mention its own stock number (or at least not a *different* one).
         ar_desc = (v.get("description_i18n") or {}).get("ar", "")
