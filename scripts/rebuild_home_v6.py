@@ -129,7 +129,7 @@ L = {
  },
  'en': {
   'title': 'Jinba Auto Export | Quality Used Cars from China, Exported Worldwide',
-  'desc': 'Verified inventory, 96-point export inspection, one-stop export documents, customs clearance and international shipping to the Middle East, Africa, Central Asia and Russia.',
+  'desc': 'Verified inventory, 96-point export inspection, export documents, customs and shipping to the Middle East, Africa, Central Asia and Russia.',
   'eyebrow': 'XINYU · JIANGXI · CHINA',
   'h1a': 'China used cars, ready for the ', 'h1em': 'world.',
   'sub': 'Verified inventory, 96-point export inspection, one-stop documents, customs and shipping.',
@@ -154,7 +154,7 @@ L = {
  },
  'ru': {
   'title': 'Jinba Auto Export | Автомобили из Китая на экспорт',
-  'desc': 'Проверенный автопарк, 96-пунктовая проверка, полный пакет экспортных документов, таможня и международная доставка на Ближний Восток, в Африку, Центральную Азию и Россию.',
+  'desc': 'Проверенный автопарк, 96-пунктовая проверка, экспортные документы, таможня и доставка на Ближний Восток, в Африку, Центральную Азию и Россию.',
   'eyebrow': 'СИНЬЮ · ЦЗЯНСИ · КИТАЙ',
   'h1a': 'Авто из Китая — ', 'h1em': 'весь мир.',
   'sub': 'Проверенные авто, 96-пунктовая проверка, документы, таможня и доставка под ключ.',

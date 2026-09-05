@@ -8,6 +8,7 @@ MARKETS = [
     {"slug": "nigeria", "names": {"en": "Nigeria", "zh": "尼日利亚", "ru": "Нигерия", "ar": "نيجيريا"}},
     {"slug": "iraq", "names": {"en": "Iraq", "zh": "伊拉克", "ru": "Ирак", "ar": "العراق"}},
     {"slug": "russia", "names": {"en": "Russia", "zh": "俄罗斯", "ru": "Россия", "ar": "روسيا"}},
+    {"slug": "kenya", "names": {"en": "Kenya", "zh": "肯尼亚", "ru": "Кения", "ar": "كينيا"}},
 ]
 
 MARKET_DETAILS = {

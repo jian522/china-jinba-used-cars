@@ -51,7 +51,7 @@ SEO_TITLES = {
 }
 
 def head(lang,title,desc,canonical,image='/images/og-image.jpg',page_type='website'):
- if len(title)>60:title=title[:57].rstrip()+'...'
+ if len(title)>95:title=title[:92].rstrip()+'...'
  if len(desc)>160:desc=desc[:157].rstrip()+'...'
  # Auto-generate SEO title for home page
  if canonical == '/' and '|' not in title:
@@ -166,7 +166,8 @@ def detail(lang,v):
  photo_note=e['complete'] if v.get('photo_status')=='complete' else f"{e['limited']} · {t['limited']}"
  message=quote_plus(f"Jinba Auto {v['stock_id']} {name}");mail_subject=quote_plus(f"{v['stock_id']} {name}")
  crumb=breadcrumbs(lang,[(t['home'],f'/{lang}/'),(t['inventory'],f'/{lang}/cars/'),(name,f'/{lang}/cars/{v["id"]}/')])
- return head(lang,f"{name} | Jinba Auto Export",desc,f"/cars/{v['id']}/",image=main)+f'<script type="application/ld+json">{schema}</script>'+header(lang,f"/cars/{v['id']}/")+f'''<main class="section"><div class="wrap">{crumb}<div class="detail" style="margin-top:22px"><div><div class="mainphoto"><img id="mainphoto" width="720" height="540" fetchpriority="high" src="{esc(main)}" alt="{esc(name)}"></div><div class="thumbs">{thumbs}</div><span class="verified">✓ {pc} {t['onephoto'] if pc==1 else t['photos']}</span></div><div><div class="stocktag">{esc(v['stock_id'])}</div><h1>{esc(name)}</h1><div class="bigprice">{esc(v['price'])}</div><div class="specgrid">{''.join(f'<div class="specitem"><small>{esc(label)}</small><b>{esc(val)}</b></div>' for label,val in specs)}</div><div class="notice">{photo_note}</div><div class="legalnote"><p>{l['price']}</p><p>{l['availability']}</p></div><h3>{t['condition']}</h3><p class="desc">{esc(desc)}</p><div class="actions"><a class="btn primary" data-track="whatsapp" data-stock="{esc(v['stock_id'])}" href="https://wa.me/8618079089999?text={message}">{t['quote']}</a><a class="btn" data-track="email" data-stock="{esc(v['stock_id'])}" style="border-color:var(--line)" href="mailto:jian5222@gmail.com?subject={mail_subject}">{t['email']}</a></div></div></div></div></main>'''+footer(lang)
+ _nt=name if len(name)<=58 else name[:57].rstrip()+'…';tt=f"{_nt} · {esc(v['stock_id'])}"
+ return head(lang,tt,desc,f"/cars/{v['id']}/",image=main)+f'<script type="application/ld+json">{schema}</script>'+header(lang,f"/cars/{v['id']}/")+f'''<main class="section"><div class="wrap">{crumb}<div class="detail" style="margin-top:22px"><div><div class="mainphoto"><img id="mainphoto" width="720" height="540" fetchpriority="high" src="{esc(main)}" alt="{esc(name)}"></div><div class="thumbs">{thumbs}</div><span class="verified">✓ {pc} {t['onephoto'] if pc==1 else t['photos']}</span></div><div><div class="stocktag">{esc(v['stock_id'])}</div><h1>{esc(name)}</h1><div class="bigprice">{esc(v['price'])}</div><div class="specgrid">{''.join(f'<div class="specitem"><small>{esc(label)}</small><b>{esc(val)}</b></div>' for label,val in specs)}</div><div class="notice">{photo_note}</div><div class="legalnote"><p>{l['price']}</p><p>{l['availability']}</p></div><h3>{t['condition']}</h3><p class="desc">{esc(desc)}</p><div class="actions"><a class="btn primary" data-track="whatsapp" data-stock="{esc(v['stock_id'])}" href="https://wa.me/8618079089999?text={message}">{t['quote']}</a><a class="btn" data-track="email" data-stock="{esc(v['stock_id'])}" style="border-color:var(--line)" href="mailto:jian5222@gmail.com?subject={mail_subject}">{t['email']}</a></div></div></div></div></main>'''+footer(lang)
 def contact(lang):
  t=T[lang];l=L[lang];return head(lang,f"{t['contact']} | Jinba Auto Export",t['ctap'],'/contact/')+header(lang,'/contact/')+f'''<section class="pagehead"><div class="wrap"><h1>{t['contact']}</h1><p>{t['ctap']}</p></div></section><main class="section"><div class="wrap contactlayout"><div class="contactbox"><div class="contactcard"><h3>WhatsApp</h3><a href="https://wa.me/8618079089999">+86 180 7908 9999</a></div><div class="contactcard"><h3>{t['email']}</h3><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div><div class="contactcard"><h3>{t['location']}</h3><p>Jinba Auto Export</p></div><div class="contactcard"><h3>{t['quote']}</h3><a class="btn primary" href="https://wa.me/8618079089999">{t['whatsapp']}</a></div></div><form class="inquiry" action="https://formspree.io/f/xqapjkvg" method="post"><h2>{l['form']}</h2><div class="formgrid"><label>{l['name']} *<input name="name" required autocomplete="name"></label><label>{t['email']} *<input type="email" name="email" required autocomplete="email"></label><label>{l['country']} *<input name="country" required autocomplete="country-name"></label><label>{l['port']}<input name="destination_port"></label><label>{l['vehicle']} *<input name="vehicle" required></label><label>{l['budget']}<input name="budget" inputmode="numeric"></label></div><label>{l['message']}<textarea name="message" rows="5"></textarea></label><input type="hidden" name="language" value="{lang}"><button class="btn primary" type="submit">{l['send']}</button><small>{l['required']} · <a href="/{lang}/privacy/">{l['privacy']}</a></small></form></div></main>'''+footer(lang)
 def legal(lang,kind):
@@ -228,6 +229,14 @@ for l in langs:
  for slug in CATEGORY_NAMES:write(R/l/f'categories/{slug}/index.html',category_page(l,slug,V))
  for guide in GUIDES:write(R/l/f'guides/{guide["slug"]}/index.html',guide_page(l,guide))
  for v in V:write(R/l/f'cars/{v["id"]}/index.html',detail(l,v))
+# 清理品牌/市场/分类目录残留孤儿页（改名/下架后不遗留旧页）
+for l in langs:
+ for d in (R/l/'brands').glob('*'):
+  if d.is_dir() and d.name not in {slugify(b) for b in sorted(set(v['brand'] for v in V))}:shutil.rmtree(d,ignore_errors=True)
+ for d in (R/l/'markets').glob('*'):
+  if d.is_dir() and d.name not in {m['slug'] for m in MARKETS}:shutil.rmtree(d,ignore_errors=True)
+ for d in (R/l/'categories').glob('*'):
+  if d.is_dir() and d.name not in set(CATEGORY_NAMES):shutil.rmtree(d,ignore_errors=True)
 write(R/'index.html','<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="https://jinbacars.com/en/"><title>Jinba Auto Export</title>')
 write(R/'cars/index.html','<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/en/cars/"><link rel="canonical" href="https://jinbacars.com/en/cars/">')
 write(R/'admin/login/index.html',admin_page())
