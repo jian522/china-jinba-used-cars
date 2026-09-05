@@ -174,13 +174,20 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute; left: 8px; bottom: 8px; background: rgba(11,34,57,.78); color: #fff;
   font-size: 11px; padding: 3px 8px; border-radius: 999px;
 }
-.card .body { padding: var(--s4); display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card .body { padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
 .card .meta { color: var(--muted); font-size: var(--fs-13); }
 .card h3 { font-size: var(--fs-16); margin: 0; color: var(--primary); }
 .card .spec { display: flex; gap: var(--s3); color: var(--muted); font-size: var(--fs-13); flex-wrap: wrap; }
-.card .foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: var(--s2); }
+.card .foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px; }
 .card .price { font-size: var(--fs-20); font-weight: 900; color: var(--accent-2); }
 .card .more { color: var(--primary); font-weight: 700; font-size: var(--fs-14); }
+
+/* 首页车型网格：大屏固定5列，窗口缩小时自动切换列数（4→3→2→1） */
+.grid.home-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s3); }
+@media (max-width: 1279.98px) { .grid.home-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 1023.98px) { .grid.home-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 767.98px) { .grid.home-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); } }
+@media (max-width: 419.98px) { .grid.home-grid { grid-template-columns: 1fr; } }
 
 /* 链接卡片网格 */
 .linkgrid { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
