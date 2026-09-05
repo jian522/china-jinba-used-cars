@@ -446,6 +446,32 @@ html, body { overflow-x: hidden; }
   .detail .actions .btn { text-align: center; }
 }
 
+/* ---------- 视觉打磨（本轮 UI 优化） ---------- */
+.hero { background: linear-gradient(180deg, #0d2c4c 0%, #0b2239 100%); }
+.hero-img img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.card { border-radius: var(--radius-lg); }
+.card .photo img { transition: transform var(--transition); }
+.card:hover .photo img { transform: scale(1.05); }
+section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+.btn:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid rgba(217,119,6,.45); outline-offset: 2px; }
+
+/* 移动端固定询价栏（仅车辆详情页注入 .quickbar，桌面隐藏） */
+.quickbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 80; display: flex; gap: 10px;
+  padding: 10px max(var(--s3), env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(var(--s3), env(safe-area-inset-right));
+  background: rgba(255,255,255,.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(11,34,57,.08); }
+.quickbar .btn { flex: 1; text-align: center; margin: 0; }
+@media (min-width: 768px) { .quickbar { display: none; } }
+body:has(.quickbar) { padding-bottom: 72px; }
+
+/* 小屏节距收窄，内容更紧凑 */
+@media (max-width: 767.98px) {
+  .section { padding: 34px 0; }
+  .hero { padding: 40px 0; }
+  .pagehead { padding: 26px 0 10px; }
+  h1 { letter-spacing: -.01em; }
+}
+
 /* ====================== RTL（阿拉伯语） ====================== */
 [dir="rtl"] .breadcrumbs span, [dir="rtl"] .faqitem summary { padding-inline-start: 48px; }
 [dir="rtl"] .linkcard span { float: left; }
