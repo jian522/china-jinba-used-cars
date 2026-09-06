@@ -261,10 +261,10 @@ write(R/'feed.xml',f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><c
 write(R/f'{INDEXNOW_KEY}.txt',INDEXNOW_KEY)
 write(R/'favicon.svg','''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#f4622b"/><path d="M38 13v30c0 7-4 10-11 10-6 0-10-3-11-9l8-2c1 3 2 4 4 4 2 0 3-1 3-4V13z" fill="white"/></svg>''')
 print('vehicles',len(V),'pages',len(urls))
-# 首页由独立模板 rebuild_home_v6.py 生成：build_v2 的 home() 是旧模板，
-# 会覆盖新版首页。此处自动补跑，从流程上消除模板分叉。
+# 首页由独立模板 rebuild_home_v7.py 生成（2026-09 深蓝+橙改版）：build_v2 的
+# home() 是旧模板，会覆盖新版首页。此处自动补跑，从流程上消除模板分叉。
 import subprocess as _sp, sys as _sys
-_rc=_sp.run([_sys.executable,str(R/'scripts'/'rebuild_home_v6.py')],cwd=str(R)).returncode
+_rc=_sp.run([_sys.executable,str(R/'scripts'/'rebuild_home_v7.py')],cwd=str(R)).returncode
 print('homepage rebuild exit:',_rc)
 if _rc != 0:
     sys.exit(_rc)

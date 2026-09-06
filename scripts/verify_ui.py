@@ -70,20 +70,29 @@ for lang in LANGS:
     if h is None:
         check(f'{lang} 首页存在', False)
         continue
-    check(f'{lang} 首页引用 design-system.css', 'design-system.css' in h)
-    check(f'{lang} 首页引用 app.js', 'app.js' in h)
-    check(f'{lang} 首页已清除暗色覆盖层', '9EFF00' not in h.upper() and '141414' not in h)
-    check(f'{lang} 首页 theme-color 为 #0b2239', 'content="#0b2239"' in h)
+    if 'jinba-home-v7.css' in h:
+        # 2026-09 深蓝+橙改版（v7）首页结构
+        check(f'{lang} 首页引用 v7 样式', 'jinba-home-v7.css' in h)
+        check(f'{lang} 首页精选车卡=4', h.count('jv7-car-body') == 4,
+              f'实际 {h.count("jv7-car-body")}')
+        check(f'{lang} 首页流程步=4', h.count('jv7-step-no') == 4,
+              f'实际 {h.count("jv7-step-no")}')
+        check(f'{lang} 首页市场卡=3', h.count('class="jv7-market"') + h.count('class="jv7-market jv7-market--navy"') == 3)
+        check(f'{lang} 首页 FAQ=4', h.count('jv7-faqitem') == 4,
+              f'实际 {h.count("jv7-faqitem")}')
+        check(f'{lang} 首页 CTA 与 footer 存在', 'class="jv7-cta"' in h and 'jv7-footer' in h)
+        check(f'{lang} 首页 theme-color 为 #0A1628', 'content="#0A1628"' in h)
+    else:
+        check(f'{lang} 首页引用 design-system.css', 'design-system.css' in h)
+        check(f'{lang} 首页引用 app.js', 'app.js' in h)
+        check(f'{lang} 首页 footer 水印', 'footer-wm' in h)
+    check(f'{lang} 首页无旧版暗色残留', '9EFF00' not in h.upper() and '141414' not in h)
     check(f'{lang} 首页 hreflang 5 向', h.count('hreflang="') == 5,
           f'实际 {h.count("hreflang=")}')
-    check(f'{lang} 首页排行模块存在', h.count('class="rankcard"') >= 1,
-          f'实际 {h.count(chr(34).join(["class=", "rankcard"]))}')
-    check(f'{lang} 首页 FAQ 模块存在', h.count('class="faqitem"') >= 1,
-          f'实际 {h.count("class=" + chr(34) + "faqitem")}')
-    check(f'{lang} 首页 footer 水印', 'footer-wm' in h)
     rtl_ok = ('dir="rtl"' in h) if lang == 'ar' else ('dir="ltr"' in h)
     check(f'{lang} 首页方向正确', rtl_ok)
-    check(f'{lang} 首页保留 Organization JSON-LD', '"@type": "Organization"' in h)
+    check(f'{lang} 首页保留 Organization JSON-LD',
+          '"@type": "Organization"' in h or '"@type":"Organization"' in h)
 
 # ---------------------------------------------------------------- 3. 库存与详情
 print('== 3. 库存页 / 详情页 ==')
