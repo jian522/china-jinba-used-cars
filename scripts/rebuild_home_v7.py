@@ -429,20 +429,24 @@ def chips_html(lang, v):
     body = {'zh': v.get('body_type') or 'SUV', 'en': v.get('body_type') or 'SUV',
             'ru': v.get('body_type') or 'SUV', 'ar': v.get('body_type') or 'SUV'}[lang]
     return (f'<span class="jv7-chip">{esc(str(v["year"]))} · {esc(fuel)}</span>'
-            f'<span class="jv7-chip">{esc(body)}</span>'
-            f'<span class="jv7-chip jv7-chip--stock">{esc(v["stock_id"])}</span>')
+            f'<span class="jv7-chip">{esc(body)}</span>')
 
 
 def car_card(lang, v):
+    # v8 规范：左上角 年份+燃料+车身 标签悬浮于原图上，禁止缩略图作主图；
+    # 下方车型名 / 库存号 / 里程 / 品牌 / FOB 价 + 藏蓝实心白字按钮。
     d = L[lang]
     t = v['title_i18n'].get(lang) or v['title']
     ph = v['photos'][0]
     alt = esc(t)
+    stock = esc(v['stock_id'])
+    mileage = esc(f'{int(v.get("mileage_km") or 0):,}') + ' km'
+    brand = esc(v['brand'])
     return (f'<article class="jv7-car">'
-            f'<div class="jv7-car-photo"><img src="{ph}" alt="{alt}" loading="lazy" decoding="async" width="640" height="480"></div>'
-            f'<div class="jv7-car-body"><div class="jv7-chiprow">{chips_html(lang, v)}</div>'
-            f'<h3 class="jv7-car-name">{alt}</h3>'
-            f'<div class="jv7-car-spec">{esc(str(v["mileage_km"]))} km · {esc(v["brand"])}</div>'
+            f'<div class="jv7-car-photo"><img src="{ph}" alt="{alt}" loading="lazy" decoding="async" width="720" height="540">'
+            f'<span class="jv7-tags"><b>{esc(str(v["year"]))}</b>{chips_html(lang, v)}</span></div>'
+            f'<div class="jv7-car-body"><h3 class="jv7-car-name">{alt}</h3>'
+            f'<div class="jv7-car-spec">{stock} · {mileage} · {brand}</div>'
             f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(v["price"])}</div>'
             f'<div class="jv7-fob">{esc(d["fob"])}</div></div>'
             f'<a class="jv7-btn jv7-btn--navy" href="{N[lang]}cars/{v["id"]}/">{esc(d["quote"])}</a>'

@@ -1,0 +1,143 @@
+/* =========================================================================
+   金霸二手车出口 · v8 全站样式 (jinba-v8.css)
+   叠加在 design-system.css 之上：藏蓝 #0A1628 + 暖橙 #FF6B2C + 白底
+   覆盖范围：车辆卡片 / 库存筛选栏 / 详情页双栏 / 画廊缩略图 / 按钮
+   规范要点：
+     * 全站主图一律高清原图，禁止缩略图作主图
+     * 卡片左上角 年份+燃料+车身 标签
+     * 详情页缩略图点击直接替换主图，禁止弹窗
+     * 按钮一律实心底白字，禁止深色文字放深底
+   ========================================================================= */
+
+:root {
+  --v8-navy: #0A1628;
+  --v8-navy-2: #12233d;
+  --v8-orange: #FF6B2C;
+  --v8-orange-2: #e05a20;
+  --v8-line: #e5eaf2;
+  --v8-muted: #5b6b7c;
+  --v8-radius: 14px;
+  --v8-shadow: 0 10px 28px rgba(10, 22, 40, .10);
+}
+
+/* ---------- 车辆卡片（v8） ---------- */
+.card { border-radius: var(--v8-radius); border-color: var(--v8-line); }
+.card:hover { border-color: rgba(255, 107, 44, .45); box-shadow: var(--v8-shadow); }
+.card .photo { position: relative; overflow: hidden; background: #f2f5f9; }
+.card .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+.card:hover .photo img { transform: scale(1.04); }
+
+/* 左上角标签：年份 + 燃料 + 车身 */
+.card .photo-tags {
+  position: absolute; inset-block-start: 10px; inset-inline-start: 10px;
+  display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none;
+}
+.card .photo-tags b, .card .photo-tags span {
+  background: rgba(10, 22, 40, .82); color: #fff; font-size: 11.5px; font-weight: 600;
+  line-height: 1; padding: 6px 10px; border-radius: 999px; backdrop-filter: blur(4px);
+}
+.card .photo-tags b { background: var(--v8-orange); font-weight: 800; }
+
+.card .body { padding: 14px 16px 16px; gap: 6px; }
+.card h3 { font-size: 15.5px; line-height: 1.35; }
+.card .meta { color: var(--v8-muted); font-size: 12.5px; }
+.card .foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 10px; }
+.card .price { font-size: 19px; font-weight: 900; color: var(--v8-navy); display: grid; line-height: 1.15; }
+.card .price small { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--v8-muted); font-family: ui-monospace, monospace; }
+.card .more {
+  background: var(--v8-navy); color: #fff; font-size: 13px; font-weight: 700;
+  padding: 9px 14px; border-radius: 999px; white-space: nowrap;
+}
+a.card:hover .more { background: var(--v8-orange); }
+
+/* ---------- 库存筛选栏（v8 五维） ---------- */
+.filters-v8 { border-radius: var(--v8-radius); }
+.filters-v8 input, .filters-v8 select {
+  border: 1px solid var(--v8-line); border-radius: 10px; color: var(--ink); background: #fff;
+}
+.filters-v8 input:focus, .filters-v8 select:focus {
+  outline: none; border-color: var(--v8-navy); box-shadow: 0 0 0 3px rgba(10, 22, 40, .10);
+}
+@media (min-width: 768px) {
+  .filters-v8 { grid-template-columns: 1.6fr 1fr 1fr 1.2fr 1fr 1fr auto; }
+}
+@media (max-width: 767.98px) {
+  .filters-v8 { grid-template-columns: 1fr 1fr; }
+  .filters-v8 input { grid-column: 1 / -1; }
+  .filters-v8 button { grid-column: 1 / -1; }
+}
+
+/* ---------- 详情页（v8 双栏） ---------- */
+.detail-v8 { gap: 36px; align-items: start; }
+.detail-gallery { min-width: 0; }
+
+/* 主图：高清原图，无点击弹窗 */
+.detail-v8 .mainphoto { border-radius: var(--v8-radius); border: 1px solid var(--v8-line); background: #f2f5f9; }
+.detail-v8 .mainphoto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; cursor: default; }
+
+/* 横向缩略图轮播：点击直接替换主图（脚本 setMain） */
+.thumbs-v8 {
+  display: flex; gap: 10px; margin-top: 12px; overflow-x: auto;
+  padding-bottom: 6px; scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.thumbs-v8 .thumb {
+  flex: 0 0 auto; width: 108px; aspect-ratio: 4 / 3; padding: 0;
+  border: 2px solid var(--v8-line); border-radius: 10px; overflow: hidden;
+  background: #f2f5f9; transition: border-color .15s ease, opacity .15s ease;
+}
+.thumbs-v8 .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumbs-v8 .thumb:hover { border-color: var(--v8-orange); }
+.thumbs-v8 .thumb.active { border-color: var(--v8-navy); }
+.thumbs-v8 .thumb:not(.active):hover { opacity: .92; }
+
+/* 右侧参数区 */
+.detail-info { min-width: 0; }
+.detail-v8 h1 { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 1.9rem); margin-bottom: 4px; }
+.detail-version {
+  display: block; font-size: .62em; font-weight: 700; color: var(--v8-muted); margin-top: 4px;
+}
+.detail-v8 .bigprice { color: var(--v8-navy); display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 10px 0 18px; }
+.detail-v8 .bigprice small {
+  font-size: 12.5px; font-weight: 700; color: var(--v8-orange);
+  background: rgba(255, 107, 44, .10); padding: 4px 12px; border-radius: 999px;
+}
+.detail-v8 .specgrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.specgrid-v8 .specitem {
+  background: #f7f9fc; border: 1px solid var(--v8-line); border-radius: 10px; padding: 12px 14px;
+}
+.specgrid-v8 .specitem small { color: var(--v8-muted); font-size: 12px; text-transform: none; letter-spacing: 0; }
+.specgrid-v8 .specitem b { color: var(--v8-navy); font-size: 15px; }
+.detail-v8 .verified { color: var(--v8-orange); }
+.detail-v8 .stocktag { background: rgba(10, 22, 40, .06); color: var(--v8-navy); font-family: ui-monospace, monospace; letter-spacing: .06em; }
+
+/* 详情页 CTA：实心底白字（WhatsApp 主 / 邮件描边次） */
+.detail-v8 .actions { margin-top: 18px; }
+.detail-v8 .actions .btn.primary { background: var(--v8-orange); border-color: var(--v8-orange); color: #fff; }
+.detail-v8 .actions .btn.primary:hover { background: var(--v8-orange-2); }
+.detail-v8 .actions .btn { color: var(--v8-navy); }
+
+/* ---------- 按钮（v8 全站收紧） ---------- */
+.btn.primary { background: var(--v8-navy); border-color: var(--v8-navy); color: #fff; }
+.btn.primary:hover { background: var(--v8-navy-2); }
+.navlinks .quote { background: #25D366; color: #fff !important; }
+.navlinks .quote:hover { background: #1fb857; }
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 767.98px) {
+  .detail-v8 { grid-template-columns: 1fr; gap: 22px; }
+  .detail-v8 .specgrid { grid-template-columns: repeat(2, 1fr); }
+  .card .photo-tags b, .card .photo-tags span { font-size: 10.5px; padding: 5px 8px; }
+  .thumbs-v8 .thumb { width: 92px; }
+  .card .more { padding: 8px 12px; font-size: 12.5px; }
+}
+@media (min-width: 768px) {
+  .detail-v8 { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+}
+
+/* ---------- RTL（阿拉伯语） ---------- */
+[dir="rtl"] .card .photo-tags { inset-inline-start: 10px; inset-inline-end: auto; }
+[dir="rtl"] .thumbs-v8 { flex-direction: row; }
+
+/* ---------- 弹窗保险：lightbox 一律禁用 ---------- */
+#lightbox { display: none !important; }

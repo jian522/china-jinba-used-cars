@@ -208,6 +208,16 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 .jv7-car:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(10, 22, 40, .12); }
 .jv7-car-photo { position: relative; }
 .jv7-car-photo img { width: 100%; height: 216px; object-fit: cover; }
+/* v8：左上角 年份+燃料+车身 标签（悬浮于原图） */
+.jv7-tags {
+  position: absolute; top: 10px; left: 10px; right: auto;
+  display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none;
+}
+.jv7-tags b, .jv7-tags .jv7-chip {
+  background: rgba(10, 22, 40, .82); color: #fff; font-size: 11.5px; font-weight: 600;
+  line-height: 1; padding: 6px 10px; border-radius: 999px; backdrop-filter: blur(4px);
+}
+.jv7-tags b { background: var(--jv-orange); font-weight: 800; }
 .jv7-car-body { padding: 18px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .jv7-chiprow { display: flex; flex-wrap: wrap; gap: 8px; }
 .jv7-chip {
@@ -221,6 +231,7 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 .jv7-price { font-family: var(--jv-font-head); font-weight: 800; font-size: 22px; line-height: 1; }
 .jv7-fob { font-family: var(--jv-font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--jv-gray); margin-top: 4px; }
 .jv7-car .jv7-btn { width: 100%; padding: 12px 20px; font-size: 14px; }
+[dir="rtl"] .jv7-tags { left: auto; right: 10px; }
 @media (max-width: 1279px) { .jv7-grid4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 599px) { .jv7-grid4 { grid-template-columns: 1fr; } }
 

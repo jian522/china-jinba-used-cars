@@ -37,26 +37,38 @@
     });
   }
 
-  /* 2. 库存筛选（搜索 + 品牌/燃料/年份下拉，结果数 + 空状态） */
+  /* 2. 库存筛选（v8：搜索 + 车身/燃料/价格/品牌/港口 五维，结果数 + 空状态） */
   function setupFilter() {
     var grid = document.querySelector('.grid');
     var q = document.getElementById('q');
     var brand = document.getElementById('brand');
     var fuel = document.getElementById('fuel');
     var year = document.getElementById('year');
+    var body = document.getElementById('body');
+    var price = document.getElementById('price');
+    var port = document.getElementById('port');
     if (!grid) return;
     function filterCars() {
       var qv = (q ? q.value : '').trim().toLowerCase();
       var bv = brand ? brand.value : '';
       var fv = fuel ? fuel.value : '';
       var yv = year ? year.value : '';
+      var bodyv = body ? body.value : '';
+      var portv = port ? port.value : '';
+      var pv = price ? price.value : '';
+      var pmin = 0, pmax = Infinity;
+      if (pv) { var seg = pv.split('-'); pmin = +seg[0] || 0; pmax = +seg[1] || Infinity; }
       var n = 0;
       grid.querySelectorAll('[data-car]').forEach(function (c) {
         var s = (c.getAttribute('data-search') || '').toLowerCase();
+        var pr = +c.getAttribute('data-price') || 0;
         var ok = (!qv || s.indexOf(qv) > -1) &&
                  (!bv || c.getAttribute('data-brand') === bv) &&
                  (!fv || c.getAttribute('data-fuel') === fv) &&
-                 (!yv || c.getAttribute('data-year') === yv);
+                 (!yv || c.getAttribute('data-year') === yv) &&
+                 (!bodyv || c.getAttribute('data-body') === bodyv) &&
+                 (!portv || c.getAttribute('data-port') === portv) &&
+                 (pr >= pmin && pr <= pmax);
         c.style.display = ok ? '' : 'none';
         if (ok) n++;
       });
@@ -74,58 +86,20 @@
     }
     window.filterCars = filterCars;
     if (q) q.addEventListener('input', filterCars);
-    [brand, fuel, year].forEach(function (el) { if (el) el.addEventListener('change', filterCars); });
+    [brand, fuel, year, body, price, port].forEach(function (el) { if (el) el.addEventListener('change', filterCars); });
   }
 
-  /* 3. 详情页缩略图 + Lightbox（动态创建，无需改模板） */
+  /* 3. 详情页画廊（v8 规范）：缩略图点击直接替换主图，禁止任何弹窗预览器 */
   function setupGallery() {
     var main = document.getElementById('mainphoto');
     if (!main) return;
     window.setMain = function (src, btn) {
+      if (!src) return;
       main.src = src;
+      main.removeAttribute('srcset');
       document.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('active'); });
       if (btn) btn.classList.add('active');
     };
-    var lb = document.createElement('div');
-    lb.id = 'lightbox';
-    lb.setAttribute('role', 'dialog');
-    lb.setAttribute('aria-modal', 'true');
-    lb.innerHTML = '<button class="lb-close" aria-label="Close">×</button>' +
-                   '<button class="lb-prev" aria-label="Previous">‹</button>' +
-                   '<img class="lb-img" alt="">' +
-                   '<button class="lb-next" aria-label="Next">›</button>' +
-                   '<div class="lb-cap"></div>';
-    document.body.appendChild(lb);
-    var lbImg = lb.querySelector('.lb-img');
-    var lbCap = lb.querySelector('.lb-cap');
-    var imgs = [], idx = 0;
-    function show() { lbImg.src = imgs[idx]; lbCap.textContent = (idx + 1) + ' / ' + imgs.length; }
-    function indexOfSrc(src) { var i = imgs.indexOf(src); return i < 0 ? 0 : i; }
-    function open(i) {
-      imgs = Array.prototype.map.call(document.querySelectorAll('.thumb img'), function (im) { return im.src; });
-      if (!imgs.length) return;
-      idx = i < 0 ? 0 : (i >= imgs.length ? imgs.length - 1 : i);
-      show();
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-    lb.querySelector('.lb-close').addEventListener('click', close);
-    lb.querySelector('.lb-prev').addEventListener('click', function () { idx = (idx - 1 + imgs.length) % imgs.length; show(); });
-    lb.querySelector('.lb-next').addEventListener('click', function () { idx = (idx + 1) % imgs.length; show(); });
-    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
-    document.addEventListener('keydown', function (e) {
-      if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') { idx = (idx - 1 + imgs.length) % imgs.length; show(); }
-      else if (e.key === 'ArrowRight') { idx = (idx + 1) % imgs.length; show(); }
-    });
-    main.style.cursor = 'zoom-in';
-    main.addEventListener('click', function () { open(indexOfSrc(main.src)); });
-    document.querySelectorAll('.thumb').forEach(function (t) {
-      var im = t.querySelector('img');
-      t.addEventListener('click', function () { open(indexOfSrc(im ? im.src : '')); });
-    });
   }
 
   /* 4. 入场动画（无障碍：无 IO 时直接显示） */
