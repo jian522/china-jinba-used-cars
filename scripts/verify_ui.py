@@ -19,7 +19,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGS = ['en', 'zh', 'ru', 'ar']
-SAMPLE_CARS = [3, 4, 11, 60, 265]
+# 抽样详情页：从已发布车辆中取代表（新批次 2026-09-che168-full）
+# 若对应 id 未发布则自动跳过（check 会标 FAIL，提示重新选样本）
+SAMPLE_CARS = [271, 275, 283, 289, 295]
 
 
 def car_count():
@@ -126,8 +128,10 @@ print('== 4. sitemap ==')
 sm = read('sitemap.xml')
 if sm:
     n = sm.count('<loc>')
-    check('sitemap URL 数 ≥ 1000', n >= 1000, f'实际 {n}')
-    check('sitemap 含新车 3/4', '/en/cars/3/' in sm and '/en/cars/4/' in sm)
+    # 38 台车 × 4 语言 + 首页/库存/品牌/市场等静态页 ≈ 300+；
+    # 车辆大幅精简后不再要求 ≥1000，改为与库存页一致即可（见 check 3）
+    check('sitemap URL 数 ≥ 200', n >= 200, f'实际 {n}')
+    check('sitemap 含新车 271/275', '/en/cars/271/' in sm and '/en/cars/275/' in sm)
 else:
     check('sitemap 存在', False)
 
