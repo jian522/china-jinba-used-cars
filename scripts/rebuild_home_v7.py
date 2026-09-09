@@ -469,7 +469,7 @@ def build(lang):
     # ---- nav ----
     navlinks = ''.join(f'<a href="{href}">{esc(name)}</a>' for name, href in d['nav'])
     # ---- hero ----
-    hero_img = HERO_IMG
+    hero_img = '/images/hero-banner.webp'  # 2026-09-09: 固定使用广告 banner（1536x1024 3:2）
     hero_alt = esc((HERO['title_i18n'].get(lang) or HERO['title']) if HERO else 'Jinba Cars Export')
     stats = ''.join(f'<div class="jv7-stat"><b>{val}</b><span>{esc(lab)}</span></div>' for val, lab in d['stats'])
     # ---- featured ----
@@ -548,7 +548,7 @@ def build(lang):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260906">
+<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260909c">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
@@ -595,7 +595,7 @@ def build(lang):
       </div>
     </div>
     <div class="jv7-hero-media">
-      <img class="jv7-hero-img" src="{hero_img}" alt="{hero_alt}" width="1200" height="1020" fetchpriority="high">
+      <img class="jv7-hero-img" src="{hero_img}" alt="{hero_alt}" width="1536" height="1024" fetchpriority="high">
       <div class="jv7-statband">{stats}</div>
     </div>
   </div>
