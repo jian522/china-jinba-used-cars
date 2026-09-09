@@ -8,3 +8,7 @@ HANDOVER_PROMPT.md
 # 运营目录：本地保留，不进入公开站点/仓库提交
 admin/
 data/
+
+# 本地辅助目录：技能配置与预览截图，不提交
+.codebuddy/
+_preview/
