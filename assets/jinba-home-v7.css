@@ -180,7 +180,7 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 }
 .jv7-hero .jv7-hero-img {
   display: block;
-  width: min(100%, 440px); height: 330px;
+  width: 100%; aspect-ratio: 3 / 2; height: auto;
   margin-inline: auto; flex: none; align-self: center;
   object-fit: cover;
   border-radius: var(--jv-r-hero);
