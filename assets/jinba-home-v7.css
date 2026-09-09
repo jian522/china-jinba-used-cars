@@ -146,34 +146,51 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 
 /* ============================================================
    3. Hero
+   左右两栏等高对齐；右侧图片缩小并居中；左侧文本画布
+   与右侧图片容器等高，文本垂直居中，留白收紧。
    ============================================================ */
-.jv7-hero { padding: 56px 0 64px; }
-.jv7-hero-grid { display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 1fr); gap: 56px; align-items: center; }
+.jv7-hero { padding: 40px 0 48px; }
+.jv7-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: 44px; align-items: stretch;
+}
+.jv7-hero-grid > div { min-width: 0; }
+.jv7-hero-grid > div:first-child {
+  display: flex; flex-direction: column; justify-content: center;
+}
 .jv7-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--jv-orange-soft); color: var(--jv-orange);
   border-radius: 999px; padding: 7px 16px;
   font-family: var(--jv-font-mono); font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  align-self: flex-start;
 }
 .jv7-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--jv-orange); flex: none; }
 .jv7-h1 {
   font-family: var(--jv-font-head); font-weight: 800;
   font-size: clamp(34px, 4.6vw, 58px); line-height: 1.07; letter-spacing: -0.02em;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
 }
-.jv7-hero-sub { font-size: 16.5px; color: var(--jv-gray); margin: 20px 0 0; max-width: 54ch; }
-.jv7-hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-.jv7-hero-media { min-width: 0; }
-.jv7-hero-img {
-  width: 100%; aspect-ratio: 20 / 17; object-fit: cover;
+.jv7-hero-sub { font-size: 16.5px; color: var(--jv-gray); margin: 16px 0 0; max-width: 54ch; }
+.jv7-hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.jv7-hero-media {
+  display: flex; flex-direction: column; gap: 18px; justify-content: center;
+  min-width: 0;
+}
+.jv7-hero .jv7-hero-img {
+  display: block;
+  width: min(100%, 440px); height: 330px;
+  margin-inline: auto; flex: none; align-self: center;
+  object-fit: cover;
   border-radius: var(--jv-r-hero);
-  box-shadow: 0 32px 64px rgba(10, 22, 40, .18);
+  box-shadow: 0 24px 48px rgba(10, 22, 40, .16);
 }
 .jv7-statband {
-  margin-top: 22px; background: linear-gradient(120deg, var(--jv-navy), var(--jv-navy2));
+  margin-top: 0; background: linear-gradient(120deg, var(--jv-navy), var(--jv-navy2));
   border-radius: var(--jv-r-hero); color: #fff;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
-  padding: 24px 34px;
+  padding: 20px 26px;
 }
 .jv7-stat { display: grid; gap: 3px; }
 .jv7-stat b { font-family: var(--jv-font-head); font-weight: 800; font-size: 22px; line-height: 1.1; }
@@ -184,7 +201,10 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 }
 @media (max-width: 1023px) {
   .jv7-hero { padding: 36px 0 44px; }
-  .jv7-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .jv7-hero-grid { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  .jv7-hero-grid > div:first-child { justify-content: flex-start; }
+  .jv7-hero-media { justify-content: flex-start; }
+  .jv7-hero .jv7-hero-img { max-width: 100%; }
   .jv7-statband { grid-template-columns: repeat(2, 1fr); padding: 20px 24px; border-radius: var(--jv-r-card); }
 }
 @media (max-width: 479px) {

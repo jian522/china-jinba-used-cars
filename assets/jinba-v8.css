@@ -38,10 +38,10 @@
 }
 .card .photo-tags b { background: var(--v8-orange); font-weight: 800; }
 
-.card .body { padding: 14px 16px 16px; gap: 6px; }
+.card .body { padding: 12px 14px 13px; gap: 4px; }
 .card h3 { font-size: 15.5px; line-height: 1.35; }
 .card .meta { color: var(--v8-muted); font-size: 12.5px; }
-.card .foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 10px; }
+.card .foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 0; }
 .card .price { font-size: 19px; font-weight: 900; color: var(--v8-navy); display: grid; line-height: 1.15; }
 .card .price small { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--v8-muted); font-family: ui-monospace, monospace; }
 .card .more {
@@ -111,10 +111,10 @@ a.card:hover .more { background: var(--v8-orange); }
 .detail-v8 .verified { color: var(--v8-orange); }
 .detail-v8 .stocktag { background: rgba(10, 22, 40, .06); color: var(--v8-navy); font-family: ui-monospace, monospace; letter-spacing: .06em; }
 
-/* 详情页 CTA：实心底白字（WhatsApp 主 / 邮件描边次） */
+/* 详情页 CTA：蓝底白字（圆角与尺寸继承自 .btn） */
 .detail-v8 .actions { margin-top: 18px; }
-.detail-v8 .actions .btn.primary { background: var(--v8-orange); border-color: var(--v8-orange); color: #fff; }
-.detail-v8 .actions .btn.primary:hover { background: var(--v8-orange-2); }
+.detail-v8 .actions .btn.primary { background: var(--v8-navy); border-color: var(--v8-navy); color: #fff; }
+.detail-v8 .actions .btn.primary:hover { background: var(--v8-navy-2); }
 .detail-v8 .actions .btn { color: var(--v8-navy); }
 
 /* ---------- 按钮（v8 全站收紧） ---------- */
