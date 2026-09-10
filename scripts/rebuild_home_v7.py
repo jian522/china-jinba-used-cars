@@ -90,8 +90,8 @@ FOUR_LANG = ['English', '简体中文', 'Русский', 'العربية']
 # ---------------------------------------------------------------- i18n copy
 L = {
  'en': {
-  'title': 'Jinba Cars Export | Used Cars from China, Export-Ready & Shipped Worldwide',
-  'desc': 'Licensed used-car exporter since 2016: 209 vehicles in stock, 168-point inspection, full export paperwork and shipping to 14 countries across Africa, the Middle East and Eurasia.',
+  'title': 'Used Cars from China for Export | Jinba Cars',
+  'desc': f'Browse {STAT_INV} used vehicles from China for export. Compare stock, photos, price and mileage, then request a written quotation for your destination port.',
   'topbar_l': 'Licensed used-car exporter · Shenzhen, China · Since 2016',
   'nav': [('Inventory', '/en/cars/'), ('Markets', '/en/markets/kenya/'), ('Process', '#process'), ('About', '/en/about/')],
   'nav_wa': 'WhatsApp',
@@ -171,8 +171,8 @@ L = {
   'foot_badge': 'MOFCOM licensed · COI verified · B/L on every shipment',
  },
  'zh': {
-  'title': '金霸汽车出口 | 中国二手车出口 · 现车充足 · 一站式发运全球',
-  'desc': '持证二手车出口企业：209 台现车在库，168 项出口检测，一站式出口单证与报关，直航非洲、中东、欧亚 14 个目的国。',
+  'title': '中国二手车出口服务 | 金霸汽车',
+  'desc': f'浏览 {STAT_INV} 台可出口中国二手车，查看库存编号、照片、价格和里程，并获取目的港书面报价。',
   'topbar_l': '持证二手车出口企业 · 中国深圳 · 2016 年至今',
   'nav': [('车辆库存', '/zh/cars/'), ('出口市场', '/zh/markets/kenya/'), ('采购流程', '#process'), ('关于我们', '/zh/about/')],
   'nav_wa': 'WhatsApp 咨询',
@@ -252,8 +252,8 @@ L = {
   'foot_badge': '商务部备案 · COI 验证 · 每船提单可查',
  },
  'ru': {
-  'title': 'Jinba Cars Export | Авто из Китая: 209 авто в наличии, доставка в 14 стран',
-  'desc': 'Лицензированный экспортёр подержанных авто с 2016 года: 209 авто в наличии, проверка по 168 пунктам, полный пакет документов и доставка в 14 стран Африки, Ближнего Востока и Евразии.',
+  'title': 'Авто из Китая для экспорта | Jinba Cars',
+  'desc': f'Смотрите {STAT_INV} автомобилей из Китая для экспорта: номера склада, фото, цены и пробег. Запросите письменное предложение для вашего порта.',
   'topbar_l': 'Лицензированный экспортёр авто · Шэньчжэнь, Китай · с 2016 года',
   'nav': [('Автопарк', '/ru/cars/'), ('Рынки', '/ru/markets/kenya/'), ('Процесс', '#process'), ('О нас', '/ru/about/')],
   'nav_wa': 'WhatsApp',
@@ -333,8 +333,8 @@ L = {
   'foot_badge': 'Лицензия MOFCOM · COI · коносамент по каждой партии',
  },
  'ar': {
-  'title': 'جينبا لتصدير السيارات | سيارات مستعملة من الصين · شحن إلى 14 دولة',
-  'desc': 'مصدّر مرخّص للسيارات المستعملة منذ 2016: 209 سيارة في المخزون، فحص من 168 نقطة، مستندات تصدير كاملة وشحن إلى 14 دولة في أفريقيا والشرق الأوسط وأوراسيا.',
+  'title': 'سيارات مستعملة من الصين للتصدير | جينبا',
+  'desc': f'تصفح {STAT_INV} سيارة مستعملة من الصين للتصدير، مع رقم المخزون والصور والسعر والمسافة، واطلب عرضاً مكتوباً لميناء الوصول.',
   'topbar_l': 'مصدّر سيارات مستعملة مرخّص · شنتشن، الصين · منذ 2016',
   'nav': [('المخزون', '/ar/cars/'), ('أسواق التصدير', '/ar/markets/kenya/'), ('آلية الشراء', '#process'), ('من نحن', '/ar/about/')],
   'nav_wa': 'واتساب',
@@ -554,6 +554,7 @@ def build(lang):
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Jinba Cars Export Co., Ltd.","url":"{DOMAIN}","email":"{EMAIL}","telephone":"+86 755 8899 2100","address":{{"@type":"PostalAddress","addressLocality":"Shenzhen","addressRegion":"Guangdong","addressCountry":"CN"}}}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Jinba Cars","url":"{DOMAIN}","inLanguage":"{lang}"}}</script>
 </head>
 <body class="jv7">
 
