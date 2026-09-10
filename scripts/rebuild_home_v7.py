@@ -498,6 +498,16 @@ def build(lang):
         for quote, who, role, tail in d['stories'])
     # ---- faq ----
     faq = faq_html(lang)
+    # FAQPage schema（与页面 FAQ 区块同步，四语言）
+    _faqs = L[lang]['faq']
+    import json as _json
+    faq_schema = ('<script type="application/ld+json">' +
+                  _json.dumps({'@context': 'https://schema.org', '@type': 'FAQPage',
+                               'mainEntity': [{'@type': 'Question', 'name': q,
+                                               'acceptedAnswer': {'@type': 'Answer', 'text': a}}
+                                              for q, a in _faqs]}, ensure_ascii=False)
+                  .replace('<', '\\u003c').replace('>', '\\u003e') +
+                  '</script>')
     # ---- footer cols ----
     fcols = ''
     for col_title, links in d['foot_cols']:
@@ -555,6 +565,7 @@ def build(lang):
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Jinba Cars Export Co., Ltd.","url":"{DOMAIN}","email":"{EMAIL}","telephone":"+86 180 7908 9999","address":{{"@type":"PostalAddress","addressLocality":"Shenzhen","addressRegion":"Guangdong","addressCountry":"CN"}}}}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Jinba Cars","url":"{DOMAIN}","inLanguage":"{lang}"}}</script>
+{faq_schema}
 </head>
 <body class="jv7">
 
