@@ -71,9 +71,9 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
   cursor: pointer; white-space: nowrap;
 }
 .jv7-btn:hover { transform: translateY(-1px); }
-.jv7-btn--orange { background: var(--jv-orange); color: #fff; box-shadow: 0 8px 24px rgba(255, 107, 44, .28); }
+.jv7 .jv7-btn--orange { background: var(--jv-orange); color: #fff; box-shadow: 0 8px 24px rgba(255, 107, 44, .28); }
 .jv7-btn--orange:hover { background: #ff5c17; }
-.jv7-btn--navy { background: var(--jv-navy); color: #fff; }
+.jv7 .jv7-btn--navy { background: var(--jv-navy); color: #fff; }
 .jv7-btn--navy:hover { background: var(--jv-navy2); }
 .jv7-btn--ghost { background: #fff; color: var(--jv-ink); border-color: #D7DBE0; }
 .jv7-btn--ghost:hover { border-color: var(--jv-navy); }
