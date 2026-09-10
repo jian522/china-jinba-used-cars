@@ -20,6 +20,9 @@ import shutil
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
+from seo_content import CAR_COPY
+
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
 PHOTO_AUDIT = ROOT / 'data' / 'photo-audit.json'
@@ -447,7 +450,8 @@ def car_card(lang, v):
             f'<span class="jv7-tags"><b>{esc(str(v["year"]))}</b>{chips_html(lang, v)}</span></div>'
             f'<div class="jv7-car-body"><h3 class="jv7-car-name">{alt}</h3>'
             f'<div class="jv7-car-spec">{stock} · {mileage} · {brand}</div>'
-            f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(v["price"])}</div>'
+            + (f'<p class="jv7-car-desc">{esc(CAR_COPY[v["id"]][lang])}</p>' if v['id'] in CAR_COPY else '')
+            + f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(v["price"])}</div>'
             f'<div class="jv7-fob">{esc(d["fob"])}</div></div>'
             f'<a class="jv7-btn jv7-btn--navy" href="{N[lang]}cars/{v["id"]}/">{esc(d["quote"])}</a>'
             f'</div></div></article>')

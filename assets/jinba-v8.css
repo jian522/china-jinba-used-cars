@@ -43,6 +43,9 @@
 .card .body { padding: 12px 14px 13px; gap: 4px; }
 .card h3 { font-size: 15.5px; line-height: 1.35; }
 .card .meta { color: var(--v8-muted); font-size: 12.5px; }
+.card .desc-line { font-size: 12px; line-height: 1.5; color: var(--v8-ink, #1a2436); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card:has(.desc-line) .foot { margin-top: 6px; }
+.jv7-car-desc { font-size: 12px; line-height: 1.5; margin: 4px 0 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .card .foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 0; }
 .card .price { font-size: 19px; font-weight: 900; color: var(--v8-navy); display: grid; line-height: 1.15; }
 .card .price small { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--v8-muted); font-family: ui-monospace, monospace; }
