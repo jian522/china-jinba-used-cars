@@ -429,3 +429,6 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
   letter-spacing: .04em; /* mono tracking reads badly in Arabic — reduce */
 }
 [dir="rtl"] .jv7-why::before { inset-inline-end: auto; inset-inline-start: -8%; }
+
+/* 产品卡专属描述（CAR_COPY 13 台重点车） */
+.jv7-car-desc { font-size: 12px; line-height: 1.5; margin: 4px 0 0; color: var(--jv-ink, #1a2436); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
