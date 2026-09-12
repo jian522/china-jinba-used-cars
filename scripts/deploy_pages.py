@@ -12,6 +12,7 @@
 """
 from __future__ import annotations
 
+import os
 import pathlib
 import subprocess
 import sys
@@ -51,14 +52,23 @@ def stage() -> None:
 
 
 def deploy() -> int:
-    env = {"PATH": r"C:/Windows/System32",
-           "CLOUDFLARE_API_TOKEN": TOKEN_FILE.read_text(encoding="utf-8").strip(),
-           "CLOUDFLARE_ACCOUNT_ID": ACCOUNT,
-           "HTTPS_PROXY": "http://127.0.0.1:7890", "HTTP_PROXY": "http://127.0.0.1:7890"}
-    r = subprocess.run(
-        [NODE, WRANGLER, "pages", "deploy", ".", "--project-name", PROJECT,
-         "--branch", "main", "--commit-dirty=true"],
-        cwd=STAGE, capture_output=True, text=True, env=env, timeout=3600)
+    # 必须基于完整 os.environ：裁剪 PATH（只留 System32）会让 Node 启动即
+    # 崩溃 `Assertion failed: ncrypto::CSPRNG(nullptr, 0)`（2026-09-12 实锤复现）
+    env = dict(os.environ)
+    env.update({"CLOUDFLARE_API_TOKEN": TOKEN_FILE.read_text(encoding="utf-8").strip(),
+                "CLOUDFLARE_ACCOUNT_ID": ACCOUNT,
+                "HTTPS_PROXY": "http://127.0.0.1:7890", "HTTP_PROXY": "http://127.0.0.1:7890"})
+    cmd = [NODE, WRANGLER, "pages", "deploy", ".", "--project-name", PROJECT,
+           "--branch", "main", "--commit-dirty=true"]
+    r = subprocess.run(cmd, cwd=STAGE, capture_output=True, text=True,
+                       env=env, timeout=3600)
+    if r.returncode != 0 and "fetch failed" in ((r.stderr or "") + (r.stdout or "")):
+        # Clash 代理挂掉 → 去掉代理直连重试（api.cloudflare.com 可直连）
+        print("proxy fetch failed, retry direct...", flush=True)
+        for k in ("HTTPS_PROXY", "HTTP_PROXY"):
+            env.pop(k, None)
+        r = subprocess.run(cmd, cwd=STAGE, capture_output=True, text=True,
+                           env=env, timeout=3600)
     print((r.stdout or "")[-1500:], flush=True)
     if r.returncode != 0:
         print("ERR " + (r.stderr or "")[-800:], flush=True)
