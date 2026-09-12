@@ -9,7 +9,10 @@
      不与历史批次冲突。
   3. 幂等：批次名含日期（daily-YYYYMMDD）；当天重跑时先清掉当日半成品目录。
   4. 全链路校验：入库后必跑 photo_check + validate_inventory，不过不部署。
-  5. 输出结构化结果（最后一行 JSON），供定时任务转述给用户。
+  5. **封面合规**（2026-09-12 起）：首图必须正前脸或左前 45°。纯图像特征
+     无法可靠判别，故用 `cover_auto.py` 导出候选拼图供 Agent/人工目检，
+     再按 `.workbuddy/cover_auto/picks.json` 落地；无 picks 时跳过并告警。
+  6. 输出结构化结果（最后一行 JSON），供定时任务转述给用户。
 
 用法：
   "$PY" scripts/daily_upload.py              # 默认 4 台
@@ -140,6 +143,26 @@ def main() -> int:
     print(f"[图片修复] exit={code}")
     if code != 0:
         print(out[-600:])
+
+    # 3b) 封面合规：首图必须正前脸 / 左前 45°（用户 2026-09-12 要求）。
+    #     纯图像特征无法可靠判别（见 cover_auto.py 头部说明），因此分两段：
+    #       (a) 导出候选清单 + 拼图 → 供 Agent/人工目检
+    #       (b) 读取 picks JSON 落地（存在才执行）
+    #     当天批次的车 id 从 added 里的 stock_id 反查。
+    code, out = run([PY, str(ROOT / "scripts/cover_auto.py"), "--export",
+                     "--json", str(ROOT / ".workbuddy/cover_auto/candidates.json")])
+    print(f"[封面候选] exit={code}")
+    cand_png = ROOT / ".workbuddy" / "cover_auto" / "candidates.png"
+    print(f"  候选拼图 → {cand_png}")
+    picks_file = ROOT / ".workbuddy" / "cover_auto" / "picks.json"
+    if picks_file.is_file():
+        code, out = run([PY, str(ROOT / "scripts/cover_auto.py"),
+                         "--picks", str(picks_file), "--commit"])
+        print(f"[封面落地] exit={code}")
+        for line in out.strip().splitlines()[-6:]:
+            print("   ", line.strip()[:140])
+    else:
+        print(f"  ⚠ 未找到 {picks_file}，跳过封面落地（首图可能不合规）")
 
     # 4) 缩略图 + 重建 + 双校验
     for script, label in [("make_thumbs.py", "缩略图"),
