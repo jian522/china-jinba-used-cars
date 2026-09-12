@@ -20,10 +20,32 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 STAGE = ROOT / "_pages_deploy" / "site"
 TOKEN_FILE = ROOT / ".workbuddy" / "cf_token.txt"
-NODE = r"C:/Users/Administrator/.workbuddy/binaries/node/versions/22.22.2-2/node.exe"
 WRANGLER = r"C:/Users/Administrator/node_modules/wrangler/bin/wrangler.js"
 ACCOUNT = "0cd64536d2bc18ae46651a0a2636e1ff"
 PROJECT = "jinba-cars"
+
+
+def _find_node() -> str:
+    """定位 WorkBuddy 托管 Node（目录名含版本号，会随升级变化）。
+
+    2026-09-12 踩坑：硬编码 22.22.2-2，在升级到 22.22.2-3 后
+    subprocess 直接 WinError 2（系统找不到指定的文件）。
+    优先用 `current` 软链，其次按 mtime 取最新带 node.exe 的版本目录。
+    """
+    base = pathlib.Path(r"C:/Users/Administrator/.workbuddy/binaries/node/versions")
+    if base.is_dir():
+        cands = [p / "node.exe" for p in base.iterdir()
+                 if ".old" not in p.name and p.name != "current" and (p / "node.exe").is_file()]
+        cands.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+        if cands:
+            return str(cands[0]).replace("\\", "/")
+    for p in (r"C:/Program Files/nodejs/node.exe",):
+        if pathlib.Path(p).is_file():
+            return p
+    raise FileNotFoundError("找不到可用的 node.exe")
+
+
+NODE = _find_node()
 
 
 def stage() -> None:

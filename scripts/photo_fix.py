@@ -34,7 +34,9 @@ QUALITY = 88
 THUMB_W = 300
 
 sys.path.insert(0, str(ROOT / "scripts"))
-from photo_check import corner_overlay, gray, interior_like, rear_like, strip_bar  # noqa: E402
+from photo_check import (  # noqa: E402
+    corner_overlay, exterior_like, gray, interior_like, rear_like, strip_bar,
+)
 
 
 def text_score(corner: np.ndarray) -> float:
@@ -62,20 +64,9 @@ def watermark_corners(a: np.ndarray) -> list[str]:
     return hits
 
 
-def exterior_score(a: np.ndarray) -> tuple[int, float]:
-    """外观分（越小越好）：类别 0=外观(有天空亮区) 1=中性 2=内饰/细节；
-    类内用上部亮区占比排序（前脸/45° 构图上部开阔）。"""
-    h, w = a.shape
-    mean = a.mean()
-    top = a[: h // 4].mean()
-    edges = np.abs(np.diff(a, axis=1)).mean()
-    if top > mean + 18 and mean > 90:
-        cat = 0
-    elif mean < 95 or edges > 26:
-        cat = 2
-    else:
-        cat = 1
-    return cat, -float((a[: h // 4] > 200).mean())
+# exterior_score 已上移到 photo_check.exterior_like（唯一实现），此处保留别名，
+# 供既有调用点（photo_fix 自身与外部脚本）继续使用。
+exterior_score = exterior_like
 
 
 def crop_bars(im: Image.Image) -> Image.Image:

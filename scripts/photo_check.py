@@ -110,6 +110,24 @@ def front_facade_like(im: Image.Image) -> bool:
     return sym < 5.0 and dark_bot > 0.45 and top_bright > 0.05
 
 
+def exterior_like(a: np.ndarray) -> tuple[int, float]:
+    """外观分（供 cover_auto / photo_fix 复用，越小越好）：
+    类别 0=外观（上部有天空/背景亮区）1=中性 2=内饰/细节；
+    第二项为"上部亮区占比"的负值（越大越开阔 → 排序用）。
+    2026-09-12 从 photo_fix.exterior_score 上移至此，作为唯一实现。"""
+    h = a.shape[0]
+    mean = float(a.mean())
+    top = float(a[: h // 4].mean())
+    edges = float(np.abs(np.diff(a, axis=1)).mean())
+    if top > mean + 18 and mean > 90:
+        cat = 0
+    elif mean < 95 or edges > 26:
+        cat = 2
+    else:
+        cat = 1
+    return cat, -float((a[: h // 4] > 200).mean())
+
+
 def interior_like(a: np.ndarray) -> bool:
     """内饰/细节特征：整体暗 + 上部无亮区（窗外天空），或边缘密度过高。"""
     h, w = a.shape
@@ -156,9 +174,12 @@ def check_image(path: Path, *, is_cover: bool) -> dict:
         bars.append("bottom")
     if strip_bar(a, 0.05, top=True):
         bars.append("top")
+    flat_scene = bool(bars) and all(_is_flat_scene_band(a, b)[0] for b in bars)
     if bars and not band_exempt_by_source(path, bars):
         res["ok"] = False
         res["issues"].append("R1 边缘纯色条带（角标/水印底板）")
+    elif bars and flat_scene:
+        res["issues"].append("R1 边缘条带已豁免（近纯色平场景：展厅地面/背景墙）")
     elif bars:
         res["issues"].append("R1 边缘条带已豁免（原图同位同性质，场景白墙/地面）")
     corners = corner_overlay(a)
@@ -292,6 +313,43 @@ def _source_candidates(path: Path) -> tuple[Path | None, Path | None]:
     return impd, src if src.is_file() else None
 
 
+def _is_flat_scene_band(arr: np.ndarray, bar: str) -> tuple[bool, float, float]:
+    """本图自身的条带是否就是"近纯色平场景"（展厅白墙/灰地/棚拍背景）。
+
+    2026-09-12 新增：R1 的原始意图是抓 **叠加的角标底板/水印条**。但 che168
+    棚拍图的顶部/底部常被纯色地面与背景墙填满（std 低、与车身均差大），
+    会被 strip_bar 误判。真水印条的特征是**非常平**（std 通常 < 8）且
+    **与画面主体反差明显**；而场景地面有轻微纹理与透视渐变。
+
+    判定：std < 12 且与主体均差 > 20 → 场景平带（豁免）。
+    真角标底板多为近纯白/纯色矩形，std 更低但同样满足；因此还要配合
+    "原图同位同性质"双重确认（见 band_exempt_by_source）才彻底放行。
+    """
+    h = arr.shape[0]
+    frac, top = (0.05, True) if bar == "top" else (0.06, False)
+    s = arr[: int(h * frac)] if top else arr[int(h * (1 - frac)):]
+    body = arr[int(h * 0.1): int(h * 0.9)]
+    std = float(s.std())
+    diff = float(abs(s.mean() - body.mean()))
+    return (std < 12.0 and diff > 20.0), std, diff
+
+
+def _refetch_candidates(path: Path) -> list[Path]:
+    """cover_auto 重抓图集目录（.workbuddy/cover_auto/<vid>/img_NN.jpg）。
+
+    这些图不在 imports/ 里，band_exempt_by_source 无法靠 imports 比对；
+    用重抓图集自身做同族确认（同车同场景，多张图同位同性质即场景面）。
+    """
+    try:
+        vid = path.parent.name
+        gdir = ROOT / ".workbuddy" / "cover_auto" / vid
+        if gdir.is_dir():
+            return sorted(gdir.glob("img_*.jpg"))
+    except Exception:  # noqa: BLE001
+        pass
+    return []
+
+
 def band_exempt_by_source(path: Path, bars: list[str]) -> bool:
     """边缘纯色条带豁免：条带在 imports 原图同位同性质出现 → 拍摄场景的
     白墙/地面（展厅素色背景），不是 che168 角标底板或水印条。
@@ -302,6 +360,20 @@ def band_exempt_by_source(path: Path, bars: list[str]) -> bool:
     """
     impd, src = _source_candidates(path)
     if impd is None:
+        # cover_auto 重抓图：不在 imports 下 → 用重抓图集做同族确认
+        gallery = _refetch_candidates(path)
+        if gallery:
+            try:
+                import numpy as _np
+                for jpg in gallery:
+                    try:
+                        ga = gray(Image.open(jpg))
+                    except Exception:  # noqa: BLE001
+                        continue
+                    if all(_is_flat_scene_band(ga, b)[0] for b in bars):
+                        return True
+            except Exception:  # noqa: BLE001
+                pass
         return False
 
     def stats(arr: np.ndarray, frac: float, top: bool) -> tuple[float, float]:
@@ -333,6 +405,22 @@ def band_exempt_by_source(path: Path, bars: list[str]) -> bool:
         try:
             if match(gray(Image.open(src))):
                 return True
+        except Exception:  # noqa: BLE001
+            pass
+    # 本图自证：条带即"近纯色平场景"（展厅地面/背景墙），且同图另有
+    # 至少一张同位同性质 → 场景面而非叠印。仅对本图 std 极低的条带生效。
+    if all(_is_flat_scene_band(wa, b)[0] for b in bars):
+        try:
+            others = 0
+            for jpg in list(impd.glob("*.jpg")) + _refetch_candidates(path):
+                try:
+                    ga = gray(Image.open(jpg))
+                except Exception:  # noqa: BLE001
+                    continue
+                if all(_is_flat_scene_band(ga, b)[0] for b in bars):
+                    others += 1
+                    if others >= 2:
+                        return True
         except Exception:  # noqa: BLE001
             pass
     # 同族兜底：任一原图同位近纯色且量级相符
