@@ -89,6 +89,27 @@ def corner_overlay(a: np.ndarray) -> list[str]:
     return hits
 
 
+def front_facade_like(im: Image.Image) -> bool:
+    """正前脸特写豁免（2026-09-12 新增）。
+
+    深色车正对镜头近距离拍摄时，画面被车漆暗部填满、上部只有一条窄亮带
+    （天空/远处背景），在灰度特征上与"内饰"同族 → interior_like 误杀。
+    真实正前脸的几何签名：
+      a) 左右高度对称（车头中线镜像）sym < 5
+      b) 下半幅存在大面积近黑车漆 dark_bot > 0.45
+      c) 上部 1/4 存在成片亮区（天空/室外背景）top_bright > 0.05
+    内饰无法同时满足：仪表台/座椅布局左右不对称（sym 通常 ≥ 7），
+    且车外亮区不会与"下半幅大面积纯黑车漆"共存。
+    """
+    r, g, b = (np.asarray(im.getchannel(c), dtype=float) for c in "RGB")
+    gl = (r + g + b) / 3.0
+    h, w = gl.shape
+    sym = float(abs(gl[:, : w // 2].mean() - gl[:, w // 2:].mean()))
+    dark_bot = float((gl[h // 2:] < 60).mean())
+    top_bright = float((gl[: h // 4] > 170).mean())
+    return sym < 5.0 and dark_bot > 0.45 and top_bright > 0.05
+
+
 def interior_like(a: np.ndarray) -> bool:
     """内饰/细节特征：整体暗 + 上部无亮区（窗外天空），或边缘密度过高。"""
     h, w = a.shape
@@ -130,9 +151,16 @@ def check_image(path: Path, *, is_cover: bool) -> dict:
     a = gray(im)
 
     # R1 水印
-    if strip_bar(a, 0.06, top=False) or strip_bar(a, 0.05, top=True):
+    bars = []
+    if strip_bar(a, 0.06, top=False):
+        bars.append("bottom")
+    if strip_bar(a, 0.05, top=True):
+        bars.append("top")
+    if bars and not band_exempt_by_source(path, bars):
         res["ok"] = False
         res["issues"].append("R1 边缘纯色条带（角标/水印底板）")
+    elif bars:
+        res["issues"].append("R1 边缘条带已豁免（原图同位同性质，场景白墙/地面）")
     corners = corner_overlay(a)
     if corners and not exempt_by_source(path, corners):
         res["ok"] = False
@@ -142,10 +170,12 @@ def check_image(path: Path, *, is_cover: bool) -> dict:
 
     # R2 封面必须是前脸/45°外观
     if is_cover:
-        if interior_like(a):
+        if interior_like(a) and not front_facade_like(im):
             res["ok"] = False
             res["issues"].append("R2 封面疑似内饰/细节特写，需换正前或左前45°外观")
-        elif rear_like(a):
+        elif interior_like(a):
+            res["issues"].append("R2 内饰特征已豁免（正前脸构图：高对称 + 大面积车漆暗部 + 上部亮带）")
+        if rear_like(a) and not front_facade_like(im):
             res["ok"] = False
             res["issues"].append("R2 封面疑似纯车尾，需换正前或左前45°外观")
     return res
@@ -232,6 +262,89 @@ def exempt_by_source(path: Path, corners: list[str]) -> bool:
             jk = max(24, int(min(jh, jw) * 0.12))
             if all(e_of(jimg, sslices[_sname[n]]) >= 0.7 * we[n] for n in corners):
                 return True
+    except Exception:  # noqa: BLE001
+        pass
+    return False
+
+
+def _source_candidates(path: Path) -> tuple[Path | None, Path | None]:
+    """返回 (imports 车源目录, 对应原图)。取不到返回 (None, None)。"""
+    try:
+        vid = path.parent.name
+        data = json.loads(DATA.read_text(encoding="utf-8"))
+        v = next(x for x in data if str(x["id"]) == vid)
+        stock = v["stock_id"]
+    except Exception:  # noqa: BLE001
+        return None, None
+    impd = _imports_dir(stock)
+    if impd is None:
+        return None, None
+    fn = path.name
+    if fn.startswith("primary"):
+        # 2026-09-12：primary 可能来自 imports 之外的重抓图（cover 修复），
+        # 此时 imports/primary.jpg 仍是老图，同位比对会失效 → 交给同族兜底
+        return impd, impd / "primary.jpg"
+    try:
+        idx = int(fn.replace("photo-", "").split(".")[0])
+    except ValueError:
+        return impd, None
+    src = impd / f"{stock}_src_{idx}.jpg"
+    return impd, src if src.is_file() else None
+
+
+def band_exempt_by_source(path: Path, bars: list[str]) -> bool:
+    """边缘纯色条带豁免：条带在 imports 原图同位同性质出现 → 拍摄场景的
+    白墙/地面（展厅素色背景），不是 che168 角标底板或水印条。
+
+    判定：原图同位置的 条带 std 与 body mean 差 与 webp 相差很小
+    （std 比 0.8–1.25、|mean-body| 差 ≤12 灰阶），且原图自己也满足
+    std<25（确为近纯色区域）。同族兜底：同车任一原图同位同样近纯色。
+    """
+    impd, src = _source_candidates(path)
+    if impd is None:
+        return False
+
+    def stats(arr: np.ndarray, frac: float, top: bool) -> tuple[float, float]:
+        h = arr.shape[0]
+        s = arr[: int(h * frac)] if top else arr[int(h * (1 - frac)): ]
+        b = arr[int(h * 0.1): int(h * 0.9)]
+        return float(s.std()), float(abs(s.mean() - b.mean()))
+
+    try:
+        wa = gray(Image.open(path))
+    except Exception:  # noqa: BLE001
+        return False
+    want = {"bottom": (0.06, False), "top": (0.05, True)}
+
+    def match(simg: np.ndarray) -> bool:
+        for bar in bars:
+            frac, top = want[bar]
+            ws, wd = stats(wa, frac, top)
+            ss, sd = stats(simg, frac, top)
+            if ss >= 25:
+                return False       # 原图同位不是纯色 → 不是场景白墙
+            if not (0.65 <= ws / (ss + 1e-6) <= 1.6):
+                return False
+            if abs(wd - sd) > 14:
+                return False
+        return True
+
+    if src is not None and src.is_file():
+        try:
+            if match(gray(Image.open(src))):
+                return True
+        except Exception:  # noqa: BLE001
+            pass
+    # 同族兜底：任一原图同位近纯色且量级相符
+    try:
+        for jpg in sorted(impd.glob("*.jpg")):
+            if src is not None and jpg.name == src.name:
+                continue
+            try:
+                if match(gray(Image.open(jpg))):
+                    return True
+            except Exception:  # noqa: BLE001
+                continue
     except Exception:  # noqa: BLE001
         pass
     return False

@@ -11,6 +11,7 @@
   --jv-navy: #0A1628;
   --jv-navy2: #0D2944;
   --jv-orange: #FF6B2C;
+  --jv-orange2: #E85A1C;
   --jv-orange-soft: #FFEDE2;
   --jv-green: #25D366;
   --jv-ink: #0A1628;
@@ -247,10 +248,27 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 .jv7-chip--stock { background: var(--jv-orange-soft); color: var(--jv-orange); font-family: var(--jv-font-mono); letter-spacing: .06em; }
 .jv7-car-name { font-family: var(--jv-font-head); font-weight: 700; font-size: 16px; line-height: 1.3; margin: 0; }
 .jv7-car-spec { font-size: 13px; color: var(--jv-gray); }
-.jv7-car-foot { margin-top: auto; display: grid; gap: 12px; padding-top: 6px; }
-.jv7-price { font-family: var(--jv-font-head); font-weight: 800; font-size: 22px; line-height: 1; }
-.jv7-fob { font-family: var(--jv-font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--jv-gray); margin-top: 4px; }
-.jv7-car .jv7-btn { width: 100%; padding: 12px 20px; font-size: 14px; }
+.jv7-car-desc {
+  font-size: 12.5px; line-height: 1.55; color: #4B5563; margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.jv7-car-foot {
+  margin-top: auto; padding-top: 8px; display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 12px;
+}
+.jv7-price { font-family: var(--jv-font-head); font-weight: 800; font-size: 22px; line-height: 1; white-space: nowrap; }
+.jv7-price .jv7-cur { font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--jv-gray); }
+.jv7-fob { font-family: var(--jv-font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--jv-gray); margin-top: 4px; }
+.jv7-car .jv7-btn { padding: 11px 18px; font-size: 13.5px; white-space: nowrap; }
+/* 橙色 Details → 按钮（截图案式：价格左、橙色行动按钮右） */
+.jv7-btn--details {
+  background: var(--jv-orange); color: #fff; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.jv7-btn--details:hover { background: var(--jv-orange2, #ff7d3d); color: #fff; }
+.jv7-btn--details span { transition: transform .18s ease; }
+.jv7-btn--details:hover span { transform: translateX(3px); }
+[dir="rtl"] .jv7-btn--details:hover span { transform: translateX(-3px); }
 [dir="rtl"] .jv7-tags { left: auto; right: 10px; }
 @media (max-width: 1279px) { .jv7-grid4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 599px) { .jv7-grid4 { grid-template-columns: 1fr; } }

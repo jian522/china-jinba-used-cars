@@ -425,35 +425,96 @@ STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d=
 
 
 def chips_html(lang, v):
-    fuel = {'zh': {'插混': '插混', '纯电': '纯电', '混动': '混动'}.get(v['fuel'], v['fuel']),
-            'en': {'插混': 'PHEV', '纯电': 'EV', '混动': 'Hybrid'}.get(v['fuel'], v['fuel']),
-            'ru': {'插混': 'PHEV', '纯电': 'EV', '混动': 'Hybrid'}.get(v['fuel'], v['fuel']),
-            'ar': {'插混': 'هجين', '纯电': 'كهربائي', '混动': 'هجين'}.get(v['fuel'], v['fuel'])}[lang]
-    body = {'zh': v.get('body_type') or 'SUV', 'en': v.get('body_type') or 'SUV',
-            'ru': v.get('body_type') or 'SUV', 'ar': v.get('body_type') or 'SUV'}[lang]
-    return (f'<span class="jv7-chip">{esc(str(v["year"]))} · {esc(fuel)}</span>'
-            f'<span class="jv7-chip">{esc(body)}</span>')
+    """年份徽标 + 燃料 chip + 车身类型 chip（截图案式 SEO 卡片，2026-09-12）。
+
+    fuel 已归一化为规范键 Petrol/EV/PHEV/Hybrid/Diesel（data/vehicles.json），
+    同时兼容历史中文值，避免漏译成中文。
+    """
+    fuel_map = {
+        'zh': {'Petrol': '汽油', 'EV': '纯电', 'PHEV': '插混',
+               'Hybrid': '混动', 'Diesel': '柴油'},
+        'en': {'Petrol': 'Petrol', 'EV': 'EV', 'PHEV': 'PHEV',
+               'Hybrid': 'Hybrid', 'Diesel': 'Diesel'},
+        'ru': {'Petrol': 'Бензин', 'EV': 'Электро', 'PHEV': 'PHEV',
+               'Hybrid': 'Гибрид', 'Diesel': 'Дизель'},
+        'ar': {'Petrol': 'بنزين', 'EV': 'كهربائي', 'PHEV': 'هجين',
+               'Hybrid': 'هجين', 'Diesel': 'ديزل'},
+    }[lang]
+    legacy = {'汽油': 'Petrol', '纯电': 'EV', '插混': 'PHEV',
+              '混动': 'Hybrid', '柴油': 'Diesel'}
+    key = legacy.get(v.get('fuel'), v.get('fuel'))
+    fuel = fuel_map.get(key, key or '')
+
+    body_map = {
+        'zh': {'SUV': 'SUV', '轿车': '轿车', 'MPV': 'MPV', '皮卡': '皮卡'},
+        'en': {'SUV': 'SUV', '轿车': 'Sedan', 'MPV': 'MPV', '皮卡': 'Pickup'},
+        'ru': {'SUV': 'SUV', '轿车': 'Седан', 'MPV': 'MPV', '皮卡': 'Пикап'},
+        'ar': {'SUV': 'SUV', '轿车': 'سيدان', 'MPV': 'MPV', '皮卡': 'بيك أب'},
+    }[lang]
+    raw_body = v.get('body_type') or ''
+    body = raw_body or 'SUV'
+    # 车身类型缺失时，用标题关键词兜底识别（含"炮/皮卡"→皮卡，轿车关键词→轿车）
+    if not raw_body:
+        t = v.get('title') or ''
+        if any(k in t for k in ('皮卡', '长城炮', '炮 ')) or t.startswith('长城炮'):
+            body = '皮卡'
+        elif any(k in t for k in ('轿车',)) or t.startswith(('秦PLUS', '汉 ', '汉2', '海豹', '海豚')):
+            body = '轿车' if t.startswith(('秦PLUS', '汉 ')) else 'SUV'
+    body = body_map.get(body, body)
+
+    year = esc(str(v.get('year') or ''))
+    # 年份已由 .jv7-tags 的 <b> 徽标展示，chip 只放燃料 + 车身，避免重复
+    chips = (f'<span class="jv7-chip">{esc(fuel)}</span>' if fuel else '')
+    return f'{chips}<span class="jv7-chip">{esc(body)}</span>'
+
+
+PORT_I18N = {
+    'zh': {'上海港': '上海港'}, 'en': {'上海港': 'Shanghai'},
+    'ru': {'上海港': 'Шанхай'}, 'ar': {'上海港': 'شنغهاي'},
+}
+# 参考目的港（截图规范：价格行标注 FOB + 目的港，便于买家直接比价）
+DEST_I18N = {'zh': '蒙巴萨', 'en': 'Mombasa', 'ru': 'Момбаса', 'ar': 'مومباسا'}
+DETAILS_I18N = {'zh': '查看详情', 'en': 'Details', 'ru': 'Подробнее', 'ar': 'التفاصيل'}
+
+
+def car_desc(lang, v, limit: int = 150) -> str:
+    """卡片 2 行描述：优先 description_i18n，缺失时按字段拼装。"""
+    di = v.get('description_i18n') or {}
+    txt = (di.get(lang) or di.get('en') or '').strip()
+    if not txt:
+        t = v.get('title_i18n', {}).get(lang) or v.get('title') or ''
+        txt = f"{v.get('stock_id')} · {t}"
+    if len(txt) > limit:
+        txt = txt[: limit - 1].rstrip() + '…'
+    return txt
 
 
 def car_card(lang, v):
-    # v8 规范：左上角 年份+燃料+车身 标签悬浮于原图上，禁止缩略图作主图；
-    # 下方车型名 / 库存号 / 里程 / 品牌 / FOB 价 + 藏蓝实心白字按钮。
+    """v9 规范（2026-09-12 按用户截图对齐）：
+    左上角 年份+燃料+车身 徽标悬浮原图上；下方车型名 / 库存号·里程·城市 /
+    2 行描述 / 价格行 `$X USD FOB <目的港>` + 橙色 Details → 按钮。
+    """
     d = L[lang]
     t = v['title_i18n'].get(lang) or v['title']
     ph = v['photos'][0]
     alt = esc(t)
     stock = esc(v['stock_id'])
     mileage = esc(f'{int(v.get("mileage_km") or 0):,}') + ' km'
-    brand = esc(v['brand'])
+    city = esc(v.get('city') or v.get('province') or '')
+    meta = ' · '.join(x for x in (stock, mileage, city) if x)
+    price = esc(v.get('price') or '')
+    port = PORT_I18N[lang].get(v.get('departure_port') or '', '')
+    term = esc(v.get('trade_term') or 'FOB')
+    dest = DEST_I18N[lang]
     return (f'<article class="jv7-car">'
             f'<div class="jv7-car-photo"><img src="{ph}" alt="{alt}" loading="lazy" decoding="async" width="720" height="540">'
             f'<span class="jv7-tags"><b>{esc(str(v["year"]))}</b>{chips_html(lang, v)}</span></div>'
             f'<div class="jv7-car-body"><h3 class="jv7-car-name">{alt}</h3>'
-            f'<div class="jv7-car-spec">{stock} · {mileage} · {brand}</div>'
-            + (f'<p class="jv7-car-desc">{esc(CAR_COPY[v["id"]][lang])}</p>' if v['id'] in CAR_COPY else '')
-            + f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(v["price"])}</div>'
-            f'<div class="jv7-fob">{esc(d["fob"])}</div></div>'
-            f'<a class="jv7-btn jv7-btn--navy" href="{N[lang]}cars/{v["id"]}/">{esc(d["quote"])}</a>'
+            f'<div class="jv7-car-spec">{meta}</div>'
+            f'<p class="jv7-car-desc">{esc(car_desc(lang, v))}</p>'
+            f'<div class="jv7-car-foot"><div><div class="jv7-price">{price} <span class="jv7-cur">USD</span></div>'
+            f'<div class="jv7-fob">{term} {dest}{(" · " + port) if port else ""}</div></div>'
+            f'<a class="jv7-btn jv7-btn--details" href="{N[lang]}cars/{v["id"]}/">{esc(DETAILS_I18N[lang])} <span aria-hidden="true">→</span></a>'
             f'</div></div></article>')
 
 
