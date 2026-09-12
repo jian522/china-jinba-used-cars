@@ -184,8 +184,21 @@ def main() -> int:
         print(out[-800:])
         return 1
 
+    # 6b) Cloudflare Pages 现网部署（2026-09-10 起 jinbacars.com 由 CF Pages 服务，
+    #     push_api 只同步 GitHub 备份仓库；漏掉这步新车不会出现在现网）
+    code, out = run([PY, str(ROOT / "scripts/deploy_pages.py")])
+    cf_ok = code == 0 and "Deployment complete" in out
+    print(f"[CF部署] exit={code} {'✅ 现网已更新' if cf_ok else '❌ 失败'}")
+    if not cf_ok:
+        print(out[-800:])
+        print(json.dumps({"date": today, "batch": batch, "uploaded": len(added),
+                          "stocks": added, "targets": picks, "status": "cf-deploy-failed"},
+                         ensure_ascii=False))
+        return 1
+
     result = {"date": today, "batch": batch, "uploaded": len(added),
-              "stocks": added, "targets": picks, "status": "deployed"}
+              "stocks": added, "targets": picks, "git_commit": deployed,
+              "cf_deployed": True, "status": "deployed"}
     print(json.dumps(result, ensure_ascii=False))
     return 0
 
