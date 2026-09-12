@@ -63,7 +63,7 @@ def head(lang,title,desc,canonical,image='/images/og-image.jpg',page_type='websi
 def header(lang,path='/'):
  t=T[lang];return f'''<div class="top"><div class="wrap"><span>JINBA AUTO EXPORT · CHINA</span><span><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a> · <a href="https://wa.me/8618079089999">+86 180 7908 9999</a></span></div></div><header class="header"><nav class="wrap nav"><a class="brand" href="/{lang}/"><span class="mark">J</span><span>JINBA AUTO<small>USED CAR EXPORT</small></span></a><button class="hamb" onclick="toggleNav(this)" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">☰</button><div class="navlinks" id="navlinks"><a href="/{lang}/">{t['home']}</a><a href="/{lang}/cars/">{t['inventory']}</a><a href="/{lang}/about/">{t['about']}</a><a href="/{lang}/#process">{t['process']}</a><a href="/{lang}/contact/">{t['contact']}</a><span class="langs">{alt(lang,path)}</span><a class="quote" href="https://wa.me/8618079089999">{t['quote']}</a></div></nav></header>'''
 
-VALUES={'fuel':{'纯电':{'en':'EV','zh':'纯电','ru':'Электро','ar':'كهربائي'},'插混':{'en':'PHEV','zh':'插混','ru':'Гибрид PHEV','ar':'هجين PHEV'},'混动':{'en':'Hybrid','zh':'混动','ru':'Гибрид','ar':'هجين'},'柴油':{'en':'Diesel','zh':'柴油','ru':'Дизель','ar':'ديزل'},'Petrol':{'en':'Petrol','zh':'汽油','ru':'Бензин','ar':'بنزين'}},'trans':{'自动':{'en':'Automatic','zh':'自动','ru':'Автомат','ar':'أوتوماتيك'},'手动':{'en':'Manual','zh':'手动','ru':'Механика','ar':'يدوي'}},'body_type':{'轿车':{'en':'Sedan','zh':'轿车','ru':'Седан','ar':'سيدان'},'SUV':{'en':'SUV','zh':'SUV','ru':'внедорожник','ar':'دفع رباعي'},'MPV':{'en':'MPV','zh':'MPV','ru':'минивэн','ar':'MPV'},'皮卡':{'en':'Pickup','zh':'皮卡','ru':'пикап','ar':'بيك أب'},'跑车':{'en':'Coupe','zh':'跑车','ru':'купе','ar':'كوبيه'}},'departure_port':{'上海港':{'en':'Shanghai Port','zh':'上海港','ru':'порт Шанхай','ar':'ميناء شنغهاي'},'天津港':{'en':'Tianjin Port','zh':'天津港','ru':'порт Тяньцзинь','ar':'ميناء تيانجين'},'广州港':{'en':'Guangzhou Port','zh':'广州港','ru':'порт Гуанчжоу','ar':'ميناء قوانغتشو'},'宁波港':{'en':'Ningbo Port','zh':'宁波港','ru':'порт Нинбо','ar':'ميناء نينغبو'},'青岛港':{'en':'Qingdao Port','zh':'青岛港','ru':'порт Циндао','ar':'ميناء تشينغداو'},'深圳港':{'en':'Shenzhen Port','zh':'深圳港','ru':'порт Шэньчжэнь','ar':'ميناء شنتشن'},'厦门港':{'en':'Xiamen Port','zh':'厦门港','ru':'порт Сямэнь','ar':'ميناء شيامن'}}}
+VALUES={'fuel':{'EV':{'en':'EV','zh':'纯电','ru':'Электро','ar':'كهربائي'},'PHEV':{'en':'PHEV','zh':'插混','ru':'Гибрид PHEV','ar':'هجين PHEV'},'Hybrid':{'en':'Hybrid','zh':'混动','ru':'Гибрид','ar':'هجين'},'Diesel':{'en':'Diesel','zh':'柴油','ru':'Дизель','ar':'ديزل'},'Petrol':{'en':'Petrol','zh':'汽油','ru':'Бензин','ar':'بنزين'},'纯电':{'en':'EV','zh':'纯电','ru':'Электро','ar':'كهربائي'},'插混':{'en':'PHEV','zh':'插混','ru':'Гибрид PHEV','ar':'هجين PHEV'},'混动':{'en':'Hybrid','zh':'混动','ru':'Гибрид','ar':'هجين'},'柴油':{'en':'Diesel','zh':'柴油','ru':'Дизель','ar':'ديزل'}},'trans':{'自动':{'en':'Automatic','zh':'自动','ru':'Автомат','ar':'أوتوماتيك'},'手动':{'en':'Manual','zh':'手动','ru':'Механика','ar':'يدوي'}},'body_type':{'轿车':{'en':'Sedan','zh':'轿车','ru':'Седан','ar':'سيدان'},'SUV':{'en':'SUV','zh':'SUV','ru':'внедорожник','ar':'دفع رباعي'},'MPV':{'en':'MPV','zh':'MPV','ru':'минивэн','ar':'MPV'},'皮卡':{'en':'Pickup','zh':'皮卡','ru':'пикап','ar':'بيك أب'},'跑车':{'en':'Coupe','zh':'跑车','ru':'купе','ar':'كوبيه'}},'departure_port':{'上海港':{'en':'Shanghai Port','zh':'上海港','ru':'порт Шанхай','ar':'ميناء شنغهاي'},'天津港':{'en':'Tianjin Port','zh':'天津港','ru':'порт Тяньцзинь','ar':'ميناء تيانجين'},'广州港':{'en':'Guangzhou Port','zh':'广州港','ru':'порт Гуанчжоу','ar':'ميناء قوانغتشو'},'宁波港':{'en':'Ningbo Port','zh':'宁波港','ru':'порт Нинбо','ar':'ميناء نينغبو'},'青岛港':{'en':'Qingdao Port','zh':'青岛港','ru':'порт Циндао','ar':'ميناء تشينغداو'},'深圳港':{'en':'Shenzhen Port','zh':'深圳港','ru':'порт Шэньчжэнь','ar':'ميناء شنتشن'},'厦门港':{'en':'Xiamen Port','zh':'厦门港','ru':'порт Сямэнь','ar':'ميناء شيامن'}}}
 def value(lang,key,raw):return VALUES.get(key,{}).get(raw,{}).get(lang,raw)
 # 品牌中文名映射（详情页 headline 用）
 BRAND_ZH={'BYD':'比亚迪','Haval':'哈弗','Chery':'奇瑞','Geely':'吉利','Changan':'长安','Li Auto':'理想','AITO':'问界','Volkswagen':'大众','MG':'名爵','Toyota':'丰田','Honda':'本田','Jetour':'捷途','Wuling':'五菱'}
@@ -96,13 +96,20 @@ def breadcrumbs(lang,items):
 def footer(lang):
  t=T[lang];l=L[lang];return f'''<footer><div class="wrap"><div class="footergrid"><div><h4>JINBA AUTO EXPORT</h4><p>{t['location']}</p></div><div><h4>{t['inventory']}</h4><a href="/{lang}/cars/">{t['all']}</a><a href="/{lang}/brands/">{SEO_UI[lang]['brands']}</a><a href="/{lang}/categories/">{SEO_UI[lang]['categories']}</a></div><div><h4>{t['company']}</h4><a href="/{lang}/about/">{t['about']}</a><a href="/{lang}/contact/">{t['contact']}</a><a href="/{lang}/markets/">{SEO_UI[lang]['markets']}</a><a href="/{lang}/guides/">{SEO_UI[lang]['guides']}</a><a href="/{lang}/privacy/">{l['privacy']}</a><a href="/{lang}/terms/">{l['terms']}</a></div><div><h4>{t['contact']}</h4><a href="https://wa.me/8618079089999">WhatsApp: +86 180 7908 9999</a><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div></div><div class="copyright">© 2026 Jinba Auto Export. {t['rights']}</div></div></footer></body></html>'''
 def card(v,lang):
- # v8 规范：高清原图作主图（禁缩略图），左上角年份+燃料+SUV 标签，
- # 下方车型名/库存号/里程/品牌/FOB 价 + 藏蓝实心白字按钮。
- # 2026-09-10：重点车（CAR_COPY 命中）在 meta 下方追加一行四语专属描述。
+ # v9 规范（2026-09-12 按用户截图对齐）：高清原图作主图，左上角年份+燃料+车身 徽标，
+ # 下方车型名 / 库存号·里程·城市 / 2 行描述 / 价格行 $X USD FOB <目的港> + 橙色 Details → 按钮。
  t=T[lang];name=title_for(v,lang);ph=v['photos'][0] if v['photos'] else '/images/og-image.jpg';fuel=v['fuel'];displayfuel=value(lang,'fuel',fuel);body=value(lang,'body_type',v.get('body_type') or 'SUV');search=' '.join(v.get('title_i18n',{}).values())+' '+v['brand']
- fob={ 'en':'FOB Shanghai','zh':'上海港 FOB','ru':'FOB Шанхай','ar':'FOB شنغهاي'}[lang]
+ port={'en':'Shanghai','zh':'上海港','ru':'Шанхай','ar':'شنغهاي'}.get(lang,'Shanghai')
+ dest={'en':'Mombasa','zh':'蒙巴萨','ru':'Момбаса','ar':'مومباسا'}[lang]
  descline=f'<p class="desc-line">{esc(CAR_COPY[v["id"]][lang])}</p>' if v['id'] in CAR_COPY else ''
- return f'''<a class="card" data-car data-search="{esc(search.lower())}" data-brand="{esc(v['brand'])}" data-fuel="{esc(fuel)}" data-year="{esc(v['year'])}" data-price="{esc(v.get('price_usd',0))}" data-port="{esc(v.get('departure_port',''))}" data-body="{esc(v.get('body_type',''))}" href="/{lang}/cars/{v['id']}/"><div class="photo"><img loading="lazy" decoding="async" width="720" height="540" src="{esc(ph)}" alt="{esc(name)}"><span class="photo-tags"><b>{esc(v['year'])}</b><span>{esc(displayfuel)}</span><span>{esc(body)}</span></span></div><div class="body"><h3>{esc(name)}</h3><div class="meta">{esc(v['stock_id'])} · {esc(v['mileage'])} · {esc(v['brand'])}</div>{descline}<div class="foot"><span class="price">{esc(v['price'])}<small>{fob}</small></span><span class="more">{t['details']} →</span></div></div></a>'''
+ if not descline:
+  _d=(v.get('description_i18n') or {}).get(lang) or (v.get('description_i18n') or {}).get('en') or ''
+  descline=f'<p class="desc-line">{esc(_d[:150].rstrip() + ("…" if len(_d)>150 else ""))}</p>' if _d else ''
+ city=esc(v.get('city') or '')
+ try: _mi=f"{int(v.get('mileage_km') or 0):,} km"
+ except Exception: _mi=esc(v.get('mileage') or '')
+ meta=' · '.join(x for x in (esc(v['stock_id']),_mi,city) if x)
+ return f'''<a class="card" data-car data-search="{esc(search.lower())}" data-brand="{esc(v['brand'])}" data-fuel="{esc(fuel)}" data-year="{esc(v['year'])}" data-price="{esc(v.get('price_usd',0))}" data-port="{esc(v.get('departure_port',''))}" data-body="{esc(v.get('body_type',''))}" href="/{lang}/cars/{v['id']}/"><div class="photo"><img loading="lazy" decoding="async" width="720" height="540" src="{esc(ph)}" alt="{esc(name)}"><span class="photo-tags"><b>{esc(v['year'])}</b><span>{esc(displayfuel)}</span><span>{esc(body)}</span></span></div><div class="body"><h3>{esc(name)}</h3><div class="meta">{meta}</div>{descline}<div class="foot"><span class="price">{esc(v['price'])} <small class="cur">USD</small><small>{esc(v.get('trade_term') or 'FOB')} {esc(dest)} · {esc(port)}</small></span><span class="more">{t['details']} →</span></div></div></a>'''
 def home(lang,V):
  t=T[lang]; hero=V[0]['photos'][0] if V and V[0].get('photos') else '/images/og-image.jpg'; featured=''.join(card(v,lang) for v in V[:6]); steps=''.join(f'<article class="step"><h3>{t[f"step{i}"]}</h3></article>' for i in range(1,7));desc=t['hero2']
  org={'@context':'https://schema.org','@type':'Organization','name':'Jinba Auto Export','url':BASE,'email':'jian5222@gmail.com','telephone':'+86 180 7908 9999','address':{'@type':'PostalAddress','addressLocality':'Xinyu','addressRegion':'Jiangxi','addressCountry':'CN'}}
@@ -211,7 +218,7 @@ def category_index(lang,V):
   count=sum(v['fuel']==raw for v in V);links.append((CATEGORY_NAMES[slug][lang],f'/{lang}/categories/{slug}/',f'{count} · {ui["available"]}'))
  return directory_page(lang,ui['categories'],descs[lang],'/categories/',links)
 def category_page(lang,slug,V):
- ui=SEO_UI[lang];fuelmap={'ev':'纯电','phev':'插混','petrol':'Petrol','diesel':'柴油'};cars=[v for v in V if v['fuel']==fuelmap[slug]];name=CATEGORY_NAMES[slug][lang];path=f'/categories/{slug}/';desc=f'{len(cars)} · {ui["available"]} · {name}';crumb=breadcrumbs(lang,[(T[lang]['home'],f'/{lang}/'),(ui['categories'],f'/{lang}/categories/'),(name,f'/{lang}{path}')])
+ ui=SEO_UI[lang];fuelmap={'ev':'EV','phev':'PHEV','petrol':'Petrol','diesel':'Diesel','hybrid':'Hybrid'};cars=[v for v in V if v['fuel']==fuelmap[slug]];name=CATEGORY_NAMES[slug][lang];path=f'/categories/{slug}/';desc=f'{len(cars)} · {ui["available"]} · {name}';crumb=breadcrumbs(lang,[(T[lang]['home'],f'/{lang}/'),(ui['categories'],f'/{lang}/categories/'),(name,f'/{lang}{path}')])
  # EV 页专属 SEO 文案 + CollectionPage schema（第三批文案基线包）
  ev_copy={
   'en':{'title':'Used BYD Cars for Export | EV Stock FOB Shenzhen – Jinba Cars',
@@ -303,8 +310,8 @@ for v in V:
  # Normalize fuel/transmission from the title only when the raw value is
  # missing, so manual/imported values are never silently overwritten.
  if not v.get('fuel'):
-  if re.search(r'DM-i|增程',title,re.I):v['fuel']='插混'
-  elif re.search(r'(^|\W)EV($|\W)|纯电',title,re.I):v['fuel']='纯电'
+  if re.search(r'DM-i|增程',title,re.I):v['fuel']='PHEV'
+  elif re.search(r'(^|\W)EV($|\W)|纯电',title,re.I):v['fuel']='EV'
  if not v.get('transmission'):
   if re.search(r'自动|CVT|DCT|DSG',title,re.I):v['transmission']='自动'
 V=enrich_all(V)
