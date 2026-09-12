@@ -43,6 +43,9 @@
 .card .body { padding: 12px 14px 13px; gap: 4px; }
 .card h3 { font-size: 15.5px; line-height: 1.35; }
 .card .meta { color: var(--v8-muted); font-size: 12.5px; }
+.card .desc-line { font-size: 12px; line-height: 1.5; color: var(--v8-ink, #1a2436); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card:has(.desc-line) .foot { margin-top: 6px; }
+.jv7-car-desc { font-size: 12px; line-height: 1.5; margin: 4px 0 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .card .foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 0; }
 .card .price { font-size: 19px; font-weight: 900; color: var(--v8-navy); display: grid; line-height: 1.15; }
 .card .price small { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--v8-muted); font-family: ui-monospace, monospace; }
@@ -143,3 +146,13 @@ a.card:hover .more { background: var(--v8-orange); }
 
 /* ---------- 弹窗保险：lightbox 一律禁用 ---------- */
 #lightbox { display: none !important; }
+
+/* ---------- FAQ 区块（首页 v8） ---------- */
+.faqlist { max-width: 860px; margin: 0 auto; display: grid; gap: 10px; }
+.faqlist details { background: #fff; border: 1px solid rgba(10,22,40,.1); border-radius: 10px; padding: 0 16px; }
+.faqlist details[open] { border-color: rgba(10,22,40,.22); }
+.faqlist summary { cursor: pointer; font-weight: 600; font-size: 15px; padding: 14px 0; list-style: none; position: relative; color: var(--v8-navy, #0A1628); }
+.faqlist summary::-webkit-details-marker { display: none; }
+.faqlist summary::after { content: '+'; position: absolute; inset-inline-end: 0; top: 12px; font-size: 18px; color: #6b7280; }
+.faqlist details[open] summary::after { content: '−'; }
+.faqlist details p { margin: 0 0 14px; font-size: 14px; line-height: 1.7; color: #374151; }

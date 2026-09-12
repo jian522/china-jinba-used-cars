@@ -20,15 +20,18 @@ import shutil
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
+from seo_content import CAR_COPY
+
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
 PHOTO_AUDIT = ROOT / 'data' / 'photo-audit.json'
 DOMAIN = 'https://jinbacars.com'
 WA = 'https://wa.me/8618079089999'
-EMAIL = 'sales@jinbacars.com'
+EMAIL = 'jian5222@gmail.com'
 GA_ID = 'G-3SVJ44HVKC'
 VERIF = 'hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0'
-PHONE_DISPLAY = '+86 755 8899 2100'
+PHONE_DISPLAY = '+86 180 7908 9999'
 
 LANGS = ['en', 'zh', 'ru', 'ar']
 N = {'zh': '/zh/', 'en': '/en/', 'ru': '/ru/', 'ar': '/ar/'}
@@ -447,7 +450,8 @@ def car_card(lang, v):
             f'<span class="jv7-tags"><b>{esc(str(v["year"]))}</b>{chips_html(lang, v)}</span></div>'
             f'<div class="jv7-car-body"><h3 class="jv7-car-name">{alt}</h3>'
             f'<div class="jv7-car-spec">{stock} · {mileage} · {brand}</div>'
-            f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(v["price"])}</div>'
+            + (f'<p class="jv7-car-desc">{esc(CAR_COPY[v["id"]][lang])}</p>' if v['id'] in CAR_COPY else '')
+            + f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(v["price"])}</div>'
             f'<div class="jv7-fob">{esc(d["fob"])}</div></div>'
             f'<a class="jv7-btn jv7-btn--navy" href="{N[lang]}cars/{v["id"]}/">{esc(d["quote"])}</a>'
             f'</div></div></article>')
@@ -498,6 +502,16 @@ def build(lang):
         for quote, who, role, tail in d['stories'])
     # ---- faq ----
     faq = faq_html(lang)
+    # FAQPage schema（与页面 FAQ 区块同步，四语言）
+    _faqs = L[lang]['faq']
+    import json as _json
+    faq_schema = ('<script type="application/ld+json">' +
+                  _json.dumps({'@context': 'https://schema.org', '@type': 'FAQPage',
+                               'mainEntity': [{'@type': 'Question', 'name': q,
+                                               'acceptedAnswer': {'@type': 'Answer', 'text': a}}
+                                              for q, a in _faqs]}, ensure_ascii=False)
+                  .replace('<', '\\u003c').replace('>', '\\u003e') +
+                  '</script>')
     # ---- footer cols ----
     fcols = ''
     for col_title, links in d['foot_cols']:
@@ -548,13 +562,14 @@ def build(lang):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260909c">
+<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260910b">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Jinba Cars Export Co., Ltd.","url":"{DOMAIN}","email":"{EMAIL}","telephone":"+86 755 8899 2100","address":{{"@type":"PostalAddress","addressLocality":"Shenzhen","addressRegion":"Guangdong","addressCountry":"CN"}}}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Jinba Cars Export Co., Ltd.","url":"{DOMAIN}","email":"{EMAIL}","telephone":"+86 180 7908 9999","address":{{"@type":"PostalAddress","addressLocality":"Shenzhen","addressRegion":"Guangdong","addressCountry":"CN"}}}}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Jinba Cars","url":"{DOMAIN}","inLanguage":"{lang}"}}</script>
+{faq_schema}
 </head>
 <body class="jv7">
 
@@ -563,7 +578,7 @@ def build(lang):
     <span class="jv7-topbar-l">{esc(d["topbar_l"])}</span>
     <span class="jv7-topbar-r jv7-topbar-contact">
       <a href="mailto:{EMAIL}">{EMAIL}</a>
-      <a href="tel:+8675588992100">{PHONE_DISPLAY}</a>
+      <a href="tel:+8618079089999">{PHONE_DISPLAY}</a>
       <span class="jv7-topbar-langs">{lang_links}</span>
     </span>
   </div>
