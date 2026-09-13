@@ -249,7 +249,10 @@ def main() -> int:
             print(f"   {v['stock_id']} (id {vid}): primary ← img_{idx:02d}.jpg"
                   f"  {'[写盘]' if args.commit else '[预演]'}")
             if args.commit:
-                if idx <= len(photos) and (ROOT / photos[idx - 1].lstrip("/")).is_file():
+                # idx=1 时 photos[idx-1] 就是 primary 自己，互换会把旧封面写回
+                # （等于空操作，2026-09-13 实证）→ 直接写入，旧封面内容弃用
+                # （新批次旧封面多为内饰/车尾废图，画廊已有同类）。
+                if idx > 1 and idx <= len(photos) and (ROOT / photos[idx - 1].lstrip("/")).is_file():
                     # 内容互换：候选进 primary，原 primary 退回该位置图 → 图片集合无损
                     target = ROOT / photos[idx - 1].lstrip("/")
                     tmp = Path(tempfile.mkdtemp()) / "orig.webp"

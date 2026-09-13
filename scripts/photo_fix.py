@@ -35,7 +35,8 @@ THUMB_W = 300
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from photo_check import (  # noqa: E402
-    corner_overlay, exterior_like, gray, interior_like, rear_like, strip_bar,
+    band_exempt_by_source, corner_overlay, exterior_like, front_facade_like,
+    gray, interior_like, rear_like, strip_bar,
 )
 
 
@@ -150,14 +151,22 @@ def main() -> int:
         entry = {"stock": stock, "id": vid, "actions": [], "manual": []}
 
         # --- R1 条带修复 ---
+        # 2026-09-13：与 photo_check 的豁免闸对齐。展厅白墙/灰地的"场景平带"
+        # 不是水印，此前无条件裁剪导致每天重裁一刀、取景漂移、豁免失配，
+        # photo_check 反复误报（JB-8280/JB-9113 实证）。豁免判定复用
+        # band_exempt_by_source（imports 原图同位同性质 / 重抓图集同族确认）。
         for rel in photos:
             p = ROOT / rel.lstrip("/")
             if not p.is_file():
                 continue
             a = gray(Image.open(p))
-            has_bar = strip_bar(a, 0.06, top=False) or strip_bar(a, 0.05, top=True)
+            bars = []
+            if strip_bar(a, 0.06, top=False):
+                bars.append("bottom")
+            if strip_bar(a, 0.05, top=True):
+                bars.append("top")
             wm = watermark_corners(a)
-            if has_bar:
+            if bars and not band_exempt_by_source(p, bars):
                 if args.commit:
                     done = fix_bar(p)
                     entry["actions"].append(
@@ -168,11 +177,17 @@ def main() -> int:
                 entry["manual"].append(f"疑似文字水印角({c}): {p.name} → 人工复核/换图")
 
         # --- R2 封面违规换图 ---
+        # 2026-09-13：加 front_facade_like 豁免（与 photo_check R2 一致）。
+        # 深色车正脸照会被 interior_like 误杀，此前触发换图反而把内饰照
+        # 换成了封面（JB-8122 实证）—— 换图目标由 exterior_score 决定，
+        # 同样不可靠，只作为兜底并尽量少触发。
         if photos:
             cover = ROOT / photos[0].lstrip("/")
             if cover.is_file():
-                ca = gray(Image.open(cover))
-                if interior_like(ca) or rear_like(ca):
+                cover_im = Image.open(cover).convert("RGB")
+                ca = gray(cover_im)
+                if ((interior_like(ca) or rear_like(ca))
+                        and not front_facade_like(cover_im)):
                     scored = []
                     for i, rel in enumerate(photos[1:], start=2):
                         p = ROOT / rel.lstrip("/")
