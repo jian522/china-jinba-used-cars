@@ -92,9 +92,13 @@ def main() -> int:
     print(f"=== 金霸每日上架 {today} ===")
     print(plan)
 
-    # 幂等：清掉当天半成品
+    # 幂等：清掉当天半成品（沙箱下 rmtree 可能被安全层拦截，失败则跳过，
+    # 采集脚本本身按 stock 覆盖写，残留不影响正确性）
     if batch_dir.exists():
-        shutil.rmtree(batch_dir)
+        try:
+            shutil.rmtree(batch_dir)
+        except OSError as e:
+            print(f"[warn] 清理旧批次目录失败，跳过：{e}")
 
     # 1) 采集（逐车型跑，共享同一批次目录；stock 号接续递增）
     ok_cars = 0
