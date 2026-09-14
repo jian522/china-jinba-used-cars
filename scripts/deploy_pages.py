@@ -63,8 +63,27 @@ def stage() -> None:
 
     import shutil
     if STAGE.exists():
-        # 不删旧文件，直接按清单覆盖复制（Pages 部署以本次上传为准，多出的旧文件仅在文件删除时才需要清理）
-        pass
+        # 先按清单对账，删掉「暂存区有、git 已跟踪清单里没有」的陈旧文件。
+        # 2026-09-14 踩坑：原实现只覆盖不删除，导致已从仓库移除的 347 个
+        # cars/<n>/ 跳转桩页一直留在暂存区被反复上传（直接 Upload 是全新
+        # 部署，多出的旧文件会一并上线）。不清理就永远删不掉。
+        keep_set = set(keep)
+        removed = 0
+        for f in sorted([p for p in STAGE.rglob("*") if p.is_file()],
+                        key=lambda p: len(p.parts), reverse=True):
+            rel = f.relative_to(STAGE).as_posix()
+            if rel not in keep_set:
+                f.unlink()
+                removed += 1
+        # 清掉因删文件而变空的目录
+        for d in sorted([p for p in STAGE.rglob("*") if p.is_dir()],
+                        key=lambda p: len(p.parts), reverse=True):
+            try:
+                d.rmdir()
+            except OSError:
+                pass
+        if removed:
+            print(f"STAGE pruned {removed} stale files", flush=True)
     for rel in keep:
         src, dst = ROOT / rel, STAGE / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
