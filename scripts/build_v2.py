@@ -376,7 +376,9 @@ _car_redirects += [
     #    若 :id 直转 /en/cars/:id/ 会「301 到 404」断链，故统一 301 到列表页。
     '/car/:id  /en/cars/  301',
     '/car/*  /en/cars/  301',
-    # E. 俄语旧路径 /ru/cars/<id>/（GSC 实测 1 个）
+    # E. 俄语旧路径（GSC 实报死链逐条加静态规则；不能加 /ru/cars/* 或 /ru/cars/:id/
+    #    通配 —— CF redirects 命中即跳、无视静态资源，会把在售车 /ru/cars/225/ 也 301 掉）
+    '/ru/cars/149/  /ru/cars/  301',
     '/ru/cars/:id  /ru/cars/  301',
     # F. 旧页面（GSC 实测 2 个）
     '/faq  /en/contact/  301',

@@ -85,6 +85,7 @@
 /cars-detail.html  /en/cars/  301
 /car/:id  /en/cars/  301
 /car/*  /en/cars/  301
+/ru/cars/149/  /ru/cars/  301
 /ru/cars/:id  /ru/cars/  301
 /faq  /en/contact/  301
 /contact.html  /en/contact/  301
