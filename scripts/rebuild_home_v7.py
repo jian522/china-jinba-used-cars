@@ -29,7 +29,7 @@ PHOTO_AUDIT = ROOT / 'data' / 'photo-audit.json'
 DOMAIN = 'https://jinbacars.com'
 WA = 'https://wa.me/8618079089999'
 EMAIL = 'jian5222@gmail.com'
-GA_ID = 'G-3SVJ44HVKC'
+GA_ID = 'G-NR49LE183C'
 VERIF = 'hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0'
 PHONE_DISPLAY = '+86 180 7908 9999'
 
