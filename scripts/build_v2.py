@@ -348,10 +348,23 @@ write(R/'data/photo-audit.json',write_audit)
 write(R/'data/photo-completion-queue.csv',photo_queue_csv(V,photo_audit))
 for old,target in {'about':'/en/about/','services':'/en/#process','contact':'/en/contact/'}.items():
  write(R/old/'index.html',f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="https://jinbacars.com{target}"><title>Jinba Auto Export</title>')
-published={v['id'] for v in V}
-for i in range(1,max(int(v['id']) for v in all_vehicles)+1):
- target=f'/en/cars/{i}/' if i in published else '/en/cars/'
- write(R/f'cars/{i}/index.html',f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="https://jinbacars.com{target}">')
+# 旧路径 /cars/<数字>/ 的兼容处理（2026-09-14 改造）
+# 原做法：为 1..max(id) 每号生成一个 meta refresh 桩页（347 个），Google 一律判为
+# 「网页会自动重定向」并占用抓取预算。现改走 CF Pages 边缘 301（_redirects），
+# 语义正确（搜索引擎直接归并权重），且线上不再存在任何桩页文件。
+# 注意：published 车辆的旧链接 301 到 /en/cars/<id>/；未上架的 301 到 /en/cars/。
+_car_redirects=['/cars/  /en/cars/  301']
+for v in V:
+ _car_redirects.append(f'/cars/{v["id"]}/  /en/cars/{v["id"]}/  301')
+_car_redirects.append('/cars/*  /en/cars/  301')
+# 旧英文路径兜底（历史外链/索引残留）
+_car_redirects.append('/cars  /en/cars/  301')
+_car_redirects.append('/inventory/*  /en/cars/  301')
+_car_redirects.append('/uploads/cars/*  /uploads/cars/  404')
+write(R/'_redirects','\n'.join(_car_redirects)+'\n')
+for d in (R/'cars').iterdir():
+ if d.is_dir() and d.name.isdigit():
+  shutil.rmtree(d,ignore_errors=True)
 for p in (R/'cars').glob('[0-9]*.html'):p.unlink()  # legacy cars/N.html stubs only; keep cars/index.html
 today=date.today().isoformat()
 urls=[f'{BASE}/{l}/' for l in langs]+[f'{BASE}/{l}/{p}/' for l in langs for p in ('cars','about','contact','privacy','terms','markets','brands','categories','guides')]+[f'{BASE}/{l}/markets/{m["slug"]}/' for l in langs for m in MARKETS]+[f'{BASE}/{l}/brands/{slugify(b)}/' for l in langs for b in sorted(set(v['brand'] for v in V))]+[f'{BASE}/{l}/categories/{s}/' for l in langs for s in CATEGORY_NAMES]+[f'{BASE}/{l}/guides/{g["slug"]}/' for l in langs for g in GUIDES]+[f'{BASE}/{l}/cars/{v["id"]}/' for l in langs for v in V]
