@@ -59,7 +59,7 @@ def head(lang,title,desc,canonical,image='/images/og-image.jpg',page_type='websi
  hre=''.join(f'<link rel="alternate" hreflang="{l}" href="{BASE}/{l}{canonical}">' for l in langs)+f'<link rel="alternate" hreflang="x-default" href="{BASE}/en{canonical}">'
  image_url=image if image.startswith('http') else BASE+image
  og_locale={'en':'en_US','zh':'zh_CN','ru':'ru_RU','ar':'ar_AR'}[lang]
- return f'''<!doctype html><html lang="{lang if lang!='zh' else 'zh-CN'}" dir="{'rtl' if lang=='ar' else 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071827"><meta name="google-site-verification" content="hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><meta name="keywords" content="used cars china, export cars, chinese cars, BYD, Chery, Haval, auto export, used vehicle export, used car from china"><meta property="og:site_name" content="Jinba Auto Export"><meta property="og:locale" content="{og_locale}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:type" content="{page_type}"><meta property="og:url" content="{BASE}/{lang}{canonical}"><meta property="og:image" content="{esc(image_url)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{esc(image_url)}"><link rel="canonical" href="{BASE}/{lang}{canonical}">{hre}<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="Jinba Auto Export Inventory" href="/feed.xml"><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://wa.me"><link rel="stylesheet" href="/assets/design-system.css"><link rel="stylesheet" href="/assets/jinba-v8.css?v=20260910b"><script async src="https://www.googletagmanager.com/gtag/js?id=G-NR49LE183C"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-NR49LE183C');</script><script defer src="/assets/app.js"></script>{extra_schema}</head><body>'''
+ return f'''<!doctype html><html lang="{lang if lang!='zh' else 'zh-CN'}" dir="{'rtl' if lang=='ar' else 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071827"><meta name="google-site-verification" content="hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0"><meta name="yandex-verification" content="d349dc679919fbc6"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><meta name="keywords" content="used cars china, export cars, chinese cars, BYD, Chery, Haval, auto export, used vehicle export, used car from china"><meta property="og:site_name" content="Jinba Auto Export"><meta property="og:locale" content="{og_locale}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:type" content="{page_type}"><meta property="og:url" content="{BASE}/{lang}{canonical}"><meta property="og:image" content="{esc(image_url)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{esc(image_url)}"><link rel="canonical" href="{BASE}/{lang}{canonical}">{hre}<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="Jinba Auto Export Inventory" href="/feed.xml"><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://wa.me"><link rel="stylesheet" href="/assets/design-system.css"><link rel="stylesheet" href="/assets/jinba-v8.css?v=20260915"><script async src="https://www.googletagmanager.com/gtag/js?id=G-NR49LE183C"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-NR49LE183C');</script><script defer src="/assets/app.js"></script>{extra_schema}</head><body>'''
 def header(lang,path='/'):
  t=T[lang];return f'''<div class="top"><div class="wrap"><span>JINBA AUTO EXPORT · CHINA</span><span><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a> · <a href="https://wa.me/8618079089999">+86 180 7908 9999</a></span></div></div><header class="header"><nav class="wrap nav"><a class="brand" href="/{lang}/"><span class="mark">J</span><span>JINBA AUTO<small>USED CAR EXPORT</small></span></a><button class="hamb" onclick="toggleNav(this)" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">☰</button><div class="navlinks" id="navlinks"><a href="/{lang}/">{t['home']}</a><a href="/{lang}/cars/">{t['inventory']}</a><a href="/{lang}/about/">{t['about']}</a><a href="/{lang}/#process">{t['process']}</a><a href="/{lang}/contact/">{t['contact']}</a><span class="langs">{alt(lang,path)}</span><a class="quote" href="https://wa.me/8618079089999">{t['quote']}</a></div></nav></header>'''
 
@@ -340,7 +340,7 @@ for l in langs:
   if d.is_dir() and d.name not in {m['slug'] for m in MARKETS}:shutil.rmtree(d,ignore_errors=True)
  for d in (R/l/'categories').glob('*'):
   if d.is_dir() and d.name not in set(CATEGORY_NAMES):shutil.rmtree(d,ignore_errors=True)
-write(R/'index.html','<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="https://jinbacars.com/en/"><title>Jinba Auto Export</title>')
+write(R/'index.html','<!doctype html><meta charset="utf-8"><meta name="yandex-verification" content="d349dc679919fbc6"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="https://jinbacars.com/en/"><title>Jinba Auto Export</title>')
 write(R/'cars/index.html','<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/en/cars/"><link rel="canonical" href="https://jinbacars.com/en/cars/">')
 write(R/'admin/login/index.html',admin_page())
 write(R/'admin/photo-coverage/index.html',photo_dashboard(V,photo_audit))
@@ -348,19 +348,47 @@ write(R/'data/photo-audit.json',write_audit)
 write(R/'data/photo-completion-queue.csv',photo_queue_csv(V,photo_audit))
 for old,target in {'about':'/en/about/','services':'/en/#process','contact':'/en/contact/'}.items():
  write(R/old/'index.html',f'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url={target}"><link rel="canonical" href="https://jinbacars.com{target}"><title>Jinba Auto Export</title>')
-# 旧路径 /cars/<数字>/ 的兼容处理（2026-09-14 改造）
+# 旧路径兼容处理（2026-09-14 改造）
 # 原做法：为 1..max(id) 每号生成一个 meta refresh 桩页（347 个），Google 一律判为
 # 「网页会自动重定向」并占用抓取预算。现改走 CF Pages 边缘 301（_redirects），
 # 语义正确（搜索引擎直接归并权重），且线上不再存在任何桩页文件。
 # 注意：published 车辆的旧链接 301 到 /en/cars/<id>/；未上架的 301 到 /en/cars/。
-_car_redirects=['/cars/  /en/cars/  301']
+#
+# 2026-09-14 二轮补充：GSC 报告 50 个 404，逐条归类后补全以下规则。
+_car_redirects=['/cars/  /en/cars/  301',
+                # /cars/<数字> 无尾斜杠变体（GSC 实测 8 个：/cars/205、/cars/88 ...）
+                '/cars/:id  /en/cars/  301']
 for v in V:
- _car_redirects.append(f'/cars/{v["id"]}/  /en/cars/{v["id"]}/  301')
-_car_redirects.append('/cars/*  /en/cars/  301')
+    _car_redirects.append(f'/cars/{v["id"]}/  /en/cars/{v["id"]}/  301')
 # 旧英文路径兜底（历史外链/索引残留）
-_car_redirects.append('/cars  /en/cars/  301')
-_car_redirects.append('/inventory/*  /en/cars/  301')
-_car_redirects.append('/uploads/cars/*  /uploads/cars/  404')
+_car_redirects += [
+    '/cars/*  /en/cars/  301',
+    '/cars  /en/cars/  301',
+    # A. 旧版静态站页面（GSC 实测 5 个）
+    #    /cars.html、/cars.html?brand=X、/cars-detail.html?id=N
+    '/cars.html  /en/cars/  301',
+    '/cars-detail.html  /en/cars/  301',
+    # B. 旧筛选参数（GSC 实测 16 个）：/cars?brand=X 与 /cars/?brand=X
+    #    CF Pages 的 _redirects 不按 query 匹配，/cars/ 规则已能吃掉这两类。
+    #    额外用 /cars/* 覆盖 /cars 下的任意带参残留（已在下方兜底）。
+    # C. 旧单数详情路径 /car/<id>/（GSC 实测 18 个，旧版是单数 car）
+    #    旧 /car/8065/ 用的是 che168 老车 ID，新库 id 只有 225-344 区间，
+    #    若 :id 直转 /en/cars/:id/ 会「301 到 404」断链，故统一 301 到列表页。
+    '/car/:id  /en/cars/  301',
+    '/car/*  /en/cars/  301',
+    # E. 俄语旧路径（GSC 实报死链逐条加静态规则；不能加 /ru/cars/* 或 /ru/cars/:id/
+    #    通配 —— CF redirects 命中即跳、无视静态资源，会把在售车 /ru/cars/225/ 也 301 掉）
+    '/ru/cars/149/  /ru/cars/  301',
+    '/ru/cars/:id  /ru/cars/  301',
+    # F. 旧页面（GSC 实测 2 个）
+    '/faq  /en/contact/  301',
+    '/contact.html  /en/contact/  301',
+    # G. CF 邮件混淆路径（GSC 实测 1 个）—— 明确 410 告知不存在
+    '/cdn-cgi/l/email-protection  /  410',
+    # 越界与静态资源
+    '/inventory/*  /en/cars/  301',
+    '/uploads/cars/*  /uploads/cars/  404',
+]
 write(R/'_redirects','\n'.join(_car_redirects)+'\n')
 for d in (R/'cars').iterdir():
  if d.is_dir() and d.name.isdigit():

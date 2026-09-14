@@ -219,9 +219,10 @@ button { font-family: inherit; cursor: pointer; }
 footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0 var(--s5); }
 .footergrid { display: grid; gap: var(--s5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
 .footergrid h4 { color: #fff; margin: 0 0 var(--s3); font-size: var(--fs-15); }
-.footergrid a { color: var(--on-dark-muted); display: block; padding: 4px 0; font-size: var(--fs-14); }
+.footergrid a { color: var(--on-dark-muted); display: block; padding: 7px 0; font-size: var(--fs-14); }
 .footergrid a:hover { color: #fff; }
 .copyright { color: var(--on-dark-muted); font-size: var(--fs-13); border-top: 1px solid rgba(255,255,255,.12); margin-top: var(--s5); padding-top: var(--s4); }
+.copyright a { display: inline-block; padding: 4px 0; }   /* 触屏可点面积 */
 .footer-wm { color: rgba(255,255,255,.18); font-weight: 900; letter-spacing: .2em; margin-top: var(--s3); font-size: var(--fs-13); }
 
 /* ---------- 内页头 / 面包屑 ---------- */
@@ -384,13 +385,10 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
   .adminsummary { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* 平板+（≥768）：导航横排、hero/详情/联系 双列、排行榜双列 */
+/* 平板+（≥768）：hero/详情/联系 双列、排行榜双列
+   注意：导航横排推迟到 1024 —— 768~1023 宽度塞不下 logo+5 个链接+语言+按钮 */
 @media (min-width: 768px) {
   .wrap { padding-inline: var(--s5); }
-  /* 导航：桌面显示横排，隐藏汉堡 */
-  .hamb { display: none; }
-  .navlinks { position: static; flex-direction: row; flex-wrap: wrap; background: none;
-    border: 0; box-shadow: none; padding: 0; max-height: none; width: auto; }
   .section { padding: var(--s8) 0; }
   .hero-grid { grid-template-columns: 1.1fr .9fr; }
   .rankgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -398,12 +396,16 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
   .contactlayout { grid-template-columns: 1fr 1.1fr; }
   .formgrid { grid-template-columns: 1fr 1fr; }
   .specgrid { grid-template-columns: repeat(3, 1fr); }
-  /* 桌面：筛选栏一行横排，信息密度更高 */
-  .filters { grid-template-columns: 2fr 1fr 1fr 1fr auto; align-items: end; }
 }
 
-/* 桌面+（≥1024）：容器加宽、卡片/排行榜三列、信息密度 */
+/* 桌面+（≥1024）：导航横排、容器加宽、卡片/排行榜三列、信息密度 */
 @media (min-width: 1024px) {
+  /* 导航：桌面显示横排，隐藏汉堡；抽屉模式一直持续到 1023 */
+  .hamb { display: none; }
+  .navlinks { position: static; flex-direction: row; flex-wrap: wrap; background: none;
+    border: 0; box-shadow: none; padding: 0; max-height: none; width: auto; }
+  /* 筛选栏一行横排，信息密度更高 */
+  .filters { grid-template-columns: 2fr 1fr 1fr 1fr auto; align-items: end; }
   :root { --container: 1320px; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
   .rankgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -421,9 +423,10 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
   :root { --container: 1520px; }
 }
 
-/* ---------- 移动端导航抽屉 + 防横向溢出（<768） ---------- */
+/* ---------- 导航抽屉（<1024） + 防横向溢出 ---------- */
 html, body { overflow-x: hidden; }
-@media (max-width: 767.98px) {
+/* 抽屉模式覆盖到 1023：与上面 .navlinks 横排规则同一切换点 */
+@media (max-width: 1023.98px) {
   .navlinks {
     position: absolute; top: 100%; inset-inline: 0; z-index: 49;
     flex-direction: column; align-items: stretch; gap: 2px;
@@ -436,9 +439,13 @@ html, body { overflow-x: hidden; }
   .navlinks a { padding: 12px 10px; font-size: var(--fs-16); }
   .navlinks .langs { flex-wrap: wrap; padding-block: 8px 2px; border-top: 1px solid var(--line); margin-top: 6px; }
   .navlinks .quote { text-align: center; margin-top: 4px; }
+}
+@media (max-width: 767.98px) {
   .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s2); }
   .card h3 { font-size: var(--fs-14); }
   .specgrid { grid-template-columns: repeat(2, 1fr); }
+  /* 顶栏联系方式在触屏上要够大（原链接仅 17px 高） */
+  .top a { display: inline-block; padding-block: 6px; }
 }
 @media (max-width: 520px) {
   .top .wrap > span:first-child { display: none; }  /* 小屏只留联系方式一行 */

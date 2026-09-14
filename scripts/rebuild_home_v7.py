@@ -31,6 +31,7 @@ WA = 'https://wa.me/8618079089999'
 EMAIL = 'jian5222@gmail.com'
 GA_ID = 'G-NR49LE183C'
 VERIF = 'hpe_PNYRQogsN199OCEqggbxRhlvZKMk3oylavUxvK0'
+YANDEX_VERIF = 'd349dc679919fbc6'  # Yandex Webmaster 站点验证（2026-09-14）
 PHONE_DISPLAY = '+86 180 7908 9999'
 
 LANGS = ['en', 'zh', 'ru', 'ar']
@@ -598,6 +599,7 @@ def build(lang):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0A1628">
 <meta name="google-site-verification" content="{VERIF}">
+<meta name="yandex-verification" content="{YANDEX_VERIF}">
 <title>{esc(d["title"])}</title>
 <meta name="description" content="{esc(d["desc"])}">
 <meta name="keywords" content="used cars from china, china used car export, BYD export, used car exporter shenzhen, FOB china cars, 出口二手车, 中国二手车出口">
@@ -623,7 +625,7 @@ def build(lang):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260910b">
+<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260915">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>

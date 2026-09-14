@@ -1,4 +1,5 @@
 /cars/  /en/cars/  301
+/cars/:id  /en/cars/  301
 /cars/225/  /en/cars/225/  301
 /cars/250/  /en/cars/250/  301
 /cars/271/  /en/cars/271/  301
@@ -80,5 +81,14 @@
 /cars/349/  /en/cars/349/  301
 /cars/*  /en/cars/  301
 /cars  /en/cars/  301
+/cars.html  /en/cars/  301
+/cars-detail.html  /en/cars/  301
+/car/:id  /en/cars/  301
+/car/*  /en/cars/  301
+/ru/cars/149/  /ru/cars/  301
+/ru/cars/:id  /ru/cars/  301
+/faq  /en/contact/  301
+/contact.html  /en/contact/  301
+/cdn-cgi/l/email-protection  /  410
 /inventory/*  /en/cars/  301
 /uploads/cars/*  /uploads/cars/  404

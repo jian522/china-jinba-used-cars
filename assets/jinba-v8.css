@@ -65,10 +65,16 @@ a.card:hover .more { background: var(--v8-navy); }
 .filters-v8 input:focus, .filters-v8 select:focus {
   outline: none; border-color: var(--v8-navy); box-shadow: 0 0 0 3px rgba(10, 22, 40, .10);
 }
-@media (min-width: 768px) {
+/* 筛选栏列数：只有 ≥1024 才放得下 7 列一行；
+   768~1023 强排 7 列会把 placeholder 全部截断（Search model… / All bodie…） */
+@media (min-width: 1024px) {
   .filters-v8 { grid-template-columns: 1.6fr 1fr 1fr 1.2fr 1fr 1fr auto; }
 }
-@media (max-width: 767.98px) {
+@media (min-width: 600px) and (max-width: 1023.98px) {
+  .filters-v8 { grid-template-columns: repeat(3, 1fr); }
+  .filters-v8 input { grid-column: 1 / -1; }
+}
+@media (max-width: 599.98px) {
   .filters-v8 { grid-template-columns: 1fr 1fr; }
   .filters-v8 input { grid-column: 1 / -1; }
   .filters-v8 button { grid-column: 1 / -1; }

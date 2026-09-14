@@ -99,8 +99,17 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 .jv7-topbar-langs a { opacity: .6; }
 .jv7-topbar-langs a[aria-current="true"] { opacity: 1; color: var(--jv-orange); }
 @media (max-width: 899px) {
-  .jv7-topbar-l, .jv7-topbar-contact { display: none; }
+  /* 只隐藏顶部标语与联系方式，保留语言切换（原先整块隐藏导致手机端顶栏全空） */
+  .jv7-topbar-l { display: none; }
+  .jv7-topbar-contact > a { display: none; }
   .jv7-topbar-in { justify-content: center; }
+  .jv7-topbar-r { gap: 0; }
+  .jv7-topbar-langs { gap: 2px; }
+  /* 语言切换在触屏上需要足够点击面积（原 17px 高极易误触） */
+  .jv7-topbar-langs a {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 36px; padding-inline: 10px;
+  }
 }
 
 /* ============================================================
@@ -120,20 +129,24 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
   box-shadow: 0 6px 16px rgba(255, 107, 44, .3);
 }
 .jv7-logo-mark svg { width: 26px; height: 26px; }
-.jv7-logo-name { font-family: var(--jv-font-head); font-weight: 800; font-size: 18px; letter-spacing: .02em; line-height: 1.1; }
+.jv7-logo-name { font-family: var(--jv-font-head); font-weight: 800; font-size: 18px; letter-spacing: .02em; line-height: 1.1; white-space: nowrap; }
 .jv7-logo-sub { font-family: var(--jv-font-mono); font-size: 9.5px; letter-spacing: .3em; color: var(--jv-gray); text-transform: uppercase; }
 .jv7-navlinks { display: flex; align-items: center; gap: 26px; margin-inline-start: 12px; font-weight: 600; font-size: 14.5px; color: #374151; }
 .jv7-navlinks a:hover { color: var(--jv-ink); }
 .jv7-nav-cta { margin-inline-start: auto; display: flex; align-items: center; gap: 12px; }
 .jv7-nav .jv7-btn { padding: 11px 22px; font-size: 14px; }
 .jv7-burger { display: none; }
+/* 汉堡开关是一个 hidden 的 checkbox：必须始终不渲染，
+   否则会被下面的 .jv7-burger 移动端规则强制显示成空白方块并挤坏 logo */
+.jv7-nav input.jv7-burger { display: none !important; }
 @media (max-width: 899px) {
-  .jv7-burger {
+  label.jv7-burger {
     display: grid; place-items: center; margin-inline-start: auto;
     width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--jv-line);
     background: #fff; cursor: pointer;
   }
   .jv7-burger svg { width: 20px; height: 20px; }
+  .jv7-nav-in { gap: 14px; }
   .jv7-navlinks, .jv7-nav-cta { display: none; }
   .jv7-nav-toggle:checked ~ .jv7-navlinks {
     display: flex; flex-direction: column; align-items: stretch;
@@ -228,7 +241,8 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 }
 .jv7-car:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(10, 22, 40, .12); }
 .jv7-car-photo { position: relative; }
-.jv7-car-photo img { width: 100%; height: 216px; object-fit: cover; }
+/* 卡片图随列宽自适应（原 height:216px 固定高度在宽卡片上会把车压成扁条） */
+.jv7-car-photo img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
 /* v8：左上角 年份+燃料+车身 标签（悬浮于原图） */
 .jv7-tags {
   position: absolute; top: 10px; left: 10px; right: auto;
@@ -270,7 +284,12 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 .jv7-btn--details:hover span { transform: translateX(3px); }
 [dir="rtl"] .jv7-btn--details:hover span { transform: translateX(-3px); }
 [dir="rtl"] .jv7-tags { left: auto; right: 10px; }
-@media (max-width: 1279px) { .jv7-grid4 { grid-template-columns: repeat(2, 1fr); } }
+/* 列数：≥1280 四列 · 1024~1279 三列 · 600~1023 两列 · 手机单列
+   实测：1024 下 4 列只有 237px，价格+Details 按钮放不下会被裁；
+        2 列则有 470px 的巨卡。3 列（约 307px）是内容完整又不过扁的平衡点。
+   （原先 1280 以下直接掉到两列，卡片图又被 height:216px 锁死，压成 2.2:1 扁条） */
+@media (max-width: 1279px) { .jv7-grid4 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1023px) { .jv7-grid4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 599px) { .jv7-grid4 { grid-template-columns: 1fr; } }
 
 /* ============================================================
@@ -436,6 +455,13 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
 }
 @media (max-width: 1023px) { .jv7-footgrid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 599px) { .jv7-footgrid { grid-template-columns: 1fr; gap: 28px; } }
+/* 触屏上页脚链接需要足够的点击高度（原 20px 高、间距 10px，容易误触） */
+@media (max-width: 899px) {
+  .jv7-footcol ul { gap: 2px; }
+  .jv7-footcol a { display: block; padding: 6px 0; }
+  /* "View all" 同为触屏主要入口，原 27px 高 */
+  .jv7-viewall { display: inline-block; padding-block: 8px; }
+}
 
 /* ============================================================
    RTL mirrors (ar)
