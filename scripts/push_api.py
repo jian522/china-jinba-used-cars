@@ -197,16 +197,12 @@ def cmd_plan():
     print(f'API 配额 {core["remaining"]}/{core["limit"]}')
 
 
-def cmd_upload(n=150):
-    base, target, new, added, modified, removed = load_diff_cached()
-    cache, dropped = valid_cache(new)
-    uploads = added + modified
-    pending = [p for p in uploads if p not in cache][:n]
-    if dropped:
-        print(f'  丢弃失效缓存 {dropped} 条（内容已变或旧格式）', flush=True)
+def do_upload(uploads, cache, limit=150, new=None):
+    """上传 uploads 中尚未缓存的前 limit 个文件，返回 (done, failed, pending 总数)。"""
+    pending = [p for p in uploads if p not in cache][:limit]
     if not pending:
-        print('本批无待传文件（全部已缓存）')
-        return
+        return 0, [], 0
+    total_pending = sum(1 for p in uploads if p not in cache)
     print(f'本批 {len(pending)} 个文件，'
           f'{sum((ROOT / p).stat().st_size for p in pending) / 1048576:.1f} MB', flush=True)
     t0 = time.time()
@@ -218,7 +214,10 @@ def cmd_upload(n=150):
             rel = futs[f]
             try:
                 r, sha = f.result()
-                cache[r] = {'sha': sha, 'git': new[r][1]}
+                entry = {'sha': sha}
+                if new is not None and r in new:
+                    entry['git'] = new[r][1]
+                cache[r] = entry
                 done += 1
             except Exception as e:
                 failed.append((rel, str(e)[:80]))
@@ -233,16 +232,45 @@ def cmd_upload(n=150):
         print(f'失败 {len(failed)} 个（下批自动重试）:')
         for p, e in failed[:5]:
             print(f'  {p} -> {e}')
+    return done, failed, total_pending
 
 
-def cmd_finish(msg=None):
+def cmd_upload(n=150):
     base, target, new, added, modified, removed = load_diff_cached()
     cache, dropped = valid_cache(new)
     uploads = added + modified
+    if dropped:
+        print(f'  丢弃失效缓存 {dropped} 条（内容已变或旧格式）', flush=True)
+    done, failed, total = do_upload(uploads, cache, n, new)
+    if done == 0 and not failed:
+        print('本批无待传文件（全部已缓存）')
+
+
+def cmd_finish(msg=None):
+    # 2026-09-18 修复：远端 main 可能在 plan 之后被别的提交推进（例如定时任务/网页端编辑），
+    # 此时用旧 base 建出的 commit 不是 fast-forward，PATCH refs 会 422。
+    # 对策：finish 时重新比对远端当前 HEAD，若与缓存的 base 不一致就按新 base 重建树。
+    live_base = api(f'/git/refs/heads/{BRANCH}')['object']['sha']
+    base, target, new, added, modified, removed = load_diff_cached()
+    if live_base != base:
+        print(f'远端已推进: {base[:12]} -> {live_base[:12]}，按新 base 重建差异', flush=True)
+        DIFF.unlink(missing_ok=True)
+        base, target, new, added, modified, removed = load_diff_cached(refresh=True)
+        cache, dropped = valid_cache(new)
+        uploads = added + modified
+        missing = [p for p in uploads if p not in cache]
+        if missing:
+            print(f'远端推进后新增 {len(missing)} 个待传文件，先补传')
+            do_upload(uploads, cache, limit=len(missing), new=new)
+            cache, _ = valid_cache(new)
+    else:
+        cache, dropped = valid_cache(new)
+        uploads = added + modified
     missing = [p for p in uploads if p not in cache]
     if missing:
         print(f'还有 {len(missing)} 个文件未上传，请先跑 upload')
         return
+
     entries = [{'path': p, 'mode': new[p][0], 'type': 'blob', 'sha': cache[p]['sha']}
                for p in uploads]
     old_modes = remote_tree(base)
