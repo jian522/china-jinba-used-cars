@@ -58,8 +58,9 @@ BRAND_MAP = {
     "阿维塔": "Avatr", "岚图": "Voyah", "欧拉": "Ora", "腾势": "Denza",
     "方程豹": "Fangchengbao", "仰望": "Yangwang", "星途": "EXEED", "奇瑞捷途": "Jetour",
 }
-FUEL_CN = {"汽油": "Petrol", "燃油": "Petrol", "纯电": "纯电", "插电混动": "插混",
-           "插混": "插混", "混动": "混动", "柴油": "柴油", "油电混合": "混动"}
+FUEL_CN = {"汽油": "Petrol", "燃油": "Petrol", "纯电": "EV", "插电混动": "PHEV",
+           "插混": "PHEV", "混动": "Hybrid", "柴油": "Diesel", "油电混合": "Hybrid",
+           "增程": "PHEV", "纯电动": "EV", "电动": "EV"}
 TRANS_CN = {"自动": "自动", "手动": "手动", "AT": "自动", "CVT": "自动",
             "DCT": "自动", "双离合": "自动"}
 
