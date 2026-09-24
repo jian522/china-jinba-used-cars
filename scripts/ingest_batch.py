@@ -162,6 +162,14 @@ def main():
                 print(f"[下架] {stock}")
 
     next_id = max((int(v["id"]) for v in vehicles), default=0) + 1
+    # 防呆：同一份 CSV 里 stock_id 重复 = 采集端编号分配出错，
+    # 若直接入库会按 stock 反复更新同一台车、覆盖已有记录（2026-09-24 事故）。
+    _stocks = [norm(r.get("stock_id")) for r in rows if norm(r.get("stock_id"))]
+    _dups = sorted({s for s in _stocks if _stocks.count(s) > 1})
+    if _dups:
+        print(f"!! CSV 内 stock_id 重复 {_dups}（采集端编号分配出错），"
+              f"为避免覆盖已有车辆，已中止入库。请检查 scrape_wap 的 --stock-prefix。")
+        return 2
     preview: list[str] = []
     for r in rows:
         stock = norm(r.get("stock_id"))
