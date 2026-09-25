@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGS = ['en', 'zh', 'ru', 'ar']
 # 抽样详情页：从已发布车辆中取代表（新批次 2026-09-che168-full）
 # 若对应 id 未发布则自动跳过（check 会标 FAIL，提示重新选样本）
-SAMPLE_CARS = [406, 407, 408, 409, 326]
+SAMPLE_CARS = [410, 411, 412, 413, 326]
 
 
 def car_count():
