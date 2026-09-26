@@ -4,7 +4,7 @@ from datetime import date
 from urllib.parse import quote_plus
 from enrich_inventory import enrich_all
 from photo_audit import build_photo_audit
-from seo_content import MARKETS, MARKET_COPY, MARKET_DETAILS, GUIDES, CATEGORY_NAMES, UI as SEO_UI, CAR_COPY
+from seo_content import MARKETS, MARKET_COPY, MARKET_DETAILS, GUIDES, CATEGORY_NAMES, UI as SEO_UI
 
 R=Path(__file__).resolve().parents[1]; DATA=R/'data/vehicles.json'; BASE='https://jinbacars.com';INDEXNOW_KEY='6d9a7c2e4f8b41a39c5d7e0b2f6a8c14'
 langs=['en','zh','ru','ar']
@@ -97,19 +97,17 @@ def footer(lang):
  t=T[lang];l=L[lang];return f'''<footer><div class="wrap"><div class="footergrid"><div><h4>JINBA AUTO EXPORT</h4><p>{t['location']}</p></div><div><h4>{t['inventory']}</h4><a href="/{lang}/cars/">{t['all']}</a><a href="/{lang}/brands/">{SEO_UI[lang]['brands']}</a><a href="/{lang}/categories/">{SEO_UI[lang]['categories']}</a></div><div><h4>{t['company']}</h4><a href="/{lang}/about/">{t['about']}</a><a href="/{lang}/contact/">{t['contact']}</a><a href="/{lang}/markets/">{SEO_UI[lang]['markets']}</a><a href="/{lang}/guides/">{SEO_UI[lang]['guides']}</a><a href="/{lang}/privacy/">{l['privacy']}</a><a href="/{lang}/terms/">{l['terms']}</a></div><div><h4>{t['contact']}</h4><a href="https://wa.me/8618079089999">WhatsApp: +86 180 7908 9999</a><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div></div><div class="copyright">© 2026 Jinba Auto Export. {t['rights']}</div></div></footer></body></html>'''
 def card(v,lang):
  # v9 规范（2026-09-12 按用户截图对齐）：高清原图作主图，左上角年份+燃料+车身 徽标，
- # 下方车型名 / 库存号·里程·城市 / 2 行描述 / 价格行 $X USD FOB <目的港> + 橙色 Details → 按钮。
+ # 下方车型名 / 库存号·里程·城市 / 2 行描述 / 价格行与详情页一致的贸易条款及出发港。
  t=T[lang];name=title_for(v,lang);ph=v['photos'][0] if v['photos'] else '/images/og-image.jpg';fuel=v['fuel'];displayfuel=value(lang,'fuel',fuel);body=value(lang,'body_type',v.get('body_type') or 'SUV');search=' '.join(v.get('title_i18n',{}).values())+' '+v['brand']
- port={'en':'Shanghai','zh':'上海港','ru':'Шанхай','ar':'شنغهاي'}.get(lang,'Shanghai')
- dest={'en':'Mombasa','zh':'蒙巴萨','ru':'Момбаса','ar':'مومباسا'}[lang]
- descline=f'<p class="desc-line">{esc(CAR_COPY[v["id"]][lang])}</p>' if v['id'] in CAR_COPY else ''
- if not descline:
-  _d=(v.get('description_i18n') or {}).get(lang) or (v.get('description_i18n') or {}).get('en') or ''
-  descline=f'<p class="desc-line">{esc(_d[:150].rstrip() + ("…" if len(_d)>150 else ""))}</p>' if _d else ''
+ departure=value(lang,'departure_port',v.get('departure_port',''))
+ trade_term=value(lang,'trade_term',v.get('trade_term') or 'FOB')
+ _d=(v.get('description_i18n') or {}).get(lang) or (v.get('description_i18n') or {}).get('en') or ''
+ descline=f'<p class="desc-line">{esc(_d[:150].rstrip() + ("…" if len(_d)>150 else ""))}</p>' if _d else ''
  city=esc(v.get('city') or '')
  try: _mi=f"{int(v.get('mileage_km') or 0):,} km"
  except Exception: _mi=esc(v.get('mileage') or '')
  meta=' · '.join(x for x in (esc(v['stock_id']),_mi,city) if x)
- return f'''<a class="card" data-car data-search="{esc(search.lower())}" data-brand="{esc(v['brand'])}" data-fuel="{esc(fuel)}" data-year="{esc(v['year'])}" data-price="{esc(v.get('price_usd',0))}" data-port="{esc(v.get('departure_port',''))}" data-body="{esc(v.get('body_type',''))}" href="/{lang}/cars/{v['id']}/"><div class="photo"><img loading="lazy" decoding="async" width="720" height="540" src="{esc(ph)}" alt="{esc(name)}"><span class="photo-tags"><b>{esc(v['year'])}</b><span>{esc(displayfuel)}</span><span>{esc(body)}</span></span></div><div class="body"><h3>{esc(name)}</h3><div class="meta">{meta}</div>{descline}<div class="foot"><span class="price">{esc(v['price'])} <small class="cur">USD</small><small>{esc(v.get('trade_term') or 'FOB')} {esc(dest)} · {esc(port)}</small></span><span class="more">{t['details']} →</span></div></div></a>'''
+ return f'''<a class="card" data-car data-search="{esc(search.lower())}" data-brand="{esc(v['brand'])}" data-fuel="{esc(fuel)}" data-year="{esc(v['year'])}" data-price="{esc(v.get('price_usd',0))}" data-port="{esc(v.get('departure_port',''))}" data-body="{esc(v.get('body_type',''))}" href="/{lang}/cars/{v['id']}/"><div class="photo"><img loading="lazy" decoding="async" width="720" height="540" src="{esc(ph)}" alt="{esc(name)}"><span class="photo-tags"><b>{esc(v['year'])}</b><span>{esc(displayfuel)}</span><span>{esc(body)}</span></span></div><div class="body"><h3>{esc(name)}</h3><div class="meta">{meta}</div>{descline}<div class="foot"><span class="price">{esc(v['price'])} <small class="cur">USD</small><small>{esc(trade_term)} · {esc(departure)}</small></span><span class="more">{t['details']} →</span></div></div></a>'''
 def home(lang,V):
  t=T[lang]; hero=V[0]['photos'][0] if V and V[0].get('photos') else '/images/og-image.jpg'; featured=''.join(card(v,lang) for v in V[:6]); steps=''.join(f'<article class="step"><h3>{t[f"step{i}"]}</h3></article>' for i in range(1,7));desc=t['hero2']
  org={'@context':'https://schema.org','@type':'Organization','name':'Jinba Auto Export','url':BASE,'email':'jian5222@gmail.com','telephone':'+86 180 7908 9999','address':{'@type':'PostalAddress','addressLocality':'Xinyu','addressRegion':'Jiangxi','addressCountry':'CN'}}
@@ -257,9 +255,15 @@ def detail(lang,v):
  specs=[(t['mileage'],v['mileage']),(t['fuel'],value(lang,'fuel',v['fuel'])),(t['brand'],v['brand']),(e['stock_id'],v['stock_id']),(e['engine'],value(lang,'engine',v.get('engine',''))),(e['seats'],v.get('seats','')),(e['vin_last6'],v.get('vin_last6','')),(e['emission'],value(lang,'emission',v.get('emission',''))),(e['departure_port'],value(lang,'departure_port',v.get('departure_port',''))),(e['trade_term'],value(lang,'trade_term',v.get('trade_term','')))]
  specs=[(lb,val) for lb,val in specs if val not in ('',None)]
  fuel_schema={'纯电':'Electric','插混':'HybridEngine','混动':'HybridEngine','柴油':'Diesel','Petrol':'Gasoline'}
- schema=json.dumps({'@context':'https://schema.org','@type':'Vehicle','name':name,'description':desc,'sku':v['stock_id'],'brand':{'@type':'Brand','name':v['brand']},'model':title_for(v,'en'),'fuelType':fuel_schema.get(v.get('fuel',''),''),'vehicleTransmission':value(lang,'trans',v.get('transmission','')),'image':[BASE+x for x in imgs],'vehicleModelDate':v['year'],'mileageFromOdometer':{'@type':'QuantitativeValue','value':v.get('mileage_km',0),'unitCode':'KMT'},'itemCondition':'https://schema.org/UsedCondition','offers':{'@type':'Offer','price':v.get('price_usd',0),'priceCurrency':'USD','availability':'https://schema.org/InStock','url':f'{BASE}/{lang}/cars/{v["id"]}/','seller':{'@type':'Organization','name':'Jinba Auto Export'}}},ensure_ascii=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+ schema=json.dumps({'@context':'https://schema.org','@type':'Vehicle','name':name,'description':desc,'sku':v['stock_id'],'brand':{'@type':'Brand','name':v['brand']},'model':title_for(v,'en'),'fuelType':fuel_schema.get(v.get('fuel',''),''),'vehicleTransmission':value(lang,'trans',v.get('transmission','')),'image':[BASE+x for x in imgs],'vehicleModelDate':v['year'],'mileageFromOdometer':{'@type':'QuantitativeValue','value':v.get('mileage_km',0),'unitCode':'KMT'},'itemCondition':'https://schema.org/UsedCondition','offers':{'@type':'Offer','price':v.get('price_usd',0),'priceCurrency':'USD','url':f'{BASE}/{lang}/cars/{v["id"]}/','seller':{'@type':'Organization','name':'Jinba Auto Export'}}},ensure_ascii=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
  photo_note=e['complete'] if v.get('photo_status')=='complete' else f"{e['limited']} · {t['limited']}"
- message=quote_plus(f"Jinba Auto {v['stock_id']} {name}");mail_subject=quote_plus(f"{v['stock_id']} {name}")
+ prompts={
+  'en':f"Hello JINBA CARS. I am interested in {v['stock_id']} {name}. Quantity: __. Destination port: __. Please confirm current stock, condition and FOB/CIF quote.",
+  'zh':f"您好，我想咨询 {v['stock_id']} {name}。采购数量：__。目的港：__。请确认当前库存、车况及 FOB/CIF 报价。",
+  'ru':f"Здравствуйте, интересует {v['stock_id']} {name}. Количество: __. Порт назначения: __. Подтвердите наличие, состояние и цену FOB/CIF.",
+  'ar':f"مرحباً، أريد الاستفسار عن {v['stock_id']} {name}. الكمية: __. ميناء الوصول: __. يرجى تأكيد التوفر والحالة وسعر FOB/CIF.",
+ }
+ message=quote_plus(prompts[lang]);mail_subject=quote_plus(f"{v['stock_id']} {name}")
  crumb=breadcrumbs(lang,[(t['home'],f'/{lang}/'),(t['inventory'],f'/{lang}/cars/'),(name,f'/{lang}/cars/{v["id"]}/')])
  qb=f'<div class="quickbar" aria-label="Quick contact"><a class="btn primary" data-track="whatsapp" data-stock="{esc(v["stock_id"])}" href="https://wa.me/8618079089999?text={message}">{t["quote"]}</a><a class="btn" data-track="email" data-stock="{esc(v["stock_id"])}" href="mailto:jian5222@gmail.com?subject={mail_subject}">{t["email"]}</a></div>'
  _nt=name if len(name)<=58 else name[:57].rstrip()+'…';tt=f"{_nt} · {esc(v['stock_id'])}"

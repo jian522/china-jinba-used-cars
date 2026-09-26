@@ -40,7 +40,12 @@ PY="C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe"
 "$PY" scripts/daily_upload.py --count 3    # 指定台数（自动夹到 3~5）
 ```
 
-它跑到 `cover_auto.py --export` 那步就停下来等目检，你必须接着做：
+⚠ **注意（2026-09-25 实测校正）**：`daily_upload.py` **不会**在 `cover_auto --export` 处停下等目检 ——
+找不到 `picks.json` 时它只打印一条告警就继续构建并**直接部署**。所以要么**先分步跑**
+（采集 → ingest → photo_fix → cover_auto --export → 目检裁决 → picks --commit → 构建 → 校验 → 部署），
+要么先把 `picks.json` 准备好再整体跑。**别裸跑整体流程，否则等于违反规则 1。**
+
+分步复刻时必须接着做：
 
 1. `Read` `.workbuddy/cover_auto/candidates.png`
    （拼图看不清就按车读 `.workbuddy/cover_auto/<vid>/img_NN.jpg`）
