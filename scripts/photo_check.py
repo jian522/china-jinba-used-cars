@@ -30,6 +30,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -202,12 +203,38 @@ def check_image(path: Path, *, is_cover: bool) -> dict:
     return res
 
 
-def _imports_dir(stock: str) -> Path | None:
-    for b in sorted((ROOT / "imports").iterdir()):
-        d = b / stock
-        if d.is_dir():
-            return d
-    return None
+def _imports_dir(stock: str, infoid: str | None = None) -> Path | None:
+    """定位 imports/<批次>/<stock_id> 车源目录。
+
+    2026-09-28 修复：同一 stock_id 可能在**多个历史批次目录**里残留
+    （如 imports/2026-09-14-refill2/JB-9640 与 imports/daily-20260928/JB-9640），
+    旧实现按目录名排序取第一个 → 取到别的车的图集，导致 R1 整条豁免链全部失效、
+    把合规图误判成水印/条带（424 的 photo-02/03 实测）。
+    现改为：优先按 spec.json 的 infoid 精确匹配本车，匹配不到再取最新批次目录。
+    """
+    cands = [b / stock for b in sorted((ROOT / "imports").iterdir())
+             if (b / stock).is_dir()]
+    if not cands:
+        return None
+    if infoid:
+        for d in cands:
+            try:
+                sp = d / "spec.json"
+                if sp.is_file() and str(json.loads(
+                        sp.read_text(encoding="utf-8")).get("infoid", "")) == str(infoid):
+                    return d
+            except Exception:  # noqa: BLE001
+                continue
+    try:
+        return max(cands, key=lambda p: p.stat().st_mtime)
+    except Exception:  # noqa: BLE001
+        return cands[0]
+
+
+def infoid_of(v: dict) -> str | None:
+    """从车辆 source 字段抽 che168 车源 id：'che168 wap (car 59268869, 城市贵阳)'。"""
+    m = re.search(r"car\s+(\d{5,})", str(v.get("source") or ""))
+    return m.group(1) if m else None
 
 
 def exempt_by_source(path: Path, corners: list[str]) -> bool:
@@ -229,7 +256,7 @@ def exempt_by_source(path: Path, corners: list[str]) -> bool:
         stock = v["stock_id"]
     except Exception:  # noqa: BLE001
         return False
-    impd = _imports_dir(stock)
+    impd = _imports_dir(stock, infoid_of(v))
     if impd is None:
         return False
     fn = path.name
@@ -297,7 +324,7 @@ def _source_candidates(path: Path) -> tuple[Path | None, Path | None]:
         stock = v["stock_id"]
     except Exception:  # noqa: BLE001
         return None, None
-    impd = _imports_dir(stock)
+    impd = _imports_dir(stock, infoid_of(v))
     if impd is None:
         return None, None
     fn = path.name
