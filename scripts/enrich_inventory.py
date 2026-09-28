@@ -29,6 +29,7 @@ MODEL_NAMES = {
     "荣威RX5新能源": "RX5 eRX5", "荣威RX5": "RX5", "荣威iMAX8": "iMAX8", "荣威i5": "i5",
     "飞凡R7": "Rising Auto R7", "飞凡F7": "Rising Auto F7",
     "缤越": "Coolray", "星越L": "Monjaro", "帝豪": "Emgrand",
+    "博越L": "Boyue L", "博越": "Boyue",
     "长安CS75PLUS": "CS75 PLUS", "长安CS55PLUS": "CS55 PLUS", "逸动": "Eado",
     "理想L7": "L7", "问界M7": "M7", "智界S7": "S7", "传祺GS3": "GS3",
 }
