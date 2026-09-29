@@ -1,0 +1,75 @@
+# jinbacars.com 缓存优化规则（Cloudflare Pages）
+# 部署日期：2026-09-28
+#
+# 设计原则：
+#   HTML 页面 —— 短缓存，保证每日新车上架后访客能及时看到
+#   静态资源 —— 长缓存 30 天，URL 自带 ?v=YYYYMMDD 版本号，改版即失效
+#   站点元数据 —— 中缓存，兼顾收录及时性
+
+# HTML 页面：浏览器 10 分钟 / 边缘 1 小时
+/*
+  Cache-Control: public, max-age=600, s-maxage=3600
+  X-Content-Type-Options: nosniff
+
+# 静态资源：浏览器 30 天 / 边缘 30 天
+/assets/*
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+# CSS
+/*.css
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+# JavaScript
+/*.js
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+# 图片
+/*.png
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.gif
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.avif
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+/*.mp4
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+
+# 字体：浏览器 30 天 / 边缘 1 年（字体文件内容恒定，不会变）
+/*.woff
+  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
+
+/*.ttf
+  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
+
+/*.otf
+  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
+
+# 站点地图与 robots：边缘 1 小时，保证搜索引擎及时拉到新车
+/sitemap.xml
+  Cache-Control: public, max-age=600, s-maxage=3600
+
+/sitemap*.xml
+  Cache-Control: public, max-age=600, s-maxage=3600
+
+/robots.txt
+  Cache-Control: public, max-age=600, s-maxage=3600
