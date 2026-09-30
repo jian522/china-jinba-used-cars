@@ -1,5 +1,5 @@
 from pathlib import Path
-import re,json,html,shutil,csv,io
+import re,json,html,shutil,csv,io,sys
 from datetime import date
 from urllib.parse import quote_plus
 from enrich_inventory import enrich_all
@@ -48,6 +48,27 @@ SEO_TITLES = {
     'zh': {'home': '中国二手车出口 | 真实库存全球运输 - 金霸汽车', 'inventory': '中国二手车出口库存 | 浏览150+经验证车辆', 'about': '关于我们 | 中国二手车出口公司', 'contact': '联系我们 | 获取中国二手车出口报价'},
     'ru': {'home': 'Экспорт подержанных авто из Китая | Проверенный ассортимент', 'inventory': 'Подержанные автомобили на экспорт из Китая | 150+ авто', 'about': 'О компании | Экспорт авто из Китая', 'contact': 'Связаться с нами | Запросить цену на экспорт авто из Китая'},
     'ar': {'home': 'تصدير سيارات مستعملة من الصين | مخزون موثّق', 'inventory': 'سيارات مستعملة للتصدير من الصين | 150+ سيارة', 'about': 'من نحن | شركة تصدير سيارات من الصين', 'contact': 'اتصل بنا | اطلب عرض سعر لتصدير سيارات من الصين'},
+}
+
+# Contact-form copy is kept separate from the vehicle inventory translations.
+CONTACT_EXTRA={
+ 'en':dict(interest='What are you looking for?',choose='Select one',used='Used vehicles',parts='Legally reusable dismantled parts',item='Vehicle model / part requested',phone='WhatsApp number (optional, with country code)',optin='I agree that JINBA CARS may message this number on WhatsApp about my inquiry and relevant used-vehicle or lawful reusable-parts availability. I can withdraw consent at any time by replying STOP.',note='Availability and legal export eligibility are checked before any quotation.',channel='Follow our WhatsApp Channel',channel_note='See vehicle updates and export information; following does not subscribe you to private messages.',privacy_wa='WhatsApp contact is optional. We message your number only if you provide it and separately check the WhatsApp consent box, or you start a WhatsApp conversation with us. Consent covers your inquiry and relevant availability updates; reply STOP to withdraw it. The inquiry form is processed by Formspree.'),
+ 'zh':dict(interest='采购需求',choose='请选择',used='二手整车',parts='合法可再利用的拆解件',item='车型／配件需求',phone='WhatsApp 号码（选填，请带国家区号）',optin='我同意 JINBA CARS 通过 WhatsApp 向此号码发送与本次询盘及相关二手车或合法可再利用配件供应有关的信息。我可随时回复 STOP 撤回同意。',note='我们将在报价前核实供应情况及合法出口资格。',channel='关注 WhatsApp 频道',channel_note='获取车源和出口知识；关注频道不会订阅私人消息。',privacy_wa='WhatsApp 联系方式为选填。只有在您提供号码并单独勾选 WhatsApp 同意框，或主动向我们发起 WhatsApp 对话时，我们才会向该号码发送消息。同意范围包括本次询盘和相关供应更新；回复 STOP 可撤回。询盘表单由 Formspree 处理。'),
+ 'ru':dict(interest='Что вы ищете?',choose='Выберите',used='Подержанные автомобили',parts='Законно пригодные к повторному использованию демонтированные запчасти',item='Модель / нужная деталь',phone='Номер WhatsApp (необязательно, с кодом страны)',optin='Я согласен получать от JINBA CARS сообщения в WhatsApp по моему запросу и о наличии подходящих подержанных автомобилей или законно пригодных деталей. Я могу отозвать согласие в любое время, ответив STOP.',note='Наличие и законность экспорта проверяются до предложения.',channel='Подписаться на канал WhatsApp',channel_note='Обновления автомобилей и информация об экспорте; подписка не включает личные сообщения.',privacy_wa='Номер WhatsApp указывать необязательно. Мы пишем вам в WhatsApp только если вы указали номер и отдельно отметили согласие либо сами начали переписку с нами. Согласие относится к запросу и обновлениям о подходящих предложениях; ответьте STOP, чтобы отозвать его. Форма обрабатывается сервисом Formspree.'),
+ 'ar':dict(interest='ماذا تبحث عنه؟',choose='اختر',used='سيارات مستعملة',parts='قطع مفككة قابلة لإعادة الاستخدام بشكل قانوني',item='الطراز / القطعة المطلوبة',phone='رقم واتساب (اختياري، مع رمز الدولة)',optin='أوافق على أن ترسل JINBA CARS رسائل واتساب إلى هذا الرقم بشأن طلبي وتوافر السيارات المستعملة أو القطع القابلة لإعادة الاستخدام بشكل قانوني. يمكنني سحب موافقتي في أي وقت بالرد STOP.',note='يُتحقق من التوافر وأهلية التصدير القانونية قبل تقديم أي عرض.',channel='تابع قناة واتساب',channel_note='تحديثات السيارات ومعلومات التصدير؛ متابعة القناة لا تعني الاشتراك في رسائل خاصة.',privacy_wa='رقم واتساب اختياري. لا نراسلك عبر واتساب إلا إذا قدمت الرقم ووافقت بشكل منفصل، أو بدأت أنت محادثة معنا. تشمل الموافقة طلبك وتحديثات التوافر ذات الصلة؛ يمكنك سحبها بالرد STOP. تعالج Formspree نموذج الاستفسار.'),
+}
+for _lang,_company,_quantity in (
+ ('en','Company name (optional)','Expected monthly quantity (vehicles or parts)'),
+ ('zh','公司名称（选填）','预计每月采购量（车辆或配件件数）'),
+ ('ru','Название компании (необязательно)','Планируемое количество в месяц (авто или деталей)'),
+ ('ar','اسم الشركة (اختياري)','الكمية المتوقعة شهرياً (سيارات أو قطع)'),
+):
+ CONTACT_EXTRA[_lang].update(company=_company,quantity=_quantity)
+PRIVACY_EXTRA={
+ 'en':'You may also submit a company name, expected monthly quantity and WhatsApp number.',
+ 'zh':'您也可以提交公司名称、预计每月采购量和 WhatsApp 号码。',
+ 'ru':'Вы также можете указать компанию, планируемое количество в месяц и номер WhatsApp.',
+ 'ar':'يمكنك أيضاً تقديم اسم الشركة والكمية الشهرية المتوقعة ورقم واتساب.',
 }
 
 def head(lang,title,desc,canonical,image='/images/og-image.jpg',page_type='website',extra_schema=''):
@@ -276,9 +297,41 @@ def detail(lang,v):
  version=_ver or name
  return head(lang,tt,desc,f"/cars/{v['id']}/",image=main)+f'<script type="application/ld+json">{schema}</script>'+header(lang,f"/cars/{v['id']}/")+f'''<main class="section"><div class="wrap">{crumb}<div class="detail detail-v8" style="margin-top:22px"><div class="detail-gallery"><div class="mainphoto"><img id="mainphoto" width="720" height="540" fetchpriority="high" src="{esc(main)}" alt="{esc(name)}"></div><div class="thumbs thumbs-v8">{thumbs}</div><span class="verified">✓ {pc} {t['onephoto'] if pc==1 else t['photos']}</span></div><div class="detail-info"><div class="stocktag">{esc(v['stock_id'])}</div><h1>{esc(headline)}<span class="detail-version">{esc(version)}</span></h1><div class="bigprice">{esc(v['price'])}<small>{value(lang,'trade_term',v.get('trade_term','FOB'))} · {value(lang,'departure_port',v.get('departure_port',''))}</small></div><div class="specgrid specgrid-v8">{''.join(f'<div class="specitem"><small>{esc(label)}</small><b>{esc(val)}</b></div>' for label,val in specs)}</div><div class="notice">{photo_note}</div><h3>{t['condition']}</h3><p class="desc">{esc(desc)}</p><div class="legalnote"><p>{l['price']}</p><p>{l['availability']}</p></div><div class="actions"><a class="btn primary" data-track="whatsapp" data-stock="{esc(v["stock_id"])}" href="https://wa.me/8618079089999?text={message}">{t['quote']}</a><a class="btn" data-track="email" data-stock="{esc(v["stock_id"])}" href="mailto:jian5222@gmail.com?subject={mail_subject}">{t['email']}</a></div></div></div></div></main>'''+qb+footer(lang)
 def contact(lang):
- t=T[lang];l=L[lang];return head(lang,f"{t['contact']} | Jinba Auto Export",t['ctap'],'/contact/')+header(lang,'/contact/')+f'''<section class="pagehead"><div class="wrap"><h1>{t['contact']}</h1><p>{t['ctap']}</p></div></section><main class="section"><div class="wrap contactlayout"><div class="contactbox"><div class="contactcard"><h3>WhatsApp</h3><a href="https://wa.me/8618079089999">+86 180 7908 9999</a></div><div class="contactcard"><h3>{t['email']}</h3><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div><div class="contactcard"><h3>{t['location']}</h3><p>Jinba Auto Export</p></div><div class="contactcard"><h3>{t['quote']}</h3><a class="btn primary" href="https://wa.me/8618079089999">{t['whatsapp']}</a></div></div><form class="inquiry" action="https://formspree.io/f/xqapjkvg" method="post"><h2>{l['form']}</h2><div class="formgrid"><label>{l['name']} *<input name="name" required autocomplete="name"></label><label>{t['email']} *<input type="email" name="email" required autocomplete="email"></label><label>{l['country']} *<input name="country" required autocomplete="country-name"></label><label>{l['port']}<input name="destination_port"></label><label>{l['vehicle']} *<input name="vehicle" required></label><label>{l['budget']}<input name="budget" inputmode="numeric"></label></div><label>{l['message']}<textarea name="message" rows="5"></textarea></label><input type="hidden" name="language" value="{lang}"><button class="btn primary" type="submit">{l['send']}</button><small>{l['required']} · <a href="/{lang}/privacy/">{l['privacy']}</a></small></form></div></main>'''+footer(lang)
+ t=T[lang];l=L[lang];c=CONTACT_EXTRA[lang]
+ wa_text=quote_plus('Hello JINBA CARS. I am looking for used vehicles or legally reusable dismantled parts. My country is: ')
+ wa_link=f'https://wa.me/8618079089999?text={wa_text}'
+ channel='https://whatsapp.com/channel/0029VbDdLPnHgZWjsouXpu26'
+ contact_head=head(lang,f"{t['contact']} | Jinba Auto Export",t['ctap'],'/contact/')
+ contact_head=contact_head.replace('href="/assets/design-system.css"','href="/assets/design-system.css?v=20260930"')
+ return contact_head+header(lang,'/contact/')+f'''<section class="pagehead"><div class="wrap"><h1>{t['contact']}</h1><p>{t['ctap']}</p></div></section>
+<main class="section"><div class="wrap contactlayout"><div class="contactbox">
+<div class="contactcard"><h3>WhatsApp</h3><a href="{wa_link}">+86 180 7908 9999</a></div>
+<div class="contactcard"><h3>{t['email']}</h3><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div>
+<div class="contactcard"><h3>{t['location']}</h3><p>Jinba Auto Export</p></div>
+<div class="contactcard"><h3>{t['quote']}</h3><a class="btn primary" href="{wa_link}">{t['whatsapp']}</a></div>
+<div class="contactcard"><h3>{c['channel']}</h3><a href="{channel}" target="_blank" rel="noopener noreferrer">{c['channel']} →</a><p>{c['channel_note']}</p></div>
+</div><form class="inquiry" action="https://formspree.io/f/xqapjkvg" method="post">
+<h2>{l['form']}</h2><div class="formgrid">
+<label>{l['name']} *<input name="name" required autocomplete="name"></label>
+<label>{t['email']} *<input type="email" name="email" required autocomplete="email"></label>
+<label>{l['country']} *<input name="country" required autocomplete="country-name"></label>
+<label>{c['company']}<input name="company" autocomplete="organization"></label>
+<label>{l['port']}<input name="destination_port"></label>
+<label>{c['interest']} *<select name="product_interest" required><option value="" disabled selected>{c['choose']}</option><option value="used_vehicle">{c['used']}</option><option value="reusable_dismantled_parts">{c['parts']}</option></select></label>
+<label>{c['item']} *<input name="vehicle" required></label>
+<label>{c['quantity']}<input type="number" min="1" name="monthly_quantity" inputmode="numeric"></label>
+<label>{l['budget']}<input name="budget" inputmode="numeric"></label>
+<label>{c['phone']}<input type="tel" name="whatsapp" autocomplete="tel" inputmode="tel"></label>
+</div><label>{l['message']}<textarea name="message" rows="5"></textarea></label>
+<label class="whatsapp-consent"><input type="checkbox" name="whatsapp_opt_in" value="yes" onchange="this.form.elements.whatsapp.required=this.checked"> <span>{c['optin']}</span></label>
+<input type="hidden" name="language" value="{lang}"><input type="hidden" name="form_source" value="jinbacars-contact-{lang}">
+<p class="formnote">{c['note']}</p><button class="btn primary" type="submit">{l['send']}</button>
+<small>{l['required']} · <a href="/{lang}/privacy/">{l['privacy']}</a></small>
+</form></div></main>'''+footer(lang)
 def legal(lang,kind):
- t=T[lang];l=L[lang];title=l[kind];intro=l[f'{kind}_intro'];body=l[f'{kind}_body'];return head(lang,f"{title} | Jinba Auto Export",intro,f'/{kind}/')+header(lang,f'/{kind}/')+f'''<section class="pagehead"><div class="wrap"><h1>{title}</h1><p>{intro}</p></div></section><main class="section"><article class="wrap legalpage"><p>{body}</p><h2>{t['contact']}</h2><p><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a> · <a href="https://wa.me/8618079089999">+86 180 7908 9999</a></p><p class="legalnote">{l['price']} {l['availability']}</p></article></main>'''+footer(lang)
+ t=T[lang];l=L[lang];title=l[kind];intro=l[f'{kind}_intro'];body=l[f'{kind}_body']
+ if kind=='privacy':body+=' '+PRIVACY_EXTRA[lang]+' '+CONTACT_EXTRA[lang]['privacy_wa']
+ return head(lang,f"{title} | Jinba Auto Export",intro,f'/{kind}/')+header(lang,f'/{kind}/')+f'''<section class="pagehead"><div class="wrap"><h1>{title}</h1><p>{intro}</p></div></section><main class="section"><article class="wrap legalpage"><p>{body}</p><h2>{t['contact']}</h2><p><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a> · <a href="https://wa.me/8618079089999">+86 180 7908 9999</a></p><p class="legalnote">{l['price']} {l['availability']}</p></article></main>'''+footer(lang)
 def admin_page():
  return '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#071827"><title>授权登录 | Jinba Auto Export</title><link rel="stylesheet" href="/assets/design-system.css"></head><body><div class="top"><div class="wrap"><span>JINBA AUTO EXPORT · PRIVATE ADMIN</span><span>GitHub 身份验证</span></div></div><header class="header"><nav class="wrap nav"><a class="brand" href="/zh/"><span class="mark">J</span><span>JINBA AUTO<small>VEHICLE ADMIN</small></span></a><a class="quote" href="/zh/cars/">返回公开库存</a></nav></header><main class="section alt"><div class="wrap adminwrap"><div class="kicker">AUTHORIZED OWNER ONLY</div><h1>车辆管理授权登录</h1><p class="adminlead">后台不使用网页明文密码。请使用仓库所有者 GitHub 账号 <b>jian522</b> 登录；GitHub 将验证账号和登录安全信息，其他账号无法发布或修改车辆数据。</p><div class="adminnote"><h2>安全状态</h2><ul><li>首页和所有公开页面已移除后台入口</li><li>只有 GitHub 账号 <b>jian522</b> 的管理请求会执行</li><li>其他账号提交的管理请求会被自动拒绝并关闭</li><li>后台页面禁止搜索引擎收录和存档</li></ul><a class="btn primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new/choose" rel="nofollow noopener">使用 GitHub 账号进入车辆管理 →</a></div><div class="adminnote"><h2>照片补全</h2><p>查看每台车现有照片、缺少数量和重复主图风险；可以单车上传，也可以一次批量处理最多20台。</p><div class="actions"><a href="/admin/photo-coverage/">打开照片补全清单 →</a><a class="btn primary" href="https://github.com/jian522/china-jinba-used-cars/issues/new?template=bulk-photo-import.yml" rel="nofollow noopener">批量补图 →</a></div></div></div></main></body></html>'''
 
@@ -300,6 +353,15 @@ def photo_queue_csv(V,audit):
   writer.writerow([v['stock_id'],v['id'],v['title'],row['photo_count'],row['missing_to_6'],' '.join(map(str,row['duplicate_primary_with'])),v.get('vin_last6',''),v.get('photo_source_reference',''),v.get('photo_rights','')])
  return '\ufeff'+stream.getvalue()
 def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s)
+if '--contact-only' in sys.argv:
+ pages=[(R/lang/'contact/index.html',contact(lang)) for lang in langs]
+ pages += [(R/lang/'privacy/index.html',legal(lang,'privacy')) for lang in langs]
+ for path,content in pages:
+  if '--dry-run' not in sys.argv:
+   path.parent.mkdir(parents=True,exist_ok=True)
+   path.write_text(content,encoding='utf-8',newline='\n')
+  print(('would write' if '--dry-run' in sys.argv else 'wrote'),path.relative_to(R),len(content))
+ raise SystemExit(0)
 V=json.loads(DATA.read_text()) if DATA.exists() else extract()
 # Merge the full photo index (generated by batch_photo_import.py) into the
 # vehicle records so every uploaded original photo appears in the gallery.

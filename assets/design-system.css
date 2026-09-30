@@ -322,11 +322,14 @@ footer { background: var(--primary); color: var(--on-dark); padding: var(--s7) 0
 .inquiry h2 { margin-top: 0; }
 .formgrid { display: grid; gap: var(--s3); grid-template-columns: 1fr; }
 .inquiry label { display: block; font-size: var(--fs-14); font-weight: 600; color: var(--primary); }
-.inquiry input, .inquiry textarea {
+.inquiry input, .inquiry select, .inquiry textarea {
   width: 100%; min-height: 44px; margin-top: 6px; padding: 10px 14px; border: 1px solid var(--line);
   border-radius: var(--radius-sm); font-size: var(--fs-15); font-family: inherit; color: var(--ink);
 }
 .inquiry textarea { min-height: 120px; resize: vertical; }
+.inquiry .whatsapp-consent { display: flex; align-items: flex-start; gap: 10px; margin-top: var(--s3); font-weight: 400; line-height: 1.5; }
+.inquiry .whatsapp-consent input { flex: 0 0 auto; width: 18px; min-height: 18px; height: 18px; margin: 2px 0 0; padding: 0; }
+.inquiry .formnote { margin: var(--s3) 0 0; color: var(--muted); font-size: var(--fs-13); }
 .inquiry button { margin-top: var(--s2); }
 .inquiry small { display: block; margin-top: var(--s3); color: var(--muted); font-size: var(--fs-13); }
 
