@@ -5,8 +5,8 @@
 <div class="contactcard"><h3>Синьюй, Цзянси, Китай</h3><p>Jinba Auto Export</p></div>
 <div class="contactcard"><h3>Получить цену</h3><a class="btn primary" href="https://wa.me/8618079089999?text=Hello+JINBA+CARS.+I+am+looking+for+used+vehicles+or+legally+reusable+dismantled+parts.+My+country+is%3A+">Написать в WhatsApp</a></div>
 <div class="contactcard"><h3>Подписаться на канал WhatsApp</h3><a href="https://whatsapp.com/channel/0029VbDdLPnHgZWjsouXpu26" target="_blank" rel="noopener noreferrer">Подписаться на канал WhatsApp →</a><p>Обновления автомобилей и информация об экспорте; подписка не включает личные сообщения.</p></div>
-</div><form class="inquiry" id="inquiry-form" action="https://formspree.io/f/xqapjkvg" method="post">
-<h2>Запросить экспортное предложение</h2><div class="formgrid">
+</div><form class="inquiry" id="inquiry-form">
+<h2>Подготовить запрос</h2><div class="formgrid">
 <label>Имя *<input name="name" required autocomplete="name"></label>
 <label>Email *<input type="email" name="email" required autocomplete="email"></label>
 <label>Страна / регион *<input name="country" required autocomplete="country-name"></label>
@@ -20,30 +20,43 @@
 </div><label>Требования<textarea name="message" rows="5"></textarea></label>
 <label class="whatsapp-consent"><input type="checkbox" name="whatsapp_opt_in" value="yes" onchange="this.form.elements.whatsapp.required=this.checked"> <span>Я согласен получать от JINBA CARS сообщения в WhatsApp по моему запросу и о наличии подходящих подержанных автомобилей или законно пригодных деталей. Я могу отозвать согласие в любое время, ответив STOP.</span></label>
 <input type="hidden" name="language" value="ru"><input type="hidden" name="form_source" value="jinbacars-contact-ru">
-<p class="formnote">Наличие и законность экспорта проверяются до предложения.</p><button class="btn primary" type="submit">Отправить запрос</button>
+<p class="formnote">Наличие и законность экспорта проверяются до предложения.</p><button class="btn primary" type="submit" name="channel" value="wa">Продолжить в WhatsApp</button> <button class="btn" type="submit" name="channel" value="email">Продолжить по email</button>
 <p id="inquiry-feedback" role="status" aria-live="polite" hidden></p>
-<p class="formnote">Если форма не отвечает, свяжитесь с нами напрямую: <a href="https://wa.me/8618079089999?text=Hello+JINBA+CARS.+I+am+looking+for+used+vehicles+or+legally+reusable+dismantled+parts.+My+country+is%3A+">WhatsApp</a> · <a href="mailto:jian5222@gmail.com">Email</a></p>
+<p><a class="btn primary" id="inquiry-open" href="https://wa.me/8618079089999?text=Hello+JINBA+CARS.+I+am+looking+for+used+vehicles+or+legally+reusable+dismantled+parts.+My+country+is%3A+" target="_blank" rel="noopener noreferrer" hidden>Продолжить в WhatsApp</a></p>
+<p class="formnote">Если кнопки не работают, воспользуйтесь ссылками WhatsApp или email на этой странице. <a href="https://wa.me/8618079089999?text=Hello+JINBA+CARS.+I+am+looking+for+used+vehicles+or+legally+reusable+dismantled+parts.+My+country+is%3A+">WhatsApp</a> · <a href="mailto:jian5222@gmail.com">Email</a></p>
 <small>Обязательные поля · <a href="/ru/privacy/">Политика конфиденциальности</a></small>
 </form></div></main><footer><div class="wrap"><div class="footergrid"><div><h4>JINBA AUTO EXPORT</h4><p>Синьюй, Цзянси, Китай</p></div><div><h4>Объявления об авто</h4><a href="/ru/cars/">Все автомобили</a><a href="/ru/brands/">Автомобили по маркам</a><a href="/ru/categories/">Категории автомобилей</a></div><div><h4>Компания</h4><a href="/ru/about/">О компании</a><a href="/ru/contact/">Контакты</a><a href="/ru/markets/">Рынки экспорта</a><a href="/ru/guides/">Руководства покупателя</a><a href="/ru/privacy/">Политика конфиденциальности</a><a href="/ru/terms/">Условия обслуживания</a></div><div><h4>Контакты</h4><a href="https://wa.me/8618079089999">WhatsApp: +86 180 7908 9999</a><a href="mailto:jian5222@gmail.com">jian5222@gmail.com</a></div></div><div class="copyright">© 2026 Jinba Auto Export. Все права защищены.</div></div></footer><script>(function(){
  const form=document.getElementById('inquiry-form');
  const status=document.getElementById('inquiry-feedback');
- const messages={"pending": "Отправляем запрос…", "success": "Запрос отправлен. Мы ответим по указанным контактам.", "error": "Не удалось подтвердить доставку запроса. Пока не отправляйте его повторно; свяжитесь с нами через WhatsApp или email и упомяните эту попытку."};
- if(!form||!status||!window.fetch||!window.AbortController)return;
- form.addEventListener('submit',async function(event){
-  if(!form.reportValidity())return;
+ const messages={"wa": "Продолжить в WhatsApp", "email": "Продолжить по email", "open": "Сообщение подготовлено. Нажмите «Отправить» в WhatsApp или почтовом приложении.", "used": "Подержанные автомобили", "parts": "Законно пригодные к повторному использованию демонтированные запчасти"};
+ if(!form||!status)return;
+ form.addEventListener('input',function(){document.getElementById('inquiry-open').hidden=true;status.hidden=true;});
+ form.addEventListener('change',function(){document.getElementById('inquiry-open').hidden=true;status.hidden=true;});
+ form.addEventListener('submit',function(event){
   event.preventDefault();
-  const button=form.querySelector('button[type="submit"]');
-  button.disabled=true;
-  status.hidden=false;status.textContent=messages.pending;
-  const controller=new AbortController();
-  const timer=setTimeout(function(){controller.abort();},15000);
-  try{
-   const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'},signal:controller.signal});
-   if(!response.ok)throw new Error('Form service returned '+response.status);
-   status.textContent=messages.success;
-   form.reset();form.elements.whatsapp.required=false;
-  }catch(error){
-   status.textContent=messages.error;
-  }finally{clearTimeout(timer);button.disabled=false;}
+  if(!form.reportValidity())return;
+  const data=new FormData(form);
+  const value=(key)=>String(data.get(key)||'').trim();
+  const lines=[
+   'Hello JINBA CARS. I am contacting you from jinbacars.com.',
+   'Name: '+value('name'),
+   'Email: '+value('email'),
+   'Country: '+value('country'),
+   'Interest: '+(value('product_interest')==='used_vehicle'?messages.used:messages.parts),
+   'Requested model / part: '+value('vehicle')
+  ];
+  for(const [key,label] of [['company','Company'],['destination_port','Destination port'],['monthly_quantity','Monthly quantity'],['budget','Budget (USD)'],['whatsapp','WhatsApp number'],['message','Requirements']]){
+   if(value(key))lines.push(label+': '+value(key));
+  }
+  if(data.get('whatsapp_opt_in')==='yes')lines.push('I agree that JINBA CARS may contact my provided number on WhatsApp about this inquiry and relevant availability. I can withdraw by replying STOP.');
+  const text=lines.join('\n');
+  const channel=event.submitter?.value==='email'?'email':'wa';
+  const url=channel==='email'
+   ? 'mailto:jian5222@gmail.com?subject='+encodeURIComponent('JINBA CARS buyer inquiry')+'&body='+encodeURIComponent(text)
+   : 'https://wa.me/8618079089999?text='+encodeURIComponent(text);
+  const link=document.getElementById('inquiry-open');
+  link.href=url;link.textContent=channel==='email'?messages.email:messages.wa;
+  status.hidden=false;status.textContent=messages.open;
+  link.hidden=false;link.focus();
  });
 })();</script></body></html>
