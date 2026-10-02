@@ -71,6 +71,10 @@ for _lang,_company,_quantity in (
  ('ar','اسم الشركة (اختياري)','الكمية المتوقعة شهرياً (سيارات أو قطع)'),
 ):
  CONTACT_EXTRA[_lang].update(company=_company,quantity=_quantity)
+CONTACT_EXTRA['en'].update(privacy_wa='This page prepares your inquiry in your browser. It opens WhatsApp or your email app; you must press Send there to deliver it. We may reply to your inquiry on WhatsApp when you start the conversation. Availability updates require your separate consent; reply STOP to withdraw it.', prepare='Prepare your inquiry', send_wa='Continue on WhatsApp', send_email='Continue by email', open_note='Your message is ready. Complete the final Send step in WhatsApp or your email app.', no_js='If these buttons do not work, use the WhatsApp or email links on this page.')
+CONTACT_EXTRA['zh'].update(privacy_wa='此页面仅在您的浏览器中整理询盘，然后打开 WhatsApp 或邮件应用；您需要在该应用内点击发送才能送达。您主动开启 WhatsApp 对话后，我们可回复本次询盘。后续供应信息须另行同意；回复 STOP 可撤回。', prepare='填写采购需求', send_wa='转到 WhatsApp', send_email='转到邮箱', open_note='消息已准备好。请在 WhatsApp 或邮件应用中点击发送。', no_js='若按钮无法使用，请点击本页的 WhatsApp 或邮箱链接。')
+CONTACT_EXTRA['ru'].update(privacy_wa='Эта страница составляет запрос в вашем браузере и открывает WhatsApp или почтовое приложение. Чтобы доставить запрос, нажмите «Отправить» там. Мы можем ответить на начатый вами чат WhatsApp; обновления о наличии требуют отдельного согласия. Ответьте STOP, чтобы отозвать его.', prepare='Подготовить запрос', send_wa='Продолжить в WhatsApp', send_email='Продолжить по email', open_note='Сообщение подготовлено. Нажмите «Отправить» в WhatsApp или почтовом приложении.', no_js='Если кнопки не работают, воспользуйтесь ссылками WhatsApp или email на этой странице.')
+CONTACT_EXTRA['ar'].update(privacy_wa='تُعد هذه الصفحة طلبك داخل المتصفح ثم تفتح واتساب أو تطبيق البريد. يجب الضغط على إرسال هناك حتى يصل الطلب. يمكننا الرد على محادثة واتساب التي تبدأها؛ وتتطلب تحديثات التوافر موافقة منفصلة. يمكنك سحبها بالرد STOP.', prepare='إعداد الطلب', send_wa='المتابعة عبر واتساب', send_email='المتابعة بالبريد', open_note='الرسالة جاهزة. اضغط إرسال في واتساب أو تطبيق البريد لإيصالها.', no_js='إذا لم تعمل الأزرار، استخدم رابط واتساب أو البريد في هذه الصفحة.')
 PRIVACY_EXTRA={
  'en':'You may also submit a company name, expected monthly quantity and WhatsApp number.',
  'zh':'您也可以提交公司名称、预计每月采购量和 WhatsApp 号码。',
@@ -334,34 +338,40 @@ def contact(lang):
  wa_text=quote_plus('Hello JINBA CARS. I am looking for used vehicles or legally reusable dismantled parts. My country is: ')
  wa_link=f'https://wa.me/8618079089999?text={wa_text}'
  channel='https://whatsapp.com/channel/0029VbDdLPnHgZWjsouXpu26'
- feedback={
-  'en':('Sending inquiry…','Inquiry sent. We will reply using the contact details you provided.','We could not confirm delivery of this inquiry. Please do not submit it again yet. Contact us on WhatsApp or by email and mention this attempt.','If the form does not respond, contact us directly:'),
-  'zh':('正在发送询盘…','询盘已发送。我们会通过您提供的联系方式回复。','无法确认此询盘是否送达。请暂勿重复提交；可通过 WhatsApp 或邮箱联系并说明刚才的尝试。','若表单无响应，请直接联系：'),
-  'ru':('Отправляем запрос…','Запрос отправлен. Мы ответим по указанным контактам.','Не удалось подтвердить доставку запроса. Пока не отправляйте его повторно; свяжитесь с нами через WhatsApp или email и упомяните эту попытку.','Если форма не отвечает, свяжитесь с нами напрямую:'),
-  'ar':('جارٍ إرسال الطلب…','تم إرسال الطلب. سنرد عبر بيانات الاتصال التي قدمتها.','تعذر تأكيد وصول الطلب. لا ترسله مرة أخرى الآن؛ تواصل معنا عبر واتساب أو البريد الإلكتروني واذكر هذه المحاولة.','إذا لم يستجب النموذج، تواصل معنا مباشرة:')
- }[lang]
- form_messages=json.dumps({'pending':feedback[0],'success':feedback[1],'error':feedback[2]},ensure_ascii=False).replace('</','<\\/')
+ form_messages=json.dumps({'wa':c['send_wa'],'email':c['send_email'],'open':c['open_note'],'used':c['used'],'parts':c['parts']},ensure_ascii=False).replace('</','<\\/')
  form_script='''<script>(function(){
  const form=document.getElementById('inquiry-form');
  const status=document.getElementById('inquiry-feedback');
  const messages=__MESSAGES__;
- if(!form||!status||!window.fetch||!window.AbortController)return;
- form.addEventListener('submit',async function(event){
-  if(!form.reportValidity())return;
+ if(!form||!status)return;
+ form.addEventListener('input',function(){document.getElementById('inquiry-open').hidden=true;status.hidden=true;});
+ form.addEventListener('change',function(){document.getElementById('inquiry-open').hidden=true;status.hidden=true;});
+ form.addEventListener('submit',function(event){
   event.preventDefault();
-  const button=form.querySelector('button[type="submit"]');
-  button.disabled=true;
-  status.hidden=false;status.textContent=messages.pending;
-  const controller=new AbortController();
-  const timer=setTimeout(function(){controller.abort();},15000);
-  try{
-   const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'},signal:controller.signal});
-   if(!response.ok)throw new Error('Form service returned '+response.status);
-   status.textContent=messages.success;
-   form.reset();form.elements.whatsapp.required=false;
-  }catch(error){
-   status.textContent=messages.error;
-  }finally{clearTimeout(timer);button.disabled=false;}
+  if(!form.reportValidity())return;
+  const data=new FormData(form);
+  const value=(key)=>String(data.get(key)||'').trim();
+  const lines=[
+   'Hello JINBA CARS. I am contacting you from jinbacars.com.',
+   'Name: '+value('name'),
+   'Email: '+value('email'),
+   'Country: '+value('country'),
+   'Interest: '+(value('product_interest')==='used_vehicle'?messages.used:messages.parts),
+   'Requested model / part: '+value('vehicle')
+  ];
+  for(const [key,label] of [['company','Company'],['destination_port','Destination port'],['monthly_quantity','Monthly quantity'],['budget','Budget (USD)'],['whatsapp','WhatsApp number'],['message','Requirements']]){
+   if(value(key))lines.push(label+': '+value(key));
+  }
+  if(data.get('whatsapp_opt_in')==='yes')lines.push('I agree that JINBA CARS may contact my provided number on WhatsApp about this inquiry and relevant availability. I can withdraw by replying STOP.');
+  const text=lines.join('\\n');
+  const channel=event.submitter?.value==='email'?'email':'wa';
+  const url=channel==='email'
+   ? 'mailto:jian5222@gmail.com?subject='+encodeURIComponent('JINBA CARS buyer inquiry')+'&body='+encodeURIComponent(text)
+   : 'https://wa.me/8618079089999?text='+encodeURIComponent(text);
+  const link=document.getElementById('inquiry-open');
+  link.href=url;link.textContent=channel==='email'?messages.email:messages.wa;
+  status.hidden=false;status.textContent=messages.open;
+  link.hidden=false;link.focus();
  });
 })();</script>'''.replace('__MESSAGES__',form_messages)
  contact_head=head(lang,f"{t['contact']} | Jinba Auto Export",t['ctap'],'/contact/')
@@ -373,8 +383,8 @@ def contact(lang):
 <div class="contactcard"><h3>{t['location']}</h3><p>Jinba Auto Export</p></div>
 <div class="contactcard"><h3>{t['quote']}</h3><a class="btn primary" href="{wa_link}">{t['whatsapp']}</a></div>
 <div class="contactcard"><h3>{c['channel']}</h3><a href="{channel}" target="_blank" rel="noopener noreferrer">{c['channel']} →</a><p>{c['channel_note']}</p></div>
-</div><form class="inquiry" id="inquiry-form" action="https://formspree.io/f/xqapjkvg" method="post">
-<h2>{l['form']}</h2><div class="formgrid">
+</div><form class="inquiry" id="inquiry-form">
+<h2>{c['prepare']}</h2><div class="formgrid">
 <label>{l['name']} *<input name="name" required autocomplete="name"></label>
 <label>{t['email']} *<input type="email" name="email" required autocomplete="email"></label>
 <label>{l['country']} *<input name="country" required autocomplete="country-name"></label>
@@ -388,9 +398,10 @@ def contact(lang):
 </div><label>{l['message']}<textarea name="message" rows="5"></textarea></label>
 <label class="whatsapp-consent"><input type="checkbox" name="whatsapp_opt_in" value="yes" onchange="this.form.elements.whatsapp.required=this.checked"> <span>{c['optin']}</span></label>
 <input type="hidden" name="language" value="{lang}"><input type="hidden" name="form_source" value="jinbacars-contact-{lang}">
-<p class="formnote">{c['note']}</p><button class="btn primary" type="submit">{l['send']}</button>
+<p class="formnote">{c['note']}</p><button class="btn primary" type="submit" name="channel" value="wa">{c['send_wa']}</button> <button class="btn" type="submit" name="channel" value="email">{c['send_email']}</button>
 <p id="inquiry-feedback" role="status" aria-live="polite" hidden></p>
-<p class="formnote">{feedback[3]} <a href="{wa_link}">WhatsApp</a> · <a href="mailto:jian5222@gmail.com">{t['email']}</a></p>
+<p><a class="btn primary" id="inquiry-open" href="{wa_link}" target="_blank" rel="noopener noreferrer" hidden>{c['send_wa']}</a></p>
+<p class="formnote">{c['no_js']} <a href="{wa_link}">WhatsApp</a> · <a href="mailto:jian5222@gmail.com">{t['email']}</a></p>
 <small>{l['required']} · <a href="/{lang}/privacy/">{l['privacy']}</a></small>
 </form></div></main>'''+footer(lang).replace('</body>',form_script+'</body>')
 def legal(lang,kind):
