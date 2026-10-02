@@ -140,13 +140,6 @@ L = {
     ('EURASIA', 'Russia · Kazakhstan · Kyrgyzstan',
      'Overland and sea routings, EAC documentation guidance, Russian-speaking advisors from quote to arrival.', ''),
   ],
-  'story_kicker': 'CLIENT STORIES', 'stories_h2': 'Trusted by importers on three continents',
-  'stories': [
-    ('Third batch this year — inspection reports matched what arrived on the dock, down to the tyre tread. That is why we keep ordering.',
-     'Daniel Otieno', 'Fleet importer · Nairobi, Kenya', ''),
-    ('Documents cleared Russian customs without a single revision. First importer I have worked with who sends the B/L before I ask.',
-     'Alexey Voronov', 'Dealer · Vladivostok, Russia', 'peach'),
-  ],
   'faq_kicker': 'FAQ', 'faq_h2': 'Questions buyers ask first',
   'faq_side': 'Payment, shipping time, inspection — the four questions below cover 90% of first enquiries. Anything else, just message us.',
   'faq_side_btn': 'Ask on WhatsApp',
@@ -220,13 +213,6 @@ L = {
      '海湾规格车型经验丰富，杰贝阿里与亚喀巴滚装/集装箱直航，可安排阿语服务。', ''),
     ('欧亚', '俄罗斯 · 哈萨克斯坦 · 吉尔吉斯斯坦',
      '海运与陆路联运方案，EAC 认证文件指导，俄语顾问从报价跟进到抵港。', ''),
-  ],
-  'story_kicker': '客户见证', 'stories_h2': '来自三大洲进口商的信任',
-  'stories': [
-    ('今年第三批了——检测报告和到港实车一致，连胎纹深度都对得上，所以我们一直下单。',
-     'Daniel Otieno', '车队采购 · 肯尼亚内罗毕', ''),
-    ('清关文件一次都没被打回过。我是第一次遇到不等我开口就先把提单发来的出口商。',
-     'Alexey Voronov', '车行老板 · 俄罗斯海参崴', 'peach'),
   ],
   'faq_kicker': '常见问题', 'faq_h2': '买家最先问的四个问题',
   'faq_side': '付款方式、运输时效、验车与单证——下面四个问题覆盖了九成首次询盘。还有疑问，直接给我们留言。',
@@ -302,13 +288,6 @@ L = {
     ('ЕВРАЗИЯ', 'Россия · Казахстан · Кыргызстан',
      'Морские и сухопутные маршруты, помощь с документами ЕАЭС, русскоговорящие менеджеры от запроса до прихода авто.', ''),
   ],
-  'story_kicker': 'ОТЗЫВЫ КЛИЕНТОВ', 'stories_h2': 'Нам доверяют импортёры на трёх континентах',
-  'stories': [
-    ('Уже третья партия за год — отчёты об осмотре совпали с машинами в порту вплоть до протектора шин. Поэтому заказываем снова.',
-     'Daniel Otieno', 'Импортёр автопарка · Найроби, Кения', ''),
-    ('Документы прошли российскую таможню без единой правки. Впервые коносамент присылают раньше, чем я успеваю спросить.',
-     'Alexey Voronov', 'Дилер · Владивосток, Россия', 'peach'),
-  ],
   'faq_kicker': 'ВОПРОСЫ', 'faq_h2': 'Что спрашивают в первую очередь',
   'faq_side': 'Оплата, сроки доставки, осмотр и документы — четыре вопроса ниже закрывают 90% первых обращений. Остальное — просто напишите нам.',
   'faq_side_btn': 'Спросить в WhatsApp',
@@ -383,13 +362,6 @@ L = {
     ('أوراسيا', 'روسيا · كازاخستان · قيرغيزستان',
      'مسارات بحرية وبرية، وإرشاد لمستندات الاتحاد الاقتصادي الأوراسي، ومستشارون بالروسية من العرض حتى الوصول.', ''),
   ],
-  'story_kicker': 'آراء العملاء', 'stories_h2': 'ثقة مستوردين من ثلاث قارات',
-  'stories': [
-    ('هذه الدفعة الثالثة هذا العام — تقارير الفحص طابقت ما وصل إلى الميناء حتى عمق نقر الإطارات. لذلك نستمر في الطلب.',
-     'Daniel Otieno', 'مستورد أسطول · نيروبي، كينيا', ''),
-    ('المستندات اجتازت الجمارك الروسية دون أي تعديل. أول مصدّر يرسل لي بوليصة الشحن قبل أن أطلبه.',
-     'Alexey Voronov', 'تاجر سيارات · فلاديفوستوك، روسيا', 'peach'),
-  ],
   'faq_kicker': 'الأسئلة الشائعة', 'faq_h2': 'ما يسأل عنه المشترون أولاً',
   'faq_side': 'الدفع ومدة الشحن والفحص والمستندات — الأسئلة الأربعة أدناه تغطي 90% من الاستفسارات الأولى. ولأي شيء آخر راسلنا مباشرة.',
   'faq_side_btn': 'اسأل عبر واتساب',
@@ -418,6 +390,112 @@ L = {
   'foot_badge': 'مرخّص من MOFCOM · موثّق COI · بوليصة شحن لكل شحنة',
  },
 }
+
+# Public copy below deliberately avoids treating syndicated listings as owned stock
+# or presenting unverified inspections, licences, shipments and testimonials as facts.
+SAFE_COPY = {
+ 'en': {
+  'desc':'Browse used-vehicle listings from China and ask for a written, vehicle-specific export quotation.',
+  'topbar_l':'JINBA CARS · Used-vehicle sourcing from China',
+  'badge':'China vehicle listings · availability on request',
+  'hero_sub':'Tell us the models, years, quantity and destination you need. We will reconfirm the selected vehicles, inspection options, export eligibility and shipping terms before quoting.',
+  'stats':[('4','site languages'),('1-to-1','buyer inquiry'),('FOB / CIF','options by route'),('China','sourcing market')],
+  'feat_kicker':'VEHICLE LISTINGS','feat_h2':'Browse models and request verification',
+  'view_all':'View all listings →','fob':'Terms on request',
+  'why_sub':'We coordinate sourcing inquiries and can discuss vehicle checks, documentation and transport after the vehicle and destination are confirmed.',
+  'why_main_h3':'Verify the selected vehicle before ordering',
+  'why_main_p':'Ask for current photos, ownership and condition information. An independent inspection can be discussed before any purchase decision.',
+  'bento':[('VIN','request verification'),('Photos','review available set'),('Quote','confirm in writing')],
+  'why_cards':[
+   ('DOCUMENTS','Confirm the document list','The required documents depend on the vehicle, route and destination. We will list them in the written quotation.'),
+   ('PAYMENT','Agree terms in writing','Payment method and milestones are agreed for each transaction after the vehicle and buyer are checked.'),
+   ('SHIPPING','Check route and costs','Ask for a route-specific estimate. Port, carrier, transit time and included costs are confirmed before booking.')],
+  'steps':[
+   ('01','Share your requirements','Send model, year, quantity, budget and destination port.'),
+   ('02','Review vehicle evidence','Request current photos, condition information and an independent inspection option.'),
+   ('03','Confirm the quote','Receive written vehicle, document, trade-term and shipping details.'),
+   ('04','Arrange shipment','Proceed only after both parties agree on the vehicle, documents and logistics.')],
+  'mkt_h2':'Discuss your destination requirements',
+  'markets':[
+   ('AFRICA','Kenya · Nigeria · Tanzania · Ghana','Confirm local import rules and the selected vehicle with your broker before ordering.','navy'),
+   ('MIDDLE EAST','UAE · Jordan · Iraq','Ask us to check vehicle suitability, port options and documents for your destination.',''),
+   ('EURASIA','Russia · Kazakhstan · Kyrgyzstan','Confirm route, vehicle specifications and import documents case by case.','')],
+  'faq_side':'Ask about vehicle checks, payment, documents or a destination-specific route.',
+  'faq':[
+   ('How is payment arranged?','Payment method and milestones are agreed in writing for each transaction.'),
+   ('How long does shipping take?','Transit time depends on the route, carrier and booking date. We will provide a current estimate with your quote.'),
+   ('Can I inspect before paying?','Ask for available photos and condition information. We can discuss an independent inspection for the selected vehicle.'),
+   ('Which documents will I receive?','The document set depends on the vehicle and destination. We will confirm the required items in writing before purchase.')],
+  'cta_h2':'Tell us what you are sourcing',
+  'cta_p':'Send your target models, years, quantity and destination. We will check availability and prepare a written response.',
+  'cta_note':'Availability, price and shipping terms confirmed per inquiry',
+  'foot_about':'JINBA CARS coordinates inquiries for used vehicles sourced in China. Ask for company registration and transaction-specific documents before ordering.',
+  'foot_copy':'Copyright 2026 JINBA CARS · jinbacars.com',
+  'foot_badge':'Vehicle details and export terms subject to written confirmation',
+ },
+ 'zh': {
+  'desc':'浏览中国来源的二手车信息，并申请针对具体车辆的书面出口报价。',
+  'topbar_l':'JINBA CARS · 中国二手车采购咨询','badge':'中国车源信息 · 可售情况待确认',
+  'hero_sub':'告诉我们所需车型、年份、数量及目的地。报价前逐车确认车况、验车方案、出口资格和运输条款。',
+  'stats':[('4','种网站语言'),('1对1','采购咨询'),('FOB / CIF','按航线讨论'),('中国','采购市场')],
+  'feat_kicker':'车辆信息','feat_h2':'浏览车型并申请核验','view_all':'查看全部车辆信息 →','fob':'条款待确认',
+  'why_sub':'确认具体车辆和目的地后，我们可协助讨论车源核验、单证及运输安排。',
+  'why_main_h3':'下单前核验具体车辆','why_main_p':'请索取当前照片、权属和车况资料；采购决定前可讨论第三方验车。',
+  'bento':[('VIN','逐车核对'),('照片','查看现有素材'),('报价','书面确认')],
+  'why_cards':[('单证','确认所需文件','文件要求取决于车辆、路线和目的国，书面报价会列明。'),('付款','书面约定条款','核实车辆和买家后，逐笔约定付款方式与节点。'),('运输','核查路线与费用','按具体路线确认港口、承运人、时效及费用范围。')],
+  'steps':[('01','提交需求','发送车型、年份、数量、预算和目的港。'),('02','查看车辆证据','索取当前照片、车况信息和独立验车选项。'),('03','确认书面报价','核对车价、文件、贸易条款和运输内容。'),('04','安排发运','双方确认车辆、文件和物流后再推进。')],
+  'mkt_h2':'按目的地核实进口要求',
+  'markets':[('非洲','肯尼亚 · 尼日利亚 · 坦桑尼亚 · 加纳','下单前与当地清关行核实进口规则及具体车辆。','navy'),('中东','阿联酋 · 约旦 · 伊拉克','按目的地核对车辆适配、港口方案和文件。',''),('欧亚','俄罗斯 · 哈萨克斯坦 · 吉尔吉斯斯坦','逐笔核实路线、车辆规格和进口文件。','')],
+  'faq_side':'可询问验车、付款、单证及目的地运输方案。',
+  'faq':[('付款方式怎么安排？','每笔交易的付款方式和节点以书面约定为准。'),('运输时效多久？','时效取决于路线、承运人和订舱日期，报价时提供当期估计。'),('付款前可以验车吗？','请先索取现有照片和车况信息，并讨论具体车辆的第三方验车。'),('会收到哪些单证？','所需文件取决于车辆和目的国，采购前书面确认清单。')],
+  'cta_h2':'告诉我们您的采购需求','cta_p':'发送目标车型、年份、数量和目的地，我们核查可售情况后书面回复。',
+  'cta_note':'可售情况、价格和运输条款逐笔书面确认',
+  'foot_about':'JINBA CARS 提供中国来源二手车采购咨询。下单前可索取公司登记和该笔交易的文件。',
+  'foot_copy':'Copyright 2026 JINBA CARS · jinbacars.com','foot_badge':'车辆资料及出口条款以书面确认为准',
+ },
+ 'ru': {
+  'desc':'Смотрите объявления о подержанных автомобилях из Китая и запрашивайте письменное предложение по выбранной машине.',
+  'topbar_l':'JINBA CARS · Поиск автомобилей в Китае','badge':'Объявления из Китая · наличие уточняется',
+  'hero_sub':'Сообщите модели, годы, количество и порт назначения. Перед расчётом мы уточним выбранные машины, возможность осмотра, экспортные требования и доставку.',
+  'stats':[('4','языка сайта'),('1:1','запрос покупателя'),('FOB / CIF','по маршруту'),('Китай','рынок поиска')],
+  'feat_kicker':'ОБЪЯВЛЕНИЯ','feat_h2':'Выберите модель и запросите проверку','view_all':'Все объявления →','fob':'Условия по запросу',
+  'why_sub':'После подтверждения машины и пункта назначения можно обсудить проверку, документы и перевозку.',
+  'why_main_h3':'Проверьте выбранный автомобиль до заказа','why_main_p':'Запросите актуальные фото, сведения о владельце и состоянии. Независимый осмотр обсуждается до покупки.',
+  'bento':[('VIN','проверка по запросу'),('Фото','доступный комплект'),('Цена','письменно')],
+  'why_cards':[('ДОКУМЕНТЫ','Согласовать список','Список зависит от машины, маршрута и страны назначения и указывается в предложении.'),('ОПЛАТА','Согласовать условия','Способ и этапы оплаты фиксируются письменно для каждой сделки.'),('ПЕРЕВОЗКА','Проверить маршрут','Порт, перевозчик, сроки и расходы уточняются до бронирования.')],
+  'steps':[('01','Опишите задачу','Укажите модель, год, количество, бюджет и порт.'),('02','Изучите данные','Запросите фото, сведения о состоянии и независимый осмотр.'),('03','Согласуйте предложение','Получите письменные данные по машине, документам и доставке.'),('04','Организуйте отправку','Действуйте после согласования машины, документов и логистики.')],
+  'mkt_h2':'Уточните требования страны назначения',
+  'markets':[('АФРИКА','Кения · Нигерия · Танзания · Гана','Проверьте правила импорта и конкретную машину с местным брокером.','navy'),('БЛИЖНИЙ ВОСТОК','ОАЭ · Иордания · Ирак','Уточните пригодность машины, порт и документы.',''),('ЕВРАЗИЯ','Россия · Казахстан · Кыргызстан','Проверяйте маршрут, характеристики и документы по каждой сделке.','')],
+  'faq_side':'Спросите о проверке машины, оплате, документах и маршруте.',
+  'faq':[('Как организована оплата?','Способ и этапы оплаты согласуются письменно для каждой сделки.'),('Сколько занимает доставка?','Срок зависит от маршрута, перевозчика и даты бронирования. Актуальную оценку дадим с предложением.'),('Можно ли осмотреть машину до оплаты?','Запросите доступные фото и сведения о состоянии; можно обсудить независимый осмотр.'),('Какие документы я получу?','Список зависит от машины и страны назначения и подтверждается письменно до покупки.')],
+  'cta_h2':'Расскажите, что вы ищете','cta_p':'Пришлите модели, годы, количество и пункт назначения. Мы уточним наличие и ответим письменно.',
+  'cta_note':'Наличие, цена и доставка подтверждаются по запросу',
+  'foot_about':'JINBA CARS обрабатывает запросы на подержанные машины из Китая. До заказа запросите регистрацию компании и документы по сделке.',
+  'foot_copy':'Copyright 2026 JINBA CARS · jinbacars.com','foot_badge':'Данные машины и условия экспорта подтверждаются письменно',
+ },
+ 'ar': {
+  'desc':'تصفح قوائم السيارات المستعملة من الصين واطلب عرض تصدير مكتوباً للسيارة المختارة.',
+  'topbar_l':'JINBA CARS · البحث عن سيارات من الصين','badge':'قوائم من الصين · التوافر قيد التأكيد',
+  'hero_sub':'أرسل الطرازات والسنوات والكمية والوجهة المطلوبة. نؤكد السيارة المختارة وخيارات الفحص وأهلية التصدير وشروط الشحن قبل التسعير.',
+  'stats':[('4','لغات للموقع'),('1:1','استفسار المشتري'),('FOB / CIF','حسب المسار'),('الصين','سوق التوريد')],
+  'feat_kicker':'قوائم السيارات','feat_h2':'تصفح الطرازات واطلب التحقق','view_all':'جميع القوائم ←','fob':'الشروط عند الطلب',
+  'why_sub':'بعد تأكيد السيارة والوجهة، يمكننا مناقشة الفحص والمستندات والنقل.',
+  'why_main_h3':'تحقق من السيارة المختارة قبل الطلب','why_main_p':'اطلب صوراً حديثة ومعلومات الملكية والحالة. يمكن مناقشة فحص مستقل قبل الشراء.',
+  'bento':[('VIN','التحقق عند الطلب'),('صور','المتاح من الصور'),('عرض','تأكيد كتابي')],
+  'why_cards':[('مستندات','تأكيد القائمة','تعتمد المستندات على السيارة والمسار والوجهة وتحدد في العرض المكتوب.'),('دفع','اتفاق مكتوب','تحدد طريقة الدفع ومراحله لكل صفقة بعد التحقق.'),('شحن','فحص المسار والتكلفة','يؤكد الميناء والناقل والمدة والتكاليف قبل الحجز.')],
+  'steps':[('01','أرسل احتياجك','حدد الطراز والسنة والكمية والميزانية وميناء الوصول.'),('02','راجع الأدلة','اطلب الصور الحالية ومعلومات الحالة وخيار فحص مستقل.'),('03','أكد العرض','راجع السيارة والمستندات وشروط التجارة والشحن كتابةً.'),('04','رتب الشحن','تابع بعد اتفاق الطرفين على السيارة والمستندات والنقل.')],
+  'mkt_h2':'ناقش متطلبات وجهتك',
+  'markets':[('أفريقيا','كينيا · نيجيريا · تنزانيا · غانا','تحقق من قواعد الاستيراد والسيارة المختارة مع مخلصك المحلي.','navy'),('الشرق الأوسط','الإمارات · الأردن · العراق','اطلب التحقق من ملاءمة السيارة والميناء والمستندات.',''),('أوراسيا','روسيا · كازاخستان · قيرغيزستان','تحقق من المسار والمواصفات والمستندات لكل صفقة.','')],
+  'faq_side':'اسأل عن فحص السيارة والدفع والمستندات والمسار.',
+  'faq':[('كيف يتم ترتيب الدفع؟','تتفق الأطراف كتابةً على طريقة الدفع ومراحله لكل صفقة.'),('كم تستغرق مدة الشحن؟','تعتمد المدة على المسار والناقل وموعد الحجز؛ نقدم تقديراً حالياً مع العرض.'),('هل يمكن فحص السيارة قبل الدفع؟','اطلب الصور المتاحة ومعلومات الحالة، ويمكن مناقشة فحص مستقل.'),('ما المستندات التي سأستلمها؟','تعتمد القائمة على السيارة والوجهة وتؤكد كتابةً قبل الشراء.')],
+  'cta_h2':'أخبرنا بما تبحث عنه','cta_p':'أرسل الطرازات والسنوات والكمية والوجهة. نتحقق من التوافر ونرد كتابةً.',
+  'cta_note':'يؤكد التوافر والسعر والشحن لكل طلب',
+  'foot_about':'تنسق JINBA CARS الاستفسارات عن السيارات المستعملة من الصين. اطلب تسجيل الشركة ومستندات الصفقة قبل الطلب.',
+  'foot_copy':'Copyright 2026 JINBA CARS · jinbacars.com','foot_badge':'تفاصيل السيارة وشروط التصدير تخضع لتأكيد كتابي',
+ },
+}
+for _lang, _copy in SAFE_COPY.items():
+    L[_lang].update(_copy)
 
 SVG_TRUCK = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="#fff"/><circle cx="7" cy="17" r="2" fill="#fff"/><circle cx="17.5" cy="17" r="2" fill="#fff"/></svg>'
 SVG_BURGER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -503,18 +581,16 @@ def car_card(lang, v):
     mileage = esc(f'{int(v.get("mileage_km") or 0):,}') + ' km'
     city = esc(v.get('city') or v.get('province') or '')
     meta = ' · '.join(x for x in (stock, mileage, city) if x)
-    price = esc(v.get('price') or '')
-    port = PORT_I18N[lang].get(v.get('departure_port') or '', '')
-    term = esc(v.get('trade_term') or 'FOB')
-    dest = DEST_I18N[lang]
+    price_label = {'en':'Price on request','zh':'价格请询价','ru':'Цена по запросу','ar':'السعر عند الطلب'}[lang]
+    quote_label = {'en':'Availability and terms confirmed in writing','zh':'可售情况及条款以书面报价确认','ru':'Наличие и условия подтвердим письменно','ar':'يؤكد التوافر والشروط كتابياً'}[lang]
     return (f'<article class="jv7-car">'
             f'<div class="jv7-car-photo"><img src="{ph}" alt="{alt}" loading="lazy" decoding="async" width="720" height="540">'
             f'<span class="jv7-tags"><b>{esc(str(v["year"]))}</b>{chips_html(lang, v)}</span></div>'
             f'<div class="jv7-car-body"><h3 class="jv7-car-name">{alt}</h3>'
             f'<div class="jv7-car-spec">{meta}</div>'
             f'<p class="jv7-car-desc">{esc(car_desc(lang, v))}</p>'
-            f'<div class="jv7-car-foot"><div><div class="jv7-price">{price} <span class="jv7-cur">USD</span></div>'
-            f'<div class="jv7-fob">{term} {dest}{(" · " + port) if port else ""}</div></div>'
+            f'<div class="jv7-car-foot"><div><div class="jv7-price">{esc(price_label)}</div>'
+            f'<div class="jv7-fob">{esc(quote_label)}</div></div>'
             f'<a class="jv7-btn jv7-btn--details" href="{N[lang]}cars/{v["id"]}/">{esc(DETAILS_I18N[lang])} <span aria-hidden="true">→</span></a>'
             f'</div></div></article>')
 
@@ -555,13 +631,6 @@ def build(lang):
         f'<article class="jv7-market{"" if tail != "navy" else " jv7-market--navy"}">'
         f'<span class="jv7-kicker">{esc(name)}</span><h3>{esc(ctry)}</h3><p>{esc(desc)}</p></article>'
         for name, ctry, desc, tail in d['markets'])
-    # ---- stories ----
-    stars = f'<div class="jv7-stars" aria-label="5/5">{STAR * 5}</div>'
-    stories = ''.join(
-        f'<article class="jv7-story{"" if tail != "peach" else " jv7-story--peach"}">{stars}'
-        f'<blockquote>{esc(quote)}</blockquote>'
-        f'<div class="jv7-story-who"><div><b>{esc(who)}</b><span>{esc(role)}</span></div></div></article>'
-        for quote, who, role, tail in d['stories'])
     # ---- faq ----
     faq = faq_html(lang)
     # FAQPage schema（与页面 FAQ 区块同步，四语言）
@@ -727,14 +796,6 @@ def build(lang):
     <h2 class="jv7-h2">{esc(d["mkt_h2"])}</h2>
     <div class="jv7-markets">{markets}</div>
   </div>
-</section>
-
-<section class="jv7-section">
-  <div class="jv7-container">
-    <p class="jv7-kicker">{esc(d["story_kicker"])}</p>
-    <h2 class="jv7-h2">{esc(d["stories_h2"])}</h2>
-  </div>
-  <div class="jv7-container jv7-stories">{stories}</div>
 </section>
 
 <section class="jv7-section" id="faq">
