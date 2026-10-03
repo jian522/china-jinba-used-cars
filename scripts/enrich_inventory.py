@@ -13,7 +13,12 @@ DATA = ROOT / "data" / "vehicles.json"
 MODEL_NAMES = {
     "名爵ZS": "ZS", "捷途X70 PLUS": "X70 PLUS", "捷途X70": "X70",
     "捷途旅行者": "Traveller", "捷途大圣": "Dashing", "捷途自由者": "Ziyouzhe",
-    "哈弗大狗 PLUS": "Dargo PLUS", "哈弗大狗": "Dargo", "哈弗初恋": "Jolion",
+    # 注意：english_title() 会先剥掉行首厂商词（如「哈弗」），所以带前缀的键在
+    # brand=Haval 时永远匹配不到；纯中文车型名必须同时给出无前缀键，否则会被
+    # 中文清洗规则整段抹掉（例：「哈弗大狗 PLUS」→ 只剩 "PLUS"）。
+    "哈弗大狗 PLUS": "Dargo PLUS", "哈弗大狗": "Dargo",
+    "大狗 PLUS": "Dargo PLUS", "大狗": "Dargo",
+    "哈弗初恋": "Jolion",
     "哈弗猛龙": "Raptor", "哈弗枭龙MAX": "Xiaolong MAX", "哈弗枭龙": "Xiaolong",
     "哈弗H6": "H6", "哈弗H9": "H9", "哈弗F7": "F7", "哈弗M6": "M6",
     "海狮07": "Sea Lion 07", "海狮05": "Sea Lion 05", "宋PLUS": "Song PLUS",
