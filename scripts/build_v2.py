@@ -202,6 +202,9 @@ def about_page(lang,V):
  t=T[lang];a=ABOUT[lang];items=''.join(f'<li>{esc(x)}</li>' for x in a['what']);why=''.join(f'<li>{esc(x)}</li>' for x in a['why']);steps=''.join(f'<article class="step"><h3>{t[f"step{i}"]}</h3></article>' for i in range(1,7));crumb=breadcrumbs(lang,[(t['home'],f'/{lang}/'),(t['about'],f'/{lang}/about/')]);schema={'@context':'https://schema.org','@type':'AboutPage','name':a['title'],'description':a['desc'],'mainEntity':{'@type':'Organization','name':'Jinba Auto Export','url':BASE,'email':'jian5222@gmail.com','telephone':'+86 180 7908 9999','address':{'@type':'PostalAddress','addressLocality':'Xinyu','addressRegion':'Jiangxi','addressCountry':'CN'}}}
  return head(lang,f"{a['title']} | Jinba Auto Export",a['desc'],'/about/',page_type='website')+jsonld(schema)+header(lang,'/about/')+f'''<section class="pagehead"><div class="wrap"><h1>{esc(a['title'])}</h1><p>{esc(a['intro'])}</p></div></section><main class="section"><article class="wrap contentpage">{crumb}<h2>{esc(a['who_h'])}</h2><p>{esc(a['who'])}</p><h2>{esc(a['what_h'])}</h2><ul class="checklist">{items}</ul><h2>{t['steps']}</h2><div class="steps">{steps}</div><h2>{esc(a['why_h'])}</h2><ul class="checklist">{why}</ul><div class="checkpanel"><h2>{t['cta']}</h2><p>{t['ctap']}</p><div class="actions"><a class="btn primary" data-track="whatsapp" href="https://wa.me/8618079089999">{t['whatsapp']} →</a><a class="btn" href="/{lang}/contact/">{t['contact']} →</a></div></div></article></main>'''+footer(lang)
 def inventory(lang,V):
+ # V 在数据源头已按 id 降序排好（新上架在前）；此处再排一次是防御性的自洽保障，
+ # 口径与首页 rebuild_home_v7.py 的 featured 一致。
+ V=sorted(V,key=lambda x:-int(x['id']))
  t=T[lang];brands=sorted(set(v['brand'] for v in V if v['brand']));fuels=sorted(set(v['fuel'] for v in V if v['fuel']));years=sorted(set(v['year'] for v in V if v['year']),reverse=True)
  stockdesc={
   'en':f"Browse {len(V)} published vehicle listings from China. Reconfirm each vehicle's availability, condition, price and export eligibility before ordering.",
@@ -461,6 +464,11 @@ DATA.parent.mkdir(exist_ok=True);DATA.write_text(json.dumps(V,ensure_ascii=False
 # Only explicitly published vehicles are exposed. IDs 1–6 remain unpublished
 # because their old artwork was generated rather than original photography.
 all_vehicles=V;V=[v for v in all_vehicles if v.get('status')=='published']
+# 全站车辆排序：id 降序 = 新上架的排最前。
+# 在数据源头统一排序，列表页 / 品牌页 / 分类页 / 市场页 / sitemap 全部受益，
+# 避免逐页加排序导致漏改（新增页面默认也是新→旧）。id 随入库递增，等价于上架时间序。
+# 注意：首页由末尾 rebuild_home_v7.py 独立重建并覆盖，不受此处影响。
+V=sorted(V,key=lambda x:-int(x['id']))
 photo_audit=build_photo_audit(R,V)
 write_audit=json.dumps(photo_audit,ensure_ascii=False,indent=2)+'\n'
 for l in langs:
