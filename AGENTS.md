@@ -32,25 +32,36 @@ S=".codebuddy/skills/jinba-wa-quote/scripts"
 # 2) 算 FOB 报价（加价规则固化在脚本里）
 "$PY" "$S/quote_calc.py" --price-usd <price_usd> --id <vehicle_id>
 
-# 3) 先 dry-run 看文案与待发图片，加 --send 才真发
-"$PY" "$S/wa_send_photo.py" --session <sid> --tab-id <tid> \
-    --vehicle-id <id> --price-usd <加价后报价> --expect <客户号码>
-"$PY" "$S/wa_send_photo.py" ... --photos-only --send
+# 3) 桌面端dry-run 看文案，加 --send 才真发（--expect 必填）
+"$PY" .workbuddy/wa_desktop_send.py --vehicle-id <id> --price-usd <加价后报价>
+"$PY" .workbuddy/wa_desktop_send.py --vehicle-id <id> --price-usd <加价后报价> \
+    --expect <客户号码> --send
 ```
 
-| 加价档位（人民币口径） | 加价 |
-|---|---|
-| `< 10 万` | +1.5 ~ 2.0 万 |
-| `10 万 ≤ 车价 < 20 万` | +2.0 ~ 2.5 万 |
-| `≥ 20 万` | +2.5 ~ 3.0 万 |
+### 加价规则（方案 C · 保底封顶比例制，2026-08 简哥确认）
 
-**临界点**：正好 10 万 → B 档，正好 20 万 → C 档。默认取档位下限，报价向上取整到 100 美元。
+**护栏**：`MIN 15%` ／ `MAX 35%` ／ `DEFAULT 22%`
 
-🚫 **三条硬约束**（违反即返工，与本文件规则同级）：
+| 档 | 车价（人民币） | 加价率区间 |
+|---|---|---|
+| A | `< 10 万` | 20% ~ 30% |
+| B | `10 万 ≤ 车价 < 20 万` | 18% ~ 28% |
+| C | `≥ 20 万` | 15% ~ 25% |
+
+- 报价**向上取整到 100 美元**，汇率 `USD/CNY = 7.10`
+- **旧口径保留**：`--mode abs` 走人民币绝对额分档（默认 `band`）
+- ⚠️ **成本基数 = `price_usd`（零售挂牌价），非采购成本**。`vehicles.json` 无任何成本字段，
+  所以 `markup_ratio` 是零售价口径。**补齐采购成本表后必须重算。**
+
+### 三条硬约束（违反即返工，与本文件规则同级）
 
 4. **报价必须走 `quote_calc.py`**，禁止心算或直接报 `price_usd`（那是成本价，没加价）。
-5. **只用已有 WhatsApp 标签页**，先 `bsk tab list` 找、复用；反复新开会撞 WhatsApp 单标签会话锁。
+5. **只用 WhatsApp 桌面端**（UWP/Store 版，`WhatsApp.Root.exe`，在 `WindowsApps` 目录），
+   **不新开窗口/标签页**。网页版已停用。发送一律走 `.workbuddy/wa_desktop_send.py`。
 6. **3 分钟内有店主真人在对话 → 让位，禁止插话**（会出现自相矛盾的两个报价）。
+
+> ⚠️ **UWP 收件人核对局限**：桌面端读不到 DOM，无法程序化校验会话身份。
+> 实操必须：`--probe` 看截图 → 人工确认会话 → 再 `--send`。
 
 ## 环境（每次都要）
 
