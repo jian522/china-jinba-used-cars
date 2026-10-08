@@ -11,6 +11,47 @@ C:\Users\Administrator\.workbuddy\skills\jinba-car-pipeline\SKILL.md
 凡是涉及「采集车源 / 上架车辆 / 抓图 / 修图 / 重建页面 / 部署上线」的操作，
 **必须先读上面那份 SKILL.md 并按它的流程执行**，不要自创流程或跳过校验步骤。
 
+```
+D:\二手车出口网站\.codebuddy\skills\jinba-wa-quote\SKILL.md
+```
+
+凡是涉及「WhatsApp 客户询价 / 报价 / 回客户消息 / 发实车图」的操作，
+**必须先读 jinba-wa-quote 并按它的流程执行**。
+加价规则只有那一个口径，**已在 `scripts/quote_calc.py` 里固化，禁止心算、禁止自创档位**。
+
+## WhatsApp 询价报价（日常高频，一次两条命令）
+
+```bash
+cd "D:/二手车出口网站"
+PY="C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe"
+S=".codebuddy/skills/jinba-wa-quote/scripts"
+
+# 1) 匹配库存 → 只认 status=published
+"$PY" .workbuddy/wa_stock_lookup.py --search "哈弗H6" --limit 10
+
+# 2) 算 FOB 报价（加价规则固化在脚本里）
+"$PY" "$S/quote_calc.py" --price-usd <price_usd> --id <vehicle_id>
+
+# 3) 先 dry-run 看文案与待发图片，加 --send 才真发
+"$PY" "$S/wa_send_photo.py" --session <sid> --tab-id <tid> \
+    --vehicle-id <id> --price-usd <加价后报价> --expect <客户号码>
+"$PY" "$S/wa_send_photo.py" ... --photos-only --send
+```
+
+| 加价档位（人民币口径） | 加价 |
+|---|---|
+| `< 10 万` | +1.5 ~ 2.0 万 |
+| `10 万 ≤ 车价 < 20 万` | +2.0 ~ 2.5 万 |
+| `≥ 20 万` | +2.5 ~ 3.0 万 |
+
+**临界点**：正好 10 万 → B 档，正好 20 万 → C 档。默认取档位下限，报价向上取整到 100 美元。
+
+🚫 **三条硬约束**（违反即返工，与本文件规则同级）：
+
+4. **报价必须走 `quote_calc.py`**，禁止心算或直接报 `price_usd`（那是成本价，没加价）。
+5. **只用已有 WhatsApp 标签页**，先 `bsk tab list` 找、复用；反复新开会撞 WhatsApp 单标签会话锁。
+6. **3 分钟内有店主真人在对话 → 让位，禁止插话**（会出现自相矛盾的两个报价）。
+
 ## 环境（每次都要）
 
 ```bash
