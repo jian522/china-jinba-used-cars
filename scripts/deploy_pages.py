@@ -26,6 +26,112 @@ TOKEN_FILE = ROOT / ".workbuddy" / "cf_token.txt"
 WRANGLER = r"C:/Users/Administrator/node_modules/wrangler/bin/wrangler.js"
 ACCOUNT = "0cd64536d2bc18ae46651a0a2636e1ff"
 PROJECT = "jinba-cars"
+HOST = "jinbacars.com"
+
+# 需要主动清缓存时（每天上新后要让访客立刻看到新车间）。
+# 2026-10-08：CF 后台 Cache Rule 把 HTML 的 max-age 从 600 覆盖成了 14400，
+# 部署后主域最长 4 小时仍返回旧版列表页（易误判为「部署失败」）。
+# 要根治需给 token 加 Zone -> Cache Purge 权限，届时本函数会自动生效。
+# 权限不足时静默跳过（exit 0），不影响部署主流程。
+PURGE_URLS = [
+    f"https://{HOST}/",
+    f"https://{HOST}/en/",
+    f"https://{HOST}/zh/",
+    f"https://{HOST}/ru/",
+    f"https://{HOST}/ar/",
+    f"https://{HOST}/en/cars/",
+    f"https://{HOST}/zh/cars/",
+    f"https://{HOST}/ru/cars/",
+    f"https://{HOST}/ar/cars/",
+    f"https://{HOST}/sitemap.xml",
+    f"https://{HOST}/sitemap-images.xml",
+    f"https://{HOST}/robots.txt",
+]
+ZONE_CACHE = ROOT / ".workbuddy" / "cf_zone_id.txt"
+
+
+def _cf_api(path: str, token: str, method: str = "GET", body: str | None = None,
+            timeout: int = 30) -> tuple[int, str]:
+    """裸调 Cloudflare v4 API（走代理；失败则去代理直连重试一次）。"""
+    import urllib.request
+    import urllib.error
+    url = "https://api.cloudflare.com/client/v4" + path
+    data = body.encode("utf-8") if body else None
+    for proxy in (True, False):
+        handlers = []
+        if proxy:
+            handlers.append(urllib.request.ProxyHandler(
+                {"https": "http://127.0.0.1:7890"}))
+        else:
+            handlers.append(urllib.request.ProxyHandler({}))
+        opener = urllib.request.build_opener(*handlers)
+        req = urllib.request.Request(url, data=data, method=method, headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json"})
+        try:
+            with opener.open(req, timeout=timeout) as r:
+                return r.status, r.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            return e.code, e.read().decode("utf-8", "replace")
+        except Exception as e:                      # noqa: BLE001
+            last = f"{type(e).__name__}: {e}"
+    return 0, last                                # type: ignore[name-defined]
+
+
+def purge_cache() -> int:
+    """部署后主动清 CF 边缘缓存，让新内容立刻对访客可见。
+
+    权限模型：purge API 需要 token 具备 ``Zone -> Cache Purge``，且能读 zone
+    （``GET /zones?name=<host>``）。当前 token 只有 Pages Write，两者都缺 →
+    全部返回 403/9109，本函数静默跳过。
+
+    拿到权限后无需改代码：zone_id 首次自动探测并缓存到
+    ``.workbuddy/cf_zone_id.txt``，之后每次部署都自动清。
+    """
+    if "--no-purge" in sys.argv:
+        print("SKIP cache purge (--no-purge)", flush=True)
+        return 0
+    try:
+        token = TOKEN_FILE.read_text(encoding="utf-8").strip()
+    except OSError:
+        print("SKIP cache purge (no token file)", flush=True)
+        return 0
+
+    # 1) 取 zone_id：优先用缓存文件，避免每次部署多打一次 API
+    zone = ""
+    if ZONE_CACHE.is_file():
+        zone = ZONE_CACHE.read_text(encoding="utf-8").strip()
+    if not zone:
+        st, out = _cf_api(f"/zones?name={HOST}", token)
+        if st != 200:
+            print(f"SKIP cache purge (zone lookup HTTP {st} — "
+                  f"token 需 Zone:Read 权限)", flush=True)
+            return 0
+        try:
+            import json
+            arr = (json.loads(out).get("result") or [])
+        except Exception:                          # noqa: BLE001
+            arr = []
+        if not arr:
+            print("SKIP cache purge (zone not found — "
+                  "token 无权列出 zone)", flush=True)
+            return 0
+        zone = arr[0]["id"]
+        ZONE_CACHE.parent.mkdir(exist_ok=True)
+        ZONE_CACHE.write_text(zone + "\n", encoding="utf-8")
+        print(f"zone_id cached: {zone}", flush=True)
+
+    # 2) 清缓存
+    import json
+    body = json.dumps({"files": PURGE_URLS})
+    st, out = _cf_api(f"/zones/{zone}/purge_cache", token,
+                       method="POST", body=body, timeout=60)
+    if st == 200:
+        print(f"purged {len(PURGE_URLS)} URLs", flush=True)
+        return 0
+    print(f"SKIP cache purge (purge HTTP {st} — 需 Zone:Cache Purge 权限)",
+          flush=True)
+    return 0                                    # 永不阻断部署主流程
 
 
 def _find_node() -> str:
@@ -129,4 +235,8 @@ def deploy() -> int:
 if __name__ == "__main__":
     if "--skip-stage" not in sys.argv:
         stage()
-    sys.exit(deploy())
+    rc = deploy()
+    # 只有部署成功才清缓存（失败时清了也没意义，还会让旧内容被刷成 MISS）
+    if rc == 0:
+        purge_cache()
+    sys.exit(rc)
