@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 # 2026-09-14：暂存目录从 site/ 改为 site_v2/。历史 site/ 里积压了 1000+ 个
 # 早期误传的 imports/ 采集素材，清理它们会触发安全拦截；直接启用新目录名
 # 即可绕开，每次部署生成的都是一份由 git 清单决定的干净快照。
-STAGE = ROOT / "_pages_deploy" / "site_v2"
+STAGE = ROOT / "_pages_deploy" / "site_search_20261009"
 TOKEN_FILE = ROOT / ".workbuddy" / "cf_token.txt"
 WRANGLER = r"C:/Users/Administrator/node_modules/wrangler/bin/wrangler.js"
 ACCOUNT = "0cd64536d2bc18ae46651a0a2636e1ff"
@@ -46,7 +46,15 @@ PURGE_URLS = [
     f"https://{HOST}/sitemap.xml",
     f"https://{HOST}/sitemap-images.xml",
     f"https://{HOST}/robots.txt",
+    # hero banner 是 30 天 immutable 缓存（_headers 的 /*.webp 规则），
+    # 换图后必须显式 purge，否则一个月内访客看到的还是旧图（10-08 实测 Age=168038）。
+    f"https://{HOST}/images/hero-banner.webp",
+    f"https://{HOST}/favicon.svg",
 ]
+# Business identity and buyer guide change along with the language homepages.
+PURGE_URLS += [f"https://{HOST}/{lang}/{path}/"
+               for lang in ("en", "zh", "ru", "ar")
+               for path in ("about", "contact", "guides/buy-used-cars-from-china")]
 ZONE_CACHE = ROOT / ".workbuddy" / "cf_zone_id.txt"
 
 

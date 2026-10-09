@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
 from seo_content import CAR_COPY
+from company_profile import ADDRESS, HOME, BUYER_LABEL, BUYER_PATH, organization_script
 
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
@@ -64,13 +65,39 @@ if len(featured_pool) < 4:
                      if len(v.get('photos', [])) >= 6 and disk_ok(v)]
 FEATURED = featured_pool[:4]
 
-hero_pool = [v for v in sorted(pub, key=lambda x: -len(x.get('photos', [])))
-             if disk_ok(v)]
+# ── hero 选取：白名单机制（2026-10-08）─────────────────────────────
+# 旧逻辑「照片最多优先」与合规性无关，迟早选中带水印的车商素材
+# （实测 id 225 哈弗大狗：封面左上「M CAR 尊崇好车」叠印 + 底部 vehicle export
+#  横幅，直接违反项目硬规则 2「每张图不得含水印/logo/角标叠印」）。
+# 纯图像算法判不准水印，所以改为人工目检白名单：只认 .workbuddy/hero_approved.json。
+HERO_APPROVED = ROOT / '.workbuddy' / 'hero_approved.json'
+
+
+def load_hero_approved():
+    try:
+        data = json.loads(HERO_APPROVED.read_text(encoding='utf-8'))
+        return {int(x['id']) for x in data.get('approved', []) if 'id' in x}
+    except Exception:                              # noqa: BLE001
+        return set()
+
+
+_ok = load_hero_approved()
+hero_pool = [v for v in pub if v['id'] in _ok and disk_ok(v)]
+if not hero_pool:
+    # 白名单为空/失效 → 退回「照片最多优先」，并明确告警，不静默出无图首页
+    print('WARN hero_approved.json 无可用条目，暂退回「照片最多优先」，'
+          '该图可能含水印，请人工目检后加入白名单', flush=True)
+    hero_pool = [v for v in sorted(pub, key=lambda x: -len(x.get('photos', [])))
+                 if disk_ok(v)]
+# 白名单内优先 id 大（新上架的排前面）
+hero_pool.sort(key=lambda x: -x['id'])
 HERO = hero_pool[0] if hero_pool else None
 HERO_IMG = HERO['photos'][0] if HERO else '/images/og-image.jpg'
-# OG image prefers a >=6-photo car so shares look complete
-og_pool = [v for v in featured_pool if v.get('photos')]
-OG_IMG = (og_pool[0] if og_pool else HERO)['photos'][0] if (og_pool or HERO) else '/images/og-image.jpg'
+# OG image 同样走白名单，避免社交分享图带水印
+og_pool = [v for v in hero_pool if v.get('photos')] or \
+          [v for v in featured_pool if v.get('photos')]
+OG_IMG = (og_pool[0] if og_pool else HERO)['photos'][0] if (og_pool or HERO) \
+    else '/images/og-image.jpg'
 
 
 def esc(s):
@@ -497,6 +524,17 @@ SAFE_COPY = {
 for _lang, _copy in SAFE_COPY.items():
     L[_lang].update(_copy)
 
+# Search copy and location use the same owner-confirmed identity as contact pages.
+for _lang in LANGS:
+    L[_lang]['title'], L[_lang]['desc'] = HOME[_lang]
+    L[_lang]['topbar_l'] = 'JINBA CARS · ' + ADDRESS[_lang]
+    L[_lang]['h1'] = {
+        'en': 'Used cars from China, sourced for your market',
+        'zh': '中国汽车与二手车，按您的需求采购',
+        'ru': 'Подержанные автомобили из Китая для вашего рынка',
+        'ar': 'سيارات مستعملة من الصين حسب احتياجات سوقك',
+    }[_lang]
+
 SVG_TRUCK = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="#fff"/><circle cx="7" cy="17" r="2" fill="#fff"/><circle cx="17.5" cy="17" r="2" fill="#fff"/></svg>'
 SVG_BURGER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
 SVG_WA = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.8-4.9c-.7-1-.9-1.9-.7-2.6.1-.5.7-1.4 1.3-1.4h.6c.2 0 .4.1.6.5l.8 2c.1.2 0 .4-.1.6l-.5.6c-.2.2-.3.4-.1.7.5.9 1.9 2.3 3.2 2.9.3.1.5.1.7-.1l.7-.8c.2-.2.4-.3.6-.2l2 .9c.3.2.4.4.4.6s0 .8-.1 1.1z"/></svg>'
@@ -672,6 +710,7 @@ def build(lang):
 <title>{esc(d["title"])}</title>
 <meta name="description" content="{esc(d["desc"])}">
 <meta name="keywords" content="used cars from china, china used car export, BYD export, used car exporter shenzhen, FOB china cars, 出口二手车, 中国二手车出口">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:site_name" content="Jinba Cars Export">
 <meta property="og:locale" content="{lang}_{"AR" if lang=="ar" else ("CN" if lang=="zh" else ("RU" if lang=="ru" else "US"))}">
 <meta property="og:type" content="website">
@@ -694,13 +733,13 @@ def build(lang):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20260915">
+<link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20261008">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Jinba Cars Export Co., Ltd.","url":"{DOMAIN}","email":"{EMAIL}","telephone":"+86 180 7908 9999","address":{{"@type":"PostalAddress","addressLocality":"Shenzhen","addressRegion":"Guangdong","addressCountry":"CN"}}}}</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Jinba Cars","url":"{DOMAIN}","inLanguage":"{lang}"}}</script>
+{organization_script()}
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","@id":"{DOMAIN}/#website","name":"JINBA CARS","alternateName":"Jinba Auto Export","url":"{DOMAIN}/","inLanguage":["en","zh-CN","ru","ar"],"publisher":{{"@id":"{DOMAIN}/#organization"}}}}</script>
 {faq_schema}
 </head>
 <body class="jv7">
@@ -832,7 +871,9 @@ def build(lang):
           <span class="jv7-logo-mark">{SVG_TRUCK}</span>
           <span><span class="jv7-logo-name" style="color:#fff">JINBA CARS</span><br><span class="jv7-logo-sub">EXPORT</span></span>
         </a>
-        <p>{esc(d["foot_about"])}</p>
+      <p>{esc(d["foot_about"])}</p>
+      <p>{esc(ADDRESS[lang])}</p>
+      <p><a href="{N[lang]}{BUYER_PATH.lstrip('/')}">{esc(BUYER_LABEL[lang])}</a></p>
         <span class="jv7-topbar-langs">{lang_links}</span>
       </div>
       {fcols}

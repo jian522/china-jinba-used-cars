@@ -164,3 +164,29 @@ a.card:hover .more { background: var(--v8-navy); }
 .faqlist summary::after { content: '+'; position: absolute; inset-inline-end: 0; top: 12px; font-size: 18px; color: #6b7280; }
 .faqlist details[open] summary::after { content: '−'; }
 .faqlist details p { margin: 0 0 14px; font-size: 14px; line-height: 1.7; color: #374151; }
+
+/* ---------- 列表页渐进渲染：加载更多按钮（2026-10-08） ----------
+   /cars/ 一次渲染 175 台车，HTML 177KB，移动端 DCL 约 4s。
+   app.js 的 setupProgressiveGrid 只呈现首屏 24 台，本按钮负责逐批展开。 */
+.loadmore {
+  display: block;
+  width: 100%;
+  margin: 28px auto 8px;
+  max-width: 420px;
+  min-height: 48px;                /* 移动端触控目标 ≥44px */
+  padding: 14px 26px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--v8-navy, #0A1628);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.loadmore:hover { background: #14263f; box-shadow: 0 6px 18px rgba(10,22,40,.18); }
+.loadmore:active { transform: translateY(1px); }
+.loadmore:focus-visible { outline: 3px solid #d97706; outline-offset: 2px; }
+.loadmore[disabled] { opacity: .55; cursor: default; }
+@media (max-width: 599.98px) { .loadmore { width: 100%; } }
