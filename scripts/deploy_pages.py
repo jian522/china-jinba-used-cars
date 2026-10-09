@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 # 2026-09-14：暂存目录从 site/ 改为 site_v2/。历史 site/ 里积压了 1000+ 个
 # 早期误传的 imports/ 采集素材，清理它们会触发安全拦截；直接启用新目录名
 # 即可绕开，每次部署生成的都是一份由 git 清单决定的干净快照。
-STAGE = ROOT / "_pages_deploy" / "site_search_deep_20261009"
+STAGE = ROOT / "_pages_deploy" / "site_shop_catalog_20261009"
 TOKEN_FILE = ROOT / ".workbuddy" / "cf_token.txt"
 WRANGLER = r"C:/Users/Administrator/node_modules/wrangler/bin/wrangler.js"
 ACCOUNT = "0cd64536d2bc18ae46651a0a2636e1ff"

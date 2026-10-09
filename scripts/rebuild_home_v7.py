@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
 from seo_content import CAR_COPY
 from company_profile import ADDRESS, HOME, BUYER_LABEL, BUYER_PATH, organization_script
 from search_landing import resource_links, home_discovery
+from shop_catalog_links import catalog_link, model_links
 
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
@@ -762,7 +763,7 @@ def build(lang):
       <span class="jv7-logo-mark">{SVG_TRUCK}</span>
       <span><span class="jv7-logo-name">JINBA CARS</span><br><span class="jv7-logo-sub">EXPORT</span></span>
     </a>
-    <div class="jv7-navlinks">{navlinks}</div>
+    <div class="jv7-navlinks">{navlinks}{catalog_link(lang, "home_navigation")}</div>
     <div class="jv7-nav-cta">
       <a class="jv7-btn jv7-btn--green" href="{WA}">{SVG_WA}{esc(d["nav_wa"])}</a>
     </div>
@@ -779,6 +780,7 @@ def build(lang):
       <div class="jv7-hero-ctas">
         <a class="jv7-btn jv7-btn--orange" href="{N[lang]}cars/">{esc(d["cta_browse"])}</a>
         <a class="jv7-btn jv7-btn--ghost" href="#process">{esc(d["cta_how"])}</a>
+        {catalog_link(lang, "home_hero", "jv7-btn jv7-btn--ghost")}
       </div>
     </div>
     <div class="jv7-hero-media">
@@ -863,6 +865,7 @@ def build(lang):
   </div>
 </section>
 
+{model_links(lang, "home_models")}
 {home_discovery(lang)}
 <footer class="jv7-footer">
   <div class="jv7-container">
@@ -876,6 +879,7 @@ def build(lang):
       <p>{esc(ADDRESS[lang])}</p>
       <p><a href="{N[lang]}{BUYER_PATH.lstrip('/')}">{esc(BUYER_LABEL[lang])}</a></p>
       {resource_links(lang)}
+      <p>{catalog_link(lang, "home_footer")}</p>
         <span class="jv7-topbar-langs">{lang_links}</span>
       </div>
       {fcols}
