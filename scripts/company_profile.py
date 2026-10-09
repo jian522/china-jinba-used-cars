@@ -30,7 +30,7 @@ HOME = {
 }
 META = {
     'en': {
-        '/cars/': ('Used Cars from China: Vehicle Listings | JINBA CARS', 'Explore used cars from China by brand, year, fuel and price. View photos and mileage, then confirm availability and export terms with JINBA CARS.'),
+        '/cars/': ('Used Cars for Sale in China: Export Listings | JINBA CARS', 'Explore used cars from China by brand, year, fuel and price. View photos and mileage, then confirm availability and export terms with JINBA CARS.'),
         '/about/': ('About JINBA CARS | Used-Car Sourcing in Xinyu, China', 'Meet JINBA CARS at Jiuding Automobile Market in Xinyu, Jiangxi. Learn how we handle China used-car inquiries, vehicle checks and export quotations.'),
         '/contact/': ('Contact JINBA CARS | WhatsApp & Xinyu Company Address', 'Contact JINBA CARS on WhatsApp +86 180 7908 9999 or by email. Find our Xinyu address and request a used-car export quotation from China.'),
         BUYER_PATH: ('Buy Used Cars from China: Buyer Guide | JINBA CARS', 'Learn how to source used cars from China, compare vehicle evidence, prepare an inquiry and review a written export quotation with JINBA CARS.'),

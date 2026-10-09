@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 # 2026-09-14：暂存目录从 site/ 改为 site_v2/。历史 site/ 里积压了 1000+ 个
 # 早期误传的 imports/ 采集素材，清理它们会触发安全拦截；直接启用新目录名
 # 即可绕开，每次部署生成的都是一份由 git 清单决定的干净快照。
-STAGE = ROOT / "_pages_deploy" / "site_search_20261009"
+STAGE = ROOT / "_pages_deploy" / "site_search_deep_20261009"
 TOKEN_FILE = ROOT / ".workbuddy" / "cf_token.txt"
 WRANGLER = r"C:/Users/Administrator/node_modules/wrangler/bin/wrangler.js"
 ACCOUNT = "0cd64536d2bc18ae46651a0a2636e1ff"
@@ -131,14 +131,23 @@ def purge_cache() -> int:
 
     # 2) 清缓存
     import json
-    body = json.dumps({"files": PURGE_URLS})
-    st, out = _cf_api(f"/zones/{zone}/purge_cache", token,
-                       method="POST", body=body, timeout=60)
-    if st == 200:
-        print(f"purged {len(PURGE_URLS)} URLs", flush=True)
-        return 0
-    print(f"SKIP cache purge (purge HTTP {st} — 需 Zone:Cache Purge 权限)",
-          flush=True)
+    # Internal links changed throughout the site; clear each canonical page.
+    # Keep requests small enough for plans with a 30-URL purge limit.
+    import xml.etree.ElementTree as ET
+    urls = list(PURGE_URLS)
+    urls += [el.text for el in ET.parse(ROOT / 'sitemap.xml').findall(
+        './/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
+    urls = list(dict.fromkeys(urls))
+    purged = 0
+    for offset in range(0, len(urls), 30):
+        batch = urls[offset:offset + 30]
+        st, out = _cf_api(f"/zones/{zone}/purge_cache", token,
+                          method="POST", body=json.dumps({"files":batch}), timeout=30)
+        if st != 200 or not json.loads(out).get('success'):
+            print(f"Cache purge incomplete: HTTP {st}, {purged}/{len(urls)} URLs", flush=True)
+            return 1
+        purged += len(batch)
+        print(f"purged {purged}/{len(urls)} URLs", flush=True)
     return 0                                    # 永不阻断部署主流程
 
 

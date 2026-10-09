@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
 from seo_content import CAR_COPY
 from company_profile import ADDRESS, HOME, BUYER_LABEL, BUYER_PATH, organization_script
+from search_landing import resource_links, home_discovery
 
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
@@ -709,7 +710,6 @@ def build(lang):
 <meta name="yandex-verification" content="{YANDEX_VERIF}">
 <title>{esc(d["title"])}</title>
 <meta name="description" content="{esc(d["desc"])}">
-<meta name="keywords" content="used cars from china, china used car export, BYD export, used car exporter shenzhen, FOB china cars, 出口二手车, 中国二手车出口">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:site_name" content="Jinba Cars Export">
 <meta property="og:locale" content="{lang}_{"AR" if lang=="ar" else ("CN" if lang=="zh" else ("RU" if lang=="ru" else "US"))}">
@@ -863,6 +863,7 @@ def build(lang):
   </div>
 </section>
 
+{home_discovery(lang)}
 <footer class="jv7-footer">
   <div class="jv7-container">
     <div class="jv7-footgrid">
@@ -874,6 +875,7 @@ def build(lang):
       <p>{esc(d["foot_about"])}</p>
       <p>{esc(ADDRESS[lang])}</p>
       <p><a href="{N[lang]}{BUYER_PATH.lstrip('/')}">{esc(BUYER_LABEL[lang])}</a></p>
+      {resource_links(lang)}
         <span class="jv7-topbar-langs">{lang_links}</span>
       </div>
       {fcols}
@@ -885,6 +887,7 @@ def build(lang):
   </div>
 </footer>
 
+<script defer src="/assets/inquiry.js?v=20261009"></script>
 </body>
 </html>'''
 
