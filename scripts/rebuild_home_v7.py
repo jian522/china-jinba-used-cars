@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
 from seo_content import CAR_COPY
+from company_profile import ADDRESS, HOME, BUYER_LABEL, BUYER_PATH, organization_script
 
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
@@ -523,6 +524,17 @@ SAFE_COPY = {
 for _lang, _copy in SAFE_COPY.items():
     L[_lang].update(_copy)
 
+# Search copy and location use the same owner-confirmed identity as contact pages.
+for _lang in LANGS:
+    L[_lang]['title'], L[_lang]['desc'] = HOME[_lang]
+    L[_lang]['topbar_l'] = 'JINBA CARS · ' + ADDRESS[_lang]
+    L[_lang]['h1'] = {
+        'en': 'Used cars from China, sourced for your market',
+        'zh': '中国汽车与二手车，按您的需求采购',
+        'ru': 'Подержанные автомобили из Китая для вашего рынка',
+        'ar': 'سيارات مستعملة من الصين حسب احتياجات سوقك',
+    }[_lang]
+
 SVG_TRUCK = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" fill="#fff"/><circle cx="7" cy="17" r="2" fill="#fff"/><circle cx="17.5" cy="17" r="2" fill="#fff"/></svg>'
 SVG_BURGER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
 SVG_WA = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.8-4.9c-.7-1-.9-1.9-.7-2.6.1-.5.7-1.4 1.3-1.4h.6c.2 0 .4.1.6.5l.8 2c.1.2 0 .4-.1.6l-.5.6c-.2.2-.3.4-.1.7.5.9 1.9 2.3 3.2 2.9.3.1.5.1.7-.1l.7-.8c.2-.2.4-.3.6-.2l2 .9c.3.2.4.4.4.6s0 .8-.1 1.1z"/></svg>'
@@ -726,8 +738,8 @@ def build(lang):
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Jinba Cars Export Co., Ltd.","url":"{DOMAIN}","email":"{EMAIL}","telephone":"+86 180 7908 9999","address":{{"@type":"PostalAddress","addressLocality":"Shenzhen","addressRegion":"Guangdong","addressCountry":"CN"}}}}</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Jinba Cars","url":"{DOMAIN}","inLanguage":"{lang}"}}</script>
+{organization_script()}
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","@id":"{DOMAIN}/#website","name":"JINBA CARS","alternateName":"Jinba Auto Export","url":"{DOMAIN}/","inLanguage":["en","zh-CN","ru","ar"],"publisher":{{"@id":"{DOMAIN}/#organization"}}}}</script>
 {faq_schema}
 </head>
 <body class="jv7">
@@ -859,7 +871,9 @@ def build(lang):
           <span class="jv7-logo-mark">{SVG_TRUCK}</span>
           <span><span class="jv7-logo-name" style="color:#fff">JINBA CARS</span><br><span class="jv7-logo-sub">EXPORT</span></span>
         </a>
-        <p>{esc(d["foot_about"])}</p>
+      <p>{esc(d["foot_about"])}</p>
+      <p>{esc(ADDRESS[lang])}</p>
+      <p><a href="{N[lang]}{BUYER_PATH.lstrip('/')}">{esc(BUYER_LABEL[lang])}</a></p>
         <span class="jv7-topbar-langs">{lang_links}</span>
       </div>
       {fcols}
