@@ -46,6 +46,10 @@ PURGE_URLS = [
     f"https://{HOST}/sitemap.xml",
     f"https://{HOST}/sitemap-images.xml",
     f"https://{HOST}/robots.txt",
+    # hero banner 是 30 天 immutable 缓存（_headers 的 /*.webp 规则），
+    # 换图后必须显式 purge，否则一个月内访客看到的还是旧图（10-08 实测 Age=168038）。
+    f"https://{HOST}/images/hero-banner.webp",
+    f"https://{HOST}/favicon.svg",
 ]
 ZONE_CACHE = ROOT / ".workbuddy" / "cf_zone_id.txt"
 
