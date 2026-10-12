@@ -20,7 +20,7 @@ from admin_vehicle import DATA, EVENT_PATH, ROOT, download_image, fail, image_ur
 
 
 HEADER = re.compile(
-    r"^(JB-\d{4})\s*\|\s*primary=(\d+)\s*\|\s*vin=([^|]+)\s*\|\s*source=(.+?)\s*$",
+    r"^(JB-\d{4,5})\s*\|\s*primary=(\d+)\s*\|\s*vin=([^|]+)\s*\|\s*source=(.+?)\s*$",
     re.I | re.M,
 )
 MAX_VEHICLES_PER_BATCH = 20
