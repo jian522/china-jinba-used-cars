@@ -107,7 +107,7 @@ def main() -> int:
         code, out = run([PY, str(ROOT / ".workbuddy/scrape/scrape_wap.py"),
                          "--kw", kw_, "--n", "1", "--pages", "1",
                          "--batch", batch, "--stock-prefix", prefix])
-        m = re.search(r"入库 (\d+) 台|accepted[:=]\s*(\d+)|✅.*?JB-(\d{4})",
+        m = re.search(r"入库 (\d+) 台|accepted[:=]\s*(\d+)|✅.*?JB-(\d{4,5})",
                       out)
         got = 1 if (m or "✅" in out or "primary.jpg" in out) else 0
         tail = out.strip().splitlines()[-3:]
@@ -135,11 +135,11 @@ def main() -> int:
     if code != 0:
         print(f"!! 正式入库失败 exit={code}\n{out[-800:]}")
         return 1
-    m = re.findall(r"\[(add|update)\] (JB-\d{3,4})", out)
+    m = re.findall(r"\[(add|update)\] (JB-\d{3,5})", out)
     added = [s for _, s in m]
     if not added:
         # 兼容 ingest 输出格式变化：从计划行提取（[更新] JB-xxxx / [新增] JB-xxxx）
-        added = re.findall(r"\[(?:更新|add|新增|update)\] (JB-\d{3,4})", out)
+        added = re.findall(r"\[(?:更新|add|新增|update)\] (JB-\d{3,5})", out)
     print(f"[入库] 新增/更新 {len(added)} 台: {', '.join(added) or '无'}")
 
     # 3) 图片合规修复（新车全部过一遍：条带裁剪 + 封面校正）

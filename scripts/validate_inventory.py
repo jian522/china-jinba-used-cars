@@ -65,7 +65,7 @@ def main() -> int:
             if stock in stocks:
                 errors.append(f"{tag} duplicate stock_id {stock} (also #{stocks[stock]})")
             stocks[stock] = i
-            if not re.fullmatch(r"JB-\d{3,4}", stock):
+            if not re.fullmatch(r"JB-\d{3,5}", stock):
                 errors.append(f"{tag} stock_id format odd: {stock!r}")
 
         if v.get("status") not in ("published", "unpublished", None):
@@ -96,7 +96,7 @@ def main() -> int:
         # Arabic description content mix-up detection: the description must
         # mention its own stock number (or at least not a *different* one).
         ar_desc = (v.get("description_i18n") or {}).get("ar", "")
-        own = re.search(r"JB-\d{3,4}", ar_desc)
+        own = re.search(r"JB-\d{3,5}", ar_desc)
         if own and own.group(0) != stock and stock:
             errors.append(f"{tag} ar description references {own.group(0)} but record is {stock}")
 

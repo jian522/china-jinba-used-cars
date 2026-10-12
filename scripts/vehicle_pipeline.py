@@ -144,7 +144,7 @@ def validate_batch(batch_dir: Path, rows: list[dict], vehicles: list[dict]) -> l
                 die(f"{ctx}: 缺少必填字段 {f}")
 
         stock_id = str(row["stock_id"]).strip().upper()
-        if not re.fullmatch(r"JB-\d{4}", stock_id):
+        if not re.fullmatch(r"JB-\d{4,5}", stock_id):
             die(f"{ctx}: stock_id 必须是 JB-0000 格式")
         if stock_id in existing_stocks:
             log(f"  [更新] {ctx}: 库存号已存在，将更新该车辆")
