@@ -588,12 +588,14 @@ _car_redirects += [
     # F. 旧页面（GSC 实测 2 个）
     '/faq  /en/contact/  301',
     '/contact.html  /en/contact/  301',
-    # G. CF 邮件混淆路径（GSC 实测 1 个）—— 明确 410 告知不存在
-    '/cdn-cgi/l/email-protection  /  410',
-    # 越界与静态资源
+    # 越界旧链接；不存在的邮件混淆路径/图片由 Pages 原生 404 处理。
+    # _redirects 不支持 404/410，不能用错误状态码改写静态资源目录。
     '/inventory/*  /en/cars/  301',
-    '/uploads/cars/*  /uploads/cars/  404',
 ]
+_pages_redirect_statuses = {'200', '301', '302', '303', '307', '308'}
+for _redirect in _car_redirects:
+    if _redirect.rsplit(maxsplit=1)[-1] not in _pages_redirect_statuses:
+        raise ValueError(f'Unsupported Cloudflare Pages redirect status: {_redirect}')
 write(R/'_redirects','\n'.join(_car_redirects)+'\n')
 for d in (R/'cars').iterdir():
  if d.is_dir() and d.name.isdigit():

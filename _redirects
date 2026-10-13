@@ -1,5 +1,9 @@
 /cars/  /en/cars/  301
 /cars/:id  /en/cars/  301
+/cars/478/  /en/cars/478/  301
+/cars/477/  /en/cars/477/  301
+/cars/476/  /en/cars/476/  301
+/cars/475/  /en/cars/475/  301
 /cars/474/  /en/cars/474/  301
 /cars/473/  /en/cars/473/  301
 /cars/472/  /en/cars/472/  301
@@ -213,6 +217,4 @@
 /ru/cars/:id  /ru/cars/  301
 /faq  /en/contact/  301
 /contact.html  /en/contact/  301
-/cdn-cgi/l/email-protection  /  410
 /inventory/*  /en/cars/  301
-/uploads/cars/*  /uploads/cars/  404
