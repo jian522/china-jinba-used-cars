@@ -1,0 +1,287 @@
+{
+  "document_type": "individual_rule_checklist_not_ruleset_replacement_payload",
+  "version": 3,
+  "date": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "zone": "jinbacars.com",
+  "plan_verified": "Free",
+  "state": "live Cloudflare changes verified; local source fixes prepared without Pages deployment",
+  "warning": "Do not PUT this checklist as an entire ruleset. Seven active changes are recorded individually; this is not a complete account ruleset export.",
+  "evidence": {
+    "requests_7d_ui": "14.24k",
+    "http_5xx_7d_ui": 0,
+    "original_504_claim": "9.8% user supplied; not reproduced in current same-window UI",
+    "slovenia_ip": "31.57.216.50",
+    "slovenia_requests_7d_ui": "2.59k",
+    "slovenia_status_counts_ui": {
+      "http_2xx": "3",
+      "http_3xx": "1.11k",
+      "http_4xx": "1.47k"
+    },
+    "slovenia_visits_ui": 2,
+    "top_path_sampling": "50%",
+    "suspicious_paths": [
+      "/.env.workers",
+      "/.env.razorpay"
+    ],
+    "canonical_production": "https://769832b0.jinba-cars.pages.dev",
+    "published_highest_vehicle_id": 470,
+    "local_headers_generator_purge_fixes": "prepared locally, not deployed",
+    "old_page_rules": "CSS 30d, WebP 30d, and global Cache Everything 1d are all disabled; confirmed in dashboard UI.",
+    "page_rule_update_method": "Token PATCH returned HTTP 403; actual disabling was saved and verified via dashboard UI. Do not claim API success.",
+    "browser_cache_ttl_ui": "Respect Existing Headers",
+    "live_html_origin_cache_control": "max-age=600, s-maxage=3600",
+    "prepared_local_headers": {
+      "deployment_status": "not deployed",
+      "html": {
+        "browser_ttl_seconds": 300,
+        "edge_s_maxage_seconds": 3600
+      },
+      "static": {
+        "browser_ttl_seconds": 3600,
+        "edge_s_maxage_seconds": 86400,
+        "immutable": false
+      },
+      "metadata": {
+        "browser_ttl_seconds": 300,
+        "edge_s_maxage_seconds": 3600
+      }
+    },
+    "internal_504_differentiation": "earlyHintsCache / edgeWorkerCacheAPI cache misses can appear as internal 504; do not infer they caused the original 9.8% without RequestSource and final-response evidence.",
+    "cache_rules_active": {
+      "C1": "a47447fc55944498af417686fbf9ee23",
+      "C2": "33e7fc3719414779814413aa2d7cd10f"
+    },
+    "precise_purge": {
+      "success": true,
+      "method": "Purge API",
+      "exact_apex_urls": 19,
+      "purge_everything": false
+    },
+    "post_purge_html": {
+      "languages": [
+        "en",
+        "zh",
+        "ru",
+        "ar"
+      ],
+      "http_status": 200,
+      "cache_control": "max-age=600, s-maxage=3600",
+      "cf_cache_status": "DYNAMIC",
+      "interpretation": "Consistent with native Pages for HTML; DYNAMIC does not establish direct traffic to a self-managed origin."
+    },
+    "local_new_not_yet_deployed_vehicle_ids": [
+      471,
+      472,
+      473,
+      474
+    ],
+    "final_http_verification_at_shanghai": "2026-10-12 15:39",
+    "final_http_verification": {
+      "css_and_published_image": "200 HIT; public, max-age=7200, s-maxage=86400",
+      "nonexistent_future_image": "404 BYPASS, no-store",
+      "analytics_cookie": "200 HIT",
+      "authorization_header": "200 DYNAMIC; H1 correctly excludes authorization requests",
+      "four_legacy_inventory_paths": "301, query strings preserved",
+      "inventory_page": "200; public, max-age=600, s-maxage=3600; Pages native caching",
+      "scanner_path": "403 at edge"
+    }
+  },
+  "rules": [
+    {
+      "id": "W1",
+      "name": "Block common exploit scanning paths",
+      "product": "WAF custom rule",
+      "priority_hint": "custom rule position 1",
+      "expression": "(http.request.uri.path contains \"/wp-json/\" or http.request.uri.path contains \"/wp-admin/\" or http.request.uri.path contains \"/.git/\" or http.request.uri.path contains \"/xmlrpc.php\" or http.request.uri.path contains \"/phpinfo\" or http.request.uri.path contains \"/vendor/\" or http.request.uri.path contains \"/.aws/\" or http.request.uri.path contains \"/.ssh/\") or (http.host in {\"jinbacars.com\" \"www.jinbacars.com\"} and (starts_with(lower(http.request.uri.path), \"/.env\") or starts_with(lower(http.request.uri.path), \"/.git\") or starts_with(lower(http.request.uri.path), \"/wp-\") or starts_with(lower(http.request.uri.path), \"/phpmyadmin\") or ends_with(lower(http.request.uri.path), \".php\") or lower(http.request.uri.path) contains \"/.aws/\" or lower(http.request.uri.path) contains \"/.ssh/\"))",
+      "action": "block",
+      "publication_status": "active; saved and verified in Cloudflare UI",
+      "reason": "Retains original eight zone-wide scan conditions; appends sensitive path detection restricted to apex/www. No country block.",
+      "rollback": "Disable this individual rule; narrow only confirmed conflicts",
+      "cloudflare_rule_id": "b5c60f930e164c2eb3a971427bc800af",
+      "host_scope": "mixed: inherited branch zone-wide, new branch apex/www only",
+      "rule_id": "b5c60f930e164c2eb3a971427bc800af",
+      "order": 1
+    },
+    {
+      "id": "W2",
+      "name": "Challenge confirmed scanner 31.57.216.50",
+      "product": "WAF custom rule",
+      "priority_hint": "custom rule position 5",
+      "expression": "(http.host in {\"jinbacars.com\" \"www.jinbacars.com\"} and ip.src eq 31.57.216.50 and not cf.client.bot)",
+      "action": "managed_challenge",
+      "publication_status": "active; saved and verified in Cloudflare UI",
+      "review_after_hours": 24,
+      "auto_expiration": false,
+      "reason": "Single evidenced scanner IP; no country/ASN blanket block; excludes verified bots",
+      "rollback": "Disable or remove after manual review",
+      "cloudflare_rule_id": "f433847f080b49e9ab8752b0dc70b791",
+      "authorization_note": "User additionally approved narrowing Slovenia-wide challenge to the confirmed IP only.",
+      "rule_id": "f433847f080b49e9ab8752b0dc70b791",
+      "order": 5
+    },
+    {
+      "id": "RL1",
+      "name": "HTML burst protection 60 per 10s",
+      "product": "rate limiting",
+      "expression": "(not cf.client.bot and (http.request.uri.path in {\"/\" \"/en\" \"/zh\" \"/ru\" \"/ar\"} or starts_with(http.request.uri.path, \"/en/\") or starts_with(http.request.uri.path, \"/zh/\") or starts_with(http.request.uri.path, \"/ru/\") or starts_with(http.request.uri.path, \"/ar/\")))",
+      "action": "block",
+      "publication_status": "active; saved and verified in Cloudflare UI",
+      "rate_configuration": {
+        "characteristics": "Per client IP; exact configuration verified in dashboard",
+        "requests_per_period": 60,
+        "period_seconds": 10,
+        "mitigation_timeout_seconds": 10
+      },
+      "free_plan_note": "Expression intentionally uses only URI path and cf.client.bot. Do not add unsupported http.host/method fields.",
+      "zone_scope_warning": "Free rule is zone-wide. Same root/language routes on shop may count; images/CSS/JS directories are excluded, threshold is 60/10s, Block10s.",
+      "rollback": "Disable on first confirmed real-buyer false positive",
+      "cloudflare_rule_id": "b83d25ed6dd54c6981604d1e0b03313a",
+      "rule_id": "b83d25ed6dd54c6981604d1e0b03313a",
+      "requests_per_period": 60,
+      "period": 10,
+      "mitigation_timeout": 10
+    },
+    {
+      "id": "C1",
+      "name": "JINBA public static assets 1d edge 2h browser",
+      "product": "Cache Rule",
+      "expression": "(http.host in {\"jinbacars.com\" \"www.jinbacars.com\"} and (starts_with(http.request.uri.path, \"/assets/\") or starts_with(http.request.uri.path, \"/js/\") or starts_with(http.request.uri.path, \"/images/\") or starts_with(http.request.uri.path, \"/uploads/cars/\")) and http.request.uri.path.extension in {\"css\" \"js\" \"mjs\" \"webp\" \"jpg\" \"jpeg\" \"png\" \"svg\" \"ico\" \"gif\" \"avif\" \"woff\" \"woff2\" \"ttf\" \"otf\"})",
+      "publication_status": "active; saved and verified in Cloudflare UI",
+      "settings": {
+        "cache_eligibility": "eligible",
+        "edge_ttl_seconds": 86400,
+        "browser_ttl_seconds": 7200,
+        "cache_key": "default; all query parameters retained",
+        "error_status_ttl": ">=400 No store (-1)"
+      },
+      "rollback": "Disable this rule; purge affected individual URLs",
+      "cloudflare_rule_id": "a47447fc55944498af417686fbf9ee23",
+      "action": "set_cache_settings",
+      "action_parameters": {
+        "cache": true,
+        "edge_ttl": {
+          "mode": "override_origin",
+          "default": 86400,
+          "status_code_ttl": [
+            {
+              "status_code_range": {
+                "from": 400
+              },
+              "value": -1
+            }
+          ]
+        },
+        "browser_ttl": {
+          "mode": "override_origin",
+          "default": 7200
+        }
+      },
+      "configuration_method": "Dashboard UI; action_parameters is the equivalent API shape, not a claim that a token mutation succeeded.",
+      "remaining_checks": [
+        "Deploy corrected source headers later in a compliant vehicle pipeline release",
+        "Record repeated real CSS/image responses and Age",
+        "Verify no-store errors and real published URLs after cache purge"
+      ],
+      "rule_id": "a47447fc55944498af417686fbf9ee23",
+      "browser_ttl_note": "C1 alone cannot reduce a larger origin max-age. H1 response header transform enforces the verified 7200-second public browser header."
+    },
+    {
+      "id": "C2",
+      "name": "JINBA private paths and authorization bypass",
+      "product": "Cache Rule",
+      "expression": "(http.host in {\"jinbacars.com\" \"www.jinbacars.com\"} and (http.request.uri.path in {\"/admin\" \"/data\" \"/api\" \"/auth\" \"/login\" \"/logout\"} or starts_with(http.request.uri.path, \"/admin/\") or starts_with(http.request.uri.path, \"/data/\") or starts_with(http.request.uri.path, \"/api/\") or starts_with(http.request.uri.path, \"/auth/\") or len(http.request.headers[\"authorization\"]) gt 0))",
+      "publication_status": "active; saved and verified in Cloudflare UI",
+      "settings": {
+        "cache_eligibility": "bypass",
+        "cookies": "Does not bypass solely because any cookie exists."
+      },
+      "priority_hint": "last Cache Rule",
+      "rollback": "Disable this individual rule",
+      "cloudflare_rule_id": "33e7fc3719414779814413aa2d7cd10f",
+      "action": "set_cache_settings",
+      "action_parameters": {
+        "cache": false
+      },
+      "rule_id": "33e7fc3719414779814413aa2d7cd10f",
+      "order": 2
+    },
+    {
+      "id": "H1",
+      "rule_id": "d8afc7306fcf47a68d11988e08d9ea89",
+      "name": "JINBA public static browser TTL 2h",
+      "product": "Response Header Transform",
+      "expression": "((http.host in {\"jinbacars.com\" \"www.jinbacars.com\"} and (starts_with(http.request.uri.path, \"/assets/\") or starts_with(http.request.uri.path, \"/js/\") or starts_with(http.request.uri.path, \"/images/\") or starts_with(http.request.uri.path, \"/uploads/cars/\")) and http.request.uri.path.extension in {\"css\" \"js\" \"mjs\" \"webp\" \"jpg\" \"jpeg\" \"png\" \"svg\" \"ico\" \"gif\" \"avif\" \"woff\" \"woff2\" \"ttf\" \"otf\"}) and http.response.code ge 200 and http.response.code lt 300 and not has_key(http.request.headers, \"authorization\") and not has_key(http.response.headers, \"set-cookie\") and any(lower(http.response.headers[\"cache-control\"][*])[*] contains \"public\") and (not has_key(http.response.headers, \"cache-control\") or (not any(lower(http.response.headers[\"cache-control\"][*])[*] contains \"private\") and not any(lower(http.response.headers[\"cache-control\"][*])[*] contains \"no-store\"))) and (not has_key(http.response.headers, \"cdn-cache-control\") or (not any(lower(http.response.headers[\"cdn-cache-control\"][*])[*] contains \"private\") and not any(lower(http.response.headers[\"cdn-cache-control\"][*])[*] contains \"no-store\"))) and (not has_key(http.response.headers, \"cloudflare-cdn-cache-control\") or (not any(lower(http.response.headers[\"cloudflare-cdn-cache-control\"][*])[*] contains \"private\") and not any(lower(http.response.headers[\"cloudflare-cdn-cache-control\"][*])[*] contains \"no-store\"))))",
+      "action": "rewrite",
+      "action_parameters": {
+        "headers": {
+          "cache-control": {
+            "operation": "set",
+            "value": "public, max-age=7200, s-maxage=86400"
+          }
+        }
+      },
+      "publication_status": "active; saved and verified in Cloudflare UI"
+    },
+    {
+      "id": "R1",
+      "rule_id": "a40ec1a072004862a6f9452244ec86a7",
+      "name": "JINBA legacy inventory URLs",
+      "product": "Single Redirect",
+      "expression": "(http.host in {\"jinbacars.com\" \"www.jinbacars.com\"} and http.request.uri.path in {\"/cars\" \"/cars/\" \"/cars.html\" \"/cars-detail.html\"})",
+      "action": "redirect",
+      "action_parameters": {
+        "from_value": {
+          "status_code": 301,
+          "target_url": {
+            "value": "https://jinbacars.com/en/cars/"
+          },
+          "preserve_query_string": true
+        }
+      },
+      "publication_status": "active; saved and verified in Cloudflare UI"
+    }
+  ],
+  "cache_baseline": {
+    "preferred": "Pages native for HTML and unmatched content; C1 explicitly controls selected public static assets only.",
+    "browser_cache_ttl": "Zone Respect Existing Headers; C1 selected static assets override browser TTL to7200 seconds.",
+    "query_strings": "preserve version query strings; do not ignore all queries",
+    "cookies": "do not bypass merely because any cookie exists",
+    "no_store_errors": "C1 status >=400 No store verified; also check source error response browser headers.",
+    "purge": "Completed API purge of19 exact apex URLs; not zone-wide Purge Everything; avoid daily whole-site purge.",
+    "site_deployment_status": "Local headers/generator/purge fixes not deployed; current production remains 10-11 release and highest vehicle ID 470.",
+    "legacy_page_rules": "all three disabled via UI after API PATCH 403"
+  },
+  "prohibited_actions": [
+    "Country blanket blocks",
+    "Global Under Attack as default",
+    "Free expressions using paid Bot Management score or regex matches",
+    "Blind whole-ruleset replacement",
+    "Cache Everything for all HTML with long fixed TTL",
+    "Ignore all query parameters",
+    "Cache errors for 30 days solely because URL ends in .webp",
+    "Publish pending local vehicles as a side effect of cache work"
+  ],
+  "official_references": [
+    "https://developers.cloudflare.com/pages/configuration/serving-pages/",
+    "https://developers.cloudflare.com/pages/configuration/headers/",
+    "https://developers.cloudflare.com/pages/configuration/redirects/",
+    "https://developers.cloudflare.com/cache/how-to/cache-rules/settings/",
+    "https://developers.cloudflare.com/waf/custom-rules/",
+    "https://developers.cloudflare.com/waf/rate-limiting-rules/",
+    "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-502-504/",
+    "https://developers.cloudflare.com/cache/how-to/edge-browser-cache-ttl/set-browser-ttl/",
+    "https://developers.cloudflare.com/rules/transform/response-header-modification/",
+    "https://developers.cloudflare.com/ruleset-engine/rules-language/values/#arrays",
+    "https://developers.cloudflare.com/rules/url-forwarding/single-redirects/settings/"
+  ],
+  "new_waf_branch_hosts": [
+    "jinbacars.com",
+    "www.jinbacars.com"
+  ],
+  "host_scope_notes": {
+    "W1": "Inherited eight contains branches apply zone-wide; only newly added branch is apex/www restricted; shop is not excluded from the whole rule.",
+    "W2": "Apex/www only; verified bots excluded.",
+    "RL1": "Zone-wide including shop root and any matching language route; Free expression intentionally has no unsupported hostname/method fields."
+  }
+}

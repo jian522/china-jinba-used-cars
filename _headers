@@ -1,75 +1,64 @@
-# jinbacars.com 缓存优化规则（Cloudflare Pages）
-# 部署日期：2026-09-28
-#
-# 设计原则：
-#   HTML 页面 —— 短缓存，保证每日新车上架后访客能及时看到
-#   静态资源 —— 长缓存 30 天，URL 自带 ?v=YYYYMMDD 版本号，改版即失效
-#   站点元数据 —— 中缓存，兼顾收录及时性
+# jinbacars.com response headers (Cloudflare Pages)
+# Cache-Control paths must not overlap: Pages combines headers from all matches.
+# URLs are reused, so assets must not be marked immutable.
 
-# HTML 页面：浏览器 10 分钟 / 边缘 1 小时
+# Global security headers only; no global Cache-Control.
 /*
-  Cache-Control: public, max-age=600, s-maxage=3600
   X-Content-Type-Options: nosniff
 
-# 静态资源：浏览器 30 天 / 边缘 30 天
+# HTML: browser 5 minutes / edge 1 hour.
+/
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/index.html
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/en/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/zh/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/ru/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/ar/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+# Static assets: browser 1 hour / edge 1 day.
 /assets/*
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+  Cache-Control: public, max-age=3600, s-maxage=86400
 
-# CSS
-/*.css
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+/js/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
 
-# JavaScript
-/*.js
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+/images/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
 
-# 图片
-/*.png
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+/uploads/cars/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
 
-/*.jpg
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
+/favicon.svg
+  Cache-Control: public, max-age=3600, s-maxage=86400
 
-/*.jpeg
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-/*.gif
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-/*.svg
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-/*.ico
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-/*.webp
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-/*.avif
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-/*.mp4
-  Cache-Control: public, max-age=2592000, s-maxage=2592000, immutable
-
-# 字体：浏览器 30 天 / 边缘 1 年（字体文件内容恒定，不会变）
-/*.woff
-  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
-
-/*.woff2
-  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
-
-/*.ttf
-  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
-
-/*.otf
-  Cache-Control: public, max-age=2592000, s-maxage=31536000, immutable
-
-# 站点地图与 robots：边缘 1 小时，保证搜索引擎及时拉到新车
+# Site metadata and feed: browser 5 minutes / edge 1 hour.
 /sitemap.xml
-  Cache-Control: public, max-age=600, s-maxage=3600
+  Cache-Control: public, max-age=300, s-maxage=3600
 
-/sitemap*.xml
-  Cache-Control: public, max-age=600, s-maxage=3600
+/sitemap-images.xml
+  Cache-Control: public, max-age=300, s-maxage=3600
 
 /robots.txt
-  Cache-Control: public, max-age=600, s-maxage=3600
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/feed.xml
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/google12925231ec118e3f.html
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/6d9a7c2e4f8b41a39c5d7e0b2f6a8c14.txt
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+/404.html
+  Cache-Control: public, max-age=300, s-maxage=3600
