@@ -124,8 +124,10 @@ def localized_title(en: str, lang: str) -> str:
         },
     }
     text = en
+    # 按词边界替换：朴素 str.replace 会让 "EV" 命中 "EVO"（星越L 2.0TD EVO）
+    # 与 "MINIEV" 的子串，把汽油车标题写成「электромобильO」这类乱码。
     for source, target in sorted(replacements[lang].items(), key=lambda item: len(item[0]), reverse=True):
-        text = text.replace(source, target)
+        text = re.sub(rf"\b{re.escape(source)}\b", target, text)
     return tidy(text)
 
 
