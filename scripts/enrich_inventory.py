@@ -24,7 +24,7 @@ MODEL_NAMES = {
     "海狮07": "Sea Lion 07", "海狮05": "Sea Lion 05", "宋PLUS": "Song PLUS",
     "宋Pro": "Song Pro", "秦PLUS": "Qin PLUS", "秦L": "Qin L", "海豹06": "Seal 06",
     "海豹": "Seal", "海鸥": "Seagull", "海豚": "Dolphin", "唐": "Tang",
-    "汉": "Han", "元": "Yuan",
+    "汉": "Han", "元": "Yuan", "元PLUS": "Yuan PLUS",
     "瑞虎8 PLUS": "Tiggo 8 PLUS", "瑞虎8 PRO": "Tiggo 8 PRO", "瑞虎8L": "Tiggo 8L",
     "瑞虎8": "Tiggo 8", "瑞虎7": "Tiggo 7", "瑞虎3x": "Tiggo 3x",
     "艾瑞泽8 PRO": "Arrizo 8 PRO", "艾瑞泽8": "Arrizo 8", "艾瑞泽5": "Arrizo 5",
