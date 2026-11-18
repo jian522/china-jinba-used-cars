@@ -29,10 +29,26 @@
     "ar": "وصول يومي للسيارات وصور جديدة وأخبار شحن — أولاً على قناتنا في تيليجرام. بدون إزعاج: فقط السيارات والتصدير الذي يهم المشترين."
   },
   "bullets": {
-    "en": ["New stock every day, before it hits the site", "Real photos, prices and stock numbers", "Export documents and shipping updates"],
-    "zh": ["每日新到车源，先于官网上线", "实拍图、报价与库存编号", "出口单证与发运进度更新"],
-    "ru": ["Новое каждый день — раньше сайта", "Реальные фото, цены и номера", "Документы и новости доставки"],
-    "ar": ["سيارات جديدة كل يوم قبل الموقع", "صور حقيقية وأسعار وأرقام مخزون", "مستندات وتحديثات الشحن"]
+    "en": [
+      "New stock every day, before it hits the site",
+      "Real photos, prices and stock numbers",
+      "Export documents and shipping updates"
+    ],
+    "zh": [
+      "每日新到车源，先于官网上线",
+      "实拍图、报价与库存编号",
+      "出口单证与发运进度更新"
+    ],
+    "ru": [
+      "Новое каждый день — раньше сайта",
+      "Реальные фото, цены и номера",
+      "Документы и новости доставки"
+    ],
+    "ar": [
+      "سيارات جديدة كل يوم قبل الموقع",
+      "صور حقيقية وأسعار وأرقام مخزون",
+      "مستندات وتحديثات الشحن"
+    ]
   },
   "cta": {
     "en": "Join on Telegram",
@@ -51,5 +67,39 @@
     "zh": "扫码加入",
     "ru": "Наведите камеру",
     "ar": "امسح للانضمام"
+  },
+  "footer_channels": {
+    "_readme": "页脚 TELEGRAM 列的 4 个频道 + 投稿机器人。channels 为 4 频道（名称/URL），各语言共用；title 为列标题，bot_label 为机器人行文案，按语言区分。改这里全站内页页脚同步。",
+    "channels": [
+      {
+        "name": "Used car supermarket",
+        "url": "https://t.me/usedcarsdealer99"
+      },
+      {
+        "name": "China Used Cars Export",
+        "url": "https://t.me/JinbaUsedCars"
+      },
+      {
+        "name": "Авто из Китая — экспорт",
+        "url": "https://t.me/KitayAvtoExport"
+      },
+      {
+        "name": "中国二手车出口",
+        "url": "https://t.me/ZhongGuoErShouChe"
+      }
+    ],
+    "title": {
+      "en": "TELEGRAM",
+      "zh": "电报频道",
+      "ru": "TELEGRAM",
+      "ar": "تيليغرام"
+    },
+    "bot_url": "https://t.me/JinbaCarsBot",
+    "bot_label": {
+      "en": "List your car — @JinbaCarsBot",
+      "zh": "发车投稿 — @JinbaCarsBot",
+      "ru": "Разместить авто — @JinbaCarsBot",
+      "ar": "اعرض سيارتك — @JinbaCarsBot"
+    }
   }
 }

@@ -480,6 +480,17 @@ body:has(.quickbar) { padding-bottom: 72px; }
   .hero { padding: 40px 0; }
   .pagehead { padding: 26px 0 10px; }
   h1 { letter-spacing: -.01em; }
+  /* 链接卡片：收紧内边距与标题，避免手机上每张卡过高（原 padding24 + 标题22px 达 232px） */
+  .linkgrid { gap: 12px; }
+  .linkcard { padding: 16px; }
+  .linkcard h2, .linkcard h3 { font-size: 17px; line-height: 1.35; margin-bottom: 4px; }
+  .linkcard p { font-size: 13px; line-height: 1.5; }
+  /* 页脚：两列排布 + 收紧垂直间距（原 4 列竖排达 1231px） */
+  footer { padding: 28px 0 18px; }
+  .footergrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; }
+  .footergrid h4 { margin-bottom: 8px; }
+  .footergrid a { padding: 4px 0; }
+  .copyright { margin-top: 18px; padding-top: 12px; }
 }
 
 /* ====================== RTL（阿拉伯语） ====================== */

@@ -180,8 +180,16 @@ def _cf_api(path: str, token: str, method: str = "GET", body: str | None = None,
     for proxy in (True, False):
         handlers = []
         if proxy:
-            handlers.append(urllib.request.ProxyHandler(
-                {"https": "http://127.0.0.1:7890"}))
+            try:
+                import winreg
+                _rk = winreg.OpenKey(winreg.HKEY_CURRENT_USER,
+                                     r"Software\Microsoft\Windows\CurrentVersion\Internet Settings")
+                _srv, _ = winreg.QueryValueEx(_rk, "ProxyServer")
+                winreg.CloseKey(_rk)
+                _px = _srv if "://" in _srv else ("http://" + _srv)
+            except Exception:
+                _px = "http://127.0.0.1:16392"
+            handlers.append(urllib.request.ProxyHandler({"https": _px}))
         else:
             handlers.append(urllib.request.ProxyHandler({}))
         opener = urllib.request.build_opener(*handlers)
@@ -328,16 +336,32 @@ def deploy() -> int:
     # 必须基于完整 os.environ：裁剪 PATH（只留 System32）会让 Node 启动即
     # 崩溃 `Assertion failed: ncrypto::CSPRNG(nullptr, 0)`（2026-09-12 实锤复现）
     env = dict(os.environ)
+    try:
+        import winreg
+        _rk = winreg.OpenKey(winreg.HKEY_CURRENT_USER,
+                             r"Software\Microsoft\Windows\CurrentVersion\Internet Settings")
+        _srv, _ = winreg.QueryValueEx(_rk, "ProxyServer")
+        winreg.CloseKey(_rk)
+        _px = _srv if "://" in _srv else ("http://" + _srv)
+    except Exception:
+        _px = "http://127.0.0.1:16392"
     env.update({"CLOUDFLARE_API_TOKEN": TOKEN_FILE.read_text(encoding="utf-8").strip(),
                 "CLOUDFLARE_ACCOUNT_ID": ACCOUNT,
-                "HTTPS_PROXY": "http://127.0.0.1:7890", "HTTP_PROXY": "http://127.0.0.1:7890"})
+                "HTTPS_PROXY": _px, "HTTP_PROXY": _px})
     cmd = [NODE, WRANGLER, "pages", "deploy", ".", "--project-name", PROJECT,
            "--branch", "main", "--commit-dirty=true"]
     r = subprocess.run(cmd, cwd=STAGE, capture_output=True, text=True,
                        env=env, timeout=3600)
-    if r.returncode != 0 and "fetch failed" in ((r.stderr or "") + (r.stdout or "")):
-        # Clash 代理挂掉 → 去掉代理直连重试（api.cloudflare.com 可直连）
-        print("proxy fetch failed, retry direct...", flush=True)
+    _errout = (r.stderr or "") + (r.stdout or "")
+    # 代理大批量上传会 socket 被对端关闭（UND_ERR_SOCKET / other side closed），
+    # 报错文案是 "Failed to upload files"，不含 "fetch failed" —— 必须一并匹配，
+    # 否则直连重试永远不触发，全站重建（上万文件）时必失败（2026-11-18 实锤）。
+    _proxy_dead = any(k in _errout for k in (
+        "fetch failed", "Failed to upload files", "UND_ERR_SOCKET",
+        "other side closed", "socket hang up", "ECONNRESET"))
+    if r.returncode != 0 and _proxy_dead:
+        # Clash 代理挂掉 → 去掉代理直连重试（api.cloudflare.com 可直连，实测 200）
+        print("proxy upload failed, retry direct...", flush=True)
         for k in ("HTTPS_PROXY", "HTTP_PROXY"):
             env.pop(k, None)
         r = subprocess.run(cmd, cwd=STAGE, capture_output=True, text=True,

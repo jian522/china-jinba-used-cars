@@ -179,6 +179,29 @@ def inner_footer_link(lang):
             f'{_SVG_TG}<span>{_esc(TG.t("name", lang))} &#8599;</span></a>')
 
 
+def inner_footer_channels(lang):
+    """内页页脚的 TELEGRAM 频道列（4 频道 + 投稿 Bot）—— design-system 风格 <div>。
+
+    与首页 foot_cols 的 TELEGRAM 列同内容：频道链接四语共用，仅列标题与机器人行文案按语言区分。
+    作为 .footergrid 的第 5 列插入（共用模板 footer() 里只写一次）。
+    """
+    if lang not in _LANGS:
+        lang = 'en'
+    fc = TG.get('footer_channels', {}) or {}
+    title = _esc((fc.get('title', {}) or {}).get(lang, 'TELEGRAM'))
+    label = _esc((fc.get('bot_label', {}) or {}).get(lang, '')) or _esc(TG.t('cta', lang))
+    bot_url = _esc(fc.get('bot_url', '')) or _esc(TG.url)
+    links = []
+    for ch in (fc.get('channels', []) or []):
+        name = _esc(ch.get('name', ''))
+        url = _esc(ch.get('url', ''))
+        if not url:
+            continue
+        links.append(f'<a href="{url}" {track_attrs("inner_footer_channel", lang)}>{name}</a>')
+    links.append(f'<a href="{bot_url}" {track_attrs("inner_footer_bot", lang)}>{label}</a>')
+    return f'<div><h4>{title}</h4>{"".join(links)}</div>'
+
+
 def inner_footer_cta(lang):
     """内页页脚的独立频道介绍块（<div>，design-system 风格）。"""
     name = _esc(TG.t('name', lang))

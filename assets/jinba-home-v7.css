@@ -454,7 +454,14 @@ body:has(.jv7) { background: #F9F9F9; margin: 0; }
   padding: 22px 0 26px; font-size: 12.5px; color: rgba(255, 255, 255, .55);
 }
 @media (max-width: 1023px) { .jv7-footgrid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 599px) { .jv7-footgrid { grid-template-columns: 1fr; gap: 28px; } }
+/* 手机页脚：品牌块占满一行，其余列 2 列排布（原全竖排 1805px → 明显缩短） */
+@media (max-width: 599px) {
+  .jv7-footer { padding-top: 36px; }
+  .jv7-footgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; padding-bottom: 28px; }
+  .jv7-footbrand { grid-column: 1 / -1; gap: 10px; }
+  .jv7-footcol h4 { margin: 0 0 10px; }
+  .jv7-footbar { padding: 16px 0 20px; }
+}
 /* 触屏上页脚链接需要足够的点击高度（原 20px 高、间距 10px，容易误触） */
 @media (max-width: 899px) {
   .jv7-footcol ul { gap: 2px; }
