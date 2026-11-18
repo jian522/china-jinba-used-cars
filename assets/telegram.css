@@ -1,0 +1,178 @@
+/* ============================================================
+   Jinba Telegram promo (jb-tg) — 2026-11-18
+   Styles for the Telegram channel promo section + footer strip
+   added to the homepages on 2026-11-18. The homepages link this
+   file as /assets/telegram.css?v=20261118; until this file
+   existed the promo rendered completely unstyled (and the QR
+   images 404, see below).
+   Tokens match jinba-home-v7.css (navy #0A1628, orange #FF6B2C).
+   Scoped to .jb-tg* classes only — no impact on other pages.
+   ============================================================ */
+
+/* ---------- promo section ---------- */
+.jb-tg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(130deg, var(--jv-navy, #0A1628), var(--jv-navy2, #0D2944));
+  color: #fff;
+  padding: 64px 0;
+}
+.jb-tg::before {
+  content: "";
+  position: absolute;
+  inset-inline-end: -8%;
+  top: -30%;
+  width: 640px;
+  height: 640px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 44, .18), transparent 62%);
+  pointer-events: none;
+}
+.jb-tg-inner {
+  position: relative;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  align-items: center;
+}
+.jb-tg-copy { min-width: 0; display: grid; gap: 14px; align-content: start; }
+.jb-tg-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--jv-font-mono, 'JetBrains Mono', ui-monospace, Consolas, monospace);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--jv-orange, #FF6B2C);
+}
+.jb-tg-kicker .jb-tg-icon { width: 18px; height: 18px; flex: none; }
+.jb-tg-title {
+  font-family: var(--jv-font-head, 'Mona Sans', 'Inter', 'Noto Sans SC', 'Noto Sans Arabic', sans-serif);
+  font-weight: 800;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+  color: #fff;
+}
+.jb-tg-desc {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .7);
+  max-width: 60ch;
+}
+.jb-tg-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, .85);
+}
+.jb-tg-list li { display: flex; align-items: flex-start; gap: 10px; }
+.jb-tg-list svg { width: 20px; height: 20px; flex: none; color: var(--jv-orange, #FF6B2C); margin-top: 1px; }
+.jb-tg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 14px 28px;
+  min-height: 48px;
+  border-radius: 999px;
+  background: #229ED9;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(34, 158, 217, .35);
+  transition: transform .15s ease, background .15s ease;
+  justify-self: start;
+}
+.jb-tg-btn:hover { background: #1d8fc7; transform: translateY(-1px); }
+.jb-tg-btn .jb-tg-icon { width: 20px; height: 20px; flex: none; }
+.jb-tg-btn .jb-tg-ext { width: 16px; height: 16px; flex: none; }
+.jb-tg-handle {
+  display: block;
+  font-family: var(--jv-font-mono, 'JetBrains Mono', ui-monospace, Consolas, monospace);
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(255, 255, 255, .55);
+}
+
+/* QR slots are hidden for now: /images/telegram-qr-placeholder.svg
+   returns 404 on the live site, so showing them renders broken-image
+   icons. Upload the real Telegram channel QR code to
+   /images/telegram-qr-placeholder.svg (or update the <img> src in
+   the homepages), then delete the two rules below to show the QR. */
+.jb-tg-qr { display: none; }
+.jb-tg-footqr { display: none; }
+
+/* ---------- footer strip (inside the navy footer) ---------- */
+.jb-tg-footstrip {
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  padding: 22px 0 26px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+.jb-tg-footstrip-main { min-width: 0; }
+.jb-tg-footstrip-main h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: var(--jv-font-mono, 'JetBrains Mono', ui-monospace, Consolas, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .5);
+}
+.jb-tg-footstrip-main h4 .jb-tg-icon { width: 18px; height: 18px; flex: none; color: var(--jv-orange, #FF6B2C); }
+.jb-tg-footstrip-main p { margin: 6px 0 0; font-size: 13px; color: rgba(255, 255, 255, .6); }
+.jb-tg-footlink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 20px;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, .35);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.jb-tg-footlink:hover { border-color: #fff; transform: translateY(-1px); }
+
+/* ---------- mobile ---------- */
+@media (max-width: 899px) {
+  .jb-tg-inner { gap: 32px; }
+}
+@media (max-width: 599px) {
+  .jb-tg { padding: 44px 0; }
+  .jb-tg-inner { grid-template-columns: 1fr; gap: 28px; }
+  /* CTA spans the full width on phones so it is easy to tap */
+  .jb-tg-btn { width: 100%; justify-self: stretch; }
+  .jb-tg-footstrip { flex-direction: column; align-items: stretch; }
+  .jb-tg-footlink { width: 100%; }
+}
+
+/* ---------- RTL mirrors (ar) ---------- */
+[dir="rtl"] .jb-tg-kicker,
+[dir="rtl"] .jb-tg-handle,
+[dir="rtl"] .jb-tg-footstrip-main h4 { letter-spacing: .04em; }
+[dir="rtl"] .jb-tg-ext { transform: scaleX(-1); }
