@@ -1,0 +1,108 @@
+{
+  "last_run": {
+    "attempted": "2026-11-18 18:00-19:35 CST",
+    "car": "JB-11681 AITO M7 2026, 4,700 km",
+    "result": "complete — all 4 channels posted; main channel via @JinbaCarsBot (Bot API), others via Telegram Web",
+    "note": "Main channel posted 19:35 CST via bot (media_group 14360014021295045). All four channels still 2 subscribers."
+  },
+  "posted": [
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-18 18:25-18:26 CST to the three @KinbaAutoExport channels; main channel @usedcarsdealer99 posted 2026-11-18 19:35 CST via @JinbaCarsBot sendMediaGroup (Telegram Web K blank + A client lacks @ChinaUsedCarExpert login). Media group 14360014021295045, first message_id 16.",
+      "posted_at": "2026-11-18 18:25-18:26 CST (3 Kinba channels) + 19:35 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-11681"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 71000,
+      "model": "Great Wall Poer 2021 2.0T Commercial Automatic Diesel 4WD Long Bed GW4D20M",
+      "posted_at": "2026-11-18 16:31-16:38 CST",
+      "stock": "JB-11611"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 26000,
+      "model": "Geely Monjaro 2024 2.0TD Automatic 2WD Edition",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10889"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 40000,
+      "model": "Geely Boyue L 2023 1.5TD DCT Premium",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10879"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4000,
+      "model": "Chery Tiggo 8 PLUS 2025 290TGDI DCT Premium",
+      "note": "Completed 2026-11-14 15:18: main channel posted 2026-11-12 23:17 CST; the other three posted 2026-11-14 15:18 after user re-logged in @KinbaAutoExport via QR.",
+      "posted_at": "2026-11-14 15:18 CST",
+      "stock": "JB-10869"
+    },
+    {
+      "channels": [
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 38000,
+      "model": "Chery Tiggo 7 PLUS 2023 1.5TCI CVT Edition",
+      "note": "Posted 2026-11-14 15:18:50-15:19:18 to the three @KinbaAutoExport channels only. @usedcarsdealer99 NOT posted — needs @ChinaUsedCarExpert re-login.",
+      "posted_at": "2026-11-14 15:19 CST",
+      "stock": "JB-10859"
+    },
+    {
+      "channels": [
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels (browser task ran ~23h; web.telegram.org needed a user approval before it could load). @usedcarsdealer99 NOT posted — needs @ChinaUsedCarExpert re-login.",
+      "posted_at": "2026-11-16 11:09 CST",
+      "stock": "JB-10858"
+    },
+    {
+      "channels": [
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 21000,
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels (browser task ran 1h 43m). @usedcarsdealer99 NOT posted — needs @ChinaUsedCarExpert re-login (only @KinbaAutoExport session present in Telegram Web). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
+      "posted_at": "2026-11-16 19:43 CST",
+      "stock": "JB-10848"
+    }
+  ]
+}
