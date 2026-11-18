@@ -1,9 +1,9 @@
 {
   "last_run": {
-    "attempted": "2026-11-18 18:00-19:35 CST",
-    "car": "JB-11681 AITO M7 2026, 4,700 km",
-    "result": "complete — all 4 channels posted; main channel via @JinbaCarsBot (Bot API), others via Telegram Web",
-    "note": "Main channel posted 19:35 CST via bot (media_group 14360014021295045). All four channels still 2 subscribers."
+    "attempted": "2026-11-19 00:52 CST",
+    "car": "Backfill: JB-10859, JB-10858, JB-10848 + guide post 02",
+    "result": "complete — all 4 items posted to main channel @usedcarsdealer99 via @JinbaCarsBot (Bot API)",
+    "note": "JB-10859 media_group 14360162933791701 (msgs 20-23); JB-10858 media_group 14360162999011533 (msgs 24-27); JB-10848 media_group 14360163056228013 (msgs 28-31); guide 02 message 32. Main channel now caught up; no price numbers used."
   },
   "posted": [
     {
@@ -70,38 +70,41 @@
     },
     {
       "channels": [
+        "@usedcarsdealer99",
         "@JinbaUsedCars",
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
       "mileage_km": 38000,
       "model": "Chery Tiggo 7 PLUS 2023 1.5TCI CVT Edition",
-      "note": "Posted 2026-11-14 15:18:50-15:19:18 to the three @KinbaAutoExport channels only. @usedcarsdealer99 NOT posted — needs @ChinaUsedCarExpert re-login.",
-      "posted_at": "2026-11-14 15:19 CST",
+      "note": "Posted 2026-11-14 15:18:50-15:19:18 to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162933791701, message_ids 20-23).",
+      "posted_at": "2026-11-14 15:19 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
       "stock": "JB-10859"
     },
     {
       "channels": [
+        "@usedcarsdealer99",
         "@JinbaUsedCars",
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
       "mileage_km": 4700,
       "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
-      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels (browser task ran ~23h; web.telegram.org needed a user approval before it could load). @usedcarsdealer99 NOT posted — needs @ChinaUsedCarExpert re-login.",
-      "posted_at": "2026-11-16 11:09 CST",
+      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162999011533, message_ids 24-27).",
+      "posted_at": "2026-11-16 11:09 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
       "stock": "JB-10858"
     },
     {
       "channels": [
+        "@usedcarsdealer99",
         "@JinbaUsedCars",
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
       "mileage_km": 21000,
       "model": "Li Auto L7 2025 Max Smart Upgrade",
-      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels (browser task ran 1h 43m). @usedcarsdealer99 NOT posted — needs @ChinaUsedCarExpert re-login (only @KinbaAutoExport session present in Telegram Web). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
-      "posted_at": "2026-11-16 19:43 CST",
+      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360163056228013, message_ids 28-31). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
+      "posted_at": "2026-11-16 19:43 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
       "stock": "JB-10848"
     }
   ]
