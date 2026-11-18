@@ -25,6 +25,7 @@ from seo_content import CAR_COPY
 from company_profile import ADDRESS, HOME, BUYER_LABEL, BUYER_PATH, organization_script
 from search_landing import resource_links, home_discovery
 from shop_catalog_links import catalog_link, model_links
+import telegram_block as _tg
 
 ROOT = Path(r'D:\二手车出口网站')
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
@@ -698,6 +699,10 @@ def build(lang):
             else:
                 lis += f'<li><a href="{href}">{esc(name)}</a></li>'
         fcols += f'<div class="jv7-footcol"><h4>{esc(col_title)}</h4><ul>{lis}</ul></div>'
+    # Telegram 频道页脚卡片（文案/链接集中在 data/telegram.json）
+    tg_footcard = _tg.footer_card_html(lang)
+    # 首页显著位置的 Telegram 引流 section
+    tg_banner = _tg.banner_html(lang)
     lang_links = ''.join(f'<a href="{N[lg]}"{" aria-current=\"true\"" if lg == lang else ""}>{esc(d["lang_names"][i])}</a>'
                          for i, lg in enumerate(LANGS))
 
@@ -735,6 +740,7 @@ def build(lang):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20261008">
+<link rel="stylesheet" href="/assets/telegram.css?v=20261118">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
@@ -851,6 +857,8 @@ def build(lang):
   </div>
 </section>
 
+{tg_banner}
+
 <section class="jv7-ctawrap">
   <div class="jv7-container">
     <div class="jv7-cta">
@@ -884,6 +892,7 @@ def build(lang):
       </div>
       {fcols}
     </div>
+    {tg_footcard}
     <div class="jv7-footbar">
       <span>{esc(d["foot_copy"])}</span>
       <span>{esc(d["foot_badge"])}</span>
@@ -891,7 +900,7 @@ def build(lang):
   </div>
 </footer>
 
-<script defer src="/assets/inquiry.js?v=20261009"></script>
+<script defer src="/assets/inquiry.js?v=20261118"></script>
 </body>
 </html>'''
 

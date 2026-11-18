@@ -33,15 +33,58 @@
     document.addEventListener('click', function (event) {
       var link = event.target.closest('a[href]');
       if (!link || !link.href.startsWith('https://wa.me/8618079089999')) return;
+      var stockId = link.getAttribute('data-stock') || '';
+      var payload = {
+        page_path: location.pathname,
+        language: lang,
+        stock_id: stockId,
+        topic: link.getAttribute('data-topic') || '',
+        placement: link.getAttribute('data-placement') || 'page_link',
+        transport_type: 'beacon'
+      };
       if (typeof window.gtag === 'function') {
-        window.gtag('event', 'whatsapp_click', {
+        window.gtag('event', 'whatsapp_click', payload);
+        // 统一询盘事件（GA4 关键事件）：whatsapp 渠道入口。
+        window.gtag('event', 'inquiry', Object.assign({ inquiry_type: 'whatsapp' }, payload));
+      }
+    });
+    // Telegram 频道点击追踪占位：事件名/频道地址来自 data-track / href，
+    // 后续接 GA4 只需在 gtag 里登记同名事件，无需改页面。
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[data-track]');
+      if (!link || !link.href.startsWith('https://t.me/')) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', link.getAttribute('data-track') || 'telegram_click', {
           page_path: location.pathname,
-          language: lang,
-          stock_id: link.getAttribute('data-stock') || '',
-          topic: link.getAttribute('data-topic') || '',
+          language: link.getAttribute('data-lang') || lang,
           placement: link.getAttribute('data-placement') || 'page_link',
+          destination: 'telegram',
           transport_type: 'beacon'
         });
+      }
+    });
+    // 邮箱链接点击追踪 + 统一 inquiry 事件（覆盖 wa/telegram/mailto 三类询盘入口）。
+    // inquiry 事件是 GA4 关键事件（转化）的载体：在 GA4 后台把它登记为 key event，
+    // 就能在「获取 / 转化」里看到真实询盘量，而不只是零散的渠道点击。
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href]');
+      if (!link) return;
+      var href = link.href || '';
+      var isMail = href.startsWith('mailto:');
+      if (!isMail) return;
+      var channel = 'email';
+      var payload = {
+        inquiry_type: channel,
+        page_path: location.pathname,
+        language: lang,
+        stock_id: link.getAttribute('data-stock') || '',
+        placement: link.getAttribute('data-placement') || 'page_link',
+        transport_type: 'beacon'
+      };
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'email_click', payload);
+        // 统一询盘事件：GA4 关键事件追踪的入口。
+        window.gtag('event', 'inquiry', payload);
       }
     });
   }
