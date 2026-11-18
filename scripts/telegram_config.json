@@ -1,0 +1,55 @@
+{
+  "_readme": "Telegram 频道集中配置（全站唯一配置源）。改这里即可替换频道地址/名称/说明/文案/二维码。qr 留空字符串则不显示二维码；填入图片路径（如 /images/telegram-qr-placeholder.svg）则显示。所有文案支持 en/zh/ru/ar 四语。修改后运行 python scripts/build_v2.py 重建全站即可生效。",
+  "url": "https://t.me/chinausedcarexport",
+  "handle": "@chinausedcarexport",
+  "qr": "/images/telegram-qr-placeholder.svg",
+  "track_event": "telegram_click",
+  "name": {
+    "en": "JINBA CARS Export Channel",
+    "zh": "金霸汽车出口频道",
+    "ru": "Канал JINBA CARS — экспорт авто",
+    "ar": "قناة جينبا لتصدير السيارات"
+  },
+  "kicker": {
+    "en": "LIVE UPDATES · JOIN THE CHANNEL",
+    "zh": "实时更新 · 欢迎关注",
+    "ru": "НОВОЕ КАЖДЫЙ ДЕНЬ · ПОДПИШИТЕСЬ",
+    "ar": "تحديثات يومية · انضم للقناة"
+  },
+  "title": {
+    "en": "New arrivals, straight from the yard",
+    "zh": "新车到库，第一时间看实拍",
+    "ru": "Новые авто прямо с площадки",
+    "ar": "سيارات جديدة مباشرة من الساحة"
+  },
+  "desc": {
+    "en": "Daily used-car arrivals, fresh photos and shipping updates — posted first on our Telegram channel. No spam: just the stock and export news buyers actually ask for.",
+    "zh": "每天更新到库车源、实拍图与发运动态，Telegram 频道抢先看。不刷屏，只发买家真正关心的车源与出口信息。",
+    "ru": "Ежедневные поступления, свежие фото и новости доставки — первыми в нашем Telegram-канале. Без спама: только авто и экспорт, которые интересны покупателю.",
+    "ar": "وصول يومي للسيارات وصور جديدة وأخبار شحن — أولاً على قناتنا في تيليجرام. بدون إزعاج: فقط السيارات والتصدير الذي يهم المشترين."
+  },
+  "bullets": {
+    "en": ["New stock every day, before it hits the site", "Real photos, prices and stock numbers", "Export documents and shipping updates"],
+    "zh": ["每日新到车源，先于官网上线", "实拍图、报价与库存编号", "出口单证与发运进度更新"],
+    "ru": ["Новое каждый день — раньше сайта", "Реальные фото, цены и номера", "Документы и новости доставки"],
+    "ar": ["سيارات جديدة كل يوم قبل الموقع", "صور حقيقية وأسعار وأرقام مخزون", "مستندات وتحديثات الشحن"]
+  },
+  "cta": {
+    "en": "Join on Telegram",
+    "zh": "加入 Telegram 频道",
+    "ru": "Подписаться в Telegram",
+    "ar": "انضم على تيليجرام"
+  },
+  "footer_note": {
+    "en": "Daily new stock, photos and export updates — first on Telegram.",
+    "zh": "每日新车、实拍与出口动态，Telegram 抢先看。",
+    "ru": "Новое каждый день, фото и экспорт — первым в Telegram.",
+    "ar": "سيارات وصور وتصدير كل يوم — أولاً على تيليجرام."
+  },
+  "qr_caption": {
+    "en": "Scan to join",
+    "zh": "扫码加入",
+    "ru": "Наведите камеру",
+    "ar": "امسح للانضمام"
+  }
+}
