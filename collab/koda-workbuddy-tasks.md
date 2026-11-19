@@ -6,7 +6,10 @@
 
 ## 进行中的任务
 
-- （无。Koda 有新任务时更新这里并告诉用户。）
+### 3. 电报频道页脚卡片式改版部署（2026-11-19，待部署）
+- 详见：`workbuddy-telegram-footer-redesign.md`（同一目录，含完整说明与核对清单）
+- 改动（已推送到 main，commit 924dc38c）：页脚 TELEGRAM 列由 5 行纯文字链接改成卡片式（4 频道 + 橙色投稿卡，带图标/@handle/语言标签），桌面端列内纵向、手机端通栏可点；改了 `scripts/telegram_config.json`、`scripts/telegram_block.py`、`assets/telegram.css`、`scripts/rebuild_home_v7.py`。
+- 请 WorkBuddy：拉取最新 main → 一键部署官网.bat 重建全站并部署 → 核对四语首页与内页页脚 TELEGRAM 列为卡片式、链接正确、手机端通栏可点。
 
 ## 已完成的任务
 
