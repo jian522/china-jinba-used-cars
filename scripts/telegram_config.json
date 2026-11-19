@@ -69,23 +69,31 @@
     "ar": "امسح للانضمام"
   },
   "footer_channels": {
-    "_readme": "页脚 TELEGRAM 列的 4 个频道 + 投稿机器人。channels 为 4 频道（名称/URL），各语言共用；title 为列标题，bot_label 为机器人行文案，按语言区分。改这里全站内页页脚同步。",
+    "_readme": "页脚 TELEGRAM 列的 4 个频道 + 投稿机器人。channels 为 4 频道（名称/URL/handle/语言标签），名称与链接各语言共用，标签按语言区分；title 为列标题，subtitle 为列副标题，bot_* 为机器人卡片。改这里全站页脚同步（首页 foot_cols 与内页 footer 共用 telegram_block.footer_channels_html，卡片式渲染）。",
     "channels": [
       {
         "name": "Used car supermarket",
-        "url": "https://t.me/usedcarsdealer99"
+        "url": "https://t.me/usedcarsdealer99",
+        "handle": "@usedcarsdealer99",
+        "tag": {"en": "Bilingual", "zh": "双语", "ru": "Двуязычный", "ar": "ثنائي اللغة"}
       },
       {
         "name": "China Used Cars Export",
-        "url": "https://t.me/JinbaUsedCars"
+        "url": "https://t.me/JinbaUsedCars",
+        "handle": "@JinbaUsedCars",
+        "tag": {"en": "English", "zh": "英文", "ru": "Английский", "ar": "الإنجليزية"}
       },
       {
         "name": "Авто из Китая — экспорт",
-        "url": "https://t.me/KitayAvtoExport"
+        "url": "https://t.me/KitayAvtoExport",
+        "handle": "@KitayAvtoExport",
+        "tag": {"en": "Russian", "zh": "俄文", "ru": "Русский", "ar": "الروسية"}
       },
       {
         "name": "中国二手车出口",
-        "url": "https://t.me/ZhongGuoErShouChe"
+        "url": "https://t.me/ZhongGuoErShouChe",
+        "handle": "@ZhongGuoErShouChe",
+        "tag": {"en": "Chinese", "zh": "中文", "ru": "Китайский", "ar": "الصينية"}
       }
     ],
     "title": {
@@ -94,7 +102,26 @@
       "ru": "TELEGRAM",
       "ar": "تيليغرام"
     },
+    "subtitle": {
+      "en": "New stock, first on Telegram",
+      "zh": "每日新车，Telegram 抢先看",
+      "ru": "Новое каждый день — первым в Telegram",
+      "ar": "سيارات جديدة أولاً على تيليجرام"
+    },
     "bot_url": "https://t.me/JinbaCarsBot",
+    "bot_name": {
+      "en": "Submit your car",
+      "zh": "发车投稿",
+      "ru": "Разместить авто",
+      "ar": "اعرض سيارتك"
+    },
+    "bot_handle": "@JinbaCarsBot",
+    "bot_tag": {
+      "en": "For dealers",
+      "zh": "车商投稿",
+      "ru": "Для дилеров",
+      "ar": "للتجار"
+    },
     "bot_label": {
       "en": "List your car — @JinbaCarsBot",
       "zh": "发车投稿 — @JinbaCarsBot",

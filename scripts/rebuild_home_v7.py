@@ -691,6 +691,10 @@ def build(lang):
     # ---- footer cols ----
     fcols = ''
     for col_title, links in d['foot_cols']:
+        # TELEGRAM 列：用 telegram_block 的卡片式渲染（集中配置），不再输出纯文字链接
+        if links and links[0][1] and 't.me' in str(links[0][1]):
+            fcols += _tg.footer_channels_html(lang)
+            continue
         lis = ''
         for item in links:
             name = item[0]
