@@ -393,3 +393,43 @@ a.jb-tg-ch:focus-visible {
 [dir='rtl'] .jb-tg-inner-btn.jb-tg-inner-btn { justify-self: start; }
 [dir='rtl'] a.jb-tg-ch { direction: rtl; }
 [dir='rtl'] .jb-tg-ch-handle { direction: ltr; unicode-bidi: plaintext; }
+
+/* ---------- 首页顶部电报固定条（sticky，2026-11-19） ---------- */
+.jb-tg-topbar {
+  position: sticky; top: 0; z-index: 1000;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.jb-tg-topbar-in {
+  max-width: 1280px; margin: 0 auto; padding: 0 20px;
+  min-height: 44px; display: flex; align-items: center; gap: 14px;
+}
+.jb-tg-topbar-label {
+  display: flex; align-items: center; gap: 7px; flex: none;
+  color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em; white-space: nowrap;
+}
+.jb-tg-topbar-label svg { width: 17px; height: 17px; flex: none; }
+.jb-tg-topbar-sub { color: rgba(255,255,255,.55); font-size: 12px; white-space: nowrap; }
+.jb-tg-topbar-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.jb-tg-topbar-links a {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px; border-radius: 999px;
+  background: rgba(34,158,217,.16); border: 1px solid rgba(34,158,217,.45);
+  color: #bfe6f7; font-size: 12.5px; line-height: 1.3; white-space: nowrap;
+}
+.jb-tg-topbar-links a:hover { background: rgba(34,158,217,.32); color: #fff; }
+.jb-tg-topbar-links a .tag {
+  font-size: 10.5px; padding: 1px 6px; border-radius: 999px;
+  background: rgba(255,255,255,.14); color: rgba(255,255,255,.75);
+}
+.jb-tg-topbar-links a.bot {
+  background: #ff6b2c; border-color: #ff6b2c; color: #fff; font-weight: 700;
+}
+.jb-tg-topbar-links a.bot .tag { background: rgba(255,255,255,.22); color: #fff; }
+[dir='rtl'] .jb-tg-topbar-links a { direction: rtl; }
+@media (max-width: 760px) {
+  .jb-tg-topbar-sub { display: none; }
+  .jb-tg-topbar-in { gap: 10px; padding: 0 12px; overflow-x: auto; scrollbar-width: none; }
+  .jb-tg-topbar-in::-webkit-scrollbar { display: none; }
+  .jb-tg-topbar-links { flex-wrap: nowrap; }
+}
