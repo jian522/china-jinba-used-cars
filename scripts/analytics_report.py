@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""jinbacars.com 访问统计报告（Cloudflare Web Analytics + 边缘流量 + 爬虫）。
+"""jinbacars.com 访问统计报告（Cloudflare 边缘流量为主口径 + RUM 仅供参考）。
+
+统计口径说明（2026-11-18 实测校正）：
+  * 主口径 = 边缘 httpRequests1dGroups.uniq.uniques（逐日去重访客，真实具体数字）。
+  * 免费版 RUM（Web Analytics / rumPageloadEventsAdaptiveGroups）是 lite 采样：
+    visits 常为 0、国别/热门页全是整十整百、每日明细偶发 10000 → 严重失真，
+    只能看量级和国别大致分布，不可作 UV / 转化依据。真实转化以 GA4 为准。
 
 用法：
     python scripts/analytics_report.py              # 最近 30 天
@@ -8,8 +14,7 @@
     python scripts/analytics_report.py --realtime   # 近 30 分钟（含 1 分钟粒度）
     python scripts/analytics_report.py --all        # 全部可查区间（13 周）
 
-依赖：.workbuddy/cf_analytics_token.txt（Account Analytics Read + Zone Analytics Read）
-"""
+依赖：.workbuddy/cf_analytics_token.txt（Account Analytics Read + Zone Analytics Read）"""
 from __future__ import annotations
 
 import argparse
@@ -127,12 +132,36 @@ def main() -> int:
 
     emit("═" * 62)
     emit("jinbacars.com 访问统计  |  %s" % days_label)
-    emit("统计口径：Cloudflare Web Analytics（真实浏览器，不含爬虫）")
+    emit("主口径：Cloudflare 边缘去重访客（真实）；RUM 采样仅供参考")
     emit("═" * 62)
     emit("")
-    emit("浏览量 pageviews : %s" % fmt_int(pv))
-    emit("访问数 visits    : %s" % fmt_int(uv))
-    emit("人均浏览         : %.2f 页/次" % (pv / uv if uv else 0))
+    emit("[主口径 · 边缘层真实访客]")
+    # ---------- 1b. 边缘真实访客（主口径）----------
+    q_edge = """{ viewer { zones(filter: {zoneTag: "%s"}) {
+      httpRequests1dGroups(limit: 40, orderBy: [date_DESC], filter: {date_geq: "%s"}) {
+        dimensions { date } sum { requests pageViews threats bytes cachedBytes }
+        uniq { uniques }
+      } } } }""" % (ZONE, since[:10])
+    res_edge = gql(token, q_edge)
+    out["edge_real"] = res_edge
+    edge_rows = unwrap(res_edge, "httpRequests1dGroups")
+    edge_uv = sum(int((r.get("uniq") or {}).get("uniques") or 0) for r in edge_rows)
+    edge_req = sum(int((r.get("sum") or {}).get("requests") or 0) for r in edge_rows)
+    edge_pv = sum(int((r.get("sum") or {}).get("pageViews") or 0) for r in edge_rows)
+    edge_thr = sum(int((r.get("sum") or {}).get("threats") or 0) for r in edge_rows)
+    edge_days = len(edge_rows) or 1
+    emit("  去重访客(逐日相加) : %s" % fmt_int(edge_uv))
+    emit("  页面浏览 pageViews  : %s" % fmt_int(edge_pv))
+    emit("  边缘总请求          : %s" % fmt_int(edge_req))
+    emit("  威胁请求            : %s (%.1f%%)" % (fmt_int(edge_thr), edge_thr / edge_req * 100 if edge_req else 0))
+    emit("  日均去重访客        : %s" % fmt_int(edge_uv / edge_days))
+    emit("  说明：uniques 逐日去重后相加，跨天同一访客会重复计数，故为访问人次量级，非严格独立人数。")
+    emit("")
+    emit("[参考 · Web Analytics RUM（lite 采样，已失真，勿作 UV 依据）]")
+    emit("  浏览量 pageviews : %s" % fmt_int(pv))
+    emit("  访问数 visits    : %s  ← 免费版常为 0" % fmt_int(uv))
+    emit("  人均浏览         : %.2f 页/次" % (pv / uv if uv else 0))
+    emit("  ⚠ 以下 RUM 明细/国别/热门页均为采样值（整十整百），仅看趋势方向。")
     emit("")
 
     # ---------- 2. 每日趋势 ----------
@@ -143,7 +172,7 @@ def main() -> int:
     res = gql(token, q)
     out["daily"] = res
     daily = unwrap(res, "rumPageloadEventsAdaptiveGroups")
-    emit("── 每日明细 ──────────────────────────────────")
+    emit("── 每日明细 [RUM 采样,仅供趋势] ────────────────")
     if not daily:
         emit("  （该区间无数据）")
     else:
@@ -225,7 +254,7 @@ def main() -> int:
     res = gql(token, q)
     out["edge"] = res
     rows = unwrap(res, "httpRequests1dGroups")
-    emit("── 边缘层流量（含搜索引擎爬虫，仅供参考）──────")
+    emit("── 边缘层每日明细（真实请求/威胁，主口径逐日）──")
     if not rows:
         emit("  （无数据或超出免费版可查区间）")
     else:

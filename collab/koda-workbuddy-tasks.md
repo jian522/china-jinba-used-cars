@@ -6,11 +6,7 @@
 
 ## 进行中的任务
 
-### 1. Telegram 每日发车 — 交接给 WorkBuddy（2026-11-19，待做）
-- 详见：`workbuddy-telegram-posting-handover.md`（同一目录，含完整任务说明、文案模板、已知坑）
-- 共享状态文件：`collab/telegram-posting-state.json`（已发过的车都在里面，WorkBuddy 发完要更新并 push）
-- 要点：每天 18:00 发一辆车到 4 个 Telegram 频道（主频道 @usedcarsdealer99 双语 + 英文 @JinbaUsedCars + 俄文 @KitayAvtoExport + 中文 @ZhongGuoErShouChe），从官网选下一辆没发过的车，4 张照片，文案绝不写价格数字（只写 FOB Price on Request）。优先用 Bot API（@JinbaCarsBot 是 4 个频道管理员）发，Token 向用户要、只存电脑本地、绝不进仓库；备用 Telegram Web。先手动跑通一次，再设每天 18:00 定时。
-- 跑通后在“已完成的任务”里写清：用的哪种方式、几点发的、4 个频道订阅数，并告诉用户。用户确认后 Koda 停掉云端定时任务（telegram-channel-post-every-2-days）。
+- （无。Koda 有新任务时更新这里并告诉用户。）
 
 ## 已完成的任务
 
