@@ -234,6 +234,46 @@ def footer_channels_html(lang):
             f'<div class="jb-tg-channels">{"".join(cards)}</div></div>')
 
 
+def topbar_html(lang):
+    """首页顶部电报固定条（sticky）—— 4 频道 + 投稿机器人，紧贴 <body> 之后。
+
+    深色细条：左侧 Telegram 图标 + 标题 + 一句话副标题，右侧 4 个频道小圆钮
+    （频道名 + 语言标签）与橙色投稿机器人钮。桌面端一行展示，手机端横向可滑。
+    样式在 assets/telegram.css（.jb-tg-topbar），配置缺失时安全回落。
+    """
+    if lang not in _LANGS:
+        lang = 'en'
+    fc = TG.get('footer_channels', {}) or {}
+    title = _esc(_fc_text(fc.get('title', {}), lang) or 'TELEGRAM')
+    subtitle = _esc(_fc_text(fc.get('subtitle', {}), lang))
+    bot_url = _esc(fc.get('bot_url', '')) or _esc(TG.url)
+    bot_name = _esc(_fc_text(fc.get('bot_name', {}), lang)
+                    or _fc_text(fc.get('bot_label', {}), lang)
+                    or TG.t('cta', lang))
+    bot_tag = _esc(_fc_text(fc.get('bot_tag', {}), lang))
+    links = []
+    for ch in (fc.get('channels', []) or []):
+        name = _esc(ch.get('name', ''))
+        url = _esc(ch.get('url', ''))
+        if not url or not name:
+            continue
+        tag = _esc(_fc_text(ch.get('tag', {}), lang))
+        tag_html = f'<span class="tag">{tag}</span>' if tag else ''
+        links.append(
+            f'<a {_channel_attrs(url, "topbar_channel", lang, ch.get("name", ""))}>'
+            f'{name} {tag_html}</a>')
+    bot_tag_html = f'<span class="tag">{bot_tag}</span>' if bot_tag else ''
+    links.append(
+        f'<a class="bot" {_channel_attrs(bot_url, "topbar_bot", lang, _fc_text(fc.get("bot_name", {}), lang) or "JinbaCarsBot")}>'
+        f'{bot_name} {bot_tag_html}</a>')
+    sub_html = f'<span class="jb-tg-topbar-sub">{subtitle}</span>' if subtitle else ''
+    return (f'<div class="jb-tg-topbar"><div class="jb-tg-topbar-in">'
+            f'<span class="jb-tg-topbar-label">{_SVG_TG}{title}</span>'
+            f'{sub_html}'
+            f'<span class="jb-tg-topbar-links">{"".join(links)}</span>'
+            f'</div></div>')
+
+
 def inner_topbar_link(lang):
     """内页顶栏的简短 Telegram 文字链接 <a>。"""
     return (f'<a {_link_attrs(lang, "inner_topbar")}>'
