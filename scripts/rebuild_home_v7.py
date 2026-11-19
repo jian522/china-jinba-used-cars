@@ -20,14 +20,14 @@ import shutil
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(r'D:\二手车出口网站\scripts')))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from seo_content import CAR_COPY
 from company_profile import ADDRESS, HOME, BUYER_LABEL, BUYER_PATH, organization_script
 from search_landing import resource_links, home_discovery
 from shop_catalog_links import catalog_link, model_links
 import telegram_block as _tg
 
-ROOT = Path(r'D:\二手车出口网站')
+ROOT = Path(__file__).resolve().parents[1]
 BACKUP = ROOT / '.workbuddy' / 'backup_home'
 PHOTO_AUDIT = ROOT / 'data' / 'photo-audit.json'
 DOMAIN = 'https://jinbacars.com'
@@ -748,7 +748,7 @@ def build(lang):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="/assets/jinba-home-v7.css?v=20261118m">
-<link rel="stylesheet" href="/assets/telegram.css?v=20261118">
+<link rel="stylesheet" href="/assets/telegram.css?v=20261120">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://wa.me">
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
@@ -758,6 +758,7 @@ def build(lang):
 {faq_schema}
 </head>
 <body class="jv7">
+{_tg.topbar_html(lang)}
 
 <header class="jv7-topbar">
   <div class="jv7-container jv7-topbar-in">
