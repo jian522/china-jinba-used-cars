@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-19 18:00 CST",
-    "car": "JB-11671 Li Auto L7 2025 Max Smart Upgrade, 43,000 km",
-    "result": "complete — posted to all four channels: 3 Kinba channels via Telegram Web 20:49-20:50 CST, main channel via @JinbaCarsBot sendMediaGroup 20:52:41 CST (media_group 14360742087960309, msgs 33-36). All four channels 2 subscribers.",
-    "note": "Browser had only @KinbaAutoExport logged in; main channel fallback via bot API as in previous runs. No price numbers used."
+    "attempted": "2026-11-20 18:38 CST",
+    "car": "JB-11549 AITO M7 2026 Range-Extended Max 4WD Edition, 4,700 km",
+    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU, verified on profile showing 1 min ago.",
+    "note": "last_run.attempted was 2026-11-19 (yesterday) at start, so theme-based selection used: current_theme phev-suv. JB-11661 excluded (user manually posted to Threads 2026-11-20). Clipboard backed up to 'OpenCode' and restored after."
   },
   "posted": [
+    {
+      "stock": "JB-11549",
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "mileage_km": 4700,
+      "posted_at": "2026-11-20 18:38 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU",
+      "theme": "phev-suv",
+      "note": "Posted 2026-11-20 18:38 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04). Caption 359 chars, no price numbers, FOB Price on Request. Verified on profile: post link /@jinba_usedcars/post/Df9dQzMGygU shown 1 min ago. Stock JB-11549 (site car id 660) is newest PHEV SUV not in posted/threads_posted; JB-11661 was manually posted by user and must not be re-posted."
+    },
     {
       "channels": [
         "@usedcarsdealer99",
@@ -131,7 +141,7 @@
       "note": "User manually posted JB-11661 to Threads on 2026-11-20 (confirmed 15:13 CST). WorkBuddy MUST NOT re-post this car to Threads at 18:30. The 18:00 Telegram + Facebook cron STILL posts JB-11661 (different platforms, not a duplicate)."
     }
   ],
-  "current_theme": "phev-suv",
+  "current_theme": "ev",
   "theme_order": [
     "phev-suv",
     "ev",
