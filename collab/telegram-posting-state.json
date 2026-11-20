@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-19 18:00 CST",
-    "car": "JB-11671 Li Auto L7 2025 Max Smart Upgrade, 43,000 km",
-    "result": "complete — posted to all four channels: 3 Kinba channels via Telegram Web 20:49-20:50 CST, main channel via @JinbaCarsBot sendMediaGroup 20:52:41 CST (media_group 14360742087960309, msgs 33-36). All four channels 2 subscribers.",
-    "note": "Browser had only @KinbaAutoExport logged in; main channel fallback via bot API as in previous runs. No price numbers used."
+    "attempted": "2026-11-20 11:58 CST",
+    "car": "JB-11661 Li Auto L6 2024 Pro, 6,000 km",
+    "result": "complete — posted to Threads @jinba_usedcars with 4 photos, post Df8wiboG2Tf",
+    "note": "Theme phev-suv. Dedup against posted list (JB-11681/11671 already posted) -> picked JB-11661 latest unposted in theme. No price numbers used."
   },
   "posted": [
+    {
+      "stock": "JB-11661",
+      "model": "Li Auto L6 2024 Pro",
+      "mileage_km": 6000,
+      "posted_at": "2026-11-20 11:58 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df8wiboG2Tf",
+      "theme": "phev-suv",
+      "note": "First Threads test post. 4 photos (primary+photo-02/03/04 -> JPG) via clipboard paste; caption 332 chars, no price numbers. Posted to @jinba_usedcars only."
+    },
     {
       "channels": [
         "@usedcarsdealer99",
@@ -121,7 +131,7 @@
       "stock": "JB-10848"
     }
   ],
-  "current_theme": "phev-suv",
+  "current_theme": "ev",
   "theme_order": [
     "phev-suv",
     "ev",
