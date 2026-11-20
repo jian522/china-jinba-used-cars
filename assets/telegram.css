@@ -258,110 +258,10 @@ a.jb-tg-card-btn.jb-tg-card-btn {
   grid-row: 2 / 4;
 }
 
-/* ---------- 页脚 TELEGRAM 频道列：卡片式（2026-11-19） ----------
-   首页 foot_cols 与内页 footer 共用（telegram_block.footer_channels_html）。
-   深色页脚上的半透明卡片：图标圆章 + 频道名 + @handle + 语言标签；
-   投稿机器人用品牌橙强调。桌面端列内纵向排列，手机端通栏可点。 */
-.jb-tg-col h4 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 4px;
-  font-size: 14px;
-  letter-spacing: .08em;
-  color: #fff;
-}
-.jb-tg-col-sub {
-  margin: 0 0 12px;
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, .55);
-}
-.jb-tg-channels {
-  display: grid;
-  gap: 8px;
-}
-a.jb-tg-ch {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 52px;
-  padding: 9px 12px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, .045);
-  border: 1px solid rgba(255, 255, 255, .09);
-  text-decoration: none;
-  transition: background .16s ease, border-color .16s ease, transform .16s ease;
-}
-a.jb-tg-ch:hover {
-  background: rgba(34, 158, 217, .14);
-  border-color: rgba(34, 158, 217, .45);
-  transform: translateY(-1px);
-}
-a.jb-tg-ch:active { transform: translateY(0) scale(.99); }
-.jb-tg-ch-ic {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #229ed9;
-  color: #fff;
-}
-.jb-tg-ch-ic .jb-tg-icon { width: 17px; height: 17px; }
-.jb-tg-ch-tx {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: grid;
-  gap: 2px;
-}
-.jb-tg-ch-name {
-  font-size: 13.5px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.jb-tg-ch-handle {
-  font-size: 11.5px;
-  line-height: 1.3;
-  color: rgba(255, 255, 255, .55);
-  font-family: ui-monospace, 'JetBrains Mono', Consolas, monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.jb-tg-ch-tag {
-  flex: none;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: rgba(34, 158, 217, .16);
-  color: #7cc7ec;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.4;
-  white-space: nowrap;
-}
-/* 投稿机器人：品牌橙强调 */
-a.jb-tg-ch-bot {
-  background: rgba(255, 107, 44, .10);
-  border-color: rgba(255, 107, 44, .35);
-}
-a.jb-tg-ch-bot:hover {
-  background: rgba(255, 107, 44, .18);
-  border-color: rgba(255, 107, 44, .55);
-}
-a.jb-tg-ch-bot .jb-tg-ch-ic { background: #ff6b2c; }
-a.jb-tg-ch-bot .jb-tg-ch-tag { background: rgba(255, 107, 44, .18); color: #ffb08a; }
-
 /* ---------- 无障碍：键盘焦点 ---------- */
 a.jb-tg-btn:focus-visible,
 a.jb-tg-footlink:focus-visible,
-a.jb-tg-card-btn:focus-visible,
-a.jb-tg-ch:focus-visible {
+a.jb-tg-card-btn:focus-visible {
   outline: 3px solid #ff6b2c;
   outline-offset: 3px;
 }
@@ -377,10 +277,6 @@ a.jb-tg-ch:focus-visible {
   .jb-tg-handle { display: block; margin: 12px 0 0; }
   .jb-tg-footstrip { padding: 18px; gap: 16px; }
   .jb-tg-qr img { width: 108px; height: 108px; }
-  /* 页脚频道卡片：手机端通栏、加大点按区 */
-  a.jb-tg-ch { min-height: 56px; padding: 11px 14px; }
-  .jb-tg-ch-name { font-size: 14px; }
-  .jb-tg-ch-ic { width: 36px; height: 36px; }
 }
 
 /* ---------- RTL（ar）---------- */
@@ -391,45 +287,3 @@ a.jb-tg-ch:focus-visible {
 }
 [dir='rtl'] .jb-tg-handle { margin-inline-start: 0; margin-inline-end: 16px; }
 [dir='rtl'] .jb-tg-inner-btn.jb-tg-inner-btn { justify-self: start; }
-[dir='rtl'] a.jb-tg-ch { direction: rtl; }
-[dir='rtl'] .jb-tg-ch-handle { direction: ltr; unicode-bidi: plaintext; }
-
-/* ---------- 首页顶部电报固定条（sticky，2026-11-19） ---------- */
-.jb-tg-topbar {
-  position: sticky; top: 0; z-index: 1000;
-  background: #0a1628;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.jb-tg-topbar-in {
-  max-width: 1280px; margin: 0 auto; padding: 0 20px;
-  min-height: 44px; display: flex; align-items: center; gap: 14px;
-}
-.jb-tg-topbar-label {
-  display: flex; align-items: center; gap: 7px; flex: none;
-  color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em; white-space: nowrap;
-}
-.jb-tg-topbar-label svg { width: 17px; height: 17px; flex: none; }
-.jb-tg-topbar-sub { color: rgba(255,255,255,.55); font-size: 12px; white-space: nowrap; }
-.jb-tg-topbar-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
-.jb-tg-topbar-links a {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 11px; border-radius: 999px;
-  background: rgba(34,158,217,.16); border: 1px solid rgba(34,158,217,.45);
-  color: #bfe6f7; font-size: 12.5px; line-height: 1.3; white-space: nowrap;
-}
-.jb-tg-topbar-links a:hover { background: rgba(34,158,217,.32); color: #fff; }
-.jb-tg-topbar-links a .tag {
-  font-size: 10.5px; padding: 1px 6px; border-radius: 999px;
-  background: rgba(255,255,255,.14); color: rgba(255,255,255,.75);
-}
-.jb-tg-topbar-links a.bot {
-  background: #ff6b2c; border-color: #ff6b2c; color: #fff; font-weight: 700;
-}
-.jb-tg-topbar-links a.bot .tag { background: rgba(255,255,255,.22); color: #fff; }
-[dir='rtl'] .jb-tg-topbar-links a { direction: rtl; }
-@media (max-width: 760px) {
-  .jb-tg-topbar-sub { display: none; }
-  .jb-tg-topbar-in { gap: 10px; padding: 0 12px; overflow-x: auto; scrollbar-width: none; }
-  .jb-tg-topbar-in::-webkit-scrollbar { display: none; }
-  .jb-tg-topbar-links { flex-wrap: nowrap; }
-}

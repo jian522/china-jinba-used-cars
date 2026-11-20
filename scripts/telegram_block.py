@@ -8,9 +8,7 @@
   TG                       已解析的配置 dict（含 _cfg 原始对象）
   banner_html(lang)        首页显著位置的引流 section（jv7 风格）
   footer_card_html(lang)   首页页脚的频道卡片（jv7 风格）
-  footer_channels_html(lang) 页脚 TELEGRAM 频道列 —— 卡片式（首页 foot_cols 与内页 footer 共用）
   inner_footer_html(lang)  内页页脚的频道条目（design-system 风格，纯 <li>）
-  inner_footer_channels(lang) 内页页脚的 TELEGRAM 频道列（委托给 footer_channels_html，卡片式）
   inner_topbar_link(lang)  内页顶栏的简短 Telegram 链接 <a>
   track_attrs(placement)   点击追踪 + 新标签页 + 无障碍的统一属性串
 
@@ -169,111 +167,6 @@ def footer_card_html(lang):
             f'{qr_html}</div>')
 
 
-def _fc_text(field, lang, fallback_lang='en'):
-    """取 footer_channels 里某字段的某语言文案（dict 或纯字符串）。"""
-    if isinstance(field, dict):
-        return field.get(lang) or field.get(fallback_lang, '')
-    return str(field) if field else ''
-
-
-def _channel_attrs(url, placement, lang, label):
-    """频道/机器人卡片的外链属性：新标签页 + 追踪 + 以频道名作无障碍标注。"""
-    if lang not in _LANGS:
-        lang = 'en'
-    suffix = {
-        'en': ' (opens in a new tab)', 'zh': '（在新标签页打开）',
-        'ru': ' (откроется в новой вкладке)', 'ar': ' (يفتح في علامة تبويب جديدة)',
-    }.get(lang, '')
-    return (f'href="{_esc(url)}" target="_blank" rel="noopener noreferrer" '
-            f'data-track="{_esc(TG.event)}" data-placement="{_esc(placement)}" '
-            f'data-lang="{_esc(lang)}" aria-label="{_esc(label)}{_esc(suffix)}"')
-
-
-def footer_channels_html(lang):
-    """页脚 TELEGRAM 频道列 —— 卡片式（首页 foot_cols 与内页 footer 共用）。
-
-    4 个频道 + 投稿机器人，每张卡片含 Telegram 图标、频道名、@handle 与语言标签；
-    机器人卡片用品牌橙强调。桌面端为页脚列内纵向卡片，手机端整列堆叠、卡片通栏可点。
-    配置缺失时安全回落，绝不因为配置问题让构建脚本崩溃。
-    """
-    if lang not in _LANGS:
-        lang = 'en'
-    fc = TG.get('footer_channels', {}) or {}
-    title = _esc(_fc_text(fc.get('title', {}), lang) or 'TELEGRAM')
-    subtitle = _esc(_fc_text(fc.get('subtitle', {}), lang))
-    bot_url = _esc(fc.get('bot_url', '')) or _esc(TG.url)
-    bot_name = _esc(_fc_text(fc.get('bot_name', {}), lang)
-                    or _fc_text(fc.get('bot_label', {}), lang)
-                    or TG.t('cta', lang))
-    bot_handle = _esc(fc.get('bot_handle', ''))
-    bot_tag = _esc(_fc_text(fc.get('bot_tag', {}), lang))
-    cards = []
-    for ch in (fc.get('channels', []) or []):
-        name = _esc(ch.get('name', ''))
-        url = _esc(ch.get('url', ''))
-        if not url or not name:
-            continue
-        handle = _esc(ch.get('handle', ''))
-        tag = _esc(_fc_text(ch.get('tag', {}), lang))
-        handle_html = f'<span class="jb-tg-ch-handle">{handle}</span>' if handle else ''
-        tag_html = f'<span class="jb-tg-ch-tag">{tag}</span>' if tag else ''
-        cards.append(
-            f'<a class="jb-tg-ch" {_channel_attrs(url, "footer_channel", lang, ch.get("name", ""))}>'
-            f'<span class="jb-tg-ch-ic">{_SVG_TG}</span>'
-            f'<span class="jb-tg-ch-tx"><span class="jb-tg-ch-name">{name}</span>{handle_html}</span>'
-            f'{tag_html}</a>')
-    bot_handle_html = f'<span class="jb-tg-ch-handle">{bot_handle}</span>' if bot_handle else ''
-    bot_tag_html = f'<span class="jb-tg-ch-tag">{bot_tag}</span>' if bot_tag else ''
-    cards.append(
-        f'<a class="jb-tg-ch jb-tg-ch-bot" {_channel_attrs(bot_url, "footer_bot", lang, _fc_text(fc.get("bot_name", {}), lang) or "JinbaCarsBot")}>'
-        f'<span class="jb-tg-ch-ic">{_SVG_TG}</span>'
-        f'<span class="jb-tg-ch-tx"><span class="jb-tg-ch-name">{bot_name}</span>{bot_handle_html}</span>'
-        f'{bot_tag_html}</a>')
-    sub_html = f'<p class="jb-tg-col-sub">{subtitle}</p>' if subtitle else ''
-    return (f'<div class="jv7-footcol jb-tg-col"><h4>{title}</h4>{sub_html}'
-            f'<div class="jb-tg-channels">{"".join(cards)}</div></div>')
-
-
-def topbar_html(lang):
-    """首页顶部电报固定条（sticky）—— 4 频道 + 投稿机器人，紧贴 <body> 之后。
-
-    深色细条：左侧 Telegram 图标 + 标题 + 一句话副标题，右侧 4 个频道小圆钮
-    （频道名 + 语言标签）与橙色投稿机器人钮。桌面端一行展示，手机端横向可滑。
-    样式在 assets/telegram.css（.jb-tg-topbar），配置缺失时安全回落。
-    """
-    if lang not in _LANGS:
-        lang = 'en'
-    fc = TG.get('footer_channels', {}) or {}
-    title = _esc(_fc_text(fc.get('title', {}), lang) or 'TELEGRAM')
-    subtitle = _esc(_fc_text(fc.get('subtitle', {}), lang))
-    bot_url = _esc(fc.get('bot_url', '')) or _esc(TG.url)
-    bot_name = _esc(_fc_text(fc.get('bot_name', {}), lang)
-                    or _fc_text(fc.get('bot_label', {}), lang)
-                    or TG.t('cta', lang))
-    bot_tag = _esc(_fc_text(fc.get('bot_tag', {}), lang))
-    links = []
-    for ch in (fc.get('channels', []) or []):
-        name = _esc(ch.get('name', ''))
-        url = _esc(ch.get('url', ''))
-        if not url or not name:
-            continue
-        tag = _esc(_fc_text(ch.get('tag', {}), lang))
-        tag_html = f'<span class="tag">{tag}</span>' if tag else ''
-        links.append(
-            f'<a {_channel_attrs(url, "topbar_channel", lang, ch.get("name", ""))}>'
-            f'{name} {tag_html}</a>')
-    bot_tag_html = f'<span class="tag">{bot_tag}</span>' if bot_tag else ''
-    links.append(
-        f'<a class="bot" {_channel_attrs(bot_url, "topbar_bot", lang, _fc_text(fc.get("bot_name", {}), lang) or "JinbaCarsBot")}>'
-        f'{bot_name} {bot_tag_html}</a>')
-    sub_html = f'<span class="jb-tg-topbar-sub">{subtitle}</span>' if subtitle else ''
-    return (f'<div class="jb-tg-topbar"><div class="jb-tg-topbar-in">'
-            f'<span class="jb-tg-topbar-label">{_SVG_TG}{title}</span>'
-            f'{sub_html}'
-            f'<span class="jb-tg-topbar-links">{"".join(links)}</span>'
-            f'</div></div>')
-
-
 def inner_topbar_link(lang):
     """内页顶栏的简短 Telegram 文字链接 <a>。"""
     return (f'<a {_link_attrs(lang, "inner_topbar")}>'
@@ -287,12 +180,26 @@ def inner_footer_link(lang):
 
 
 def inner_footer_channels(lang):
-    """内页页脚的 TELEGRAM 频道列（4 频道 + 投稿 Bot）—— 卡片式，与首页同款。
+    """内页页脚的 TELEGRAM 频道列（4 频道 + 投稿 Bot）—— design-system 风格 <div>。
 
-    委托给 footer_channels_html，内容与首页 foot_cols 的 TELEGRAM 列完全一致。
+    与首页 foot_cols 的 TELEGRAM 列同内容：频道链接四语共用，仅列标题与机器人行文案按语言区分。
     作为 .footergrid 的第 5 列插入（共用模板 footer() 里只写一次）。
     """
-    return footer_channels_html(lang)
+    if lang not in _LANGS:
+        lang = 'en'
+    fc = TG.get('footer_channels', {}) or {}
+    title = _esc((fc.get('title', {}) or {}).get(lang, 'TELEGRAM'))
+    label = _esc((fc.get('bot_label', {}) or {}).get(lang, '')) or _esc(TG.t('cta', lang))
+    bot_url = _esc(fc.get('bot_url', '')) or _esc(TG.url)
+    links = []
+    for ch in (fc.get('channels', []) or []):
+        name = _esc(ch.get('name', ''))
+        url = _esc(ch.get('url', ''))
+        if not url:
+            continue
+        links.append(f'<a href="{url}" {track_attrs("inner_footer_channel", lang)}>{name}</a>')
+    links.append(f'<a href="{bot_url}" {track_attrs("inner_footer_bot", lang)}>{label}</a>')
+    return f'<div><h4>{title}</h4>{"".join(links)}</div>'
 
 
 def inner_footer_cta(lang):
