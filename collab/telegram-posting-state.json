@@ -1,31 +1,11 @@
 {
   "last_run": {
-    "attempted": "2026-11-20 14:39 CST",
-    "car": "JB-11650 BYD Han 2022 EV Edition 610KM 4WD Premium, 40,000 km",
-    "result": "complete — posted to Threads @jinba_usedcars with 4 photos, post Df9CIWvG9BX",
-    "note": "Theme ev. Different body type from prior post (sedan vs SUV). No price numbers used."
+    "attempted": "2026-11-19 18:00 CST",
+    "car": "JB-11671 Li Auto L7 2025 Max Smart Upgrade, 43,000 km",
+    "result": "complete — posted to all four channels: 3 Kinba channels via Telegram Web 20:49-20:50 CST, main channel via @JinbaCarsBot sendMediaGroup 20:52:41 CST (media_group 14360742087960309, msgs 33-36). All four channels 2 subscribers.",
+    "note": "Browser had only @KinbaAutoExport logged in; main channel fallback via bot API as in previous runs. No price numbers used."
   },
   "posted": [
-    {
-      "stock": "JB-11650",
-      "model": "BYD Han 2022 EV Edition 610KM 4WD Premium",
-      "mileage_km": 40000,
-      "posted_at": "2026-11-20 14:39 CST",
-      "platform": "threads",
-      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9CIWvG9BX",
-      "theme": "ev",
-      "note": "Second Threads post same day, different body type (sedan vs previous SUV). 4 photos primary+photo-02/03/04 -> JPG via clipboard paste; caption 332 chars, no price numbers. Posted to @jinba_usedcars only."
-    },
-    {
-      "stock": "JB-11661",
-      "model": "Li Auto L6 2024 Pro",
-      "mileage_km": 6000,
-      "posted_at": "2026-11-20 11:58 CST",
-      "platform": "threads",
-      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df8wiboG2Tf",
-      "theme": "phev-suv",
-      "note": "First Threads test post. 4 photos (primary+photo-02/03/04 -> JPG) via clipboard paste; caption 332 chars, no price numbers. Posted to @jinba_usedcars only."
-    },
     {
       "channels": [
         "@usedcarsdealer99",
@@ -141,7 +121,17 @@
       "stock": "JB-10848"
     }
   ],
-  "current_theme": "petrol-suv",
+  "threads_posted": [
+    {
+      "stock": "JB-11661",
+      "model": "Li Auto L6 2024 Pro",
+      "mileage_km": 6000,
+      "posted_at": "2026-11-20 afternoon CST",
+      "posted_by": "user manually to Threads @jinba_usedcars",
+      "note": "User manually posted JB-11661 to Threads on 2026-11-20 (confirmed 15:13 CST). WorkBuddy MUST NOT re-post this car to Threads at 18:30. The 18:00 Telegram + Facebook cron STILL posts JB-11661 (different platforms, not a duplicate)."
+    }
+  ],
+  "current_theme": "phev-suv",
   "theme_order": [
     "phev-suv",
     "ev",
