@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-20 11:58 CST",
-    "car": "JB-11661 Li Auto L6 2024 Pro, 6,000 km",
-    "result": "complete — posted to Threads @jinba_usedcars with 4 photos, post Df8wiboG2Tf",
-    "note": "Theme phev-suv. Dedup against posted list (JB-11681/11671 already posted) -> picked JB-11661 latest unposted in theme. No price numbers used."
+    "attempted": "2026-11-20 14:39 CST",
+    "car": "JB-11650 BYD Han 2022 EV Edition 610KM 4WD Premium, 40,000 km",
+    "result": "complete — posted to Threads @jinba_usedcars with 4 photos, post Df9CIWvG9BX",
+    "note": "Theme ev. Different body type from prior post (sedan vs SUV). No price numbers used."
   },
   "posted": [
+    {
+      "stock": "JB-11650",
+      "model": "BYD Han 2022 EV Edition 610KM 4WD Premium",
+      "mileage_km": 40000,
+      "posted_at": "2026-11-20 14:39 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9CIWvG9BX",
+      "theme": "ev",
+      "note": "Second Threads post same day, different body type (sedan vs previous SUV). 4 photos primary+photo-02/03/04 -> JPG via clipboard paste; caption 332 chars, no price numbers. Posted to @jinba_usedcars only."
+    },
     {
       "stock": "JB-11661",
       "model": "Li Auto L6 2024 Pro",
@@ -131,7 +141,7 @@
       "stock": "JB-10848"
     }
   ],
-  "current_theme": "ev",
+  "current_theme": "petrol-suv",
   "theme_order": [
     "phev-suv",
     "ev",
