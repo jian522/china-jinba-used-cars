@@ -1,0 +1,132 @@
+{
+  "last_run": {
+    "attempted": "2026-11-19 18:00 CST",
+    "car": "JB-11671 Li Auto L7 2025 Max Smart Upgrade, 43,000 km",
+    "result": "complete — posted to all four channels: 3 Kinba channels via Telegram Web 20:49-20:50 CST, main channel via @JinbaCarsBot sendMediaGroup 20:52:41 CST (media_group 14360742087960309, msgs 33-36). All four channels 2 subscribers.",
+    "note": "Browser had only @KinbaAutoExport logged in; main channel fallback via bot API as in previous runs. No price numbers used."
+  },
+  "posted": [
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 43000,
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "note": "Posted 2026-11-19 20:49:16-20:50:52 CST to the three @KinbaAutoExport channels via Telegram Web (@KinbaAutoExport login); main channel @usedcarsdealer99 posted 2026-11-19 20:52:41 CST via @JinbaCarsBot sendMediaGroup (Telegram Web had no @ChinaUsedCarExpert login). Media group 14360742087960309, message_ids 33-36. Subscriber counts 2026-11-19 20:49-20:52: all four channels 2 subscribers. No price numbers used.",
+      "posted_at": "2026-11-19 20:49-20:52 CST",
+      "stock": "JB-11671"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-18 18:25-18:26 CST to the three @KinbaAutoExport channels; main channel @usedcarsdealer99 posted 2026-11-18 19:35 CST via @JinbaCarsBot sendMediaGroup (Telegram Web K blank + A client lacks @ChinaUsedCarExpert login). Media group 14360014021295045, first message_id 16.",
+      "posted_at": "2026-11-18 18:25-18:26 CST (3 Kinba channels) + 19:35 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-11681"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 71000,
+      "model": "Great Wall Poer 2021 2.0T Commercial Automatic Diesel 4WD Long Bed GW4D20M",
+      "posted_at": "2026-11-18 16:31-16:38 CST",
+      "stock": "JB-11611"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 26000,
+      "model": "Geely Monjaro 2024 2.0TD Automatic 2WD Edition",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10889"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 40000,
+      "model": "Geely Boyue L 2023 1.5TD DCT Premium",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10879"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4000,
+      "model": "Chery Tiggo 8 PLUS 2025 290TGDI DCT Premium",
+      "note": "Completed 2026-11-14 15:18: main channel posted 2026-11-12 23:17 CST; the other three posted 2026-11-14 15:18 after user re-logged in @KinbaAutoExport via QR.",
+      "posted_at": "2026-11-14 15:18 CST",
+      "stock": "JB-10869"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 38000,
+      "model": "Chery Tiggo 7 PLUS 2023 1.5TCI CVT Edition",
+      "note": "Posted 2026-11-14 15:18:50-15:19:18 to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162933791701, message_ids 20-23).",
+      "posted_at": "2026-11-14 15:19 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10859"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162999011533, message_ids 24-27).",
+      "posted_at": "2026-11-16 11:09 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10858"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 21000,
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360163056228013, message_ids 28-31). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
+      "posted_at": "2026-11-16 19:43 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10848"
+    }
+  ],
+  "current_theme": "phev-suv",
+  "theme_order": [
+    "phev-suv",
+    "ev",
+    "petrol-suv",
+    "pickup-offroad",
+    "sedan"
+  ]
+}
