@@ -1,20 +1,56 @@
 {
   "last_run": {
-    "attempted": "2026-11-20 18:38 CST",
-    "car": "JB-11549 AITO M7 2026 Range-Extended Max 4WD Edition, 4,700 km",
-    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU, verified on profile showing 1 min ago.",
-    "note": "last_run.attempted was 2026-11-19 (yesterday) at start, so theme-based selection used: current_theme phev-suv. JB-11661 excluded (user manually posted to Threads 2026-11-20). Clipboard backed up to 'OpenCode' and restored after."
+    "attempted": "2026-11-21 18:00 CST",
+    "car": "JB-11529 Li Auto L6 2024 Max, 27,000 km",
+    "result": "Telegram COMPLETE — posted to all four channels via @JinbaCarsBot sendMediaGroup (main msgs 41-44, EN msgs 39-42, RU msgs 39-42, ZH msgs 40-43). All four channels 2 subscribers. Facebook PUBLISHED — facebook-cli pages posts create to Page 'Second-hand Car Pro Used Cars' (1258682224003993) succeeded, state published, post_id 122134967703480929, https://facebook.com/61594427891646/posts/pfbid02UwZy1C8U7aGLXwbg7mfsukXe4U3dSzfgxC6hXc9Tx7wzMmCm61oTHRvpJNQSbgDdl/ (approval approved). First successful Facebook cross-post via the Page route — the Nov 20 personal-profile failure is bypassed.",
+    "note": "Car chosen by user decision 2026-11-21 17:19 (JB-11549 and JB-11539 skipped for Telegram). Theme phev-suv. No price numbers used. TONIGHT 18:30 Threads post MUST be JB-11529 (same car as today's Telegram post). JB-11549 already on Threads since 2026-11-20 18:38 - do NOT re-post. JB-11539 is a duplicate of JB-11671 - do NOT post. Browser route not attempted: bot API is the proven reliable route."
   },
   "posted": [
+    {
+      "stock": "JB-11529",
+      "model": "Li Auto L6 2024 Max",
+      "mileage_km": 27000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-21 18:02 CST",
+      "note": "Posted 2026-11-21 ~18:02 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14362042300710709 (msgs 41-44), EN 14362042308700565 (msgs 39-42), RU 14362042316605973 (msgs 39-42), ZH 14362042324390949 (msgs 40-43). Theme phev-suv with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122134967703480929. No price numbers used."
+    },
     {
       "stock": "JB-11549",
       "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
       "mileage_km": 4700,
+      "status": "skipped-telegram-only",
+      "channels": [],
       "posted_at": "2026-11-20 18:38 CST",
+      "note": "Posted to Threads @jinba_usedcars 2026-11-20 18:38 CST by WorkBuddy (post https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU). SKIPPED for Telegram by user decision 2026-11-21 17:19 (third identical AITO M7 2026, 4,700 km in 5 days). Do NOT post to Telegram. Do NOT re-post to Threads.",
       "platform": "threads",
-      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU",
-      "theme": "phev-suv",
-      "note": "Posted 2026-11-20 18:38 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04). Caption 359 chars, no price numbers, FOB Price on Request. Verified on profile: post link /@jinba_usedcars/post/Df9dQzMGygU shown 1 min ago. Stock JB-11549 (site car id 660) is newest PHEV SUV not in posted/threads_posted; JB-11661 was manually posted by user and must not be re-posted."
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU"
+    },
+    {
+      "stock": "JB-11539",
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "mileage_km": 43000,
+      "status": "skipped",
+      "channels": [],
+      "posted_at": null,
+      "note": "SKIPPED 2026-11-21 - NOT actually posted. Same spec as JB-11671 (Li Auto L7 2025 Max, 43,000 km) posted Nov 19; would be a duplicate. Listed here only so the picker excludes it. Do NOT post."
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 6000,
+      "model": "Li Auto L6 2024 Pro",
+      "note": "Posted 2026-11-20 21:04:09-21:04:23 CST to all four channels via @JinbaCarsBot sendMediaGroup (browser route blocked: web.telegram.org approval timed out in detached run). Media groups: main 14361438797475005 (msgs 37-40), EN 14361438845608189 (msgs 35-38), RU 14361438894567141 (msgs 35-38), ZH 14361438904313941 (msgs 36-39). Theme phev-suv with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook NOT published: facebook-cli post create connector_feature_unavailable (terminal for this attempt). No price numbers used.",
+      "posted_at": "2026-11-20 21:04:09-21:04:23 CST",
+      "stock": "JB-11661"
     },
     {
       "channels": [
@@ -139,14 +175,35 @@
       "posted_at": "2026-11-20 afternoon CST",
       "posted_by": "user manually to Threads @jinba_usedcars",
       "note": "User manually posted JB-11661 to Threads on 2026-11-20 (confirmed 15:13 CST). WorkBuddy MUST NOT re-post this car to Threads at 18:30. The 18:00 Telegram + Facebook cron STILL posts JB-11661 (different platforms, not a duplicate)."
+    },
+    {
+      "stock": "JB-11549",
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "mileage_km": 4700,
+      "posted_at": "2026-11-20 18:38 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU",
+      "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
     }
   ],
-  "current_theme": "ev",
+  "current_theme": "phev-suv",
   "theme_order": [
     "phev-suv",
     "ev",
     "petrol-suv",
     "pickup-offroad",
     "sedan"
+  ],
+  "skipped": [
+    {
+      "stock": "JB-11549",
+      "reason": "User decision 2026-11-21 17:19: third identical AITO M7 2026, 4,700 km in 5 days",
+      "skipped_at": "2026-11-21 17:19 CST"
+    },
+    {
+      "stock": "JB-11539",
+      "reason": "Same spec as JB-11671 posted Nov 19 (Li Auto L7 2025 Max, 43,000 km); would be a duplicate",
+      "skipped_at": "2026-11-21 17:19 CST"
+    }
   ]
 }
