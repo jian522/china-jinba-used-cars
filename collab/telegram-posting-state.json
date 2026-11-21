@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-21 18:00 CST",
+    "attempted": "2026-11-21 18:41 CST",
     "car": "JB-11529 Li Auto L6 2024 Max, 27,000 km",
-    "result": "Telegram COMPLETE — posted to all four channels via @JinbaCarsBot sendMediaGroup (main msgs 41-44, EN msgs 39-42, RU msgs 39-42, ZH msgs 40-43). All four channels 2 subscribers. Facebook PUBLISHED — facebook-cli pages posts create to Page 'Second-hand Car Pro Used Cars' (1258682224003993) succeeded, state published, post_id 122134967703480929, https://facebook.com/61594427891646/posts/pfbid02UwZy1C8U7aGLXwbg7mfsukXe4U3dSzfgxC6hXc9Tx7wzMmCm61oTHRvpJNQSbgDdl/ (approval approved). First successful Facebook cross-post via the Page route — the Nov 20 personal-profile failure is bypassed.",
-    "note": "Car chosen by user decision 2026-11-21 17:19 (JB-11549 and JB-11539 skipped for Telegram). Theme phev-suv. No price numbers used. TONIGHT 18:30 Threads post MUST be JB-11529 (same car as today's Telegram post). JB-11549 already on Threads since 2026-11-20 18:38 - do NOT re-post. JB-11539 is a duplicate of JB-11671 - do NOT post. Browser route not attempted: bot API is the proven reliable route."
+    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ, verified on profile showing 1 min ago, first photo = vehicle front.",
+    "note": "last_run.attempted was 2026-11-21 18:00 CST (today) at start, so per rule posted last_run.car = JB-11529 (same car as Koda 18:00 Telegram post). Clipboard backed up (732 chars, 金鱼塘 draft) and restored after. current_theme rotated phev-suv->ev."
   },
   "posted": [
+    {
+      "stock": "JB-11529",
+      "model": "Li Auto L6 2024 Max",
+      "mileage_km": 27000,
+      "posted_at": "2026-11-21 18:41 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ",
+      "theme": "phev-suv",
+      "note": "Posted 2026-11-21 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 349 chars, no price numbers, FOB Price on Request. Same car as today 18:00 Telegram/Facebook post (Koda). Verified on profile: post shown 1 min ago, link /@jinba_usedcars/post/DgACoRlGEoJ. Theme phev-suv per last_run decision; current_theme rotated phev-suv->ev."
+    },
     {
       "stock": "JB-11529",
       "model": "Li Auto L6 2024 Max",
@@ -186,7 +196,7 @@
       "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
     }
   ],
-  "current_theme": "phev-suv",
+  "current_theme": "ev",
   "theme_order": [
     "phev-suv",
     "ev",
