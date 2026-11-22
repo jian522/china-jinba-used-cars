@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-21 18:41 CST",
-    "car": "JB-11529 Li Auto L6 2024 Max, 27,000 km",
-    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ, verified on profile showing 1 min ago, first photo = vehicle front.",
-    "note": "last_run.attempted was 2026-11-21 18:00 CST (today) at start, so per rule posted last_run.car = JB-11529 (same car as Koda 18:00 Telegram post). Clipboard backed up (732 chars, 金鱼塘 draft) and restored after. current_theme rotated phev-suv->ev."
+    "attempted": "2026-11-22 19:01 CST",
+    "car": "JB-11774 BYD Han 2022 EV Edition 610KM 4WD Premium, 40,000 km",
+    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgCpJ94G4hx, verified on profile and detail page showing 1 min ago, 4 photos + full caption.",
+    "note": "last_run.attempted was 2026-11-21 18:41 CST (yesterday) at start, so per rule used theme-rotation: current_theme=ev, picked newest EV not in posted/threads_posted/skipped = JB-11774 (site id 688). Today's 4 new listings were all PHEV, no EV. Clash core had vanished (0 procs / no 7890 listener) at browser load; restarted via start_clash_core.py. Clipboard backed up (717 chars Google OAuth URL) and restored. current_theme rotated ev->petrol-suv."
   },
   "posted": [
+    {
+      "stock": "JB-11774",
+      "model": "BYD Han 2022 EV Edition 610KM 4WD Premium",
+      "mileage_km": 40000,
+      "posted_at": "2026-11-22 19:00 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgCpJ94G4hx",
+      "theme": "ev",
+      "note": "Posted 2026-11-22 19:00 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 320 chars, no price numbers, FOB Price on Request. Same car theme ev per rotation (last_run.attempted was yesterday). Verified on profile + detail page: post shown 1 min ago, 4 photos, full caption. current_theme rotated ev->petrol-suv."
+    },
     {
       "stock": "JB-11529",
       "model": "Li Auto L6 2024 Max",
@@ -196,7 +206,7 @@
       "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
     }
   ],
-  "current_theme": "ev",
+  "current_theme": "petrol-suv",
   "theme_order": [
     "phev-suv",
     "ev",
