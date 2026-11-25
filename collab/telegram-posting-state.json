@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-23 18:40 CST",
-    "car": "JB-11723 Haval Dargo PLUS 2026 Hi4 150km Trend Edition, 2,000 km",
-    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgFL7yBG76F, verified on profile showing 1 min ago, 4 photos + full caption.",
-    "note": "last_run.attempted was 2026-11-22 19:01 CST (yesterday) at start, so per rule used theme-rotation: current_theme=petrol-suv, picked newest Petrol SUV not in posted/threads_posted/skipped = JB-11723 (site id 682, 2026 Haval Dargo PLUS Hi4 150km Trend Edition, 2,000 km, Fuel=Petrol). Clash core had vanished at start (0 procs/no 7890), restarted via start_clash_core.py. Clipboard backed up (17 chars) and restored. current_theme rotated petrol-suv->pickup-offroad."
+    "attempted": "2026-11-25 18:39 CST",
+    "car": "JB-11898 Great Wall Poer 2019 2.0T Automatic Petrol 4WD Edition GW4C20B, 20,000 km",
+    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgKVU9oG480, verified on profile (after refresh) showing 1 min ago, 4 photos + full caption.",
+    "note": "last_run.attempted was 2026-11-23 18:40 CST (not today), so per rule used theme-rotation: current_theme=pickup-offroad, picked newest pickup-offroad car not in posted/threads_posted/skipped = JB-11898 (site id 704, 2019 Great Wall Poer 2.0T Petrol 4WD, 20,000 km). Today 4 new cars (706-708 etc) are all EV, no pickup-offroad; 701-704 now deployed and verified. Clash core had vanished at start, restarted via start_clash_core.py. Clipboard backed up (5 chars '92128') and restored. current_theme rotated pickup-offroad->sedan."
   },
   "posted": [
+    {
+      "stock": "JB-11898",
+      "model": "Great Wall Poer 2019 2.0T Automatic Petrol 4WD Edition GW4C20B",
+      "mileage_km": 20000,
+      "posted_at": "2026-11-25 18:39 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgKVU9oG480",
+      "theme": "pickup-offroad",
+      "note": "Posted 2026-11-25 18:39 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 341 chars, no price numbers, FOB Price on Request. Theme pickup-offroad per rotation (last_run.attempted was 2026-11-23, not today). Site id 704. Picked newest pickup-offroad car not in posted/threads_posted/skipped. 701-704 now deployed (verified detail page + webp RIFF header), unlike 2026-11-24 when they were not yet live. Same car selected 11-24 but blocked then by Chrome login (only Edge available); today Chrome extension browser 2 logged in. Verified on profile after refresh: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgKVU9oG480. current_theme rotated pickup-offroad->sedan."
+    },
     {
       "stock": "JB-11723",
       "model": "Haval Dargo PLUS 2026 Hi4 150km Trend Edition",
@@ -216,7 +226,7 @@
       "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
     }
   ],
-  "current_theme": "pickup-offroad",
+  "current_theme": "sedan",
   "theme_order": [
     "phev-suv",
     "ev",
