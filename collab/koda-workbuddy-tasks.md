@@ -6,7 +6,21 @@
 
 ## 进行中的任务
 
-- （无。Koda 有新任务时更新这里并告诉用户。）
+### 3. Threads 补发 4 台车（2026-11-26 新增，Koda 核实后交办）
+- 背景：Koda 核实了 11 月 21、23、24、25 日的 Threads 发帖。WorkBuddy 每天 18:30 都在发，但因为仓库里的状态文件是旧的（Koda 的 18:00 定时任务只更新本地文件，没推到仓库），你没看到当天 Telegram 发的是哪台车，所以按自己的主题轮换挑了别的车；11 月 24 日那天还因为 Chrome 没登录而没发成。已核实：11 月 21 日发了 JB-11529（和当天 Telegram 同车）；11 月 23 日发了 JB-11723（不是当天 Telegram 车 JB-11774，那台是 11 月 22 日发的）；11 月 24 日没发；11 月 25 日发了 JB-11898（不是当天 Telegram 车 JB-11919）；11 月 26 日发了 JB-11930（不是当天 Telegram 车 JB-11744）。
+- 补发清单（以下 4 台还没上过 Threads，从 11 月 27 日 18:30 开始，每天发一台，不要一天发多台，按顺序）：
+  1. JB-11764 — 2025 BYD Seagull 305km Edition，20,000 km（11 月 22 日 Telegram 车，网站 car 687）
+  2. JB-11754 — 2021 BYD Dolphin 405km Fashion，44,000 km（11 月 24 日 Telegram 车，网站 car 686）
+  3. JB-11919 — 2025 BYD Seagull 305km Vitality，51,000 km（11 月 25 日 Telegram 车）
+  4. JB-11744 — 2022 BYD Yuan PLUS 430KM Premium，74,000 km（11 月 26 日 Telegram 车，网站 car 685）
+- 每台的文案（英文，4 张图 + 这段文案，不写任何价格数字，FOB Price on Request）：
+  - JB-11764：🔥 EV Series / 🚗 2025 BYD Seagull 305km Edition — Stock JB-11764 / 20,000 km | Full inspection before shipment / 💰 FOB Price on Request — tell us your destination country and we'll quote you / 📲 WhatsApp: +86 18079089999 / 🌐 jinbacars.com / #usedcars #carexport
+  - JB-11754：🔥 EV Series / 🚗 2021 BYD Dolphin 405km Fashion — Stock JB-11754 / 44,000 km | Full inspection before shipment / 💰 FOB Price on Request — tell us your destination country and we'll quote you / 📲 WhatsApp: +86 18079089999 / 🌐 jinbacars.com / #usedcars #carexport
+  - JB-11919：🔥 EV Series / 🚗 2025 BYD Seagull 305km Vitality — Stock JB-11919 / 51,000 km | Full inspection before shipment / 💰 FOB Price on Request — tell us your destination country and we'll quote you / 📲 WhatsApp: +86 18079089999 / 🌐 jinbacars.com / #usedcars #carexport
+  - JB-11744：🔥 EV Series / 🚗 2022 BYD Yuan PLUS 430KM Premium — Stock JB-11744 / 74,000 km | Full inspection before shipment / 💰 FOB Price on Request — tell us your destination country and we'll quote you / 📲 WhatsApp: +86 18079089999 / 🌐 jinbacars.com / #usedcars #carexport
+- 照片：从 jinbacars.com 该车详情页取 primary + photo-02/03/04（和平时一样，发前核对详情页 + 图片能打开）。
+- 发完每台：先 git pull，再把记录写进 collab/telegram-posting-state.json 的 threads_posted（带帖子链接），再 push。不要重复发已在 threads_posted 里的车：JB-11661、JB-11549、JB-11529、JB-11774、JB-11723、JB-11898、JB-11930。
+- 状态文件已由 Koda 合并并推回仓库（2026-11-26 21:00 左右，本地 + 仓库两边合一）。以后每天 18:30 前先 git pull 再读状态文件，就能看到当天 Telegram 的车。
 
 ## 已完成的任务
 
