@@ -1,11 +1,21 @@
 {
   "last_run": {
-    "attempted": "2026-11-25 18:39 CST",
-    "car": "JB-11898 Great Wall Poer 2019 2.0T Automatic Petrol 4WD Edition GW4C20B, 20,000 km",
-    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgKVU9oG480, verified on profile (after refresh) showing 1 min ago, 4 photos + full caption.",
-    "note": "last_run.attempted was 2026-11-23 18:40 CST (not today), so per rule used theme-rotation: current_theme=pickup-offroad, picked newest pickup-offroad car not in posted/threads_posted/skipped = JB-11898 (site id 704, 2019 Great Wall Poer 2.0T Petrol 4WD, 20,000 km). Today 4 new cars (706-708 etc) are all EV, no pickup-offroad; 701-704 now deployed and verified. Clash core had vanished at start, restarted via start_clash_core.py. Clipboard backed up (5 chars '92128') and restored. current_theme rotated pickup-offroad->sedan."
+    "attempted": "2026-11-26 18:41 CST",
+    "car": "JB-11930 BYD Qin PLUS 2024 Edition DM-i 55KM, 39,000 km",
+    "result": "complete - posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgM60MmG3ae, verified on profile (after refresh) showing 1 min ago, 4 photos + full caption.",
+    "note": "last_run.attempted was 2026-11-25 18:39 CST (not today), so per rule used theme-rotation: current_theme=sedan, picked newest sedan car not in posted/threads_posted/skipped = JB-11930 (site id 709, 2024 BYD Qin PLUS Edition DM-i 55KM, 39,000 km, PHEV). Verified detail page + all 4 webp images (RIFF header) before posting. Clash core had vanished at start, restarted via start_clash_core.py. Chrome extension browser 2 logged in, tabs_new to @jinba_usedcars. Clipboard backed up (21 chars Chinese) and restored. current_theme rotated sedan->phev-suv."
   },
   "posted": [
+    {
+      "stock": "JB-11930",
+      "model": "BYD Qin PLUS 2024 Edition DM-i 55KM",
+      "mileage_km": 39000,
+      "posted_at": "2026-11-26 18:41 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgM60MmG3ae",
+      "theme": "sedan",
+      "note": "Posted 2026-11-26 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 337 chars, no price numbers, FOB Price on Request. Theme sedan per rotation (last_run.attempted was yesterday). Site id 709, 2024 BYD Qin PLUS DM-i 55KM PHEV sedan, 39,000 km. Verified detail page + webp RIFF headers before posting. Not in posted/threads_posted/skipped. Verified on profile after refresh: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgM60MmG3ae. current_theme rotated sedan->phev-suv."
+    },
     {
       "stock": "JB-11898",
       "model": "Great Wall Poer 2019 2.0T Automatic Petrol 4WD Edition GW4C20B",
@@ -226,7 +236,7 @@
       "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
     }
   ],
-  "current_theme": "sedan",
+  "current_theme": "phev-suv",
   "theme_order": [
     "phev-suv",
     "ev",
