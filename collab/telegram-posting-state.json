@@ -1,11 +1,24 @@
 {
   "last_run": {
-    "attempted": "2026-11-26 18:41 CST",
-    "car": "JB-11930 BYD Qin PLUS 2024 Edition DM-i 55KM, 39,000 km",
-    "result": "complete - posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgM60MmG3ae, verified on profile (after refresh) showing 1 min ago, 4 photos + full caption.",
-    "note": "last_run.attempted was 2026-11-25 18:39 CST (not today), so per rule used theme-rotation: current_theme=sedan, picked newest sedan car not in posted/threads_posted/skipped = JB-11930 (site id 709, 2024 BYD Qin PLUS Edition DM-i 55KM, 39,000 km, PHEV). Verified detail page + all 4 webp images (RIFF header) before posting. Clash core had vanished at start, restarted via start_clash_core.py. Chrome extension browser 2 logged in, tabs_new to @jinba_usedcars. Clipboard backed up (21 chars Chinese) and restored. current_theme rotated sedan->phev-suv."
+    "attempted": "2026-11-26 18:00 CST",
+    "car": "JB-11744 BYD Yuan PLUS 2022 430KM Premium, 74,000 km",
+    "result": "Telegram COMPLETE — posted to all four channels via @JinbaCarsBot sendMediaGroup (main msgs 61-64, EN msgs 59-62, RU msgs 59-62, ZH msgs 60-63). All four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122136405861480929 (approved). First Facebook attempt was killed by a VM service restart before the approval card appeared (same failure as 2026-11-24); retry succeeded. Theme stays ev. No price numbers used. TONIGHT 18:30 Threads post should be JB-11744 (same car as today's Telegram post).",
+    "note": "JB-11744 is the next unposted non-duplicate EV (car 685 on jinbacars.com). User did not pick the Petrol SUV switch (Haval H6 JB-11713) before 18:00, so the default EV pick shipped — fifth EV in a row. Not a duplicate: the other Yuan PLUS is JB-11620 (2024 510KM Beyond, 27,000 km). Next unposted EVs: JB-11640 Seagull 2025 Vitality 31,500 km, JB-11620 Yuan PLUS 2024 27,000 km. NEW candidate JB-11909 Dolphin 2021 401km Edition 30,000 km — check against posted JB-11754 (Dolphin 2021 405km Fashion, 44,000 km): different trim and mileage, likely a different car, verify before picking. MERGED 2026-11-26 ~21:00 with WorkBuddy's repo copy (local and repo had diverged again: cron updates local only, WorkBuddy updates repo only). WorkBuddy posted JB-11930 (Qin PLUS) to Threads 2026-11-26 18:41 on its own rotation — it never saw today's Telegram car because the repo state was stale. BACKFILL PENDING to Threads: JB-11764 (Nov 22 Telegram car), JB-11754 (Nov 24), JB-11919 (Nov 25), JB-11744 (Nov 26) — see collab/koda-workbuddy-tasks.md task 3. Root cause: the 18:00 cron writes only the LOCAL state file, so WorkBuddy's 18:30 run reads a stale repo copy and picks its own car instead of the day's Telegram car. Fix proposed to user: make the cron push the merged state file to the repo after each run."
   },
   "posted": [
+    {
+      "stock": "JB-11744",
+      "model": "BYD Yuan PLUS 2022 430KM Premium",
+      "mileage_km": 74000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-26 18:01 CST",
+      "note": "Posted 2026-11-26 18:01 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14365498409734613 (msgs 61-64), EN 14365498418260981 (msgs 59-62), RU 14365498428102149 (msgs 59-62), ZH 14365498436834805 (msgs 60-63). Theme ev with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122136405861480929 (first attempt killed by VM service restart before approval card; retry approved). No price numbers used."
+    },
     {
       "stock": "JB-11930",
       "model": "BYD Qin PLUS 2024 Edition DM-i 55KM",
@@ -15,6 +28,19 @@
       "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgM60MmG3ae",
       "theme": "sedan",
       "note": "Posted 2026-11-26 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 337 chars, no price numbers, FOB Price on Request. Theme sedan per rotation (last_run.attempted was yesterday). Site id 709, 2024 BYD Qin PLUS DM-i 55KM PHEV sedan, 39,000 km. Verified detail page + webp RIFF headers before posting. Not in posted/threads_posted/skipped. Verified on profile after refresh: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgM60MmG3ae. current_theme rotated sedan->phev-suv."
+    },
+    {
+      "stock": "JB-11919",
+      "model": "BYD Seagull 2025 305km Vitality",
+      "mileage_km": 51000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-25 18:01 CST",
+      "note": "Posted 2026-11-25 18:01 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14364807133041245 (msgs 57-60), EN 14364807141818621 (msgs 55-58), RU 14364807153596685 (msgs 55-58), ZH 14364807163227181 (msgs 56-59). Theme ev with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122136127581480929. No price numbers used."
     },
     {
       "stock": "JB-11898",
@@ -27,6 +53,32 @@
       "note": "Posted 2026-11-25 18:39 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 341 chars, no price numbers, FOB Price on Request. Theme pickup-offroad per rotation (last_run.attempted was 2026-11-23, not today). Site id 704. Picked newest pickup-offroad car not in posted/threads_posted/skipped. 701-704 now deployed (verified detail page + webp RIFF header), unlike 2026-11-24 when they were not yet live. Same car selected 11-24 but blocked then by Chrome login (only Edge available); today Chrome extension browser 2 logged in. Verified on profile after refresh: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgKVU9oG480. current_theme rotated pickup-offroad->sedan."
     },
     {
+      "stock": "JB-11754",
+      "model": "BYD Dolphin 2021 405km Fashion",
+      "mileage_km": 44000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-24 18:01 CST",
+      "note": "Posted 2026-11-24 18:01 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14364115890345837 (msgs 53-56), EN 14364115898732317 (msgs 51-54), RU 14364115906733077 (msgs 51-54), ZH 14364115914865341 (msgs 52-55). Theme ev with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook NOT published: facebook-cli pages posts create attempted twice; BOTH attempts were killed by VM service restarts before the approval card could be decided (attempt 1 ~18:02 CST, attempt 2 ~19:44 CST). No approval pending afterwards; verified via pages posts list that no JB-11754 post exists on the Page. No price numbers used."
+    },
+    {
+      "stock": "JB-11774",
+      "model": "BYD Han 2022 EV Edition 610KM 4WD Premium",
+      "mileage_km": 40000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-23 18:01 CST",
+      "note": "Posted 2026-11-23 18:01 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14363424831919613 (msgs 49-52), EN 14363424842729645 (msgs 47-50), RU 14363424852679789 (msgs 47-50), ZH 14363424861388101 (msgs 48-51). Theme ev with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook NOT published: facebook-cli pages posts create triggered the approval card twice; both cards timed out with no user decision (attempt 1 requested 18:01 CST, timed out 19:57 CST; attempt 2 requested 19:57 CST, timed out 21:38 CST). Verified via pages posts list that no JB-11774 post exists on the Page. No price numbers used."
+    },
+    {
       "stock": "JB-11723",
       "model": "Haval Dargo PLUS 2026 Hi4 150km Trend Edition",
       "mileage_km": 2000,
@@ -35,6 +87,19 @@
       "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgFL7yBG76F",
       "theme": "petrol-suv",
       "note": "Posted 2026-11-23 18:40 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 366 chars, no price numbers, FOB Price on Request. Theme petrol-suv per rotation (last_run.attempted was yesterday). Site id 682. Verified on profile: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgFL7yBG76F. current_theme rotated petrol-suv->pickup-offroad."
+    },
+    {
+      "stock": "JB-11764",
+      "model": "BYD Seagull 2025 305km Edition",
+      "mileage_km": 20000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-22 18:03 CST",
+      "note": "Posted 2026-11-22 18:03 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14362734471682701 (msgs 45-48), EN 14362734480340301 (msgs 43-46), RU 14362734488198125 (msgs 43-46), ZH 14362734496530725 (msgs 44-47). Theme ev with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122135285421480929. No price numbers used."
     },
     {
       "stock": "JB-11774",
@@ -50,16 +115,6 @@
       "stock": "JB-11529",
       "model": "Li Auto L6 2024 Max",
       "mileage_km": 27000,
-      "posted_at": "2026-11-21 18:41 CST",
-      "platform": "threads",
-      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ",
-      "theme": "phev-suv",
-      "note": "Posted 2026-11-21 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 349 chars, no price numbers, FOB Price on Request. Same car as today 18:00 Telegram/Facebook post (Koda). Verified on profile: post shown 1 min ago, link /@jinba_usedcars/post/DgACoRlGEoJ. Theme phev-suv per last_run decision; current_theme rotated phev-suv->ev."
-    },
-    {
-      "stock": "JB-11529",
-      "model": "Li Auto L6 2024 Max",
-      "mileage_km": 27000,
       "channels": [
         "@usedcarsdealer99",
         "@JinbaUsedCars",
@@ -68,6 +123,16 @@
       ],
       "posted_at": "2026-11-21 18:02 CST",
       "note": "Posted 2026-11-21 ~18:02 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14362042300710709 (msgs 41-44), EN 14362042308700565 (msgs 39-42), RU 14362042316605973 (msgs 39-42), ZH 14362042324390949 (msgs 40-43). Theme phev-suv with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122134967703480929. No price numbers used."
+    },
+    {
+      "stock": "JB-11529",
+      "model": "Li Auto L6 2024 Max",
+      "mileage_km": 27000,
+      "posted_at": "2026-11-21 18:41 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ",
+      "theme": "phev-suv",
+      "note": "Posted 2026-11-21 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 349 chars, no price numbers, FOB Price on Request. Same car as today 18:00 Telegram/Facebook post (Koda). Verified on profile: post shown 1 min ago, link /@jinba_usedcars/post/DgACoRlGEoJ. Theme phev-suv per last_run decision; current_theme rotated phev-suv->ev."
     },
     {
       "stock": "JB-11549",
@@ -79,15 +144,6 @@
       "note": "Posted to Threads @jinba_usedcars 2026-11-20 18:38 CST by WorkBuddy (post https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU). SKIPPED for Telegram by user decision 2026-11-21 17:19 (third identical AITO M7 2026, 4,700 km in 5 days). Do NOT post to Telegram. Do NOT re-post to Threads.",
       "platform": "threads",
       "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU"
-    },
-    {
-      "stock": "JB-11539",
-      "model": "Li Auto L7 2025 Max Smart Upgrade",
-      "mileage_km": 43000,
-      "status": "skipped",
-      "channels": [],
-      "posted_at": null,
-      "note": "SKIPPED 2026-11-21 - NOT actually posted. Same spec as JB-11671 (Li Auto L7 2025 Max, 43,000 km) posted Nov 19; would be a duplicate. Listed here only so the picker excludes it. Do NOT post."
     },
     {
       "channels": [
@@ -147,10 +203,11 @@
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
-      "mileage_km": 26000,
-      "model": "Geely Monjaro 2024 2.0TD Automatic 2WD Edition",
-      "posted_at": "2026-11-11",
-      "stock": "JB-10889"
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162999011533, message_ids 24-27).",
+      "posted_at": "2026-11-16 11:09 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10858"
     },
     {
       "channels": [
@@ -159,10 +216,11 @@
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
-      "mileage_km": 40000,
-      "model": "Geely Boyue L 2023 1.5TD DCT Premium",
-      "posted_at": "2026-11-11",
-      "stock": "JB-10879"
+      "mileage_km": 21000,
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360163056228013, message_ids 28-31). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
+      "posted_at": "2026-11-16 19:43 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10848"
     },
     {
       "channels": [
@@ -197,11 +255,10 @@
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
-      "mileage_km": 4700,
-      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
-      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162999011533, message_ids 24-27).",
-      "posted_at": "2026-11-16 11:09 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
-      "stock": "JB-10858"
+      "mileage_km": 26000,
+      "model": "Geely Monjaro 2024 2.0TD Automatic 2WD Edition",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10889"
     },
     {
       "channels": [
@@ -210,14 +267,67 @@
         "@KitayAvtoExport",
         "@ZhongGuoErShouChe"
       ],
-      "mileage_km": 21000,
+      "mileage_km": 40000,
+      "model": "Geely Boyue L 2023 1.5TD DCT Premium",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10879"
+    },
+    {
+      "stock": "JB-11539",
       "model": "Li Auto L7 2025 Max Smart Upgrade",
-      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360163056228013, message_ids 28-31). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
-      "posted_at": "2026-11-16 19:43 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
-      "stock": "JB-10848"
+      "mileage_km": 43000,
+      "status": "skipped",
+      "channels": [],
+      "posted_at": null,
+      "note": "SKIPPED 2026-11-21 - NOT actually posted. Same spec as JB-11671 (Li Auto L7 2025 Max, 43,000 km) posted Nov 19; would be a duplicate. Listed here only so the picker excludes it. Do NOT post."
     }
   ],
   "threads_posted": [
+    {
+      "stock": "JB-11930",
+      "model": "BYD Qin PLUS 2024 Edition DM-i 55KM",
+      "mileage_km": 39000,
+      "posted_at": "2026-11-26 18:41 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgM60MmG3ae",
+      "note": "Posted 2026-11-26 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 337 chars, no price numbers, FOB Price on Request. Theme sedan per rotation (last_run.attempted was yesterday). Site id 709, 2024 BYD Qin PLUS DM-i 55KM PHEV sedan, 39,000 km. Verified detail page + webp RIFF headers before posting. Not in posted/threads_posted/skipped. Verified on profile after refresh: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgM60MmG3ae. current_theme rotated sedan->phev-suv."
+    },
+    {
+      "stock": "JB-11898",
+      "model": "Great Wall Poer 2019 2.0T Automatic Petrol 4WD Edition GW4C20B",
+      "mileage_km": 20000,
+      "posted_at": "2026-11-25 18:39 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgKVU9oG480",
+      "note": "Posted 2026-11-25 18:39 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 341 chars, no price numbers, FOB Price on Request. Theme pickup-offroad per rotation (last_run.attempted was 2026-11-23, not today). Site id 704. Picked newest pickup-offroad car not in posted/threads_posted/skipped. 701-704 now deployed (verified detail page + webp RIFF header), unlike 2026-11-24 when they were not yet live. Same car selected 11-24 but blocked then by Chrome login (only Edge available); today Chrome extension browser 2 logged in. Verified on profile after refresh: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgKVU9oG480. current_theme rotated pickup-offroad->sedan."
+    },
+    {
+      "stock": "JB-11723",
+      "model": "Haval Dargo PLUS 2026 Hi4 150km Trend Edition",
+      "mileage_km": 2000,
+      "posted_at": "2026-11-23 18:40 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgFL7yBG76F",
+      "note": "Posted 2026-11-23 18:40 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 366 chars, no price numbers, FOB Price on Request. Theme petrol-suv per rotation (last_run.attempted was yesterday). Site id 682. Verified on profile: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgFL7yBG76F. current_theme rotated petrol-suv->pickup-offroad."
+    },
+    {
+      "stock": "JB-11774",
+      "model": "BYD Han 2022 EV Edition 610KM 4WD Premium",
+      "mileage_km": 40000,
+      "posted_at": "2026-11-22 19:00 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgCpJ94G4hx",
+      "note": "Posted 2026-11-22 19:00 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 320 chars, no price numbers, FOB Price on Request. Same car theme ev per rotation (last_run.attempted was yesterday). Verified on profile + detail page: post shown 1 min ago, 4 photos, full caption. current_theme rotated ev->petrol-suv."
+    },
+    {
+      "stock": "JB-11529",
+      "model": "Li Auto L6 2024 Max",
+      "mileage_km": 27000,
+      "posted_at": "2026-11-21 18:41 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ",
+      "note": "Posted 2026-11-21 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 349 chars, no price numbers, FOB Price on Request. Same car as today 18:00 Telegram/Facebook post (Koda). Verified on profile: post shown 1 min ago, link /@jinba_usedcars/post/DgACoRlGEoJ. Theme phev-suv per last_run decision; current_theme rotated phev-suv->ev."
+    },
     {
       "stock": "JB-11661",
       "model": "Li Auto L6 2024 Pro",
@@ -233,10 +343,11 @@
       "posted_at": "2026-11-20 18:38 CST",
       "posted_by": "WorkBuddy to Threads @jinba_usedcars",
       "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU",
-      "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
+      "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21.",
+      "theme": null
     }
   ],
-  "current_theme": "phev-suv",
+  "current_theme": "ev",
   "theme_order": [
     "phev-suv",
     "ev",
@@ -254,6 +365,16 @@
       "stock": "JB-11539",
       "reason": "Same spec as JB-11671 posted Nov 19 (Li Auto L7 2025 Max, 43,000 km); would be a duplicate",
       "skipped_at": "2026-11-21 17:19 CST"
+    },
+    {
+      "stock": "JB-11630",
+      "reason": "Same spec as JB-11754 posted Nov 24 (BYD Dolphin 2021 405km Fashion, 44,000 km); would be a duplicate",
+      "skipped_at": "2026-11-24 18:01 CST"
+    },
+    {
+      "stock": "JB-11929",
+      "reason": "Same spec as JB-11774 posted Nov 23 (BYD Han 2022 EV Edition 610KM 4WD Premium, 40,000 km); would be a duplicate",
+      "skipped_at": "2026-11-25 18:01 CST"
     }
   ]
 }
