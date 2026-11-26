@@ -1,0 +1,239 @@
+{
+  "last_run": {
+    "attempted": "2026-11-23 18:40 CST",
+    "car": "JB-11723 Haval Dargo PLUS 2026 Hi4 150km Trend Edition, 2,000 km",
+    "result": "complete — posted 1 listing to Threads @jinba_usedcars (4 photos + English caption, no price numbers). Post link https://www.threads.com/@jinba_usedcars/post/DgFL7yBG76F, verified on profile showing 1 min ago, 4 photos + full caption.",
+    "note": "last_run.attempted was 2026-11-22 19:01 CST (yesterday) at start, so per rule used theme-rotation: current_theme=petrol-suv, picked newest Petrol SUV not in posted/threads_posted/skipped = JB-11723 (site id 682, 2026 Haval Dargo PLUS Hi4 150km Trend Edition, 2,000 km, Fuel=Petrol). Clash core had vanished at start (0 procs/no 7890), restarted via start_clash_core.py. Clipboard backed up (17 chars) and restored. current_theme rotated petrol-suv->pickup-offroad."
+  },
+  "posted": [
+    {
+      "stock": "JB-11723",
+      "model": "Haval Dargo PLUS 2026 Hi4 150km Trend Edition",
+      "mileage_km": 2000,
+      "posted_at": "2026-11-23 18:40 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgFL7yBG76F",
+      "theme": "petrol-suv",
+      "note": "Posted 2026-11-23 18:40 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 366 chars, no price numbers, FOB Price on Request. Theme petrol-suv per rotation (last_run.attempted was yesterday). Site id 682. Verified on profile: post shown 1 min ago, 4 photos, full caption, link /@jinba_usedcars/post/DgFL7yBG76F. current_theme rotated petrol-suv->pickup-offroad."
+    },
+    {
+      "stock": "JB-11774",
+      "model": "BYD Han 2022 EV Edition 610KM 4WD Premium",
+      "mileage_km": 40000,
+      "posted_at": "2026-11-22 19:00 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgCpJ94G4hx",
+      "theme": "ev",
+      "note": "Posted 2026-11-22 19:00 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 320 chars, no price numbers, FOB Price on Request. Same car theme ev per rotation (last_run.attempted was yesterday). Verified on profile + detail page: post shown 1 min ago, 4 photos, full caption. current_theme rotated ev->petrol-suv."
+    },
+    {
+      "stock": "JB-11529",
+      "model": "Li Auto L6 2024 Max",
+      "mileage_km": 27000,
+      "posted_at": "2026-11-21 18:41 CST",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/DgACoRlGEoJ",
+      "theme": "phev-suv",
+      "note": "Posted 2026-11-21 18:41 CST to Threads @jinba_usedcars via clipboard-paste of 4 JPGs (primary+photo-02/03/04, ffmpeg -q:v 2, 720x540). Caption 349 chars, no price numbers, FOB Price on Request. Same car as today 18:00 Telegram/Facebook post (Koda). Verified on profile: post shown 1 min ago, link /@jinba_usedcars/post/DgACoRlGEoJ. Theme phev-suv per last_run decision; current_theme rotated phev-suv->ev."
+    },
+    {
+      "stock": "JB-11529",
+      "model": "Li Auto L6 2024 Max",
+      "mileage_km": 27000,
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "posted_at": "2026-11-21 18:02 CST",
+      "note": "Posted 2026-11-21 ~18:02 CST to all four channels via @JinbaCarsBot sendMediaGroup. Media groups: main 14362042300710709 (msgs 41-44), EN 14362042308700565 (msgs 39-42), RU 14362042316605973 (msgs 39-42), ZH 14362042324390949 (msgs 40-43). Theme phev-suv with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook PUBLISHED via Page posts create: post_id 122134967703480929. No price numbers used."
+    },
+    {
+      "stock": "JB-11549",
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "mileage_km": 4700,
+      "status": "skipped-telegram-only",
+      "channels": [],
+      "posted_at": "2026-11-20 18:38 CST",
+      "note": "Posted to Threads @jinba_usedcars 2026-11-20 18:38 CST by WorkBuddy (post https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU). SKIPPED for Telegram by user decision 2026-11-21 17:19 (third identical AITO M7 2026, 4,700 km in 5 days). Do NOT post to Telegram. Do NOT re-post to Threads.",
+      "platform": "threads",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU"
+    },
+    {
+      "stock": "JB-11539",
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "mileage_km": 43000,
+      "status": "skipped",
+      "channels": [],
+      "posted_at": null,
+      "note": "SKIPPED 2026-11-21 - NOT actually posted. Same spec as JB-11671 (Li Auto L7 2025 Max, 43,000 km) posted Nov 19; would be a duplicate. Listed here only so the picker excludes it. Do NOT post."
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 6000,
+      "model": "Li Auto L6 2024 Pro",
+      "note": "Posted 2026-11-20 21:04:09-21:04:23 CST to all four channels via @JinbaCarsBot sendMediaGroup (browser route blocked: web.telegram.org approval timed out in detached run). Media groups: main 14361438797475005 (msgs 37-40), EN 14361438845608189 (msgs 35-38), RU 14361438894567141 (msgs 35-38), ZH 14361438904313941 (msgs 36-39). Theme phev-suv with theme lines. Subscriber counts via getChatMemberCount: all four channels 2 subscribers. Facebook NOT published: facebook-cli post create connector_feature_unavailable (terminal for this attempt). No price numbers used.",
+      "posted_at": "2026-11-20 21:04:09-21:04:23 CST",
+      "stock": "JB-11661"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 43000,
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "note": "Posted 2026-11-19 20:49:16-20:50:52 CST to the three @KinbaAutoExport channels via Telegram Web (@KinbaAutoExport login); main channel @usedcarsdealer99 posted 2026-11-19 20:52:41 CST via @JinbaCarsBot sendMediaGroup (Telegram Web had no @ChinaUsedCarExpert login). Media group 14360742087960309, message_ids 33-36. Subscriber counts 2026-11-19 20:49-20:52: all four channels 2 subscribers. No price numbers used.",
+      "posted_at": "2026-11-19 20:49-20:52 CST",
+      "stock": "JB-11671"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-18 18:25-18:26 CST to the three @KinbaAutoExport channels; main channel @usedcarsdealer99 posted 2026-11-18 19:35 CST via @JinbaCarsBot sendMediaGroup (Telegram Web K blank + A client lacks @ChinaUsedCarExpert login). Media group 14360014021295045, first message_id 16.",
+      "posted_at": "2026-11-18 18:25-18:26 CST (3 Kinba channels) + 19:35 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-11681"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 71000,
+      "model": "Great Wall Poer 2021 2.0T Commercial Automatic Diesel 4WD Long Bed GW4D20M",
+      "posted_at": "2026-11-18 16:31-16:38 CST",
+      "stock": "JB-11611"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 26000,
+      "model": "Geely Monjaro 2024 2.0TD Automatic 2WD Edition",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10889"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 40000,
+      "model": "Geely Boyue L 2023 1.5TD DCT Premium",
+      "posted_at": "2026-11-11",
+      "stock": "JB-10879"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4000,
+      "model": "Chery Tiggo 8 PLUS 2025 290TGDI DCT Premium",
+      "note": "Completed 2026-11-14 15:18: main channel posted 2026-11-12 23:17 CST; the other three posted 2026-11-14 15:18 after user re-logged in @KinbaAutoExport via QR.",
+      "posted_at": "2026-11-14 15:18 CST",
+      "stock": "JB-10869"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 38000,
+      "model": "Chery Tiggo 7 PLUS 2023 1.5TCI CVT Edition",
+      "note": "Posted 2026-11-14 15:18:50-15:19:18 to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162933791701, message_ids 20-23).",
+      "posted_at": "2026-11-14 15:19 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10859"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 4700,
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "note": "Posted 2026-11-16 11:09:44-11:11:34 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360162999011533, message_ids 24-27).",
+      "posted_at": "2026-11-16 11:09 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10858"
+    },
+    {
+      "channels": [
+        "@usedcarsdealer99",
+        "@JinbaUsedCars",
+        "@KitayAvtoExport",
+        "@ZhongGuoErShouChe"
+      ],
+      "mileage_km": 21000,
+      "model": "Li Auto L7 2025 Max Smart Upgrade",
+      "note": "Posted 2026-11-16 19:43:16-19:44:10 CST to the three @KinbaAutoExport channels. Main channel @usedcarsdealer99 backfilled 2026-11-19 ~00:52 CST via @JinbaCarsBot sendMediaGroup (media_group 14360163056228013, message_ids 28-31). Subscriber counts 2026-11-16 19:44: all four channels still 2 subscribers.",
+      "posted_at": "2026-11-16 19:43 CST (3 Kinba channels) + 2026-11-19 00:52 CST (main channel via @JinbaCarsBot)",
+      "stock": "JB-10848"
+    }
+  ],
+  "threads_posted": [
+    {
+      "stock": "JB-11661",
+      "model": "Li Auto L6 2024 Pro",
+      "mileage_km": 6000,
+      "posted_at": "2026-11-20 afternoon CST",
+      "posted_by": "user manually to Threads @jinba_usedcars",
+      "note": "User manually posted JB-11661 to Threads on 2026-11-20 (confirmed 15:13 CST). WorkBuddy MUST NOT re-post this car to Threads at 18:30. The 18:00 Telegram + Facebook cron STILL posts JB-11661 (different platforms, not a duplicate)."
+    },
+    {
+      "stock": "JB-11549",
+      "model": "AITO M7 2026 Range-Extended Max 4WD Edition 5-seat 192-line LiDAR",
+      "mileage_km": 4700,
+      "posted_at": "2026-11-20 18:38 CST",
+      "posted_by": "WorkBuddy to Threads @jinba_usedcars",
+      "threads_url": "https://www.threads.com/@jinba_usedcars/post/Df9dQzMGygU",
+      "note": "WorkBuddy posted JB-11549 to Threads 2026-11-20 18:38 CST. Do NOT re-post to Threads. Skipped for Telegram by user decision 2026-11-21."
+    }
+  ],
+  "current_theme": "pickup-offroad",
+  "theme_order": [
+    "phev-suv",
+    "ev",
+    "petrol-suv",
+    "pickup-offroad",
+    "sedan"
+  ],
+  "skipped": [
+    {
+      "stock": "JB-11549",
+      "reason": "User decision 2026-11-21 17:19: third identical AITO M7 2026, 4,700 km in 5 days",
+      "skipped_at": "2026-11-21 17:19 CST"
+    },
+    {
+      "stock": "JB-11539",
+      "reason": "Same spec as JB-11671 posted Nov 19 (Li Auto L7 2025 Max, 43,000 km); would be a duplicate",
+      "skipped_at": "2026-11-21 17:19 CST"
+    }
+  ]
+}
